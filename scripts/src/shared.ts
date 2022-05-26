@@ -62,9 +62,15 @@ export async function cleanCache(casePath: string) {
   await remove(join(casePath, 'node_modules', '.modern.js'));
 }
 
-export async function cloneRepo(repoURL: string, cwd: string) {
+export async function cloneRepo() {
+  const token = process.argv[2];
+  const { GITHUB_ACTOR } = process.env;
+  const repoURL = token
+    ? `https://${GITHUB_ACTOR}:${token}@github.com/modern-js-dev/modern.js.git`
+    : 'git@github.com:modern-js-dev/modern.js.git';
+
   return execa('git', ['clone', '--single-branch', '--depth', '1', repoURL], {
-    cwd,
+    cwd: ROOT_PATH,
     stderr: 'inherit',
     stdout: 'inherit',
   });

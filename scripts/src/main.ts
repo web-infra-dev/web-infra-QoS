@@ -28,7 +28,7 @@ async function cloneModernJs() {
     return;
   }
 
-  await cloneRepo('git@github.com:modern-js-dev/modern.js.git', ROOT_PATH);
+  await cloneRepo();
   await copy(CASES_SRC_PATH, CASES_DIST_PATH);
 
   // add cases folder to workspace config
@@ -38,7 +38,7 @@ async function cloneModernJs() {
   );
 
   await runCommand(MODERN_PATH, 'pnpm link ../scripts');
-  await runCommand(MODERN_PATH, 'pnpm install --ignore-scripts');
+  await runCommand(MODERN_PATH, 'pnpm install --ignore-scripts --no-frozen-lockfile');
   await runCommand(MODERN_PATH, 'pnpm prepare');
 }
 

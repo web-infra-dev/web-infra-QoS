@@ -29,4 +29,4 @@ jobs:
         run: cd scripts && pnpm install
 
       - name: Run benchmark
-        run: cd scripts && pnpm start
+        run: cd scripts && pnpm start -- {{ secrets.GITHUB_TOKEN }}
