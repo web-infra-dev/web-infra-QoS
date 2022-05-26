@@ -1,18 +1,18 @@
 import { join } from 'path';
 import { CASES_PATH, runCommand, cleanCache } from '../shared';
 
-export const build = async (caseName: string) => {
+export const dev = async (caseName: string) => {
   const casePath = join(CASES_PATH, caseName);
 
   await cleanCache(casePath);
 
-  // cold boot build
-  await runCommand(casePath, 'npm run build', {
+  // cold boot dev
+  await runCommand(casePath, 'npm run dev', {
     WITH_CACHE: 'false',
   });
 
-  // hot boot build
-  await runCommand(casePath, 'npm run build', {
+  // hot boot dev
+  await runCommand(casePath, 'npm run dev', {
     WITH_CACHE: 'true',
   });
 };

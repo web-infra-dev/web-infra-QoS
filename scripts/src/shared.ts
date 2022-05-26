@@ -1,7 +1,7 @@
 import execa from 'execa';
 import logger from 'consola';
 import { join } from 'path';
-import { readJsonSync, writeJsonSync, existsSync } from 'fs-extra';
+import { readJsonSync, writeJsonSync, existsSync, remove } from 'fs-extra';
 import type { Metrics } from './types';
 
 export const CASES_PATH = join(__dirname, '..', '..', 'cases');
@@ -41,4 +41,9 @@ export async function runCommand(
         }
       : process.env,
   });
+}
+
+export async function cleanCache(casePath: string) {
+  await remove(join(casePath, 'node_modules', '.cache'));
+  await remove(join(casePath, 'node_modules', '.modern.js'));
 }

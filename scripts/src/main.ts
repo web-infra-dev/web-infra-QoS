@@ -1,9 +1,10 @@
+import { dev } from './runners/dev';
 import { build } from './runners/build';
 
 const tasks = [
   {
     caseName: 'mwa-basic',
-    runners: [build],
+    runners: [dev, build],
   },
   // {
   //   caseName: 'mwa-arco-pro',

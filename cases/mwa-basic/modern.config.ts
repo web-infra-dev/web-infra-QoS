@@ -1,10 +1,13 @@
 import { defineConfig } from '@modern-js/app-tools';
-import { MeasureBuildSpeedPlugin } from '../../scripts/src/plugins/measure-build-speed-plugin';
+import { MeasureCompileSpeedPlugin } from '../../scripts/src/plugins/measure-compile-speed-plugin';
 
 export default defineConfig({
   runtime: {
     router: true,
     state: true,
   },
-  plugins: [MeasureBuildSpeedPlugin()],
+  output: {
+    disableTsChecker: process.env.NODE_ENV === 'development',
+  },
+  plugins: [MeasureCompileSpeedPlugin()],
 });
