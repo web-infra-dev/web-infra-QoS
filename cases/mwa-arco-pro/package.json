@@ -14,7 +14,7 @@
     "@arco-design/color": "^0.4.0",
     "@arco-design/web-react": "^2.27.0",
     "@arco-themes/react-arco-pro": "^0.0.7",
-    "@modern-js/runtime": "^1.0.0",
+    "@modern-js/runtime": "workspace:*",
     "@loadable/component": "^5.13.2",
     "@turf/turf": "^6.5.0",
     "arco-design-pro": "^2.4.0",
@@ -36,10 +36,10 @@
     "redux": "^4.1.2"
   },
   "devDependencies": {
-    "@modern-js/app-tools": "^1.0.0",
-    "@modern-js/plugin-jarvis": "^1.0.0",
-    "@modern-js/plugin-less": "^1.0.0",
-    "@modern-js/tsconfig": "^1.0.0",
+    "@modern-js/app-tools": "workspace:*",
+    "@modern-js/plugin-jarvis": "workspace:*",
+    "@modern-js/plugin-less": "workspace:*",
+    "@modern-js/tsconfig": "workspace:*",
     "rimraf": "^3.0.2",
     "lint-staged": "^11.2.6",
     "prettier": "^2.6.2",

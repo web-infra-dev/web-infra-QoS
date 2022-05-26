@@ -31,10 +31,8 @@ export const MeasureBundleSizePlugin = (): CliPlugin => ({
 
     return {
       afterBuild() {
-        const { appDirectory, distDirectory } = api.useAppContext();
-        const files = glob.sync(
-          join(distDirectory, '**', '*.{js,css,html}'),
-        );
+        const { distDirectory } = api.useAppContext();
+        const files = glob.sync(join(distDirectory, '**', '*.{js,css,html}'));
         const fileSizes: Record<string, number> = {};
         const gzippedSizes: Record<string, number> = {};
 
@@ -45,7 +43,7 @@ export const MeasureBundleSizePlugin = (): CliPlugin => ({
           gzippedSizes[name] = gzipSize.sync(content);
         });
 
-        saveMetrics(appDirectory, {
+        saveMetrics({
           minifiedBundleSize: {
             total: sum(fileSizes),
             files: fileSizes,

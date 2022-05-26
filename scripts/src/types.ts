@@ -3,7 +3,7 @@ export type BundleSize = {
   files: Record<string, number>;
 };
 
-export type Metrics = {
+export type Metrics = Partial<{
   // Compile speed (dev)
   devHotBootTime: number;
   devColdBootTime: number;
@@ -28,10 +28,10 @@ export type Metrics = {
   pnpmInstallTime: number;
   yarnInstallTime: number;
   dependenciesCount: number;
-};
+}>;
 
 export type MetricsRecord = {
   commitId: string;
   commitTime: string;
-  metrics: Partial<Metrics>;
+  metrics: Metrics;
 };

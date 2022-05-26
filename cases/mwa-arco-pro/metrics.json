@@ -1,0 +1,10 @@
+{
+  "devPluginSetupTime": 127.63212490081787,
+  "devPrepareTime": 193.5442090034485,
+  "devColdBootTime": 17078.75133395195,
+  "devHotBootTime": 17237.04216694832,
+  "buildPluginSetupTime": 207.33466601371765,
+  "buildPrepareTime": 194.13766622543335,
+  "buildColdBootTime": 46180.594417095184,
+  "buildHotBootTime": 12371.226457834244
+}

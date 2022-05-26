@@ -8,11 +8,11 @@ const pluginStartTime = performance.now();
 export const MeasureCompileSpeedPlugin = (): CliPlugin => ({
   name: 'MeasureCompileSpeedPlugin',
 
-  setup(api) {
+  setup() {
     let beforeDevTime: number;
     let beforeBuildTime: number;
     const setupStartTime = performance.now();
-    const metrics: Partial<Metrics> = {};
+    const metrics: Metrics = {};
 
     const isDev = process.env.NODE_ENV === 'development';
     const isCold = process.env.WITH_CACHE === 'false';
@@ -59,7 +59,7 @@ export const MeasureCompileSpeedPlugin = (): CliPlugin => ({
           metrics.devHotBootTime = devTime;
         }
 
-        saveMetrics(api.useAppContext().appDirectory, metrics);
+        saveMetrics(metrics);
         process.exit(0);
       },
 
@@ -72,7 +72,7 @@ export const MeasureCompileSpeedPlugin = (): CliPlugin => ({
           metrics.buildHotBootTime = buildTime;
         }
 
-        saveMetrics(api.useAppContext().appDirectory, metrics);
+        saveMetrics(metrics);
       },
     };
   },

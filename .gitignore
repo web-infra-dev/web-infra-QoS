@@ -40,5 +40,6 @@ output_resource/
 
 .changeset/pre.json
 
+metrics
 .pnpm-store/
-metrics.json
+
