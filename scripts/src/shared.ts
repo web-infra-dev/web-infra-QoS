@@ -7,7 +7,7 @@ import type { Metrics } from './types';
 export const CASES_PATH = join(__dirname, '..', '..', 'cases');
 export const METRICS_FILE = 'metrics.json';
 
-export function saveTempMetrics(outputPath: string, metrics: Partial<Metrics>) {
+export function saveMetrics(outputPath: string, metrics: Partial<Metrics>) {
   const jsonPath = join(outputPath, METRICS_FILE);
 
   if (existsSync(jsonPath)) {

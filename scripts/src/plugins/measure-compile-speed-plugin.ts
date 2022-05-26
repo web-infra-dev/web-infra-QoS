@@ -1,11 +1,13 @@
 import { performance } from 'perf_hooks';
-import { saveTempMetrics } from '../shared';
+import { saveMetrics } from '../shared';
 import type { CliPlugin } from '@modern-js/core';
 import type { Metrics } from '../types';
 
 const pluginStartTime = performance.now();
 
 export const MeasureCompileSpeedPlugin = (): CliPlugin => ({
+  name: 'MeasureCompileSpeedPlugin',
+
   setup(api) {
     let beforeDevTime: number;
     let beforeBuildTime: number;
@@ -57,7 +59,7 @@ export const MeasureCompileSpeedPlugin = (): CliPlugin => ({
           metrics.devHotBootTime = devTime;
         }
 
-        saveTempMetrics(api.useAppContext().appDirectory, metrics);
+        saveMetrics(api.useAppContext().appDirectory, metrics);
         process.exit(0);
       },
 
@@ -70,7 +72,7 @@ export const MeasureCompileSpeedPlugin = (): CliPlugin => ({
           metrics.buildHotBootTime = buildTime;
         }
 
-        saveTempMetrics(api.useAppContext().appDirectory, metrics);
+        saveMetrics(api.useAppContext().appDirectory, metrics);
       },
     };
   },

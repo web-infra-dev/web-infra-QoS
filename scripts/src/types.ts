@@ -1,3 +1,8 @@
+export type BundleSize = {
+  total: number;
+  files: Record<string, number>;
+};
+
 export type Metrics = {
   // Compile speed (dev)
   devHotBootTime: number;
@@ -14,8 +19,8 @@ export type Metrics = {
   buildPrepareTime: number;
 
   // Bundle size
-  minifiedBundleSize: number;
-  gzippedBundleSize: number;
+  minifiedBundleSize: BundleSize;
+  gzippedBundleSize: BundleSize;
 
   // Install Size
   installSize: number;
@@ -28,5 +33,5 @@ export type Metrics = {
 export type MetricsRecord = {
   commitId: string;
   commitTime: string;
-  metrics: Partial<Metrics>
+  metrics: Partial<Metrics>;
 };

@@ -1,4 +1,5 @@
 import { defineConfig } from '@modern-js/app-tools';
+import { MeasureBundleSizePlugin } from '../../scripts/src/plugins/measure-bundle-size-plugin';
 import { MeasureCompileSpeedPlugin } from '../../scripts/src/plugins/measure-compile-speed-plugin';
 
 export default defineConfig({
@@ -9,5 +10,5 @@ export default defineConfig({
   output: {
     disableTsChecker: process.env.NODE_ENV === 'development',
   },
-  plugins: [MeasureCompileSpeedPlugin()],
+  plugins: [MeasureBundleSizePlugin(), MeasureCompileSpeedPlugin()],
 });
