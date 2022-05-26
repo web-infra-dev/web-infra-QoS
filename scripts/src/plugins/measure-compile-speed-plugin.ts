@@ -1,11 +1,10 @@
 import { performance } from 'perf_hooks';
 import { saveMetrics } from '../shared';
-import type { CliPlugin } from '@modern-js/core';
 import type { Metrics } from '../types';
 
 const pluginStartTime = performance.now();
 
-export const MeasureCompileSpeedPlugin = (): CliPlugin => ({
+export const MeasureCompileSpeedPlugin = () => ({
   name: 'MeasureCompileSpeedPlugin',
 
   setup() {

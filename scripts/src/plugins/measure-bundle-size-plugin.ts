@@ -3,7 +3,6 @@ import { readFileSync, statSync } from 'fs';
 import glob from 'fast-glob';
 import gzipSize from 'gzip-size';
 import { saveMetrics } from '../shared';
-import type { CliPlugin } from '@modern-js/core';
 
 function removeHash(filename: string) {
   if (filename.endsWith('.js') || filename.endsWith('.css')) {
@@ -19,12 +18,12 @@ function sum(files: Record<string, number>) {
   return Object.values(files).reduce((ret, num) => ret + num, 0);
 }
 
-export const MeasureBundleSizePlugin = (): CliPlugin => ({
+export const MeasureBundleSizePlugin = () => ({
   name: 'MeasureBundleSizePlugin',
 
   pre: ['MeasureCompileSpeedPlugin'],
 
-  setup(api) {
+  setup(api: any) {
     if (process.env.NODE_ENV === 'development') {
       return;
     }
