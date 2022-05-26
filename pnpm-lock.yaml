@@ -355,7 +355,7 @@ packages:
     dev: false
 
   /@arco-design/web-react/2.33.1_569957a51d469c962fcce166a59b9f78:
-    resolution: {integrity: sha512-Yk6NeKfi6AkT7d8WziINbGiaW9fLqGKmNsUPSqeItvzyOFjnotVCcqtJ5Cl2r9UaAkR1D5az1WGew2a4HTBKUA==}
+    resolution: {integrity: sha512-Fobj5ivPPlkY4M7mrJCiy1bOxx9JXKfgzkWGnm596E9tBM6a0/x4q6bCUfBiFB79FwlQF9BnNd8dcy4iOTERVA==}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
