@@ -1,0 +1,31 @@
+name: Scheduled
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build-website:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+      - name: Install Pnpm
+        uses: pnpm/action-setup@v2.2.1
+        with:
+          version: 6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Run benchmark
+        run: cd scripts && pnpm start

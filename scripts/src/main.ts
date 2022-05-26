@@ -6,10 +6,10 @@ const tasks = [
     caseName: 'mwa-basic',
     runners: [dev, build],
   },
-  // {
-  //   caseName: 'mwa-arco-pro',
-  //   runners: [build],
-  // },
+  {
+    caseName: 'mwa-arco-pro',
+    runners: [dev, build],
+  },
 ];
 
 async function main() {
