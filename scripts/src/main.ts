@@ -31,29 +31,17 @@ async function cloneModernJs() {
   await cloneRepo();
   await copy(CASES_SRC_PATH, CASES_DIST_PATH);
 
+  // run prepare before linking cases
+  await runCommand(MODERN_PATH, 'pnpm i --ignore-scripts');
+  await runCommand(MODERN_PATH, 'pnpm prepare');
+
   // add cases folder to workspace config
   await updateFile(
     join(MODERN_PATH, 'pnpm-workspace.yaml'),
     content => `${content}\n - 'cases/*'`,
   );
-
-  // lock @types/react version
-  await updateFile(join(MODERN_PATH, 'package.json'), content => {
-    const json = JSON.parse(content);
-    json.pnpm = {
-      ...json.pnpm?.overrides,
-      '@types/react': '^17',
-      '@types/react-dom': '^17',
-    };
-    return JSON.stringify(json, null, 2);
-  });
-
   await runCommand(MODERN_PATH, 'pnpm link ../scripts');
-  await runCommand(
-    MODERN_PATH,
-    'pnpm install --ignore-scripts --no-frozen-lockfile',
-  );
-  await runCommand(MODERN_PATH, 'pnpm prepare');
+  await runCommand(MODERN_PATH, 'pnpm i --ignore-scripts --no-frozen-lockfile');
 }
 
 async function main() {
