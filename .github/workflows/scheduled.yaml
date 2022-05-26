@@ -25,6 +25,9 @@ jobs:
           cache: 'pnpm'
           cache-dependency-path: scripts/pnpm-lock.yaml
 
+      - name: wireit cache
+        uses: google/wireit@setup-github-actions-caching/v1
+
       - name: Install Dependencies
         run: cd scripts && pnpm install
 

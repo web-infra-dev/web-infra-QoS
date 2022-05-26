@@ -44,9 +44,11 @@ async function cloneModernJs() {
   await updateFile(join(MODERN_PATH, 'package.json'), content => {
     const json = JSON.parse(content);
     json.pnpm = {
-      ...json.pnpm?.overrides,
-      '@types/react': '^17',
-      '@types/react-dom': '^17',
+      overrides: {
+        ...json.pnpm?.overrides,
+        '@types/react': '^17',
+        '@types/react-dom': '^17',
+      },
     };
     return JSON.stringify(json, null, 2);
   });
