@@ -5,7 +5,7 @@ on:
     branches: [master]
 
 jobs:
-  build-website:
+  benchmark:
     runs-on: macos-latest
     steps:
       - name: Checkout
