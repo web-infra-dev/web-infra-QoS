@@ -1,5 +1,9 @@
 # Modern.js Benchmark
 
+## Data
+
+Benchmark data is stored in the [gh-pages](https://github.com/modern-js-dev/modern-js-benchmark/tree/gh-pages) branch.
+
 ## Cases
 
 ### mwa-minimal

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { join } from 'path';
 import {
   remove,
@@ -29,22 +30,21 @@ export async function updateFile(
   }
 }
 
-export async function saveCommitInfo(id: string, time: number) {
-  if (await pathExists(COMMITS_INFO_PATH)) {
-    const content: Array<{ id: string; time: number }> = await readJson(
-      COMMITS_INFO_PATH,
-    );
+export async function saveCommitInfo() {
+  const id = await getCommitId(MODERN_PATH);
+  const time = await getCommitTime(MODERN_PATH);
+  const response = await axios.get(
+    'https://github.com/modern-js-dev/modern-js-benchmark/raw/gh-pages/commits-info.json',
+  );
+  const content: Array<{ id: string; time: number }> = response.data;
 
-    if (content.find(item => item.id === id)) {
-      return;
-    }
-
-    content.push({ id, time });
-    content.sort((a, b) => a.time - b.time);
-    await outputJson(COMMITS_INFO_PATH, content, { spaces: 2 });
-  } else {
-    outputJson(COMMITS_INFO_PATH, [{ id, time }]);
+  if (content.find(item => item.id === id)) {
+    return;
   }
+
+  content.push({ id, time });
+  content.sort((a, b) => a.time - b.time);
+  await outputJson(COMMITS_INFO_PATH, content, { spaces: 2 });
 }
 
 export async function saveMetrics(metrics: Metrics) {
@@ -55,7 +55,6 @@ export async function saveMetrics(metrics: Metrics) {
   }
 
   const commitId = await getCommitId(MODERN_PATH);
-  const commitTime = await getCommitTime(MODERN_PATH);
 
   const jsonName = `${CASE_NAME}.json`;
   const jsonPath = join(DATA_PATH, commitId, jsonName);
@@ -66,8 +65,6 @@ export async function saveMetrics(metrics: Metrics) {
   } else {
     await outputJson(jsonPath, metrics, { spaces: 2 });
   }
-
-  await saveCommitInfo(commitId, commitTime);
 
   logger.success(`Successfully write metrics to ${jsonName}.`);
   logger.log(JSON.stringify(metrics, null, 2) + '\n');

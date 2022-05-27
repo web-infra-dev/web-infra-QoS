@@ -9,6 +9,7 @@
     "module": "CommonJS",
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "isolatedModules": true,
     "moduleResolution": "Node",
     "lib": ["esnext", "dom"]
   },

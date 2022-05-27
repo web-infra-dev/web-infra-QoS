@@ -29,9 +29,3 @@ export type Metrics = Partial<{
   yarnInstallTime: number;
   dependenciesCount: number;
 }>;
-
-export type MetricsRecord = {
-  commitId: string;
-  commitTime: string;
-  metrics: Metrics;
-};

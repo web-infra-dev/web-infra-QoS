@@ -1,7 +1,7 @@
 import logger from 'consola';
 import { dev } from './runners/dev';
 import { build } from './runners/build';
-import { cloneRepo } from './shared';
+import { cloneRepo, saveCommitInfo } from './shared';
 
 const cases = [
   {
@@ -29,6 +29,7 @@ async function main() {
     for (const runner of caseToRun.runners) {
       await runner(caseToRun.name);
     }
+    await saveCommitInfo();
   } else {
     logger.error(`case name not found: ${currentCase}`);
   }
