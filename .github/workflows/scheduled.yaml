@@ -12,7 +12,7 @@ jobs:
           - mwa-minimal
           - mwa-initial
           - mwa-arco-pro
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -20,9 +20,7 @@ jobs:
           fetch-depth: 1
 
       - name: Install Pnpm
-        uses: pnpm/action-setup@v2.2.1
-        with:
-          version: 6
+        run: npm install -g pnpm@^6
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -38,4 +36,4 @@ jobs:
         run: cd scripts && pnpm install
 
       - name: Run benchmark
-        run: cd scripts && pnpm start -- {{ matrix.case }} {{ secrets.GITHUB_TOKEN }}
+        run: cd scripts && GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} pnpm start -- ${{ matrix.case }}

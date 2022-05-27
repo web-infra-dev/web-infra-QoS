@@ -1,18 +1,58 @@
 import execa from 'execa';
-import { ROOT_PATH } from './constant';
+import { copy, pathExists } from 'fs-extra';
+import { updateFile } from './fs';
+import { runCommand } from './utils';
+import { join } from 'path';
+import {
+  ROOT_PATH,
+  MODERN_PATH,
+  CASES_DIST_PATH,
+  CASES_SRC_PATH,
+} from './constant';
 
 export async function cloneRepo() {
-  const token = process.argv[3];
-  const { GITHUB_ACTOR } = process.env;
-  const repoURL = token
-    ? `https://${GITHUB_ACTOR}:${token}@github.com/modern-js-dev/modern.js.git`
+  if (await pathExists(MODERN_PATH)) {
+    return;
+  }
+
+  const { GITHUB_ACTOR, GITHUB_TOKEN } = process.env;
+  const repoURL = GITHUB_TOKEN
+    ? `https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/modern-js-dev/modern.js.git`
     : 'git@github.com:modern-js-dev/modern.js.git';
 
-  return execa('git', ['clone', '--single-branch', '--depth', '1', repoURL], {
+  await execa('git', ['clone', '--single-branch', '--depth', '1', repoURL], {
     cwd: ROOT_PATH,
     stderr: 'inherit',
     stdout: 'inherit',
   });
+
+  await copy(CASES_SRC_PATH, CASES_DIST_PATH);
+
+  // run prepare before linking cases
+  await runCommand(MODERN_PATH, 'pnpm i --ignore-scripts');
+  await runCommand(MODERN_PATH, 'pnpm prepare');
+
+  // add cases folder to workspace config
+  await updateFile(
+    join(MODERN_PATH, 'pnpm-workspace.yaml'),
+    content => `${content}\n - 'cases/*'`,
+  );
+
+  // lock @types/react version
+  await updateFile(join(MODERN_PATH, 'package.json'), content => {
+    const json = JSON.parse(content);
+    json.pnpm = {
+      overrides: {
+        ...json.pnpm?.overrides,
+        '@types/react': '^17',
+        '@types/react-dom': '^17',
+      },
+    };
+    return JSON.stringify(json, null, 2);
+  });
+
+  await runCommand(MODERN_PATH, 'pnpm link ../scripts');
+  await runCommand(MODERN_PATH, 'pnpm i --ignore-scripts --no-frozen-lockfile');
 }
 
 export async function getCommitId(cwd: string) {
