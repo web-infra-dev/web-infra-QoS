@@ -33,10 +33,19 @@ export async function updateFile(
 export async function saveCommitInfo() {
   const id = await getCommitId(MODERN_PATH);
   const time = await getCommitTime(MODERN_PATH);
-  const response = await axios.get(
-    'https://github.com/modern-js-dev/modern-js-benchmark/raw/gh-pages/commits-info.json',
-  );
-  const content: Array<{ id: string; time: number }> = response.data;
+
+  let content: Array<{ id: string; time: number }>;
+
+  try {
+    const response = await axios.get(
+      'https://github.com/modern-js-dev/modern-js-benchmark/raw/gh-pages/commits-info.json',
+    );
+    content = response.data;
+  } catch (err) {
+    logger.error('failed to get commit-info.json: ', { id, time });
+    logger.error(err);
+    return;
+  }
 
   if (content.find(item => item.id === id)) {
     return;
