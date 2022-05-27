@@ -3,39 +3,17 @@ import { dev } from './runners/dev';
 import { build } from './runners/build';
 import { cloneRepo, saveCommitInfo } from './shared';
 
-const cases = [
-  {
-    name: 'mwa-minimal',
-    runners: [dev, build],
-  },
-  {
-    name: 'mwa-initial',
-    runners: [dev, build],
-  },
-  {
-    name: 'mwa-ssr',
-    runners: [dev, build],
-  },
-  {
-    name: 'mwa-arco-pro',
-    runners: [dev, build],
-  },
-];
-
-const currentCase = process.argv[2] || cases[0].name;
+const caseName = process.argv[2] || 'mwa-minimal';
 
 async function main() {
   await cloneRepo();
 
-  const caseToRun = cases.find(task => task.name === currentCase);
-
-  if (caseToRun) {
-    for (const runner of caseToRun.runners) {
-      await runner(caseToRun.name);
-    }
+  if (caseName) {
+    await dev(caseName);
+    await build(caseName)
     await saveCommitInfo();
   } else {
-    logger.error(`case name not found: ${currentCase}`);
+    logger.error(`Case not found: ${caseName}`);
   }
 }
 

@@ -16,6 +16,7 @@ jobs:
           - mwa-initial
           - mwa-ssr
           - mwa-arco-pro
+          - mwa-arco-pro-esbuild
 
     runs-on: macos-latest
 
@@ -42,7 +43,7 @@ jobs:
         run: cd scripts && pnpm install
 
       - name: 🚀 Run benchmark
-        run: cd scripts && GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.date }} pnpm start -- ${{ matrix.case }}
+        run: cd scripts && GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start -- ${{ matrix.case }}
 
       - name: Update data
         uses: JamesIves/github-pages-deploy-action@v4.3.3

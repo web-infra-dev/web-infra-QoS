@@ -13,6 +13,7 @@ jobs:
           - mwa-initial
           - mwa-ssr
           - mwa-arco-pro
+          - mwa-arco-pro-esbuild
 
     runs-on: macos-latest
 
