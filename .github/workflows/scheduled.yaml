@@ -11,6 +11,7 @@ jobs:
         case:
           - mwa-minimal
           - mwa-initial
+          - mwa-ssr
           - mwa-arco-pro
 
     runs-on: macos-latest

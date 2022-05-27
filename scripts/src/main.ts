@@ -13,6 +13,10 @@ const cases = [
     runners: [dev, build],
   },
   {
+    name: 'mwa-ssr',
+    runners: [dev, build],
+  },
+  {
     name: 'mwa-arco-pro',
     runners: [dev, build],
   },

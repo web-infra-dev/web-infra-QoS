@@ -16,6 +16,7 @@ import checkLogin from './utils/checkLogin';
 import changeTheme from './utils/changeTheme';
 import useStorage from './utils/useStorage';
 import './mock';
+import "@arco-design/web-react/dist/css/arco.css";
 
 const store = createStore(rootReducer);
 
