@@ -2,7 +2,7 @@ import execa from 'execa';
 import { ROOT_PATH } from './constant';
 
 export async function cloneRepo() {
-  const token = process.argv[2];
+  const token = process.argv[3];
   const { GITHUB_ACTOR } = process.env;
   const repoURL = token
     ? `https://${GITHUB_ACTOR}:${token}@github.com/modern-js-dev/modern.js.git`
@@ -16,7 +16,9 @@ export async function cloneRepo() {
 }
 
 export async function getCommitId(cwd: string) {
-  const { stdout } = await execa('git', ['rev-parse', '--short', 'HEAD'], { cwd });
+  const { stdout } = await execa('git', ['rev-parse', '--short', 'HEAD'], {
+    cwd,
+  });
   return stdout;
 }
 

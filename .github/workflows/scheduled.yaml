@@ -6,6 +6,12 @@ on:
 
 jobs:
   benchmark:
+    strategy:
+      matrix:
+        case:
+          - mwa-minimal
+          - mwa-initial
+          - mwa-arco-pro
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,4 +38,4 @@ jobs:
         run: cd scripts && pnpm install
 
       - name: Run benchmark
-        run: cd scripts && pnpm start -- {{ secrets.GITHUB_TOKEN }}
+        run: cd scripts && pnpm start -- {{ matrix.case }} {{ secrets.GITHUB_TOKEN }}

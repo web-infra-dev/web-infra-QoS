@@ -1,3 +1,4 @@
+import logger from 'consola';
 import { copy, pathExists } from 'fs-extra';
 import { dev } from './runners/dev';
 import { build } from './runners/build';
@@ -25,6 +26,8 @@ const tasks = [
     runners: [dev, build],
   },
 ];
+
+const currentCase = process.argv[2] || tasks[0].caseName;
 
 async function cloneModernJs() {
   if (await pathExists(MODERN_PATH)) {
@@ -64,10 +67,14 @@ async function cloneModernJs() {
 async function main() {
   await cloneModernJs();
 
-  for (const task of tasks) {
+  const task = tasks.find(task => task.caseName === currentCase);
+
+  if (task) {
     for (const runner of task.runners) {
       await runner(task.caseName);
     }
+  } else {
+    logger.error(`case name not found: ${currentCase}`);
   }
 }
 
