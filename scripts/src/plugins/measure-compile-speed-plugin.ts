@@ -1,6 +1,6 @@
 import { performance } from 'perf_hooks';
-import { saveMetrics } from '../shared';
-import type { Metrics } from '../types';
+import { saveMetrics } from '../shared/fs';
+import type { Metrics } from '../shared/types';
 
 const pluginStartTime = performance.now();
 

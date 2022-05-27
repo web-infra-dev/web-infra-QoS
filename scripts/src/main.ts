@@ -43,6 +43,7 @@ async function cloneModernJs() {
     join(MODERN_PATH, 'pnpm-workspace.yaml'),
     content => `${content}\n - 'cases/*'`,
   );
+
   // lock @types/react version
   await updateFile(join(MODERN_PATH, 'package.json'), content => {
     const json = JSON.parse(content);
@@ -55,6 +56,7 @@ async function cloneModernJs() {
     };
     return JSON.stringify(json, null, 2);
   });
+
   await runCommand(MODERN_PATH, 'pnpm link ../scripts');
   await runCommand(MODERN_PATH, 'pnpm i --ignore-scripts --no-frozen-lockfile');
 }

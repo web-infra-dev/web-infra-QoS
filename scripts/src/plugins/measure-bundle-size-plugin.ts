@@ -2,7 +2,7 @@ import { join } from 'path';
 import { readFileSync, statSync } from 'fs';
 import glob from 'fast-glob';
 import gzipSize from 'gzip-size';
-import { saveMetrics } from '../shared';
+import { saveMetrics } from '../shared/fs';
 
 function removeHash(filename: string) {
   if (filename.endsWith('.js') || filename.endsWith('.css')) {
