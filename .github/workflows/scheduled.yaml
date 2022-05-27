@@ -35,5 +35,12 @@ jobs:
       - name: Install Dependencies
         run: cd scripts && pnpm install
 
-      - name: Run benchmark
+      - name: 🚀 Run benchmark
         run: cd scripts && GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} pnpm start -- ${{ matrix.case }}
+
+      - name: Update data
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages
+          folder: data
+          clean: false
