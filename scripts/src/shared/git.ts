@@ -15,16 +15,29 @@ export async function cloneRepo() {
     return;
   }
 
-  const { GITHUB_ACTOR, GITHUB_TOKEN } = process.env;
+  const { GITHUB_ACTOR, GITHUB_TOKEN, COMMIT_ID } = process.env;
   const repoURL = GITHUB_TOKEN
     ? `https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/modern-js-dev/modern.js.git`
     : 'git@github.com:modern-js-dev/modern.js.git';
 
-  await execa('git', ['clone', '--single-branch', '--depth', '1', repoURL], {
+  const options = ['clone', '--single-branch'];
+  if (!COMMIT_ID) {
+    options.push('--depth', '1');
+  }
+
+  await execa('git', [...options, repoURL], {
     cwd: ROOT_PATH,
     stderr: 'inherit',
     stdout: 'inherit',
   });
+
+  if (COMMIT_ID) {
+    await execa('git', ['checkout', COMMIT_ID], {
+      cwd: ROOT_PATH,
+      stderr: 'inherit',
+      stdout: 'inherit',
+    });
+  }
 
   await copy(CASES_SRC_PATH, CASES_DIST_PATH);
 

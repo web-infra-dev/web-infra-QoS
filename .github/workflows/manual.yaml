@@ -1,8 +1,11 @@
-name: Scheduled
+name: Manual
 
 on:
-  push:
-    branches: [master]
+  workflow_dispatch:
+    inputs:
+      commitId:
+        description: "commitId of modern.js repo"
+        required: true
 
 jobs:
   benchmark:
@@ -38,7 +41,7 @@ jobs:
         run: cd scripts && pnpm install
 
       - name: 🚀 Run benchmark
-        run: cd scripts && GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} pnpm start -- ${{ matrix.case }}
+        run: cd scripts && GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.date }} pnpm start -- ${{ matrix.case }}
 
       - name: Update data
         uses: JamesIves/github-pages-deploy-action@v4.3.3
