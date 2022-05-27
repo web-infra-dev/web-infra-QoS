@@ -1,7 +1,7 @@
-// import {
-//   MeasureBundleSizePlugin,
-//   MeasureCompileSpeedPlugin,
-// } from '@modern-js/benchmark-scripts/plugins';
+import {
+  MeasureBundleSizePlugin,
+  MeasureCompileSpeedPlugin,
+} from '@modern-js/benchmark-scripts/plugins';
 
 export default {
   runtime: {
@@ -11,5 +11,5 @@ export default {
   output: {
     disableTsChecker: process.env.NODE_ENV === 'development',
   },
-  // plugins: [MeasureCompileSpeedPlugin(), MeasureBundleSizePlugin()],
+  plugins: [MeasureCompileSpeedPlugin(), MeasureBundleSizePlugin()],
 };

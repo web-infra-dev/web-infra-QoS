@@ -10,36 +10,34 @@ import {
   CASES_SRC_PATH,
 } from './constant';
 
-export async function cloneRepo() {
-  if (await pathExists(MODERN_PATH)) {
-    return;
-  }
+export async function cloneRepo(caseName: string) {
+  if (!(await pathExists(MODERN_PATH))) {
+    const { GITHUB_ACTOR, GITHUB_TOKEN, COMMIT_ID } = process.env;
+    const repoURL = GITHUB_TOKEN
+      ? `https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/modern-js-dev/modern.js.git`
+      : 'git@github.com:modern-js-dev/modern.js.git';
 
-  const { GITHUB_ACTOR, GITHUB_TOKEN, COMMIT_ID } = process.env;
-  const repoURL = GITHUB_TOKEN
-    ? `https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/modern-js-dev/modern.js.git`
-    : 'git@github.com:modern-js-dev/modern.js.git';
+    const options = ['clone', '--single-branch'];
+    if (!COMMIT_ID) {
+      options.push('--depth', '1');
+    }
 
-  const options = ['clone', '--single-branch'];
-  if (!COMMIT_ID) {
-    options.push('--depth', '1');
-  }
-
-  await execa('git', [...options, repoURL], {
-    cwd: ROOT_PATH,
-    stderr: 'inherit',
-    stdout: 'inherit',
-  });
-
-  if (COMMIT_ID) {
-    await execa('git', ['checkout', COMMIT_ID], {
+    await execa('git', [...options, repoURL], {
       cwd: ROOT_PATH,
       stderr: 'inherit',
       stdout: 'inherit',
     });
+
+    if (COMMIT_ID) {
+      await execa('git', ['checkout', COMMIT_ID], {
+        cwd: ROOT_PATH,
+        stderr: 'inherit',
+        stdout: 'inherit',
+      });
+    }
   }
 
-  await copy(CASES_SRC_PATH, CASES_DIST_PATH);
+  await copy(join(CASES_SRC_PATH, caseName), join(CASES_DIST_PATH, caseName));
 
   // run prepare before linking cases
   await runCommand(MODERN_PATH, 'pnpm i --ignore-scripts');

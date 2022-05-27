@@ -6,7 +6,7 @@ import { cloneRepo, saveCommitInfo } from './shared';
 const caseName = process.argv[2] || 'mwa-minimal';
 
 async function main() {
-  await cloneRepo();
+  await cloneRepo(caseName);
 
   if (caseName) {
     await dev(caseName);
