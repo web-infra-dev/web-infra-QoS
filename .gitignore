@@ -43,3 +43,4 @@ output_resource/
 metrics
 .pnpm-store/
 modern.js
+cases/**/pnpm-lock.yaml

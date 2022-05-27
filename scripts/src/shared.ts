@@ -20,6 +20,7 @@ export const CASES_DIST_PATH = join(MODERN_PATH, 'cases');
 export function saveMetrics(metrics: Metrics) {
   const { CASE_NAME } = process.env;
   if (!CASE_NAME) {
+    logger.log(JSON.stringify(metrics, null, 2) + '\n');
     return;
   }
 

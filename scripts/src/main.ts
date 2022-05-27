@@ -3,7 +3,6 @@ import { dev } from './runners/dev';
 import { build } from './runners/build';
 import {
   cloneRepo,
-  ROOT_PATH,
   runCommand,
   updateFile,
   MODERN_PATH,
@@ -14,7 +13,11 @@ import { join } from 'path';
 
 const tasks = [
   {
-    caseName: 'mwa-basic',
+    caseName: 'mwa-minimal',
+    runners: [dev, build],
+  },
+  {
+    caseName: 'mwa-initial',
     runners: [dev, build],
   },
   {

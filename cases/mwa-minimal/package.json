@@ -1,0 +1,20 @@
+{
+  "name": "mwa-minimal",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "modern dev",
+    "build": "modern build",
+    "start": "modern start",
+    "new": "modern new"
+  },
+  "dependencies": {
+    "@modern-js/runtime": "^1.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@modern-js/app-tools": "^1.0.0",
+    "@modern-js/plugin-jarvis": "^1.0.0",
+    "webpack": "^5"
+  }
+}
