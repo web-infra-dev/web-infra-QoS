@@ -16,7 +16,7 @@ export async function cloneRepo() {
 }
 
 export async function getCommitId(cwd: string) {
-  const { stdout } = await execa('git', ['rev-parse', 'HEAD'], { cwd });
+  const { stdout } = await execa('git', ['rev-parse', '--short', 'HEAD'], { cwd });
   return stdout;
 }
 

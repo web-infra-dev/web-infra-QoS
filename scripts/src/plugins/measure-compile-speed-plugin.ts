@@ -49,7 +49,7 @@ export const MeasureCompileSpeedPlugin = () => ({
         }
       },
 
-      afterDev: () => {
+      afterDev: async () => {
         const devTime = performance.now() - beforeDevTime;
 
         if (isCold) {
@@ -58,11 +58,11 @@ export const MeasureCompileSpeedPlugin = () => ({
           metrics.devHotBootTime = devTime;
         }
 
-        saveMetrics(metrics);
+        await saveMetrics(metrics);
         process.exit(0);
       },
 
-      afterBuild: () => {
+      afterBuild: async () => {
         const buildTime = performance.now() - beforeBuildTime;
 
         if (isCold) {
@@ -71,7 +71,7 @@ export const MeasureCompileSpeedPlugin = () => ({
           metrics.buildHotBootTime = buildTime;
         }
 
-        saveMetrics(metrics);
+        await saveMetrics(metrics);
       },
     };
   },
