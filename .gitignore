@@ -43,4 +43,5 @@ output_resource/
 .pnpm-store/
 modern.js
 cases/**/pnpm-lock.yaml
-./data
+data/**/*
+

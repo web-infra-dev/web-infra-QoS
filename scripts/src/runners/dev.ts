@@ -1,20 +1,29 @@
 import { join } from 'path';
-import { CASES_DIST_PATH, runCommand, cleanCache } from '../shared';
+import {
+  cleanCache,
+  runCommand,
+  CASES_DIST_PATH,
+  DEFAULT_RERUN_TIME,
+} from '../shared';
 
 export const dev = async (caseName: string) => {
   const casePath = join(CASES_DIST_PATH, caseName);
 
-  await cleanCache(casePath);
+  for (let i = 0; i < DEFAULT_RERUN_TIME; i++) {
+    await cleanCache(casePath);
 
-  // cold boot dev
-  await runCommand(casePath, 'npm run dev', {
-    CASE_NAME: caseName,
-    WITH_CACHE: 'false',
-  });
+    // cold boot
+    await runCommand(casePath, 'npm run dev', {
+      CASE_NAME: caseName,
+      WITH_CACHE: 'false',
+      CURRENT_INDEX: String(i),
+    });
 
-  // hot boot dev
-  await runCommand(casePath, 'npm run dev', {
-    CASE_NAME: caseName,
-    WITH_CACHE: 'true',
-  });
+    // hot boot
+    await runCommand(casePath, 'npm run dev', {
+      CASE_NAME: caseName,
+      WITH_CACHE: 'true',
+      CURRENT_INDEX: String(i),
+    });
+  }
 };

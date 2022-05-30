@@ -3,29 +3,29 @@ export type BundleSize = {
   files: Record<string, number>;
 };
 
-export type Metrics = Partial<{
+export type Metrics = {
   // Compile speed (dev)
-  devHotBootTime: number;
-  devColdBootTime: number;
-  devHotRecompileTime: number;
-  devColdRecompileTime: number;
-  devPluginSetupTime: number;
-  devPrepareTime: number;
+  devHotBootTime?: number;
+  devColdBootTime?: number;
+  devHotRecompileTime?: number;
+  devColdRecompileTime?: number;
+  devPluginSetupTime?: number;
+  devPrepareTime?: number;
 
   // Compile speed (build)
-  buildHotBootTime: number;
-  buildColdBootTime: number;
-  buildPluginSetupTime: number;
-  buildPrepareTime: number;
+  buildHotBootTime?: number;
+  buildColdBootTime?: number;
+  buildPluginSetupTime?: number;
+  buildPrepareTime?: number;
 
   // Bundle size
-  minifiedBundleSize: BundleSize;
-  gzippedBundleSize: BundleSize;
+  minifiedBundleSize?: BundleSize;
+  gzippedBundleSize?: BundleSize;
 
   // Install Size
-  installSize: number;
-  npmInstallTime: number;
-  pnpmInstallTime: number;
-  yarnInstallTime: number;
-  dependenciesCount: number;
-}>;
+  installSize?: number;
+  npmInstallTime?: number;
+  pnpmInstallTime?: number;
+  yarnInstallTime?: number;
+  dependenciesCount?: number;
+};

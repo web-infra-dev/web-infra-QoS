@@ -1,5 +1,6 @@
 import { join } from 'path';
 
+export const DEFAULT_RERUN_TIME = 5;
 export const ROOT_PATH = join(__dirname, '..', '..', '..');
 export const MODERN_PATH = join(ROOT_PATH, 'modern.js');
 export const DATA_PATH = join(ROOT_PATH, 'data');

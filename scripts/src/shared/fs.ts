@@ -56,25 +56,77 @@ export async function saveCommitInfo() {
   await outputJson(COMMITS_INFO_PATH, content, { spaces: 2 });
 }
 
+async function getMetricsPath(caseName: string) {
+  const commitId = await getCommitId(MODERN_PATH);
+  const jsonName = `${caseName}.json`;
+  return {
+    jsonName,
+    jsonPath: join(DATA_PATH, commitId, jsonName),
+  };
+}
+
 export async function saveMetrics(metrics: Metrics) {
-  const { CASE_NAME } = process.env;
-  if (!CASE_NAME) {
+  const { CASE_NAME, CURRENT_INDEX } = process.env;
+  if (!CASE_NAME || !CURRENT_INDEX) {
+    logger.log('missing CASE_NAME or CURRENT_INDEX.');
     logger.log(JSON.stringify(metrics, null, 2) + '\n');
     return;
   }
 
-  const commitId = await getCommitId(MODERN_PATH);
-
-  const jsonName = `${CASE_NAME}.json`;
-  const jsonPath = join(DATA_PATH, commitId, jsonName);
+  const index = Number(CURRENT_INDEX);
+  const { jsonPath, jsonName } = await getMetricsPath(CASE_NAME);
 
   if (await pathExists(jsonPath)) {
-    const content: Metrics = await readJson(jsonPath);
-    await outputJson(jsonPath, { ...content, ...metrics }, { spaces: 2 });
+    const content: Metrics[] = await readJson(jsonPath);
+
+    if (content[index]) {
+      Object.assign(content[index], metrics);
+    } else {
+      content.push(metrics);
+    }
+
+    await outputJson(jsonPath, content, { spaces: 2 });
   } else {
-    await outputJson(jsonPath, metrics, { spaces: 2 });
+    await outputJson(jsonPath, [metrics], { spaces: 2 });
   }
 
   logger.success(`Successfully write metrics to ${jsonName}.`);
   logger.log(JSON.stringify(metrics, null, 2) + '\n');
+}
+
+const average = (nums: number[]) =>
+  nums.reduce((ret, num) => ret + num, 0) / nums.length;
+
+const cleanData = (nums: number[]) => {
+  nums.sort();
+  // remove max value
+  nums.pop();
+  // remove min value
+  nums.shift();
+  return nums;
+};
+
+export async function mergeMetrics(caseName: string) {
+  const { jsonPath, jsonName } = await getMetricsPath(caseName);
+
+  if (await pathExists(jsonPath)) {
+    const allMetrics: Metrics[] = await readJson(jsonPath);
+    const firstMetrics = allMetrics[0];
+    const result: Record<string, unknown> = {};
+    const keys = Object.keys(firstMetrics) as Array<keyof Metrics>;
+
+    keys.forEach(key => {
+      const val = firstMetrics[key];
+      if (typeof val === 'number') {
+        const values = allMetrics.map(metrics => metrics[key]) as number[];
+        result[key] = average(cleanData(values));
+      } else {
+        result[key] = val;
+      }
+    });
+
+    await outputJson(jsonPath, result, { spaces: 2 });
+    logger.success(`Successfully merged metrics to ${jsonName}.`);
+    logger.log(JSON.stringify(result, null, 2) + '\n');
+  }
 }
