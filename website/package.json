@@ -1,0 +1,56 @@
+{
+  "name": "website",
+  "version": "0.1.0",
+  "scripts": {
+    "reset": "npx rimraf ./**/node_modules",
+    "dev": "modern dev",
+    "build": "modern build",
+    "start": "modern start",
+    "new": "modern new",
+    "lint": "modern lint"
+  },
+  "engines": {
+    "node": ">=14.17.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "node --max_old_space_size=8192 ./node_modules/eslint/bin/eslint.js --fix --color --cache --quiet"
+    ],
+    "*.{js,jsx,mjs,mjsx,cjs,cjsx}": [
+      "node --max_old_space_size=8192 ./node_modules/eslint/bin/eslint.js --fix --color --cache --quiet"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "dist/"
+  ],
+  "dependencies": {
+    "@modern-js/runtime": "^1.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@modern-js/app-tools": "^1.0.0",
+    "@modern-js/plugin-jarvis": "^1.0.0",
+    "@modern-js/tsconfig": "^1.0.0",
+    "rimraf": "^3.0.2",
+    "lint-staged": "^11.2.6",
+    "prettier": "^2.6.2",
+    "husky": "4.3.8",
+    "typescript": "^4",
+    "@types/react": "^17",
+    "@types/react-dom": "^17",
+    "@types/node": "^14"
+  },
+  "modernConfig": {
+    "runtime": {
+      "router": true,
+      "state": true
+    }
+  }
+}
