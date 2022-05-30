@@ -16,6 +16,8 @@ export const MeasureCompileSpeedPlugin = () => ({
     const isDev = process.env.NODE_ENV === 'development';
     const isCold = process.env.WITH_CACHE === 'false';
 
+    let webpackCompiler: any;
+
     if (isCold) {
       const pluginSetupTime = performance.now() - pluginStartTime;
       if (isDev) {
@@ -49,6 +51,10 @@ export const MeasureCompileSpeedPlugin = () => ({
         }
       },
 
+      afterCreateCompiler: ({ compiler }: any) => {
+        webpackCompiler = compiler;
+      },
+
       afterDev: async () => {
         const devTime = performance.now() - beforeDevTime;
 
@@ -60,10 +66,9 @@ export const MeasureCompileSpeedPlugin = () => ({
 
         await saveMetrics(metrics);
 
-        // wait 10s, let webpack generate cache file
-        setTimeout(() => {
+        webpackCompiler.close(() => {
           process.exit(0);
-        }, 10000);
+        });
       },
 
       afterBuild: async () => {
