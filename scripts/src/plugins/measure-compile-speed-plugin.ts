@@ -59,7 +59,11 @@ export const MeasureCompileSpeedPlugin = () => ({
         }
 
         await saveMetrics(metrics);
-        process.exit(0);
+
+        // wait 10s, let webpack generate cache file
+        setTimeout(() => {
+          process.exit(0);
+        }, 10000);
       },
 
       afterBuild: async () => {
