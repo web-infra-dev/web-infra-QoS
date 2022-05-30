@@ -6,27 +6,34 @@ export type CommitInfo = {
   time: number;
 };
 
-let commitsInfo: CommitInfo[];
-
 export type FetchedMetrics = CommitInfo & {
   metrics: Record<string, any>;
 };
 
-export const fetchCommitsInfo = async () => {
-  commitsInfo = await fetch(COMMITS_INFO_URL).then(res => res.json());
-  return commitsInfo;
+const cache = new Map();
+
+const fetchJsonWithCache = async (url: string) => {
+  if (cache.has(url)) {
+    return cache.get(url);
+  }
+  const data = await fetch(url)
+    .then(res => res.json())
+    .catch(() => {});
+  cache.set(url, data);
+  return data;
 };
+
+export const fetchCommitsInfo = async () =>
+  fetchJsonWithCache(COMMITS_INFO_URL);
 
 export const fetchMetrics = async (
   caseName: string,
 ): Promise<FetchedMetrics[]> => {
-  const commitsInfo = await fetchCommitsInfo();
+  const commitsInfo: CommitInfo[] = await fetchCommitsInfo();
 
   const allMetrics: Metrics[] = await Promise.all(
     commitsInfo.map(info =>
-      fetch(`./${info.id}/${caseName}.json`)
-        .then(res => res.json())
-        .catch(() => {}),
+      fetchJsonWithCache(`./${info.id}/${caseName}.json`),
     ),
   );
 

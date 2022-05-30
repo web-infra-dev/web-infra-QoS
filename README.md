@@ -27,3 +27,15 @@ Arco Pro project.
 ### mwa-arco-pro-esbuild
 
 `mwa-arco-pro` + esbuild.
+
+## Website
+
+### Local Development
+
+```bash
+cd website
+pnpm install
+npm run dev
+```
+
+Then visit `https://modern.js.org/modern-js-benchmark/index`.

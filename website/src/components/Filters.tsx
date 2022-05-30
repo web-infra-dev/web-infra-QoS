@@ -5,14 +5,18 @@ import {
   Form,
   Button,
   Select,
+  FormProps,
   Typography,
 } from '@arco-design/web-react';
 
-export const Filters = (props: { metrics: string[] }) => {
+export const Filters = (props: {
+  metrics: string[];
+  onSubmit: FormProps['onSubmit'];
+}) => {
   const { metrics } = props;
   return (
     <Card bordered={false} style={{ marginBottom: 24 }}>
-      <Form layout="vertical">
+      <Form layout="vertical" onSubmit={props.onSubmit}>
         <Typography.Title heading={6} style={{ marginTop: 0 }}>
           Filters
         </Typography.Title>
@@ -20,7 +24,7 @@ export const Filters = (props: { metrics: string[] }) => {
           <Grid.Col span={8}>
             <Form.Item
               label="Case"
-              field="case"
+              field="caseName"
               initialValue={CASES[0]}
               style={{ marginBottom: 8 }}
             >
@@ -36,7 +40,7 @@ export const Filters = (props: { metrics: string[] }) => {
           <Grid.Col span={8}>
             <Form.Item
               label="Metrics"
-              field="metrics"
+              field="metricsName"
               initialValue={metrics[0]}
               style={{ marginBottom: 8 }}
             >
@@ -50,8 +54,12 @@ export const Filters = (props: { metrics: string[] }) => {
             </Form.Item>
           </Grid.Col>
         </Grid.Row>
-        <Button type="primary" style={{ width: 120, marginTop: 10 }}>
-          Submit
+        <Button
+          type="primary"
+          htmlType="submit"
+          style={{ width: 120, marginTop: 10 }}
+        >
+          Query
         </Button>
       </Form>
     </Card>

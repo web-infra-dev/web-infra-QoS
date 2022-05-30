@@ -5,12 +5,7 @@ export const Content = (props: { menuIndex: string }) => {
   const renderSubContent = () => {
     switch (props.menuIndex) {
       case MENU.BUNDLE_SIZE:
-        return (
-          <ContentBundleSize
-            caseName={CASES[0]}
-            metricsName={BUNDLE_SIZE_METRICS[0]}
-          />
-        );
+        return <ContentBundleSize />;
     }
     return null;
   };
