@@ -3,12 +3,12 @@ import { IconGithub } from '@arco-design/web-react/icon';
 
 const Root = styled.div`
   display: flex;
-  height: 60px;
+  height: 56px;
   padding: 4px 24px;
   background-color: #fff;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #dcdcdc;
+  border-bottom: 1px solid #e8e8e8;
 `;
 
 const Left = styled.div`
