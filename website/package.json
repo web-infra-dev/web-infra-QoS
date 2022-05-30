@@ -12,14 +12,17 @@
     "dist/"
   ],
   "dependencies": {
+    "@antv/g2plot": "^2.4.17",
     "@arco-design/web-react": "^2.34.0",
     "@modern-js/runtime": "^1.0.0",
+    "dayjs": "^1.11.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "@modern-js/app-tools": "^1.0.0",
     "@modern-js/plugin-jarvis": "^1.0.0",
+    "@modern-js/plugin-proxy": "^1.0.0",
     "@modern-js/plugin-sass": "^1.0.0",
     "@modern-js/tsconfig": "^1.0.0",
     "@types/node": "^14",

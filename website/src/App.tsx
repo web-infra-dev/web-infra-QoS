@@ -5,7 +5,7 @@ import { NavBar } from './components/NavBar';
 import { SideMenu } from './components/SideMenu';
 import { Content } from './components/Content';
 import { useState } from 'react';
-import { MENU } from './constant';
+import { MENU } from './shared/constant';
 
 const Container = styled.div`
   min-height: 100vh;

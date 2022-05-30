@@ -1,7 +1,7 @@
 import { Menu, MenuProps } from '@arco-design/web-react';
 import styled from '@modern-js/runtime/styled';
 import { IconInteraction, IconThunderbolt } from '@arco-design/web-react/icon';
-import { MENU } from '@/constant';
+import { MENU } from '@/shared/constant';
 
 const MenuItem = Menu.Item;
 

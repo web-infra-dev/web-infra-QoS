@@ -12,3 +12,5 @@ export const CASES = [
 ];
 
 export const BUNDLE_SIZE_METRICS = ['minifiedBundleSize', 'gzippedBundleSize'];
+
+export const COMMITS_INFO_URL = './commits-info.json';

@@ -1,4 +1,4 @@
-import { CASES } from '@/constant';
+import { CASES } from '@/shared/constant';
 import {
   Card,
   Grid,
