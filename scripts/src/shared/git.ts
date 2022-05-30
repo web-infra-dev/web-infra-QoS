@@ -30,7 +30,7 @@ export async function cloneRepo(caseName: string) {
 
     if (COMMIT_ID) {
       await execa('git', ['checkout', COMMIT_ID], {
-        cwd: ROOT_PATH,
+        cwd: MODERN_PATH,
         stderr: 'inherit',
         stdout: 'inherit',
       });
