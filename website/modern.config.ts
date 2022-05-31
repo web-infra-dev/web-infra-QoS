@@ -4,6 +4,7 @@ export default defineConfig({
   output: {
     title: 'Modern.js Benchmark',
     favicon: './src/favicon.ico',
+    assetPrefix: 'https://modern.js.org/modern-js-benchmark/',
   },
   dev: {
     proxy: {
