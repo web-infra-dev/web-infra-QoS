@@ -17,7 +17,7 @@ const App = () => {
   return (
     <Container>
       <NavBar />
-      <SideMenu onClickMenuItem={setMenuIndex} />
+      <SideMenu defaultSelectedKey={menuIndex} onClickMenuItem={setMenuIndex} />
       <Content menuIndex={menuIndex} />
     </Container>
   );

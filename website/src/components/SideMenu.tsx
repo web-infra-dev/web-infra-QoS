@@ -23,6 +23,7 @@ const itemStyle = {
 
 export const SideMenu = (props: {
   onClickMenuItem: MenuProps['onClickMenuItem'];
+  defaultSelectedKey: string;
 }) => (
   <Root>
     <Menu
@@ -32,7 +33,7 @@ export const SideMenu = (props: {
         padding: '16px 4px',
       }}
       onClickMenuItem={props.onClickMenuItem}
-      defaultSelectedKeys={[MENU.BUNDLE_SIZE]}
+      defaultSelectedKeys={[props.defaultSelectedKey]}
     >
       <MenuItem key={MENU.BUNDLE_SIZE} style={itemStyle}>
         <IconInteraction style={{ fontSize: 20 }} />

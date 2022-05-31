@@ -12,6 +12,7 @@ import {
 export const Filters = (props: {
   metrics: string[];
   onSubmit: FormProps['onSubmit'];
+  initialCase: string;
 }) => {
   const { metrics } = props;
   return (
@@ -25,7 +26,7 @@ export const Filters = (props: {
             <Form.Item
               label="Case"
               field="caseName"
-              initialValue={CASES[0]}
+              initialValue={props.initialCase}
               style={{ marginBottom: 8 }}
             >
               <Select>

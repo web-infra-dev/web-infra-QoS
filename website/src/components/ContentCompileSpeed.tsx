@@ -1,28 +1,28 @@
 import { Line } from '@antv/g2plot';
 import { Card, Typography } from '@arco-design/web-react';
 import {
-  BUNDLE_SIZE_METRICS,
-  BUNDLE_SIZE_DEFAULT_CASE,
+  COMPILE_SPEED_METRICS,
+  COMPILE_SPEED_DEFAULT_CASE,
 } from '@/shared/constant';
 import { Filters } from './Filters';
 import { useEffect, useRef, useState } from 'react';
 import { FetchedMetrics, fetchMetrics } from '@/shared/request';
-import { formatDate, formatFileSize } from '@/shared/utils';
+import { formatDate, formatSecond } from '@/shared/utils';
 
 const formatData = (response: FetchedMetrics[], metricsName: string) => {
   return response.map(item => {
     return {
       date: formatDate(item.time),
-      size: formatFileSize(item.metrics[metricsName].total),
+      time: formatSecond(item.metrics[metricsName]),
     };
   });
 };
 
-export const ContentBundleSize = () => {
+export const ContentCompileSpeed = () => {
   const chartRoot = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<Line | null>(null);
-  const [caseName, setCaseName] = useState(BUNDLE_SIZE_DEFAULT_CASE);
-  const [metricsName, setMetricsName] = useState(BUNDLE_SIZE_METRICS[0]);
+  const [caseName, setCaseName] = useState(COMPILE_SPEED_DEFAULT_CASE);
+  const [metricsName, setMetricsName] = useState(COMPILE_SPEED_METRICS[0]);
 
   const renderLineChart = (
     metrics: FetchedMetrics[],
@@ -36,7 +36,7 @@ export const ContentBundleSize = () => {
         data: formatData(metrics, metricsName),
         height: 400,
         xField: 'date',
-        yField: 'size',
+        yField: 'time',
         point: {
           size: 4,
           style: {
@@ -47,7 +47,7 @@ export const ContentBundleSize = () => {
         },
         tooltip: {
           formatter: datum => {
-            return { name: 'Total Size', value: datum.size + 'KB' };
+            return { name: 'Time', value: datum.time + 's' };
           },
         },
       });
@@ -70,7 +70,7 @@ export const ContentBundleSize = () => {
   return (
     <div style={{ padding: 24 }}>
       <Filters
-        metrics={BUNDLE_SIZE_METRICS}
+        metrics={COMPILE_SPEED_METRICS}
         initialCase={caseName}
         onSubmit={onSubmitForm}
       />

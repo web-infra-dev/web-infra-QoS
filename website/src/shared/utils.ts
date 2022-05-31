@@ -5,3 +5,5 @@ export const formatDate = (time: number) =>
 
 export const formatFileSize = (size: number) =>
   Number((size / 1000).toFixed(2));
+
+export const formatSecond = (ms: number) => Number((ms / 1000).toFixed(2));

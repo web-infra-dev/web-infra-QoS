@@ -1,11 +1,14 @@
-import { MENU, CASES, BUNDLE_SIZE_METRICS } from '@/shared/constant';
+import { MENU } from '@/shared/constant';
 import { ContentBundleSize } from './ContentBundleSize';
+import { ContentCompileSpeed } from './ContentCompileSpeed';
 
 export const Content = (props: { menuIndex: string }) => {
   const renderSubContent = () => {
     switch (props.menuIndex) {
       case MENU.BUNDLE_SIZE:
         return <ContentBundleSize />;
+      case MENU.COMPILE_SPEED:
+        return <ContentCompileSpeed />;
     }
     return null;
   };
