@@ -38,4 +38,4 @@ pnpm install
 npm run dev
 ```
 
-Then visit https://modern.js.org/modern-js-benchmark/main.
+Then visit https://modern.js.org/modern-js-benchmark/index.
