@@ -27,4 +27,4 @@ export const COMPILE_SPEED_METRICS = [
   'devPrepareTime',
 ];
 
-export const COMMITS_INFO_URL = './commits-info.json';
+export const COMMITS_INFO_URL = './data/commits-info.json';

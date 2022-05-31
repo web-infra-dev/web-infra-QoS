@@ -33,7 +33,7 @@ export const fetchMetrics = async (
 
   const allMetrics: Metrics[] = await Promise.all(
     commitsInfo.map(info =>
-      fetchJsonWithCache(`./${info.id}/${caseName}.json`),
+      fetchJsonWithCache(`./data/${info.id}/${caseName}.json`),
     ),
   );
 
