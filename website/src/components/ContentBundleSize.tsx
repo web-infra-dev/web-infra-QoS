@@ -32,11 +32,22 @@ export const ContentBundleSize = () => {
     if (chartInstance.current) {
       chartInstance.current.changeData(formatData(metrics, metricsName));
     } else if (root) {
+      const data = formatData(metrics, metricsName);
       chartInstance.current = new Line(root, {
         data: formatData(metrics, metricsName),
         height: 400,
         xField: 'date',
         yField: 'size',
+        xAxis: {
+          label: {
+            formatter: text => text.split(' ')[0],
+          },
+        },
+        yAxis: {
+          label: {
+            formatter: text => `${text} KB`,
+          },
+        },
         point: {
           size: 4,
           style: {

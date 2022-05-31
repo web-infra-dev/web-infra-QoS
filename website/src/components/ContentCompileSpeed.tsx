@@ -37,6 +37,16 @@ export const ContentCompileSpeed = () => {
         height: 400,
         xField: 'date',
         yField: 'time',
+        xAxis: {
+          label: {
+            formatter: text => text.split(' ')[0],
+          },
+        },
+        yAxis: {
+          label: {
+            formatter: text => `${text} s`,
+          },
+        },
         point: {
           size: 4,
           style: {
