@@ -2,7 +2,12 @@ import styled from '@modern-js/runtime/styled';
 import { IconGithub } from '@arco-design/web-react/icon';
 
 const Root = styled.div`
+  position: fixed;
   display: flex;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 56px;
   padding: 4px 24px;
   background-color: #fff;

@@ -11,20 +11,20 @@ export const CASES = [
   'mwa-arco-pro-esbuild',
 ];
 
-export const BUNDLE_SIZE_DEFAULT_CASE = 'mwa-initial';
-export const COMPILE_SPEED_DEFAULT_CASE = 'mwa-arco-pro';
+export const BUNDLE_SIZE_DEFAULT_CASE = ['mwa-minimal', 'mwa-initial']; 
+export const COMPILE_SPEED_DEFAULT_CASE = ['mwa-arco-pro', 'mwa-arco-pro-esbuild'];
 
 export const BUNDLE_SIZE_METRICS = ['minifiedBundleSize', 'gzippedBundleSize'];
 
 export const COMPILE_SPEED_METRICS = [
-  'devColdBootTime',
-  'devHotBootTime',
-  'devPluginSetupTime',
-  'devPrepareTime',
   'buildColdBootTime',
   'buildHotBootTime',
   'buildPluginSetupTime',
   'buildPrepareTime',
+  'devColdBootTime',
+  'devHotBootTime',
+  'devPluginSetupTime',
+  'devPrepareTime',
 ];
 
 export const COMMITS_INFO_URL = './commits-info.json';

@@ -13,5 +13,7 @@ export const Content = (props: { menuIndex: string }) => {
     return null;
   };
 
-  return <div style={{ marginLeft: 260 }}>{renderSubContent()}</div>;
+  return (
+    <div style={{ marginLeft: 260, marginTop: 56 }}>{renderSubContent()}</div>
+  );
 };

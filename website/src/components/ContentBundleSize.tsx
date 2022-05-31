@@ -7,33 +7,52 @@ import {
 import { Filters } from './Filters';
 import { useEffect, useRef, useState } from 'react';
 import { FetchedMetrics, fetchMetrics } from '@/shared/request';
-import { formatDate, formatFileSize } from '@/shared/utils';
+import { formatDate, formatFileSize, mergeData } from '@/shared/utils';
 
-const formatData = (response: FetchedMetrics[], metricsName: string) =>
-  response.map(item => ({
+const formatData = (
+  data1: FetchedMetrics[],
+  data2: FetchedMetrics[],
+  caseNames: string[],
+  metricsNames: string[],
+) =>
+  mergeData(data1, data2, caseNames, metricsNames).map(item => ({
+    category: caseNames[0] === caseNames[1] ? item.metricsName : item.caseName,
     date: `${formatDate(item.time)}（${item.id}）`,
-    size: formatFileSize(item.metrics[metricsName].total),
+    size: formatFileSize(item.metrics[item.metricsName].total),
   }));
 
 export const ContentBundleSize = () => {
   const chartRoot = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<Line | null>(null);
-  const [caseName, setCaseName] = useState(BUNDLE_SIZE_DEFAULT_CASE);
-  const [metricsName, setMetricsName] = useState(BUNDLE_SIZE_METRICS[0]);
+  const [caseNames, setCaseNames] = useState(BUNDLE_SIZE_DEFAULT_CASE);
+  const [metricsNames, setMetricsNames] = useState([
+    BUNDLE_SIZE_METRICS[0],
+    BUNDLE_SIZE_METRICS[0],
+  ]);
 
-  const renderLineChart = (
-    metrics: FetchedMetrics[],
-    metricsName: string,
-    root: HTMLElement | null,
-  ) => {
+  const renderLineChart = ({
+    root,
+    data1,
+    data2,
+    caseNames,
+    metricsNames,
+  }: {
+    root: HTMLElement | null;
+    data1: FetchedMetrics[];
+    data2: FetchedMetrics[];
+    caseNames: string[];
+    metricsNames: string[];
+  }) => {
+    const data = formatData(data1, data2, caseNames, metricsNames);
     if (chartInstance.current) {
-      chartInstance.current.changeData(formatData(metrics, metricsName));
+      chartInstance.current.changeData(data);
     } else if (root) {
       chartInstance.current = new Line(root, {
-        data: formatData(metrics, metricsName),
+        data,
         height: 400,
         xField: 'date',
         yField: 'size',
+        seriesField: 'category',
         xAxis: {
           label: {
             formatter: text => text.split(' ')[0],
@@ -45,17 +64,12 @@ export const ContentBundleSize = () => {
           },
         },
         point: {
-          size: 4,
-          style: {
-            fill: 'white',
-            stroke: '#5B8FF9',
-            lineWidth: 2,
-          },
+          size: 3,
         },
         tooltip: {
-          fields: ['date', 'size', 'commitId'],
+          fields: ['date', 'size', 'category'],
           formatter: datum => ({
-            name: `Total Size`,
+            name: datum.category,
             value: `${datum.size} KB`,
           }),
         },
@@ -65,22 +79,35 @@ export const ContentBundleSize = () => {
     }
   };
 
-  const onSubmitForm = (params: { caseName: string; metricsName: string }) => {
-    setCaseName(params.caseName);
-    setMetricsName(params.metricsName);
+  const onSubmitForm = (params: {
+    caseName1: string;
+    caseName2: string;
+    metricsName1: string;
+    metricsName2: string;
+  }) => {
+    setCaseNames([params.caseName1, params.caseName2]);
+    setMetricsNames([params.metricsName1, params.metricsName2]);
   };
 
   useEffect(() => {
-    fetchMetrics(caseName).then(response => {
-      renderLineChart(response, metricsName, chartRoot.current);
-    });
-  }, [caseName, metricsName]);
+    Promise.all([fetchMetrics(caseNames[0]), fetchMetrics(caseNames[1])]).then(
+      ([data1, data2]) => {
+        renderLineChart({
+          data1,
+          data2,
+          caseNames,
+          metricsNames,
+          root: chartRoot.current,
+        });
+      },
+    );
+  }, [caseNames, metricsNames]);
 
   return (
     <div style={{ padding: 24 }}>
       <Filters
         metrics={BUNDLE_SIZE_METRICS}
-        initialCase={caseName}
+        initialCase={caseNames}
         onSubmit={onSubmitForm}
       />
       <Card bordered={false} style={{ height: 464 }}>
