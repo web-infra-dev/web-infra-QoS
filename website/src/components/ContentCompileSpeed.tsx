@@ -9,14 +9,11 @@ import { useEffect, useRef, useState } from 'react';
 import { FetchedMetrics, fetchMetrics } from '@/shared/request';
 import { formatDate, formatSecond } from '@/shared/utils';
 
-const formatData = (response: FetchedMetrics[], metricsName: string) => {
-  return response.map(item => {
-    return {
-      date: formatDate(item.time),
-      time: formatSecond(item.metrics[metricsName]),
-    };
-  });
-};
+const formatData = (response: FetchedMetrics[], metricsName: string) =>
+  response.map(item => ({
+    date: `${formatDate(item.time)}（${item.id}）`,
+    time: formatSecond(item.metrics[metricsName]),
+  }));
 
 export const ContentCompileSpeed = () => {
   const chartRoot = useRef<HTMLDivElement | null>(null);
@@ -56,9 +53,10 @@ export const ContentCompileSpeed = () => {
           },
         },
         tooltip: {
-          formatter: datum => {
-            return { name: 'Time', value: datum.time + 's' };
-          },
+          formatter: datum => ({
+            name: 'Time',
+            value: datum.time + 's',
+          }),
         },
       });
 

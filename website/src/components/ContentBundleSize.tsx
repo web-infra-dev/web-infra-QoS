@@ -9,14 +9,11 @@ import { useEffect, useRef, useState } from 'react';
 import { FetchedMetrics, fetchMetrics } from '@/shared/request';
 import { formatDate, formatFileSize } from '@/shared/utils';
 
-const formatData = (response: FetchedMetrics[], metricsName: string) => {
-  return response.map(item => {
-    return {
-      date: formatDate(item.time),
-      size: formatFileSize(item.metrics[metricsName].total),
-    };
-  });
-};
+const formatData = (response: FetchedMetrics[], metricsName: string) =>
+  response.map(item => ({
+    date: `${formatDate(item.time)}（${item.id}）`,
+    size: formatFileSize(item.metrics[metricsName].total),
+  }));
 
 export const ContentBundleSize = () => {
   const chartRoot = useRef<HTMLDivElement | null>(null);
@@ -32,7 +29,6 @@ export const ContentBundleSize = () => {
     if (chartInstance.current) {
       chartInstance.current.changeData(formatData(metrics, metricsName));
     } else if (root) {
-      const data = formatData(metrics, metricsName);
       chartInstance.current = new Line(root, {
         data: formatData(metrics, metricsName),
         height: 400,
@@ -57,9 +53,11 @@ export const ContentBundleSize = () => {
           },
         },
         tooltip: {
-          formatter: datum => {
-            return { name: 'Total Size', value: datum.size + 'KB' };
-          },
+          fields: ['date', 'size', 'commitId'],
+          formatter: datum => ({
+            name: `Total Size`,
+            value: `${datum.size} KB`,
+          }),
         },
       });
 
