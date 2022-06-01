@@ -50,4 +50,5 @@ jobs:
         with:
           branch: gh-pages
           folder: data
+          target-folder: data
           clean: false
