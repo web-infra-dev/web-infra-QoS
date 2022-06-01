@@ -38,7 +38,7 @@ export async function saveCommitInfo() {
 
   try {
     const response = await axios.get(
-      'https://github.com/modern-js-dev/modern-js-benchmark/raw/gh-pages/commits-info.json',
+      'https://github.com/modern-js-dev/modern-js-benchmark/raw/gh-pages/data/commits-info.json',
     );
     content = response.data;
   } catch (err) {
