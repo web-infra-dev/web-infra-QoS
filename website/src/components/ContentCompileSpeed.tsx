@@ -3,6 +3,8 @@ import { Card, Typography } from '@arco-design/web-react';
 import {
   COMPILE_SPEED_METRICS,
   COMPILE_SPEED_DEFAULT_CASE,
+  LINE_CHART_DEFAULT_CONFIG,
+  BASE_PADDING,
 } from '@/shared/constant';
 import { Filters } from './Filters';
 import { useEffect, useRef, useState } from 'react';
@@ -48,23 +50,13 @@ export const ContentCompileSpeed = () => {
       chartInstance.current.changeData(data);
     } else if (root) {
       chartInstance.current = new Line(root, {
+        ...LINE_CHART_DEFAULT_CONFIG,
         data,
-        height: 400,
-        xField: 'date',
         yField: 'time',
-        seriesField: 'category',
-        xAxis: {
-          label: {
-            formatter: text => text.split(' ')[0],
-          },
-        },
         yAxis: {
           label: {
             formatter: text => `${text} s`,
           },
-        },
-        point: {
-          size: 3,
         },
         tooltip: {
           fields: ['date', 'time', 'category'],
@@ -104,14 +96,14 @@ export const ContentCompileSpeed = () => {
   }, [caseNames, metricsNames]);
 
   return (
-    <div style={{ padding: 24 }}>
+    <div style={{ padding: BASE_PADDING }}>
       <Filters
         metrics={COMPILE_SPEED_METRICS}
         initialCase={caseNames}
         onSubmit={onSubmitForm}
       />
       <Card bordered={false} style={{ height: 464 }}>
-        <Typography.Title heading={6} style={{ marginTop: 0 }}>
+        <Typography.Title heading={5} style={{ marginTop: 0 }}>
           Trending
         </Typography.Title>
         <div ref={chartRoot} />

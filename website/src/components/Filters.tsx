@@ -1,4 +1,4 @@
-import { CASES } from '@/shared/constant';
+import { BASE_PADDING, CASES } from '@/shared/constant';
 import {
   Card,
   Grid,
@@ -67,7 +67,7 @@ export const Filters = (props: {
   initialCase: string[];
 }) => {
   return (
-    <Card bordered={false} style={{ marginBottom: 24 }}>
+    <Card bordered={false} style={{ marginBottom: BASE_PADDING }}>
       <Form layout="horizontal" labelAlign="left" onSubmit={props.onSubmit}>
         <SelectGroup {...props} index={1} />
         <SelectGroup {...props} index={2} />

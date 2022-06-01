@@ -1,5 +1,6 @@
 import styled from '@modern-js/runtime/styled';
 import { IconGithub } from '@arco-design/web-react/icon';
+import { BASE_PADDING } from '@/shared/constant';
 
 const Root = styled.div`
   position: fixed;
@@ -9,7 +10,7 @@ const Root = styled.div`
   left: 0;
   right: 0;
   height: 56px;
-  padding: 4px 24px;
+  padding: 4px ${BASE_PADDING}px;
   background-color: #fff;
   align-items: center;
   justify-content: space-between;

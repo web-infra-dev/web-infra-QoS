@@ -1,8 +1,11 @@
 import { Line } from '@antv/g2plot';
 import { Card, Typography } from '@arco-design/web-react';
+import { BundleSizeDetail } from './BundleSizeDetail';
 import {
   BUNDLE_SIZE_METRICS,
   BUNDLE_SIZE_DEFAULT_CASE,
+  LINE_CHART_DEFAULT_CONFIG,
+  BASE_PADDING,
 } from '@/shared/constant';
 import { Filters } from './Filters';
 import { useEffect, useRef, useState } from 'react';
@@ -29,6 +32,7 @@ export const ContentBundleSize = () => {
     BUNDLE_SIZE_METRICS[0],
     BUNDLE_SIZE_METRICS[0],
   ]);
+  const [data, setData] = useState<FetchedMetrics[][] | null>(null);
 
   const renderLineChart = ({
     root,
@@ -48,23 +52,13 @@ export const ContentBundleSize = () => {
       chartInstance.current.changeData(data);
     } else if (root) {
       chartInstance.current = new Line(root, {
+        ...LINE_CHART_DEFAULT_CONFIG,
         data,
-        height: 400,
-        xField: 'date',
         yField: 'size',
-        seriesField: 'category',
-        xAxis: {
-          label: {
-            formatter: text => text.split(' ')[0],
-          },
-        },
         yAxis: {
           label: {
             formatter: text => `${text} KB`,
           },
-        },
-        point: {
-          size: 3,
         },
         tooltip: {
           fields: ['date', 'size', 'category'],
@@ -92,6 +86,7 @@ export const ContentBundleSize = () => {
   useEffect(() => {
     Promise.all([fetchMetrics(caseNames[0]), fetchMetrics(caseNames[1])]).then(
       ([data1, data2]) => {
+        setData([data1, data2]);
         renderLineChart({
           data1,
           data2,
@@ -104,18 +99,23 @@ export const ContentBundleSize = () => {
   }, [caseNames, metricsNames]);
 
   return (
-    <div style={{ padding: 24 }}>
+    <div style={{ padding: BASE_PADDING }}>
       <Filters
         metrics={BUNDLE_SIZE_METRICS}
         initialCase={caseNames}
         onSubmit={onSubmitForm}
       />
       <Card bordered={false} style={{ height: 464 }}>
-        <Typography.Title heading={6} style={{ marginTop: 0 }}>
+        <Typography.Title heading={5} style={{ marginTop: 0 }}>
           Trending
         </Typography.Title>
         <div ref={chartRoot} />
       </Card>
+      <BundleSizeDetail
+        data={data}
+        caseNames={caseNames}
+        metricsNames={metricsNames}
+      />
     </div>
   );
 };
