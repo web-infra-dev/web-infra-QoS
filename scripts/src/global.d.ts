@@ -1,3 +1,5 @@
+declare module 'get-folder-size';
+
 declare namespace NodeJS {
   export interface ProcessEnv {
     CASE_NAME?: string;

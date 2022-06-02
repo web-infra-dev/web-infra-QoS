@@ -70,9 +70,9 @@ async function getMetricsPath(caseName: string) {
 }
 
 export async function saveMetrics(metrics: Metrics) {
-  const { CASE_NAME, CURRENT_INDEX } = process.env;
-  if (!CASE_NAME || !CURRENT_INDEX) {
-    logger.log('missing CASE_NAME or CURRENT_INDEX.');
+  const { CASE_NAME, CURRENT_INDEX = '0' } = process.env;
+  if (!CASE_NAME) {
+    logger.log('missing CASE_NAME.');
     logger.log(JSON.stringify(metrics, null, 2) + '\n');
     return;
   }
@@ -102,11 +102,17 @@ const average = (nums: number[]) =>
   nums.reduce((ret, num) => ret + num, 0) / nums.length;
 
 const cleanData = (nums: number[]) => {
+  nums = nums.filter(num => num !== undefined);
+
   nums.sort();
-  // remove max value
-  nums.pop();
-  // remove min value
-  nums.shift();
+
+  if (nums.length > 3) {
+    // remove max value
+    nums.pop();
+    // remove min value
+    nums.shift();
+  }
+
   return nums;
 };
 

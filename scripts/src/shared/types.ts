@@ -23,9 +23,8 @@ export type Metrics = {
   gzippedBundleSize?: BundleSize;
 
   // Install Size
-  installSize?: number;
-  npmInstallTime?: number;
-  pnpmInstallTime?: number;
-  yarnInstallTime?: number;
-  dependenciesCount?: number;
+  yarnInstallSize?: number;
+  yarnHotInstallTime?: number;
+  yarnColdInstallTime?: number;
+  yarnDependenciesCount?: number;
 };
