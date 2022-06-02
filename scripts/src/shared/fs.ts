@@ -9,7 +9,12 @@ import {
   pathExists,
 } from 'fs-extra';
 import logger from 'consola';
-import { COMMITS_INFO_PATH, DATA_PATH, MODERN_PATH } from './constant';
+import {
+  DATA_PATH,
+  MODERN_PATH,
+  REMOTE_DATA_URL,
+  COMMITS_INFO_PATH,
+} from './constant';
 import type { Metrics } from './types';
 import { getCommitId, getCommitTime } from './git';
 
@@ -37,9 +42,7 @@ export async function saveCommitInfo() {
   let content: Array<{ id: string; time: number }>;
 
   try {
-    const response = await axios.get(
-      'https://github.com/modern-js-dev/modern-js-benchmark/raw/gh-pages/data/commits-info.json',
-    );
+    const response = await axios.get(`${REMOTE_DATA_URL}/commits-info.json`);
     content = response.data;
   } catch (err) {
     logger.error('failed to get commit-info.json: ', { id, time });
@@ -62,6 +65,7 @@ async function getMetricsPath(caseName: string) {
   return {
     jsonName,
     jsonPath: join(DATA_PATH, commitId, jsonName),
+    remoteURL: `${REMOTE_DATA_URL}/${commitId}/${caseName}.json`,
   };
 }
 
@@ -107,12 +111,12 @@ const cleanData = (nums: number[]) => {
 };
 
 export async function mergeMetrics(caseName: string) {
-  const { jsonPath, jsonName } = await getMetricsPath(caseName);
+  const { jsonPath, jsonName, remoteURL } = await getMetricsPath(caseName);
 
   if (await pathExists(jsonPath)) {
     const allMetrics: Metrics[] = await readJson(jsonPath);
     const firstMetrics = allMetrics[0];
-    const result: Record<string, unknown> = {};
+    let result: Record<string, unknown> = {};
     const keys = Object.keys(firstMetrics) as Array<keyof Metrics>;
 
     keys.forEach(key => {
@@ -124,6 +128,16 @@ export async function mergeMetrics(caseName: string) {
         result[key] = val;
       }
     });
+
+    try {
+      const response = await axios.get(remoteURL);
+      const remoteResult = response.data;
+      result = { ...remoteResult, ...result };
+      console.log(`Merge result metrics:`);
+      console.log(JSON.stringify(remoteResult, null, 2));
+    } catch (err) {
+      console.log(`Remote metrics may not exist: ${remoteURL}`);
+    }
 
     await outputJson(jsonPath, result, { spaces: 2 });
     logger.success(`Successfully merged metrics to ${jsonName}.`);
