@@ -3,6 +3,7 @@ import type { LineOptions } from '@antv/g2plot';
 export const MENU = {
   BUNDLE_SIZE: 'bundle-size',
   COMPILE_SPEED: 'compile-speed',
+  INSTALL_SPEED: 'install-speed',
 };
 
 export const BASE_PADDING = 24;
@@ -16,13 +17,12 @@ export const CASES = [
 ];
 
 export const BUNDLE_SIZE_DEFAULT_CASE = ['mwa-minimal', 'mwa-initial'];
+export const BUNDLE_SIZE_METRICS = ['minifiedBundleSize', 'gzippedBundleSize'];
+
 export const COMPILE_SPEED_DEFAULT_CASE = [
   'mwa-arco-pro',
   'mwa-arco-pro-esbuild',
 ];
-
-export const BUNDLE_SIZE_METRICS = ['minifiedBundleSize', 'gzippedBundleSize'];
-
 export const COMPILE_SPEED_METRICS = [
   'buildColdBootTime',
   'buildHotBootTime',
@@ -34,12 +34,21 @@ export const COMPILE_SPEED_METRICS = [
   'devPrepareTime',
 ];
 
+export const INSTALL_SPEED_DEFAULT_CASE = ['mwa-minimal', 'mwa-initial'];
+export const INSTALL_SPEED_METRICS = [
+  'yarnInstallSize',
+  'yarnHotInstallTime',
+  'yarnColdInstallTime',
+  'yarnDependenciesCount',
+];
+
 export const COMMITS_INFO_URL = './data/commits-info.json';
 
 export const LINE_CHART_DEFAULT_CONFIG: Partial<LineOptions> = {
   height: 400,
   seriesField: 'category',
-  xField: 'date',
+  xField: 'x',
+  yField: 'y',
   xAxis: {
     label: {
       formatter: text => text.split(' ')[0],

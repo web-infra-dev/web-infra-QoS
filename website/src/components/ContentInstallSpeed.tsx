@@ -1,15 +1,20 @@
 import { Line } from '@antv/g2plot';
 import { Card, Typography } from '@arco-design/web-react';
 import {
-  COMPILE_SPEED_METRICS,
-  COMPILE_SPEED_DEFAULT_CASE,
-  LINE_CHART_DEFAULT_CONFIG,
   BASE_PADDING,
+  INSTALL_SPEED_METRICS,
+  INSTALL_SPEED_DEFAULT_CASE,
+  LINE_CHART_DEFAULT_CONFIG,
 } from '@/shared/constant';
 import { Filters, useFilterResult } from './Filters';
 import { useEffect, useRef } from 'react';
 import { FetchedMetrics, fetchMetrics } from '@/shared/request';
-import { formatDateWithId, formatSecond, mergeData } from '@/shared/utils';
+import {
+  mergeData,
+  formatSecond,
+  formatFileSize,
+  formatDateWithId,
+} from '@/shared/utils';
 
 const formatData = (
   data1: FetchedMetrics[],
@@ -17,18 +22,38 @@ const formatData = (
   caseNames: string[],
   metricsNames: string[],
 ) =>
-  mergeData(data1, data2, caseNames, metricsNames).map(item => ({
-    category: caseNames[0] === caseNames[1] ? item.metricsName : item.caseName,
-    x: formatDateWithId(item),
-    y: formatSecond(item.metrics[item.metricsName]),
-  }));
+  mergeData(data1, data2, caseNames, metricsNames).map(item => {
+    let y: number;
+    const initialValue = item.metrics[item.metricsName];
 
-export const ContentCompileSpeed = () => {
+    switch (item.metricsName) {
+      case 'yarnInstallSize':
+        y = formatFileSize(initialValue, 'MB');
+        break;
+      case 'yarnHotInstallTime':
+      case 'yarnColdInstallTime':
+        y = formatSecond(initialValue);
+        break;
+      default:
+        y = initialValue;
+        break;
+    }
+
+    return {
+      metricsName: item.metricsName,
+      category:
+        caseNames[0] === caseNames[1] ? item.metricsName : item.caseName,
+      x: formatDateWithId(item),
+      y,
+    };
+  });
+
+export const ContentInstallSpeed = () => {
   const chartRoot = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<Line | null>(null);
   const { caseNames, metricsNames, onSubmitForm } = useFilterResult(
-    COMPILE_SPEED_DEFAULT_CASE,
-    COMPILE_SPEED_METRICS[0],
+    INSTALL_SPEED_DEFAULT_CASE,
+    INSTALL_SPEED_METRICS[0],
   );
 
   const renderLineChart = ({
@@ -51,17 +76,24 @@ export const ContentCompileSpeed = () => {
       chartInstance.current = new Line(root, {
         ...LINE_CHART_DEFAULT_CONFIG,
         data,
-        yAxis: {
-          label: {
-            formatter: text => `${text} s`,
-          },
-        },
         tooltip: {
-          fields: ['x', 'y', 'category'],
-          formatter: datum => ({
-            name: datum.category,
-            value: datum.y + 's',
-          }),
+          fields: ['x', 'y', 'category', 'metricsName'],
+          formatter: datum => {
+            let value = datum.y;
+            if (datum.metricsName === 'yarnInstallSize') {
+              value += 'MB';
+            }
+            if (
+              datum.metricsName === 'yarnColdInstallTime' ||
+              datum.metricsName === 'yarnHotInstallTime'
+            ) {
+              value += 's';
+            }
+            return {
+              name: datum.category,
+              value,
+            };
+          },
         },
       });
 
@@ -86,7 +118,7 @@ export const ContentCompileSpeed = () => {
   return (
     <div style={{ padding: BASE_PADDING }}>
       <Filters
-        metrics={COMPILE_SPEED_METRICS}
+        metrics={INSTALL_SPEED_METRICS}
         initialCase={caseNames}
         onSubmit={onSubmitForm}
       />

@@ -4,8 +4,17 @@ import { FetchedMetrics } from './request';
 export const formatDate = (time: number) =>
   dayjs(time).format('YY-MM-DD HH:mm');
 
-export const formatFileSize = (size: number) =>
-  Number((size / 1000).toFixed(2));
+export const formatDateWithId = (item: FetchedMetrics) =>
+  `${formatDate(item.time)}（${item.id}）`;
+
+export const formatFileSize = (size: number, target = 'KB') => {
+  if (target === 'KB') {
+    size = size / 1024;
+  } else if (target === 'MB') {
+    size = size / 1024 / 1024;
+  }
+  return Number(size.toFixed(2));
+};
 
 export const formatSecond = (ms: number) => Number((ms / 1000).toFixed(2));
 
@@ -26,4 +35,6 @@ export const mergeData = (
       caseName: caseNames[1],
       metricsName: metricsNames[1],
     })),
-  ].sort((a, b) => a.time - b.time);
+  ]
+    .sort((a, b) => a.time - b.time)
+    .filter(item => item.metrics[item.metricsName]);

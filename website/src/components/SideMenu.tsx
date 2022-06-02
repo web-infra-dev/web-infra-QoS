@@ -4,6 +4,7 @@ import {
   IconLink,
   IconInteraction,
   IconThunderbolt,
+  IconCloudDownload,
 } from '@arco-design/web-react/icon';
 import { MENU } from '@/shared/constant';
 
@@ -54,6 +55,10 @@ export const SideMenu = (props: {
       <MenuItem key={MENU.COMPILE_SPEED} style={itemStyle}>
         <IconThunderbolt style={{ fontSize: 20 }} />
         Compile Speed
+      </MenuItem>
+      <MenuItem key={MENU.INSTALL_SPEED} style={itemStyle}>
+        <IconCloudDownload style={{ fontSize: 20 }} />
+        Install Speed
       </MenuItem>
     </Menu>
 

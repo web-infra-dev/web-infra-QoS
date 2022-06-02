@@ -8,6 +8,7 @@ import {
   FormProps,
   Typography,
 } from '@arco-design/web-react';
+import { useState } from 'react';
 
 const SelectGroup = ({
   index,
@@ -81,4 +82,31 @@ export const Filters = (props: {
       </Form>
     </Card>
   );
+};
+
+export const useFilterResult = (
+  defaultCaseNames: string[],
+  defaultMetricsName: string,
+) => {
+  const [caseNames, setCaseNames] = useState(defaultCaseNames);
+  const [metricsNames, setMetricsNames] = useState([
+    defaultMetricsName,
+    defaultMetricsName,
+  ]);
+
+  const onSubmitForm = (params: {
+    caseName1: string;
+    caseName2: string;
+    metricsName1: string;
+    metricsName2: string;
+  }) => {
+    setCaseNames([params.caseName1, params.caseName2]);
+    setMetricsNames([params.metricsName1, params.metricsName2]);
+  };
+
+  return {
+    caseNames,
+    metricsNames,
+    onSubmitForm,
+  };
 };

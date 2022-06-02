@@ -1,6 +1,7 @@
 import { MENU } from '@/shared/constant';
 import { ContentBundleSize } from './ContentBundleSize';
 import { ContentCompileSpeed } from './ContentCompileSpeed';
+import { ContentInstallSpeed } from './ContentInstallSpeed';
 
 export const Content = (props: { menuIndex: string }) => {
   const renderSubContent = () => {
@@ -9,6 +10,8 @@ export const Content = (props: { menuIndex: string }) => {
         return <ContentBundleSize />;
       case MENU.COMPILE_SPEED:
         return <ContentCompileSpeed />;
+      case MENU.INSTALL_SPEED:
+        return <ContentInstallSpeed />;
     }
     return null;
   };

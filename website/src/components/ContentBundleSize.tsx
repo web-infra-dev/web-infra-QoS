@@ -7,10 +7,10 @@ import {
   LINE_CHART_DEFAULT_CONFIG,
   BASE_PADDING,
 } from '@/shared/constant';
-import { Filters } from './Filters';
+import { Filters, useFilterResult } from './Filters';
 import { useEffect, useRef, useState } from 'react';
 import { FetchedMetrics, fetchMetrics } from '@/shared/request';
-import { formatDate, formatFileSize, mergeData } from '@/shared/utils';
+import { formatDateWithId, formatFileSize, mergeData } from '@/shared/utils';
 
 const formatData = (
   data1: FetchedMetrics[],
@@ -20,18 +20,17 @@ const formatData = (
 ) =>
   mergeData(data1, data2, caseNames, metricsNames).map(item => ({
     category: caseNames[0] === caseNames[1] ? item.metricsName : item.caseName,
-    date: `${formatDate(item.time)}（${item.id}）`,
-    size: formatFileSize(item.metrics[item.metricsName].total),
+    x: formatDateWithId(item),
+    y: formatFileSize(item.metrics[item.metricsName].total),
   }));
 
 export const ContentBundleSize = () => {
   const chartRoot = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<Line | null>(null);
-  const [caseNames, setCaseNames] = useState(BUNDLE_SIZE_DEFAULT_CASE);
-  const [metricsNames, setMetricsNames] = useState([
+  const { caseNames, metricsNames, onSubmitForm } = useFilterResult(
+    BUNDLE_SIZE_DEFAULT_CASE,
     BUNDLE_SIZE_METRICS[0],
-    BUNDLE_SIZE_METRICS[0],
-  ]);
+  );
   const [data, setData] = useState<FetchedMetrics[][] | null>(null);
 
   const renderLineChart = ({
@@ -54,33 +53,23 @@ export const ContentBundleSize = () => {
       chartInstance.current = new Line(root, {
         ...LINE_CHART_DEFAULT_CONFIG,
         data,
-        yField: 'size',
+
         yAxis: {
           label: {
             formatter: text => `${text} KB`,
           },
         },
         tooltip: {
-          fields: ['date', 'size', 'category'],
+          fields: ['x', 'y', 'category'],
           formatter: datum => ({
             name: datum.category,
-            value: `${datum.size} KB`,
+            value: `${datum.y} KB`,
           }),
         },
       });
 
       chartInstance.current.render();
     }
-  };
-
-  const onSubmitForm = (params: {
-    caseName1: string;
-    caseName2: string;
-    metricsName1: string;
-    metricsName2: string;
-  }) => {
-    setCaseNames([params.caseName1, params.caseName2]);
-    setMetricsNames([params.metricsName1, params.metricsName2]);
   };
 
   useEffect(() => {
