@@ -20,7 +20,7 @@ const FileSizeTable = (props: {
   metricsName: string;
 }) => {
   const latestData = props.data[props.data.length - 1];
-  const { files } = latestData.metrics[props.metricsName];
+  const { files = {} } = latestData.metrics[props.metricsName] || {};
   const tableData = Object.keys(files)
     .sort((key1, key2) => files[key2] - files[key1])
     .map(key => ({
