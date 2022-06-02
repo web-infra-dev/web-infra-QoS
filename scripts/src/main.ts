@@ -13,8 +13,11 @@ async function main() {
   if (caseName) {
     process.env.CASE_NAME = caseName;
     await remove(DATA_PATH);
-    await dev(caseName);
-    await build(caseName);
+
+    if (process.env.SIZE_ONLY !== 'true') {
+      await dev(caseName);
+      await build(caseName);
+    }
     await yarnInstall(caseName);
     await mergeMetrics(caseName);
     await saveCommitInfo();

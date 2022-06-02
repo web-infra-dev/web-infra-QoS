@@ -174,5 +174,3 @@ export const yarnInstall = async (caseName: string) => {
     yarnInstallSize: installSize,
   });
 };
-
-yarnInstall('mwa-initial');
