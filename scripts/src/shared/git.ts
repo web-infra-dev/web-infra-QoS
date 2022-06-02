@@ -37,6 +37,10 @@ export async function cloneRepo(caseName: string) {
     }
   }
 
+  if (process.env.ONLY_INSTALL_SIZE === 'true') {
+    return;
+  }
+
   await copy(join(CASES_SRC_PATH, caseName), join(CASES_DIST_PATH, caseName));
 
   // run prepare before linking cases

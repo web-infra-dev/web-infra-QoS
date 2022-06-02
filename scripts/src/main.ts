@@ -14,7 +14,7 @@ async function main() {
     process.env.CASE_NAME = caseName;
     await remove(DATA_PATH);
 
-    if (process.env.SIZE_ONLY !== 'true') {
+    if (process.env.ONLY_INSTALL_SIZE !== 'true') {
       await dev(caseName);
       await build(caseName);
     }

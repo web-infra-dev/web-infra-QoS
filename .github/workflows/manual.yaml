@@ -6,7 +6,7 @@ on:
       commitId:
         description: "commitId of modern.js repo"
         required: true
-      sizeOnly:
+      onlyInstallSize:
         description: "If only want install size, set to 'true'"
 
 jobs:
@@ -45,7 +45,7 @@ jobs:
         run: cd scripts && pnpm install
 
       - name: 🚀 Run benchmark
-        run: cd scripts && SIZE_ONLY=${{ github.event.inputs.sizeOnly }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start -- ${{ matrix.case }}
+        run: cd scripts && ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start -- ${{ matrix.case }}
 
       - name: Update data
         uses: JamesIves/github-pages-deploy-action@v4.3.3
