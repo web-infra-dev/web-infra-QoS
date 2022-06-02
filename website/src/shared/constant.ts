@@ -36,10 +36,10 @@ export const COMPILE_SPEED_METRICS = [
 
 export const INSTALL_SPEED_DEFAULT_CASE = ['mwa-minimal', 'mwa-initial'];
 export const INSTALL_SPEED_METRICS = [
-  'yarnInstallSize',
-  'yarnHotInstallTime',
-  'yarnColdInstallTime',
   'yarnDependenciesCount',
+  'yarnInstallSize',
+  'yarnColdInstallTime',
+  'yarnHotInstallTime',
 ];
 
 export const COMMITS_INFO_URL = './data/commits-info.json';
