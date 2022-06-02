@@ -7,6 +7,7 @@ export default defineConfig({
     favicon: './src/favicon.ico',
     assetPrefix: 'https://modern.js.org/modern-js-benchmark/',
     htmlPath: '/',
+    disableSourceMap: true,
   },
   dev: {
     proxy: {
