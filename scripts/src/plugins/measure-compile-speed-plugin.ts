@@ -18,6 +18,12 @@ export const MeasureCompileSpeedPlugin = () => ({
 
     let webpackCompiler: any;
 
+
+    const MAX_TIME = 10 * 60 * 1000; // 10 min
+    const timeout = setTimeout(() => {
+      process.exit(1);
+    }, MAX_TIME);
+
     if (isCold) {
       const pluginSetupTime = performance.now() - pluginStartTime;
       if (isDev) {
@@ -67,6 +73,7 @@ export const MeasureCompileSpeedPlugin = () => ({
         await saveMetrics(metrics);
 
         webpackCompiler.close(() => {
+          clearTimeout(timeout);
           process.exit(0);
         });
       },
