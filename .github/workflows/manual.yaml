@@ -18,6 +18,7 @@ jobs:
           - mwa-initial
           - mwa-ssr
           - mwa-ssg
+          - mwa-tailwind
           - mwa-arco-pro
           - mwa-arco-pro-esbuild
 

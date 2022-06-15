@@ -24,6 +24,10 @@ Created by `@modern-js/create`.
 
 `mwa-initial` + SSG.
 
+### mwa-tailwind
+
+`mwa-initial` + Tailwind CSS.
+
 ### mwa-arco-pro
 
 Arco Pro project.
