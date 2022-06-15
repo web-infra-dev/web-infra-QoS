@@ -11,10 +11,11 @@ export const BASE_PADDING = 24;
 export const CASES = [
   'mwa-minimal',
   'mwa-initial',
+  'mwa-tailwind',
   'mwa-ssr',
   'mwa-ssg',
   'mwa-bff-koa',
-  'mwa-tailwind',
+  'mwa-bff-express',
   'mwa-arco-pro',
   'mwa-arco-pro-esbuild',
 ];
