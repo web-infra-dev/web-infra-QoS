@@ -20,6 +20,10 @@ Created by `@modern-js/create`.
 
 `mwa-initial` + SSR.
 
+### mwa-ssg
+
+`mwa-initial` + SSG.
+
 ### mwa-arco-pro
 
 Arco Pro project.
