@@ -1,0 +1,34 @@
+{
+  "name": "mwa-bff-koa",
+  "version": "0.1.0",
+  "scripts": {
+    "reset": "npx rimraf ./**/node_modules",
+    "dev": "modern dev",
+    "build": "modern build",
+    "start": "modern start",
+    "new": "modern new",
+    "lint": "modern lint"
+  },
+  "dependencies": {
+    "@modern-js/runtime": "workspace:*",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "@modern-js/plugin-bff": "workspace:*",
+    "@modern-js/plugin-koa": "workspace:*",
+    "koa": "^2.13.4"
+  },
+  "devDependencies": {
+    "@modern-js/app-tools": "workspace:*",
+    "@modern-js/plugin-jarvis": "workspace:*",
+    "@modern-js/tsconfig": "workspace:*",
+    "rimraf": "^3.0.2",
+    "lint-staged": "^11.2.6",
+    "prettier": "^2.6.2",
+    "husky": "4.3.8",
+    "typescript": "^4",
+    "@types/react": "^17",
+    "@types/react-dom": "^17",
+    "@types/node": "^14",
+    "@types/koa": "^2.13.4"
+  }
+}

@@ -13,6 +13,7 @@ export const CASES = [
   'mwa-initial',
   'mwa-ssr',
   'mwa-ssg',
+  'mwa-bff-koa',
   'mwa-tailwind',
   'mwa-arco-pro',
   'mwa-arco-pro-esbuild',
