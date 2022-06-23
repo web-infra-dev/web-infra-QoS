@@ -4,6 +4,7 @@ export const MENU = {
   BUNDLE_SIZE: 'bundle-size',
   COMPILE_SPEED: 'compile-speed',
   INSTALL_SPEED: 'install-speed',
+  TEST_COVERAGE: 'test-coverage',
 };
 
 export const BASE_PADDING = 24;

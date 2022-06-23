@@ -2,6 +2,7 @@ import { Menu, MenuProps } from '@arco-design/web-react';
 import styled from '@modern-js/runtime/styled';
 import {
   IconLink,
+  IconSafe,
   IconInteraction,
   IconThunderbolt,
   IconCloudDownload,
@@ -59,6 +60,18 @@ export const SideMenu = (props: {
       <MenuItem key={MENU.INSTALL_SPEED} style={itemStyle}>
         <IconCloudDownload style={{ fontSize: 20 }} />
         Install Speed
+      </MenuItem>
+      <MenuItem key={MENU.TEST_COVERAGE} style={itemStyle}>
+        <IconSafe style={{ fontSize: 20 }} />
+        Test Coverage
+        <a
+          href="https://app.codecov.io/gh/modern-js-dev/modern.js/"
+          target="_blank"
+          style={{ position: 'absolute', top: 0, left: 0, bottom: 0, right: 0 }}
+          onClick={e => {
+            e.stopPropagation();
+          }}
+        />
       </MenuItem>
     </Menu>
 
