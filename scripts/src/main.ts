@@ -18,7 +18,13 @@ async function main() {
       await dev(caseName);
       await build(caseName);
     }
-    await yarnInstall(caseName);
+
+    try {
+      await yarnInstall(caseName);
+    } catch (err) {
+      console.log('failed to collect install size metrics:', err);
+    }
+
     await mergeMetrics(caseName);
     await saveCommitInfo();
   } else {
