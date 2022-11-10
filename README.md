@@ -6,19 +6,13 @@ Benchmark data is stored in the [gh-pages](https://github.com/modern-js-dev/mode
 
 ## Cases
 
-### mwa-minimal
+### mwa-minimal / mwa-minimal-v2
 
 Minimal MWA project, using ua polyfill, no Redux and Router.
 
-### mwa-initial
+### mwa-initial / mwa-initial-v2
 
 Initial MWA v1 project with TypeScript/Router/Redux enabled.
-
-Created by `@modern-js/create`.
-
-### mwa-initial-v2
-
-Initial MWA v2 project with TypeScript/Router/Redux enabled.
 
 Created by `@modern-js/create`.
 

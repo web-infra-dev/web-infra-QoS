@@ -10,6 +10,7 @@ jobs:
       matrix:
         case:
           - mwa-minimal
+          - mwa-minimal-v2
           - mwa-initial
           - mwa-initial-v2
           - mwa-tailwind

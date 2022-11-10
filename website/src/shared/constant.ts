@@ -11,6 +11,7 @@ export const BASE_PADDING = 24;
 
 export const CASES = [
   'mwa-minimal',
+  'mwa-minimal-v2',
   'mwa-initial',
   'mwa-initial-v2',
   'mwa-tailwind',
@@ -25,10 +26,7 @@ export const CASES = [
 export const BUNDLE_SIZE_DEFAULT_CASE = ['mwa-initial', 'mwa-initial-v2'];
 export const BUNDLE_SIZE_METRICS = ['minifiedBundleSize', 'gzippedBundleSize'];
 
-export const COMPILE_SPEED_DEFAULT_CASE = [
-  'mwa-arco-pro',
-  'mwa-arco-pro-esbuild',
-];
+export const COMPILE_SPEED_DEFAULT_CASE = ['mwa-initial', 'mwa-initial-v2'];
 export const COMPILE_SPEED_METRICS = [
   'buildColdBootTime',
   'buildHotBootTime',
