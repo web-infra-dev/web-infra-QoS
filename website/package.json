@@ -14,20 +14,18 @@
   "dependencies": {
     "@antv/g2plot": "^2.4.17",
     "@arco-design/web-react": "^2.34.0",
-    "@modern-js/runtime": "^1.0.0",
+    "@modern-js/runtime": "next",
     "dayjs": "^1.11.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "@modern-js/app-tools": "^1.0.0",
-    "@modern-js/plugin-jarvis": "^1.0.0",
-    "@modern-js/plugin-proxy": "^1.0.0",
-    "@modern-js/plugin-sass": "^1.0.0",
-    "@modern-js/tsconfig": "^1.0.0",
+    "@modern-js/app-tools": "next",
+    "@modern-js/plugin-proxy": "next",
+    "@modern-js/tsconfig": "next",
     "@types/node": "^14",
-    "@types/react": "^17",
-    "@types/react-dom": "^17",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
     "prettier": "^2.6.2",
     "typescript": "^4"
   }

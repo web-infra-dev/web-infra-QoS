@@ -17,4 +17,7 @@ export default defineConfig({
     },
   },
   plugins: [MoveHTMLPlugin()],
+  tools: {
+    esbuild: {},
+  },
 });
