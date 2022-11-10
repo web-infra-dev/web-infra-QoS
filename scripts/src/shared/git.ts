@@ -11,6 +11,8 @@ import {
 } from './constant';
 
 export async function cloneRepo(caseName: string) {
+  const isV2 = caseName.includes('-v2');
+
   if (!(await pathExists(MODERN_PATH))) {
     const { GITHUB_ACTOR, GITHUB_TOKEN, COMMIT_ID } = process.env;
     const repoURL = GITHUB_TOKEN
@@ -22,7 +24,7 @@ export async function cloneRepo(caseName: string) {
       options.push('--depth', '1');
     }
 
-    if (caseName.includes('-v2')) {
+    if (isV2) {
       options.push('--branch', 'next');
     }
 
@@ -58,17 +60,19 @@ export async function cloneRepo(caseName: string) {
   );
 
   // lock @types/react version
-  await updateFile(join(MODERN_PATH, 'package.json'), content => {
-    const json = JSON.parse(content);
-    json.pnpm = {
-      overrides: {
-        ...json.pnpm?.overrides,
-        '@types/react': '^17',
-        '@types/react-dom': '^17',
-      },
-    };
-    return JSON.stringify(json, null, 2);
-  });
+  if (!isV2) {
+    await updateFile(join(MODERN_PATH, 'package.json'), content => {
+      const json = JSON.parse(content);
+      json.pnpm = {
+        overrides: {
+          ...json.pnpm?.overrides,
+          '@types/react': '^17',
+          '@types/react-dom': '^17',
+        },
+      };
+      return JSON.stringify(json, null, 2);
+    });
+  }
 
   await runCommand(MODERN_PATH, 'pnpm link ../scripts');
   await runCommand(MODERN_PATH, 'pnpm i --ignore-scripts --no-frozen-lockfile');
