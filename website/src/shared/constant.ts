@@ -40,7 +40,7 @@ export const COMPILE_SPEED_METRICS = [
   'devPrepareTime',
 ];
 
-export const INSTALL_SPEED_DEFAULT_CASE = ['mwa-minimal', 'mwa-initial'];
+export const INSTALL_SPEED_DEFAULT_CASE = ['mwa-initial', 'mwa-initial-v2'];
 export const INSTALL_SPEED_METRICS = [
   'yarnDependenciesCount',
   'yarnInstallSize',
