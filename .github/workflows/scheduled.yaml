@@ -11,6 +11,7 @@ jobs:
         case:
           - mwa-minimal
           - mwa-initial
+          - mwa-initial-v2
           - mwa-tailwind
           - mwa-ssr
           - mwa-ssg

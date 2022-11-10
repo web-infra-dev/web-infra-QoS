@@ -12,7 +12,13 @@ Minimal MWA project, using ua polyfill, no Redux and Router.
 
 ### mwa-initial
 
-Initial MWA project with TypeScript/Router/Redux enabled.
+Initial MWA v1 project with TypeScript/Router/Redux enabled.
+
+Created by `@modern-js/create`.
+
+### mwa-initial-v2
+
+Initial MWA v2 project with TypeScript/Router/Redux enabled.
 
 Created by `@modern-js/create`.
 

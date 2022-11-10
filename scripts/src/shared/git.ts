@@ -22,6 +22,10 @@ export async function cloneRepo(caseName: string) {
       options.push('--depth', '1');
     }
 
+    if (caseName.includes('-v2')) {
+      options.push('--branch', 'next');
+    }
+
     await execa('git', [...options, repoURL], {
       cwd: ROOT_PATH,
       stderr: 'inherit',
