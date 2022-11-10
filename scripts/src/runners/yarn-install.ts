@@ -13,6 +13,7 @@ import {
   TEMP_PATH,
   runCommand,
   saveMetrics,
+  isV2Case,
 } from '../shared';
 import fastGlob from 'fast-glob';
 import { performance } from 'perf_hooks';
@@ -57,7 +58,7 @@ const copyCase = async (caseName: string, casePath: string) => {
   await copy(join(CASES_SRC_PATH, caseName), casePath);
 };
 
-const getResolutions = async (pkgJsonPath: string) => {
+const getResolutions = async (pkgJsonPath: string, isV2: boolean) => {
   const modernPkgInfo = await getModernPkgInfo();
   const modernPkgNames = modernPkgInfo.map(item => item.json.name);
   const pkgJson = await readJson(pkgJsonPath);
@@ -77,7 +78,7 @@ const getResolutions = async (pkgJsonPath: string) => {
     }
 
     if (matchedJson.json.version) {
-      resolutions[depName] = matchedJson.json.version;
+      resolutions[depName] = isV2 ? 'next' : matchedJson.json.version;
     }
 
     matchedJson.innerDeps.forEach(addResolution);
@@ -88,8 +89,8 @@ const getResolutions = async (pkgJsonPath: string) => {
   return resolutions;
 };
 
-const setResolutions = async (pkgJsonPath: string) => {
-  const resolutions = await getResolutions(pkgJsonPath);
+const setResolutions = async (pkgJsonPath: string, isV2: boolean) => {
+  const resolutions = await getResolutions(pkgJsonPath, isV2);
   const pkgJson = await readJson(pkgJsonPath);
 
   // override workspace protocol
@@ -161,7 +162,7 @@ export const yarnInstall = async (caseName: string) => {
   const pkgJsonPath = join(TEMP_PATH, caseName, 'package.json');
 
   await copyCase(caseName, casePath);
-  await setResolutions(pkgJsonPath);
+  await setResolutions(pkgJsonPath, isV2Case(caseName));
 
   const { hotInstallTime, coldInstallTime } = await runInstall(casePath);
   const installSize = await getInstallSize(casePath);

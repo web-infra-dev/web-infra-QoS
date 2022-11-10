@@ -1,5 +1,7 @@
 import execa from 'execa';
 
+export const isV2Case = (caseName: string) => caseName.includes('-v2');
+
 export async function runCommand(
   cwd: string,
   command: string,

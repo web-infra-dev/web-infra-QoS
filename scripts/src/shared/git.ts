@@ -1,7 +1,7 @@
 import execa from 'execa';
 import { copy, pathExists } from 'fs-extra';
 import { updateFile } from './fs';
-import { runCommand } from './utils';
+import { isV2Case, runCommand } from './utils';
 import { join } from 'path';
 import {
   ROOT_PATH,
@@ -11,8 +11,6 @@ import {
 } from './constant';
 
 export async function cloneRepo(caseName: string) {
-  const isV2 = caseName.includes('-v2');
-
   if (!(await pathExists(MODERN_PATH))) {
     const { GITHUB_ACTOR, GITHUB_TOKEN, COMMIT_ID } = process.env;
     const repoURL = GITHUB_TOKEN
@@ -24,7 +22,7 @@ export async function cloneRepo(caseName: string) {
       options.push('--depth', '1');
     }
 
-    if (isV2) {
+    if (isV2Case(caseName)) {
       options.push('--branch', 'next');
     }
 
@@ -60,7 +58,7 @@ export async function cloneRepo(caseName: string) {
   );
 
   // lock @types/react version
-  if (!isV2) {
+  if (!isV2Case(caseName)) {
     await updateFile(join(MODERN_PATH, 'package.json'), content => {
       const json = JSON.parse(content);
       json.pnpm = {
