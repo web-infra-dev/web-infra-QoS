@@ -36,11 +36,11 @@ Created by `@modern-js/create`.
 
 `mwa-initial` + Tailwind CSS.
 
-### mwa-arco-pro
+### mwa-arco-pro / mwa-arco-pro-v2
 
 Arco Pro project.
 
-### mwa-arco-pro-esbuild
+### mwa-arco-pro-esbuild / mwa-arco-pro-esbuild-v2
 
 `mwa-arco-pro` + esbuild.
 
