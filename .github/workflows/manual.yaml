@@ -23,6 +23,7 @@ jobs:
           - mwa-bff-koa
           - mwa-bff-express
           - mwa-arco-pro
+          - mwa-arco-pro-v2
           - mwa-arco-pro-esbuild
 
     runs-on: ubuntu-latest

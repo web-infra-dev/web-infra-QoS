@@ -20,6 +20,7 @@ export const CASES = [
   'mwa-bff-koa',
   'mwa-bff-express',
   'mwa-arco-pro',
+  'mwa-arco-pro-v2',
   'mwa-arco-pro-esbuild',
 ];
 
