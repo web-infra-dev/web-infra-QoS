@@ -22,6 +22,7 @@ export const CASES = [
   'mwa-arco-pro',
   'mwa-arco-pro-v2',
   'mwa-arco-pro-esbuild',
+  'mwa-arco-pro-esbuild-v2',
 ];
 
 export const BUNDLE_SIZE_DEFAULT_CASE = ['mwa-initial', 'mwa-initial-v2'];

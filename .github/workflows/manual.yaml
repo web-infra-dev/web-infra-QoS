@@ -25,6 +25,7 @@ jobs:
           - mwa-arco-pro
           - mwa-arco-pro-v2
           - mwa-arco-pro-esbuild
+          - mwa-arco-pro-esbuild-v2
 
     runs-on: ubuntu-latest
 

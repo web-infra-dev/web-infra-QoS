@@ -10,5 +10,5 @@
       "@shared/*": ["./shared/*"]
     }
   },
-  "include": ["src", "shared", "config", "modern.config.js"]
+  "include": ["src", "modern.config.js"]
 }
