@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       commitId:
-        description: "commitId of modern.js repo"
+        description: 'commitId of modern.js repo'
       onlyInstallSize:
         description: "If only want install size, set to 'true'"
 
@@ -37,6 +37,15 @@ jobs:
 
       - name: Install Pnpm
         run: npm install -g pnpm@^7
+
+      - name: Turbo Cache
+        id: turbo-cache
+        uses: actions/cache@v2
+        with:
+          path: .turbo
+          key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            turbo-${{ github.job }}-${{ github.ref_name }}-
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
