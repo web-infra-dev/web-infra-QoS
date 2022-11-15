@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@modern-js/runtime": "workspace:*",
-    "react": "^18",
-    "react-dom": "^18"
+    "react": "^17",
+    "react-dom": "^17"
   },
   "devDependencies": {
     "@modern-js/app-tools": "workspace:*",
@@ -23,8 +23,8 @@
     "prettier": "^2.6.2",
     "husky": "^8.0.0",
     "typescript": "^4",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^17",
+    "@types/react-dom": "^17",
     "@types/node": "^14"
   }
 }
