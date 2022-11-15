@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@antv/g2plot': ^2.4.17
-  '@arco-design/web-react': ^2.34.0
+  '@arco-design/web-react': ^2.41.2
   '@modern-js/app-tools': next
   '@modern-js/plugin-proxy': next
   '@modern-js/runtime': next
@@ -18,16 +18,16 @@ specifiers:
 
 dependencies:
   '@antv/g2plot': 2.4.17
-  '@arco-design/web-react': 2.34.0_2zx2umvpluuhvlq44va5bta2da
-  '@modern-js/runtime': 0.0.0-next-20221110051833_biqbaboplfbrettd7655fr4n2y
+  '@arco-design/web-react': 2.41.2_2zx2umvpluuhvlq44va5bta2da
+  '@modern-js/runtime': 0.0.0-next-20221114143420_biqbaboplfbrettd7655fr4n2y
   dayjs: 1.11.2
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
 devDependencies:
-  '@modern-js/app-tools': 0.0.0-next-20221110051833_nry5ledq6ed4s4qvodqbpyqzjy
-  '@modern-js/plugin-proxy': 0.0.0-next-20221110051833
-  '@modern-js/tsconfig': 0.0.0-next-20221110051833
+  '@modern-js/app-tools': 0.0.0-next-20221114143420_nry5ledq6ed4s4qvodqbpyqzjy
+  '@modern-js/plugin-proxy': 0.0.0-next-20221114143420
+  '@modern-js/tsconfig': 0.0.0-next-20221114143420
   '@types/node': 14.18.18
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.8
@@ -220,8 +220,8 @@ packages:
       color: 3.2.1
     dev: false
 
-  /@arco-design/web-react/2.34.0_2zx2umvpluuhvlq44va5bta2da:
-    resolution: {integrity: sha512-mcUq3n2O/juh1Hk9R6fzvEqvfmUvq/VD03FAJ0vHBhASTzH3ThFMFubE5yTTz+dUN2QuPVuSGFSeQR1jXcOE/g==}
+  /@arco-design/web-react/2.41.2_2zx2umvpluuhvlq44va5bta2da:
+    resolution: {integrity: sha512-NhzgdtkBQ4NMudajmljNSxVsdJih+BPCU+oa5P2aFc9fz4Sln5RX2BF3QyODpYgJIABuAEK/5ZsOyG6TSZSXvw==}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
@@ -229,7 +229,7 @@ packages:
       '@arco-design/color': 0.4.0
       '@babel/runtime': 7.18.3
       b-tween: 0.3.3
-      b-validate: 1.4.0
+      b-validate: 1.4.3
       compute-scroll-into-view: 1.0.17
       dayjs: 1.11.2
       lodash: 4.17.21
@@ -1769,13 +1769,13 @@ packages:
       make-dir: 3.1.0
     dev: false
 
-  /@modern-js-app/eslint-config/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-C7FLo3xQ92siX/tGE/+zuFS16C006qOV7Zje5HQKm0O1mQS//Fq5KmCp5YmFTIaWRsZY66w4R2D6oD4QnD+NFA==}
+  /@modern-js-app/eslint-config/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-BwRq20CVgawqCSfcq22utD+LvtV2TKkQE38GA5Hh9cMyUEMBaCLqNlD94uxkP/RFJPcpZeLmY2rRyy+YT0zNTw==}
     dependencies:
       '@babel/core': 7.18.2
       '@babel/eslint-parser': 7.19.1_k2frvhnwhyewn52hbgubltwwhi
       '@babel/eslint-plugin': 7.19.1_il6zkcidmr6g4cqn2dmxnqmije
-      '@modern-js/babel-preset-app': 0.0.0-next-20221110051833
+      '@modern-js/babel-preset-app': 0.0.0-next-20221114143420
       '@typescript-eslint/eslint-plugin': 5.42.1_hb6niqiihmiwxnrrzy63uslgle
       '@typescript-eslint/parser': 5.42.1_r6wgjs2cmdapk4bysm6dglulo4
       eslint: 7.32.0
@@ -1857,31 +1857,31 @@ packages:
       redux: 4.2.0
     dev: false
 
-  /@modern-js/app-tools/0.0.0-next-20221110051833_nry5ledq6ed4s4qvodqbpyqzjy:
-    resolution: {integrity: sha512-dWInwjxJ7/l+ZzjJWVEvnTG2F8DgF0JrQ2dahVvcwqx9eAPcDry0EIN9j+CEgf4R9ISGcpRCLT/znp9KN9svOA==}
+  /@modern-js/app-tools/0.0.0-next-20221114143420_nry5ledq6ed4s4qvodqbpyqzjy:
+    resolution: {integrity: sha512-zTQAsTfOo/P2jNvUat2JJS40ekErn6MiqifjYMtEKcuvnSFEGVoaPGtwtesfJ5jDyxNxG4D9dvlDYIN/P7eutg==}
     hasBin: true
     dependencies:
       '@babel/parser': 7.18.4
       '@babel/runtime': 7.18.3
       '@babel/traverse': 7.18.2
       '@babel/types': 7.18.4
-      '@modern-js/builder': 0.0.0-next-20221110051833
-      '@modern-js/builder-plugin-esbuild': 0.0.0-next-20221110051833
-      '@modern-js/builder-plugin-node-polyfill': 0.0.0-next-20221110051833
-      '@modern-js/builder-shared': 0.0.0-next-20221110051833
-      '@modern-js/builder-webpack-provider': 0.0.0-next-20221110051833_typescript@4.7.2
-      '@modern-js/core': 0.0.0-next-20221110051833
-      '@modern-js/new-action': 0.0.0-next-20221110051833_typescript@4.7.2
-      '@modern-js/node-bundle-require': 0.0.0-next-20221110051833
-      '@modern-js/plugin': 0.0.0-next-20221110051833
-      '@modern-js/plugin-data-loader': 0.0.0-next-20221110051833_biqbaboplfbrettd7655fr4n2y
-      '@modern-js/plugin-i18n': 0.0.0-next-20221110051833
-      '@modern-js/plugin-jarvis': 0.0.0-next-20221110051833
-      '@modern-js/prod-server': 0.0.0-next-20221110051833
-      '@modern-js/server': 0.0.0-next-20221110051833
-      '@modern-js/types': 0.0.0-next-20221110051833
-      '@modern-js/upgrade': 0.0.0-next-20221110051833
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/builder': 0.0.0-next-20221114143420
+      '@modern-js/builder-plugin-esbuild': 0.0.0-next-20221114143420
+      '@modern-js/builder-plugin-node-polyfill': 0.0.0-next-20221114143420
+      '@modern-js/builder-shared': 0.0.0-next-20221114143420
+      '@modern-js/builder-webpack-provider': 0.0.0-next-20221114143420_typescript@4.7.2
+      '@modern-js/core': 0.0.0-next-20221114143420
+      '@modern-js/new-action': 0.0.0-next-20221114143420_typescript@4.7.2
+      '@modern-js/node-bundle-require': 0.0.0-next-20221114143420
+      '@modern-js/plugin': 0.0.0-next-20221114143420
+      '@modern-js/plugin-data-loader': 0.0.0-next-20221114143420_biqbaboplfbrettd7655fr4n2y
+      '@modern-js/plugin-i18n': 0.0.0-next-20221114143420
+      '@modern-js/plugin-jarvis': 0.0.0-next-20221114143420
+      '@modern-js/prod-server': 0.0.0-next-20221114143420
+      '@modern-js/server': 0.0.0-next-20221114143420
+      '@modern-js/types': 0.0.0-next-20221114143420
+      '@modern-js/upgrade': 0.0.0-next-20221114143420
+      '@modern-js/utils': 0.0.0-next-20221114143420
     transitivePeerDependencies:
       - '@modern-js/e2e'
       - '@parcel/css'
@@ -1912,31 +1912,31 @@ packages:
       - webpack-plugin-serve
     dev: true
 
-  /@modern-js/babel-compiler/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-Jpr4bieHb4Qryg7nEMXL8x4gcuOqHagHvj5yGH455natNyBFPlKt1mFgfUCz7PXM+K8gThTq1subLyZCTF+OWA==}
+  /@modern-js/babel-compiler/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-YJff1On5ExalFTJDM+rOIsoAuukp/v547VxGfUiWcudscf38pwdNsutFPYK9c5dlzEgiBgV3zezqEmtXNLnWxA==}
     dependencies:
       '@babel/core': 7.18.2
       '@babel/runtime': 7.18.3
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/utils': 0.0.0-next-20221114143420
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@modern-js/babel-preset-app/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-7YDx8NQ0i31skWQjZZ4uDdkGQrs3M0Zq+5hpUbabtxgLKK46RJFIzzOm9RMPq3QtQLxDQj9GjjHfFzBaNFcJwQ==}
+  /@modern-js/babel-preset-app/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-KRLxNWTEMI7s/EYdio7qj+a7G2aXVOsZHcmXQfpRwlV/hnfrBAw3kx+J+GfT609x0bLT6g8ZgxEkANKA1GHzDw==}
     dependencies:
       '@babel/core': 7.18.2
       '@babel/runtime': 7.18.3
       '@babel/types': 7.18.4
-      '@modern-js/babel-preset-base': 0.0.0-next-20221110051833
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/babel-preset-base': 0.0.0-next-20221114143420
+      '@modern-js/utils': 0.0.0-next-20221114143420
       core-js: 3.26.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@modern-js/babel-preset-base/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-q0bxu/ELgzx80dnL7ImT+NyiO/fs42IZMlXmbnQNQhdkVYsKy+07+SgFYeUuA7L07Brdk8B/UeRclUyIsWfJrA==}
+  /@modern-js/babel-preset-base/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-AOMJ5GnxNHSI6BnhXU71S/LIuecq2AET+cVddlU0U1lNaWzNCzilBdI47pifDqIfluCwoNwxpEQfGqW6sWTa3g==}
     dependencies:
       '@babel/core': 7.18.2
       '@babel/plugin-transform-runtime': 7.18.2_@babel+core@7.18.2
@@ -1945,7 +1945,7 @@ packages:
       '@babel/preset-react': 7.17.12_@babel+core@7.18.2
       '@babel/preset-typescript': 7.17.12_@babel+core@7.18.2
       '@babel/runtime': 7.18.3
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/utils': 0.0.0-next-20221114143420
       '@types/babel__core': 7.1.19
       cosmiconfig: 7.0.1
       lodash: 4.17.21
@@ -1954,13 +1954,13 @@ packages:
       - supports-color
     dev: true
 
-  /@modern-js/babel-preset-lib/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-IwxwfZlmsnwb0itpnh5xKHJn3BN+ZvzTnpwB6CyNpE86YqCua3dzja+0eKnNXY0wAxyJ4cuwwYulVGM9a66Gyg==}
+  /@modern-js/babel-preset-lib/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-dlQ/4x990omtLyvyTRgcth9cmNiSnlV3zv6U3DR7e8nCghupLhMIPFO/EAxQYGUVF880ZSCLW5zHBqrpvQJKEA==}
     dependencies:
       '@babel/core': 7.18.2
       '@babel/runtime': 7.18.3
-      '@modern-js/babel-preset-base': 0.0.0-next-20221110051833
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/babel-preset-base': 0.0.0-next-20221114143420
+      '@modern-js/utils': 0.0.0-next-20221114143420
       babel-plugin-module-resolver: 4.1.0
       babel-plugin-transform-define: 2.0.1
       babel-plugin-transform-inline-environment-variables: 0.4.4
@@ -1968,11 +1968,11 @@ packages:
       - supports-color
     dev: true
 
-  /@modern-js/builder-plugin-esbuild/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-J7GYWxoLNEd7U33LSO0W4Xy66YzYnZ9sryjMlVc7WesId39UwnSH5NmpLrSN2yngtDLq/YZ6lvkXivtMvSGjlg==}
+  /@modern-js/builder-plugin-esbuild/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-oKsSBcZURjpvwb0qVBLsP8rB+MI9lJg0nzbdoFEm40shCj08HtoBQKxDiR2QO+boSB1cLcTk2rLx5IPGaVeSdQ==}
     engines: {node: '>=14.0.0'}
     dependencies:
-      '@modern-js/builder-shared': 0.0.0-next-20221110051833
+      '@modern-js/builder-shared': 0.0.0-next-20221114143420
       esbuild: 0.15.7
     transitivePeerDependencies:
       - '@types/express'
@@ -1984,20 +1984,20 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@modern-js/builder-plugin-node-polyfill/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-CibwC9jWXvVl6Wmr3ql5IqcKr6qKOgPc2i+KsLwpYC+K8bOrJVIqcTlYrfvQYiDWZWkzV2+BhdzzW1MkQMeVhw==}
+  /@modern-js/builder-plugin-node-polyfill/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-HiT6pzcNKR4jPdfCxBBTOKC1+PzLGFC2Yut4AzdCkPWNQIbFMsFWPIoG4/xY7yI8MEh4Cd80YtQttTCRcdiWOQ==}
     engines: {node: '>=14.0.0'}
     dependencies:
       node-libs-browser: 2.2.1
     dev: true
 
-  /@modern-js/builder-shared/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-jOKrGjcwGnVj/U+S1mJbANyzrLt9sF6OoLaUJHbWbv/SSNVk/LEfif3WB2GxBhlFz4I3NU0htsHz89eVNpTPDA==}
+  /@modern-js/builder-shared/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-6BZBS9s7o7aNpmSQ8usOfPkSJIRHF8cnnS4zBPsnL9TpMWm/tdzXu3PpGdg4ah2kcwJYsB/o0Lux7plQDrjLdg==}
     engines: {node: '>=14.0.0'}
     dependencies:
-      '@modern-js/server': 0.0.0-next-20221110051833
-      '@modern-js/types': 0.0.0-next-20221110051833
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/server': 0.0.0-next-20221114143420
+      '@modern-js/types': 0.0.0-next-20221114143420
+      '@modern-js/utils': 0.0.0-next-20221114143420
     transitivePeerDependencies:
       - '@types/express'
       - bufferutil
@@ -2008,21 +2008,21 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@modern-js/builder-webpack-provider/0.0.0-next-20221110051833_typescript@4.7.2:
-    resolution: {integrity: sha512-jFFGV/4hfQgIqB2C8S79LpgX8YegxwOag7Ih+a9qSn5bPn6Q/wjNfqmdgwpZsV5tqRAMYrsHySGOJlrdhhoCUQ==}
+  /@modern-js/builder-webpack-provider/0.0.0-next-20221114143420_typescript@4.7.2:
+    resolution: {integrity: sha512-HMdLXLLAMYOefYX6EqaQHJOisKppeS9BJBI4nibSKbWivvryrLDQKvlZhJ3yIb8bTpbfIHg28AgGK72mDYEiWw==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
-      '@modern-js/e2e': ^0.0.0-next-20221110051833
+      '@modern-js/e2e': 0.0.0-next-20221114143420
     peerDependenciesMeta:
       '@modern-js/e2e':
         optional: true
     dependencies:
-      '@modern-js/babel-preset-app': 0.0.0-next-20221110051833
-      '@modern-js/builder-shared': 0.0.0-next-20221110051833
+      '@modern-js/babel-preset-app': 0.0.0-next-20221114143420
+      '@modern-js/builder-shared': 0.0.0-next-20221114143420
       '@modern-js/inspector-webpack-plugin': 1.0.3
-      '@modern-js/server': 0.0.0-next-20221110051833
-      '@modern-js/types': 0.0.0-next-20221110051833
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/server': 0.0.0-next-20221114143420
+      '@modern-js/types': 0.0.0-next-20221114143420
+      '@modern-js/utils': 0.0.0-next-20221114143420
       '@pmmmwh/react-refresh-webpack-plugin': 0.5.8_pu7eigmwa3x3weuudkt33y7rqe
       '@svgr/webpack': 6.2.1
       '@types/mini-css-extract-plugin': 2.2.0
@@ -2063,11 +2063,11 @@ packages:
       - webpack-plugin-serve
     dev: true
 
-  /@modern-js/builder/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-Cq3rqVvtAu/AX+PnccwHMwetclp5RqjJNiFr2XnYaq3OpkOaq7XpzcnYjzn5UJCd01pK0GaGlNySE/4cNZ7EnA==}
+  /@modern-js/builder/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-KqKIebIWx1ihB0n2kCyNHUHUYHHprSq5WuY7Qtq/kHz3sW3ZJeebPKtcmCiULcCxkVvHzHM3gPRu/+ErBTVkiQ==}
     engines: {node: '>=14.0.0'}
     dependencies:
-      '@modern-js/builder-shared': 0.0.0-next-20221110051833
+      '@modern-js/builder-shared': 0.0.0-next-20221114143420
     transitivePeerDependencies:
       - '@types/express'
       - bufferutil
@@ -2163,12 +2163,12 @@ packages:
       - debug
     dev: true
 
-  /@modern-js/core/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-y3XlZqFHa92AIjVKjq0BM66s08PLxeejnW11pCxQ26E+TIAVvc2AleITT+d8y04x0EJTH8/Xvps1URM62nmwDA==}
+  /@modern-js/core/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-f834AwJRmj7uClZ2vpAVDO2aAcQMKJicVsdHCaguYO1gwFJXkx9NNxpWEfpPDP6ofaUMPKTekrBP27ESt612bQ==}
     dependencies:
-      '@modern-js/node-bundle-require': 0.0.0-next-20221110051833
-      '@modern-js/plugin': 0.0.0-next-20221110051833
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/node-bundle-require': 0.0.0-next-20221114143420
+      '@modern-js/plugin': 0.0.0-next-20221114143420
+      '@modern-js/utils': 0.0.0-next-20221114143420
     dev: true
 
   /@modern-js/easy-form-cli/1.6.3:
@@ -2188,33 +2188,33 @@ packages:
       lodash: 4.17.21
     dev: true
 
-  /@modern-js/eslint-config/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-Apk8ZXZPlCL1Pv5sOKF1AoP52UVVbtKtHMVHrX5BCe9jjivUBkY/Bn/HGzg7ZB1nA+XbVwIPmPmj6OwaF6Afzw==}
+  /@modern-js/eslint-config/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-A6tbnQOwOnS9owbwUhLr2+Jm5xOT166xf78iguzcUj1RNWNG3cEmmbPMDqSAMQPCPP6Dw3O+ulT8uagkPRLhmA==}
     dependencies:
-      '@modern-js-app/eslint-config': 0.0.0-next-20221110051833
+      '@modern-js-app/eslint-config': 0.0.0-next-20221114143420
     transitivePeerDependencies:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
       - supports-color
     dev: true
 
-  /@modern-js/generator-common/0.0.0-next-20221110051833_typescript@4.7.2:
-    resolution: {integrity: sha512-7UludksXf9rz3Abb/VQBf7+J9jfrIN4C/saIytUzxKiktR+e8Ep2PnaEhW+TvJ6FQpMxNNEpYh9NpRFmgFbArQ==}
+  /@modern-js/generator-common/0.0.0-next-20221114143420_typescript@4.7.2:
+    resolution: {integrity: sha512-IvDtCDHiM/TfpEzM3GTEgrzXHhpB5w61KF8kDMRZU18MZFdOS1FxV4NOhCe4YDlxM/BrgyniFcDIYIyGKWB6Jg==}
     dependencies:
       '@babel/runtime': 7.18.3
       '@modern-js/codesmith-formily': 1.6.3_typescript@4.7.2
-      '@modern-js/plugin-i18n': 0.0.0-next-20221110051833
+      '@modern-js/plugin-i18n': 0.0.0-next-20221114143420
     transitivePeerDependencies:
       - typescript
     dev: true
 
-  /@modern-js/generator-utils/0.0.0-next-20221110051833_typescript@4.7.2:
-    resolution: {integrity: sha512-xWtkEwneLAtTmNXtvGSKuGHoCBPgnPmmfgEIN3FlETZfOXPp7xVRZpxFhhsrkU55atHwn1BodkoROAfnLXxU/Q==}
+  /@modern-js/generator-utils/0.0.0-next-20221114143420_typescript@4.7.2:
+    resolution: {integrity: sha512-Wr/kcrwJ+itPHD8LjC3NGw2H283oQNjQy0O4FXtDRFX3ZEXBVxG8MuOs2OaeY+7iOj9CCp2lJuMJn507jzdEzQ==}
     dependencies:
       '@babel/runtime': 7.18.3
-      '@modern-js/generator-common': 0.0.0-next-20221110051833_typescript@4.7.2
-      '@modern-js/plugin-i18n': 0.0.0-next-20221110051833
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/generator-common': 0.0.0-next-20221114143420_typescript@4.7.2
+      '@modern-js/plugin-i18n': 0.0.0-next-20221114143420
+      '@modern-js/utils': 0.0.0-next-20221114143420
     transitivePeerDependencies:
       - typescript
     dev: true
@@ -2235,35 +2235,35 @@ packages:
     resolution: {integrity: sha512-979d6RdnSvO/v8Z/dMV7UG5kzJilYheP1d6RWcgbwVcdOE9yglKpm9D+jJy0YJ2866i4VCRME4MlDkNT5xCQNg==}
     dev: true
 
-  /@modern-js/new-action/0.0.0-next-20221110051833_typescript@4.7.2:
-    resolution: {integrity: sha512-P8ujRs+8FKBTgLOJNWV+xH8iFyIKXWSgbtXF+TvtykPKC2s5h94RdOB5FuVtVaFtldU3oyC1rdJyIWjPMRea5w==}
+  /@modern-js/new-action/0.0.0-next-20221114143420_typescript@4.7.2:
+    resolution: {integrity: sha512-8FHRvuW3AMQPi8OkZAPHSk54yR9Vdz1ey8Z9l/0CCCqX2wj/nAn2XIGNhehCjl0k9uiE1dWCZ+nETbOAqKX53A==}
     dependencies:
       '@babel/runtime': 7.18.3
       '@modern-js/codesmith': 1.6.3
       '@modern-js/codesmith-api-app': 1.6.3_typescript@4.7.2
-      '@modern-js/generator-common': 0.0.0-next-20221110051833_typescript@4.7.2
-      '@modern-js/generator-utils': 0.0.0-next-20221110051833_typescript@4.7.2
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/generator-common': 0.0.0-next-20221114143420_typescript@4.7.2
+      '@modern-js/generator-utils': 0.0.0-next-20221114143420_typescript@4.7.2
+      '@modern-js/utils': 0.0.0-next-20221114143420
     transitivePeerDependencies:
       - debug
       - typescript
     dev: true
 
-  /@modern-js/node-bundle-require/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-Ol8ZgGMjiC9Bog7UYoGVzIDjHsdEEbyD0O/XfXkYmnRlmiTmDBgAA93Sf+XHllHYa1H/sIBOCs8qu5hXRuK3Lg==}
+  /@modern-js/node-bundle-require/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-sHu5rlpiAbzeu5u74ArHBlIuxzk4VC6K6P7FB29qnc1apk837VF22wrKi82+MJS9mD7R37Se76PJHZ5iiStb9w==}
     dependencies:
       '@babel/runtime': 7.18.3
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/utils': 0.0.0-next-20221114143420
       esbuild: 0.15.7
     dev: true
 
-  /@modern-js/plugin-data-loader/0.0.0-next-20221110051833_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-rRJUvht962tTPE4zLSznf5kUOFner13nxhP8RC0kmoZdaBXPrzWq3st60Tm5pXKwELKxWqDHudQPSzt7OfolxA==}
+  /@modern-js/plugin-data-loader/0.0.0-next-20221114143420_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-EZeZfzPc1nsFAgqxl1pXQvH4a+uijMsuw8+xGyn1bJly1KRa29EfB4WhZW6m721FhALJm0gDMKs7+BpHj4IhIg==}
     dependencies:
       '@babel/core': 7.18.2
       '@babel/runtime': 7.18.3
-      '@modern-js/babel-compiler': 0.0.0-next-20221110051833
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/babel-compiler': 0.0.0-next-20221114143420
+      '@modern-js/utils': 0.0.0-next-20221114143420
       '@remix-run/node': 1.7.5_biqbaboplfbrettd7655fr4n2y
       path-to-regexp: 6.2.1
       react-router-dom: 6.4.3_biqbaboplfbrettd7655fr4n2y
@@ -2273,11 +2273,11 @@ packages:
       - supports-color
     dev: true
 
-  /@modern-js/plugin-i18n/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-YcgxPkUiHMq+muE1BOtZzk7Echl3NZwYiZYScpczqywCCAMcpIM22fdpYywHxumNQiUxqG1v21Y1dmDhe4Jjug==}
+  /@modern-js/plugin-i18n/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-hPl6FNfX48+d5lUig3zDg/x7nHaqnLQ0DYRf4W+TOKB6x5NE8sIkVvSwZuwOuazBbnXizcy4aWUOWYkDO9SLyw==}
     dependencies:
       '@babel/runtime': 7.18.3
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/utils': 0.0.0-next-20221114143420
     dev: true
 
   /@modern-js/plugin-i18n/1.21.2:
@@ -2287,14 +2287,14 @@ packages:
       '@modern-js/utils': 1.21.2
     dev: true
 
-  /@modern-js/plugin-jarvis/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-vLJEENLsVYMua8PQbaf2VuWUKWW7tEy5ctXhsXLTGkfEpjnz5IMY9DqRoRwF8YK8B3/H5O9WoSfqUipRiTrw3Q==}
+  /@modern-js/plugin-jarvis/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-/tu5eY9sQw/wPGUrTqphy2pDp25GrCPjgW0HZ2yov0uxLiG7UXVBhgFOx3yQXTqXkTBrKO/nbmUWklVMsJ2QIw==}
     dependencies:
       '@babel/runtime': 7.18.3
-      '@modern-js-app/eslint-config': 0.0.0-next-20221110051833
-      '@modern-js/eslint-config': 0.0.0-next-20221110051833
-      '@modern-js/tsconfig': 0.0.0-next-20221110051833
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js-app/eslint-config': 0.0.0-next-20221114143420
+      '@modern-js/eslint-config': 0.0.0-next-20221114143420
+      '@modern-js/tsconfig': 0.0.0-next-20221114143420
+      '@modern-js/utils': 0.0.0-next-20221114143420
       cross-spawn: 7.0.3
       eslint: 7.32.0
       husky: 8.0.2
@@ -2305,27 +2305,27 @@ packages:
       - supports-color
     dev: true
 
-  /@modern-js/plugin-proxy/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-3GPbsLSo+bNBk6YALN7IfDoBEFqQp2DFjJRTkHqXwm4ecT+wRuE7syRP5P29UuS9eQ+9CsbZSBn4vGRfo5ak0Q==}
+  /@modern-js/plugin-proxy/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-iJLIoC+kA4g42xi4gG2sTmuqTAC+D2dXOTHHyW+gRAO0Tn3xzT8i04OzxrkV3MokGAFas52jQybpinLLn9+rlQ==}
     dependencies:
       '@babel/runtime': 7.18.3
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/utils': 0.0.0-next-20221114143420
       whistle: 2.9.35
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@modern-js/plugin/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-q+m3dTqnwJ/hVG6N9aZgmWYW/SAVn8e7Ch7ozIaxUbumSojimeTwPXVKdDTBFya8kXK4O27izGJv09OjUYJGTQ==}
+  /@modern-js/plugin/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-tvqj2o0Hf47r7D/RI4BppgcMzVG93wXU9zlqWVn1UeCIkFakluFx91kNecetLSEwib+HzyUFLo66cyA0S3PFjA==}
     dependencies:
       '@babel/runtime': 7.18.3
 
-  /@modern-js/prod-server/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-IU5mVvyI4mRVfQNhJpPdIoY01d9jCEKeOhtGGmYaG8DIDFilLyw0IbwSrb3lYecyCdtTF/Xw9IH/5ljGPacEPA==}
+  /@modern-js/prod-server/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-l9zy64R5hfrE3Gl7YUn9d2WJ7fipO9JRx+KryoVka1SSQbkhbO3Tqkp3P34VbX2CW2T1JqHMAam8avifCggdXg==}
     dependencies:
       '@babel/compat-data': 7.17.10
-      '@modern-js/server-core': 0.0.0-next-20221110051833
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/server-core': 0.0.0-next-20221114143420
+      '@modern-js/utils': 0.0.0-next-20221114143420
       axios: 0.24.0
       compare-versions: 3.6.0
       cookie: 0.4.2
@@ -2344,8 +2344,8 @@ packages:
       - supports-color
     dev: true
 
-  /@modern-js/runtime/0.0.0-next-20221110051833_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-kh3WBs+kqHc+DGJlCOP9VKvteqiMFpbhK3kQtx37GrRnP6pfPXBe/gFNhEz+6gDppUq2e8vXysMyyHcvDyM0HQ==}
+  /@modern-js/runtime/0.0.0-next-20221114143420_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-t6Bg+qc8gCZa8Mh+DM9ZGybstqEoScgwOkeYxBMI56vJmAzEe9n+kMHrI8T1UoNpcNCBuyKOy31ETPqq+KTyUw==}
     engines: {node: '>=14.17.6'}
     peerDependencies:
       react: '>=17'
@@ -2363,9 +2363,9 @@ packages:
       '@modern-js-reduck/plugin-immutable': 1.0.1_ispnipafpzzhhphzi7uvk3q7n4
       '@modern-js-reduck/react': 1.0.1_react@18.2.0
       '@modern-js-reduck/store': 1.0.4
-      '@modern-js/plugin': 0.0.0-next-20221110051833
-      '@modern-js/types': 0.0.0-next-20221110051833
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/plugin': 0.0.0-next-20221114143420
+      '@modern-js/types': 0.0.0-next-20221114143420
+      '@modern-js/utils': 0.0.0-next-20221114143420
       '@remix-run/node': 1.7.5_biqbaboplfbrettd7655fr4n2y
       '@remix-run/router': 1.0.3
       '@types/loadable__component': 5.13.4
@@ -2388,15 +2388,15 @@ packages:
       - webpack
     dev: false
 
-  /@modern-js/server-core/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-ZUSzzYg3SXtFs76eJiJA4QNieE7/1PmYUlctZqQreV1QKurI4i0awDNlGR2R0YUuNUiPgOgbeapAIlvzB5cBSg==}
+  /@modern-js/server-core/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-YpyDhZ6DbYdXkUbYmn+A/YdyFa9u5RJl+dAGyDDt6DQFJZtzC4jWJbTZORUoIAFFM9qkFpFcslCilFH01ut4/Q==}
     dependencies:
-      '@modern-js/plugin': 0.0.0-next-20221110051833
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/plugin': 0.0.0-next-20221114143420
+      '@modern-js/utils': 0.0.0-next-20221114143420
     dev: true
 
-  /@modern-js/server-utils/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-zDrE6KfXxtZdf0gzMl9nKNWZyqCHzhNBjMG9LNEfdn4WR0fs1Cep8/oS6XUMFo/TZMqc1Y19HEGjM1bgOvFR8g==}
+  /@modern-js/server-utils/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-w6Ph2J9stcI6dDlXiYGTwAsZj4cErj6H12NLBfkKVMGhJnPKitsUg2qQob3Ajd1g09my7E6ogZN2/DQ503HRtw==}
     dependencies:
       '@babel/compat-data': 7.17.10
       '@babel/core': 7.18.2
@@ -2405,10 +2405,10 @@ packages:
       '@babel/preset-env': 7.18.2_@babel+core@7.18.2
       '@babel/preset-typescript': 7.17.12_@babel+core@7.18.2
       '@babel/runtime': 7.18.3
-      '@modern-js/babel-compiler': 0.0.0-next-20221110051833
-      '@modern-js/babel-preset-lib': 0.0.0-next-20221110051833
-      '@modern-js/plugin': 0.0.0-next-20221110051833
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/babel-compiler': 0.0.0-next-20221114143420
+      '@modern-js/babel-preset-lib': 0.0.0-next-20221114143420
+      '@modern-js/plugin': 0.0.0-next-20221114143420
+      '@modern-js/utils': 0.0.0-next-20221114143420
       babel-plugin-module-resolver: 4.1.0
       babel-plugin-transform-typescript-metadata: 0.3.2
       tsconfig-paths: 3.14.1
@@ -2416,18 +2416,18 @@ packages:
       - supports-color
     dev: true
 
-  /@modern-js/server/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-JQUgipCFSjkKEvBRXsrEbrbdnimWzHYVEDkp8oyzHK0k7BRRaV18SooV71PNz1kjHBYS7pxP+/7R7Qfs6HjF7g==}
+  /@modern-js/server/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-cAcR06Qok36nBNWYfi7rvhlPsuPHWlhTUNDHiimQjCvFAbkXzKyDPBZzg4l33oNcN0f15qGbbRy51ca23+jOQw==}
     peerDependencies:
       ts-node: ^10.1.0
       tsconfig-paths: 3.14.1
     dependencies:
       '@babel/core': 7.18.2
       '@babel/register': 7.17.7_@babel+core@7.18.2
-      '@modern-js/prod-server': 0.0.0-next-20221110051833
-      '@modern-js/server-utils': 0.0.0-next-20221110051833
-      '@modern-js/types': 0.0.0-next-20221110051833
-      '@modern-js/utils': 0.0.0-next-20221110051833
+      '@modern-js/prod-server': 0.0.0-next-20221114143420
+      '@modern-js/server-utils': 0.0.0-next-20221114143420
+      '@modern-js/types': 0.0.0-next-20221114143420
+      '@modern-js/utils': 0.0.0-next-20221114143420
       connect-history-api-fallback: 2.0.0
       devcert: 1.2.2
       minimatch: 3.1.2
@@ -2441,20 +2441,20 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@modern-js/tsconfig/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-IXnJqE/4x9Kijz7vT4FTmS0E1y3tS4Ck8uuzrXYiYhrJ0d6RLCgdMQpuhJN/lTyL366M2ahVsAqYkfBypWyZQg==}
+  /@modern-js/tsconfig/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-hsVGB3+GnYvE6OcMtEZODAAlK4+6OUyJWNo66ZNNo4Sa0VwD+wh1yPH2LgqasDx1e60qPqbatsGtxgsgJinSxQ==}
     dev: true
 
-  /@modern-js/types/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-1WdMPWiiT2YG2fuAxhAB5XKBXT6RQMYqEOjFwThrL/oA17ZZP2ljXp/sDA9AkG1XBYRxY+BPs2N7YSPqb0HBOA==}
+  /@modern-js/types/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-Bp9yeVIA/1e+krEJfxcrAAIFHzgCrJX8BUB8Z/7TK31HXuAmPw9Jl1lfy0vk5glMdlgCiWGLUA8hR5fDkBDXaQ==}
 
-  /@modern-js/upgrade/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-v1Jx0BcpRXQAt3mYonQqhweS+QBd+c2GsaY2+m8CtiXTHpzeyLBisC3YY9zyIMjgcbdAT8DFKCwvztSq7af6Zg==}
+  /@modern-js/upgrade/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-oW6q8VBiADo2CJcqw5DAfjw8DED14VSllUh5rkrCnIWwPWRL6M51gHcf90uHd8EeGJJrmyWnZ6iUQNDGPu5uOw==}
     hasBin: true
     dev: true
 
-  /@modern-js/utils/0.0.0-next-20221110051833:
-    resolution: {integrity: sha512-JoAXkHR2Ybu+nIwOm+FAqIXnPF94QBUj0miBYhndeWTh+aT2U8p282db2Kx4/fMOaIFJp5RoJXwqDEBvpYf0DQ==}
+  /@modern-js/utils/0.0.0-next-20221114143420:
+    resolution: {integrity: sha512-vLqWYYPWi3kLYTqEsAXXjgOo2RhtmIQXAl7MtizL4tkJB5yxBzo1B82wlmxQlNCy20zH6Rgu4YD+3ZWWL0miFg==}
     dependencies:
       caniuse-lite: 1.0.30001431
       lodash: 4.17.21
@@ -3515,8 +3515,8 @@ packages:
     resolution: {integrity: sha512-oEHegcRpA7fAuc9KC4nktucuZn2aS8htymCPcP3qkEGPqiBH+GfqtqoG2l7LxHngg6O0HFM7hOeOYExl1Oz4ZA==}
     dev: false
 
-  /b-validate/1.4.0:
-    resolution: {integrity: sha512-oSXHKWXisRFuHnmNr5QXsg9JoyUTRCfBbM4hAcAqDjAO1jeV7aQXTkzS7O2WVDDHlnGeqH7v5Im4Z+eKU1x5Mw==}
+  /b-validate/1.4.3:
+    resolution: {integrity: sha512-du2f0NOvfG7DwNLMmsRT+F/7VOeZfClOkxQN60JZFcLq0FwRC/+96HqpFUnFu6dBqNeyZnw2cl/0ydtCLnPNEg==}
     dev: false
 
   /babel-plugin-dynamic-import-node/2.3.3:
@@ -7227,7 +7227,7 @@ packages:
     dev: false
 
   /object-assign/4.1.1:
-    resolution: {integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=}
+    resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
     engines: {node: '>=0.10.0'}
 
   /object-inspect/1.12.2:
@@ -8612,7 +8612,7 @@ packages:
     dev: true
 
   /simple-swizzle/0.2.2:
-    resolution: {integrity: sha1-pNprY1/8zMoz9w0Xy5JZLeleVXo=}
+    resolution: {integrity: sha512-JA//kQgZtbuY83m+xT+tXJkmJncGMTFT+C+g2h2R9uxkYIrE2yy9sgmcLhCnw57/WSD+Eh3J97FPEDFnbXnDUg==}
     dependencies:
       is-arrayish: 0.3.2
     dev: false
