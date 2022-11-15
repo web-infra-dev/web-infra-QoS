@@ -58,19 +58,18 @@ export async function cloneRepo(caseName: string) {
   );
 
   // lock @types/react version
-  if (!isV2Case(caseName)) {
-    await updateFile(join(MODERN_PATH, 'package.json'), content => {
-      const json = JSON.parse(content);
-      json.pnpm = {
-        overrides: {
-          ...json.pnpm?.overrides,
-          '@types/react': '^17',
-          '@types/react-dom': '^17',
-        },
-      };
-      return JSON.stringify(json, null, 2);
-    });
-  }
+  const reactVersion = isV2Case(caseName) ? '^18' : '^17';
+  await updateFile(join(MODERN_PATH, 'package.json'), content => {
+    const json = JSON.parse(content);
+    json.pnpm = {
+      overrides: {
+        ...json.pnpm?.overrides,
+        '@types/react': reactVersion,
+        '@types/react-dom': reactVersion,
+      },
+    };
+    return JSON.stringify(json, null, 2);
+  });
 
   await runCommand(MODERN_PATH, 'pnpm link ../scripts');
   await runCommand(MODERN_PATH, 'pnpm i --ignore-scripts --no-frozen-lockfile');
