@@ -1,0 +1,29 @@
+{
+  "name": "mwa-ssr",
+  "version": "0.1.0",
+  "scripts": {
+    "reset": "npx rimraf ./**/node_modules",
+    "dev": "modern dev",
+    "build": "modern build",
+    "start": "modern start",
+    "new": "modern new",
+    "lint": "modern lint"
+  },
+  "dependencies": {
+    "@modern-js/runtime": "workspace:*",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@modern-js/app-tools": "workspace:*",
+    "@modern-js/tsconfig": "workspace:*",
+    "rimraf": "^3.0.2",
+    "lint-staged": "^11.2.6",
+    "prettier": "^2.6.2",
+    "husky": "4.3.8",
+    "typescript": "^4",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/node": "^14"
+  }
+}

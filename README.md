@@ -16,23 +16,19 @@ Initial MWA v1 project with TypeScript/Router/Redux enabled.
 
 Created by `@modern-js/create`.
 
-### mwa-ssr
+### mwa-ssr / mwa-ssr-2
 
 `mwa-initial` + SSR.
 
-### mwa-ssg
+### mwa-ssg / mwa-ssg-v2
 
 `mwa-initial` + SSG.
 
-### mwa-bff-koa
+### mwa-bff-koa / mwa-bff-koa-v2
 
 `mwa-initial` + BFF + Koa.
 
-### mwa-bff-express
-
-`mwa-initial` + BFF + Express.
-
-### mwa-tailwind
+### mwa-tailwind /  mwa-tailwind-v2
 
 `mwa-initial` + Tailwind CSS.
 

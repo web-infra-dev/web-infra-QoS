@@ -18,10 +18,13 @@ jobs:
           - mwa-initial
           - mwa-initial-v2
           - mwa-tailwind
+          - mwa-tailwind-2
           - mwa-ssr
+          - mwa-ssr-2
           - mwa-ssg
+          - mwa-ssg-2
           - mwa-bff-koa
-          - mwa-bff-express
+          - mwa-bff-koa-2
           - mwa-arco-pro
           - mwa-arco-pro-v2
           - mwa-arco-pro-esbuild
