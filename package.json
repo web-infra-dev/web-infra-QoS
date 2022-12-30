@@ -1,3 +1,4 @@
 {
-  "name": "modern-js-benchmark"
+  "name": "modern-js-benchmark",
+  "packageManager": "pnpm@7.12.2"
 }

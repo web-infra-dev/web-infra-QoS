@@ -1,7 +1,7 @@
 import execa from 'execa';
 import { copy, pathExists } from 'fs-extra';
 import { updateFile } from './fs';
-import { isV2Case, runCommand } from './utils';
+import { runCommand } from './utils';
 import { join } from 'path';
 import {
   ROOT_PATH,
@@ -20,10 +20,6 @@ export async function cloneRepo(caseName: string) {
     const options = ['clone', '--single-branch'];
     if (!COMMIT_ID) {
       options.push('--depth', '1');
-    }
-
-    if (isV2Case(caseName)) {
-      options.push('--branch', 'next');
     }
 
     await execa('git', [...options, repoURL], {
@@ -58,14 +54,13 @@ export async function cloneRepo(caseName: string) {
   );
 
   // lock @types/react version
-  const reactVersion = isV2Case(caseName) ? '^18' : '^17';
   await updateFile(join(MODERN_PATH, 'package.json'), content => {
     const json = JSON.parse(content);
     json.pnpm = {
       overrides: {
         ...json.pnpm?.overrides,
-        '@types/react': reactVersion,
-        '@types/react-dom': reactVersion,
+        '@types/react': '^18',
+        '@types/react-dom': '^18',
       },
     };
     return JSON.stringify(json, null, 2);
