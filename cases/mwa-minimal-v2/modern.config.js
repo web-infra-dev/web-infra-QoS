@@ -1,3 +1,4 @@
+import appTools from '@modern-js/app-tools';
 import {
   MeasureBundleSizePlugin,
   MeasureCompileSpeedPlugin,
@@ -8,5 +9,5 @@ export default {
     polyfill: 'ua',
     disableTsChecker: process.env.NODE_ENV === 'development',
   },
-  plugins: [MeasureBundleSizePlugin(), MeasureCompileSpeedPlugin()],
+  plugins: [appTools(), MeasureBundleSizePlugin(), MeasureCompileSpeedPlugin()],
 };

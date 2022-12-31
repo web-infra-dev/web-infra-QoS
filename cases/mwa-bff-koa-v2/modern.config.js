@@ -1,3 +1,6 @@
+import appTools from '@modern-js/app-tools';
+import bffPlugin from '@modern-js/plugin-bff';
+import koaPlugin from '@modern-js/plugin-koa';
 import {
   MeasureBundleSizePlugin,
   MeasureCompileSpeedPlugin,
@@ -11,5 +14,5 @@ export default {
   output: {
     disableTsChecker: process.env.NODE_ENV === 'development',
   },
-  plugins: [MeasureBundleSizePlugin(), MeasureCompileSpeedPlugin()],
+  plugins: [appTools(), bffPlugin(), koaPlugin(), MeasureBundleSizePlugin(), MeasureCompileSpeedPlugin()],
 };

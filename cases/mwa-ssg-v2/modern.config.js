@@ -1,3 +1,5 @@
+import appTools from '@modern-js/app-tools';
+import ssgPlugin from '@modern-js/plugin-ssg';
 import {
   MeasureBundleSizePlugin,
   MeasureCompileSpeedPlugin,
@@ -12,5 +14,5 @@ export default {
     ssg: true,
     disableTsChecker: process.env.NODE_ENV === 'development',
   },
-  plugins: [MeasureBundleSizePlugin(), MeasureCompileSpeedPlugin()],
+  plugins: [appTools(), ssgPlugin(), MeasureBundleSizePlugin(), MeasureCompileSpeedPlugin()],
 };

@@ -1,3 +1,4 @@
+import appTools from '@modern-js/app-tools';
 import {
   MeasureBundleSizePlugin,
   MeasureCompileSpeedPlugin,
@@ -11,5 +12,5 @@ export default {
   output: {
     disableTsChecker: process.env.NODE_ENV === 'development',
   },
-  plugins: [MeasureCompileSpeedPlugin(), MeasureBundleSizePlugin()],
+  plugins: [appTools(), MeasureCompileSpeedPlugin(), MeasureBundleSizePlugin()],
 };

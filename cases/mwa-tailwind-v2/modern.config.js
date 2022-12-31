@@ -1,3 +1,5 @@
+import appTools from '@modern-js/app-tools';
+import tailwindcssPlugin from '@modern-js/plugin-tailwindcss';
 import {
   MeasureBundleSizePlugin,
   MeasureCompileSpeedPlugin,
@@ -11,5 +13,5 @@ export default {
   output: {
     disableTsChecker: process.env.NODE_ENV === 'development',
   },
-  plugins: [MeasureBundleSizePlugin(), MeasureCompileSpeedPlugin()],
+  plugins: [appTools(), tailwindcssPlugin(), MeasureBundleSizePlugin(), MeasureCompileSpeedPlugin()],
 };
