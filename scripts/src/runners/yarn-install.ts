@@ -34,21 +34,24 @@ const getModernPkgInfo = async () => {
   const jsons = await Promise.all(pkgs.map(pkg => readJson(pkg)));
   const names = jsons.map(json => json.name);
 
-  return jsons.map(json => {
-    const innerDeps: string[] = [];
-    const allDeps = getAllDeps(json);
+  return jsons
+    // ignore private packages
+    .filter(json => !json.private)
+    .map(json => {
+      const innerDeps: string[] = [];
+      const allDeps = getAllDeps(json);
 
-    Object.keys(allDeps).forEach(key => {
-      if (names.includes(key)) {
-        innerDeps.push(key);
-      }
+      Object.keys(allDeps).forEach(key => {
+        if (names.includes(key)) {
+          innerDeps.push(key);
+        }
+      });
+
+      return {
+        json,
+        innerDeps,
+      };
     });
-
-    return {
-      json,
-      innerDeps,
-    };
-  });
 };
 
 const copyCase = async (caseName: string, casePath: string) => {
