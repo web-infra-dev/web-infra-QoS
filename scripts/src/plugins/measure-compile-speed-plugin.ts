@@ -18,9 +18,9 @@ export const MeasureCompileSpeedPlugin = () => ({
 
     let webpackCompiler: any;
 
-
     const MAX_TIME = 10 * 60 * 1000; // 10 min
     const timeout = setTimeout(() => {
+      console.error('Compile time exceed 10mins, exit process.');
       process.exit(1);
     }, MAX_TIME);
 
@@ -87,6 +87,7 @@ export const MeasureCompileSpeedPlugin = () => ({
           metrics.buildHotBootTime = buildTime;
         }
 
+        clearTimeout(timeout);
         await saveMetrics(metrics);
       },
     };
