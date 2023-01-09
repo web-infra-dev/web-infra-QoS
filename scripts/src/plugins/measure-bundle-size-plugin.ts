@@ -18,10 +18,10 @@ function sum(files: Record<string, number>) {
   return Object.values(files).reduce((ret, num) => ret + num, 0);
 }
 
-export const MeasureBundleSizePlugin = () => ({
-  name: 'MeasureBundleSizePlugin',
+export const measureBundleSizePlugin = () => ({
+  name: 'measureBundleSizePlugin',
 
-  pre: ['MeasureCompileSpeedPlugin'],
+  pre: ['measureCompileSpeedPlugin'],
 
   setup(api: any) {
     if (process.env.NODE_ENV === 'development') {

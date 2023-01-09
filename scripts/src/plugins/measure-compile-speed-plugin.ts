@@ -4,8 +4,8 @@ import type { Metrics } from '../shared/types';
 
 const pluginStartTime = performance.now();
 
-export const MeasureCompileSpeedPlugin = () => ({
-  name: 'MeasureCompileSpeedPlugin',
+export const measureCompileSpeedPlugin = () => ({
+  name: 'measureCompileSpeedPlugin',
 
   setup() {
     let beforeDevTime: number;

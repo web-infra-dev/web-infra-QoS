@@ -1,6 +1,6 @@
-import AppToolsPlugin, { defineConfig } from '@modern-js/app-tools';
-import ProxyPlugin from '@modern-js/plugin-proxy';
-import { MoveHTMLPlugin } from './move-html-plugin';
+import appTools, { defineConfig } from '@modern-js/app-tools';
+import proxyPlugin from '@modern-js/plugin-proxy';
+import { moveHTMLPlugin } from './move-html-plugin';
 
 export default defineConfig({
   output: {
@@ -21,7 +21,7 @@ export default defineConfig({
       'https://modern.js.org/static': 'http://localhost:8080/static',
     },
   },
-  plugins: [AppToolsPlugin(), ProxyPlugin(), MoveHTMLPlugin()],
+  plugins: [appTools(), proxyPlugin(), moveHTMLPlugin()],
   tools: {
     esbuild: {},
   },

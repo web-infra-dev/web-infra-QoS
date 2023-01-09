@@ -2,7 +2,7 @@ import { CliPlugin, AppTools } from '@modern-js/app-tools';
 import { renameSync } from 'fs';
 import { join } from 'path';
 
-export const MoveHTMLPlugin = (): CliPlugin<AppTools> => {
+export const moveHTMLPlugin = (): CliPlugin<AppTools> => {
   return {
     setup(api) {
       return {
