@@ -64,7 +64,7 @@ export const LINE_CHART_DEFAULT_CONFIG: Partial<LineOptions> = {
     },
   },
   point: {
-    size: 2,
+    size: 3,
   },
   stepType: 'vh',
 };
