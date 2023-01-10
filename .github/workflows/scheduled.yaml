@@ -9,14 +9,14 @@ jobs:
     strategy:
       matrix:
         case:
-          - mwa-minimal-v2
-          - mwa-initial-v2
-          - mwa-tailwind-v2
-          - mwa-ssr-v2
-          - mwa-ssg-v2
-          - mwa-bff-koa-v2
-          - mwa-arco-pro-v2
-          - mwa-arco-pro-esbuild-v2
+          - mwa-minimal
+          - mwa-initial
+          - mwa-tailwind
+          - mwa-ssr
+          - mwa-ssg
+          - mwa-bff-koa
+          - mwa-arco-pro
+          - mwa-arco-pro-esbuild
 
     runs-on: ubuntu-latest
 

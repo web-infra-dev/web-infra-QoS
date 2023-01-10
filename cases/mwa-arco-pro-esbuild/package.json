@@ -1,5 +1,5 @@
 {
-  "name": "mwa-arco-pro-v2",
+  "name": "mwa-arco-pro-esbuild",
   "version": "0.1.0",
   "scripts": {
     "reset": "npx rimraf ./**/node_modules",

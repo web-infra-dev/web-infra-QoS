@@ -6,37 +6,37 @@ Benchmark data is stored in the [gh-pages](https://github.com/modern-js-dev/mode
 
 ## Cases
 
-### mwa-minimal / mwa-minimal-v2
+### mwa-minimal
 
 Minimal MWA project, using ua polyfill, no Redux and Router.
 
-### mwa-initial / mwa-initial-v2
+### mwa-initial
 
-Initial MWA v1 project with TypeScript/Router/Redux enabled.
+Initial MWA project with TypeScript/Router/Redux enabled.
 
 Created by `@modern-js/create`.
 
-### mwa-ssr / mwa-ssr-v2
+### mwa-ssr
 
 `mwa-initial` + SSR.
 
-### mwa-ssg / mwa-ssg-v2
+### mwa-ssg
 
 `mwa-initial` + SSG.
 
-### mwa-bff-koa / mwa-bff-koa-v2
+### mwa-bff-koa
 
 `mwa-initial` + BFF + Koa.
 
-### mwa-tailwind /  mwa-tailwind-v2
+### mwa-tailwind
 
 `mwa-initial` + Tailwind CSS.
 
-### mwa-arco-pro / mwa-arco-pro-v2
+### mwa-arco-pro
 
 Arco Pro project.
 
-### mwa-arco-pro-esbuild / mwa-arco-pro-esbuild-v2
+### mwa-arco-pro-esbuild
 
 `mwa-arco-pro` + esbuild.
 

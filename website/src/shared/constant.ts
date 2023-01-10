@@ -11,27 +11,27 @@ export const BASE_PADDING = 24;
 
 export const CASES = [
   'mwa-minimal',
-  'mwa-minimal-v2',
+  'mwa-minimal',
   'mwa-initial',
-  'mwa-initial-v2',
+  'mwa-initial',
   'mwa-tailwind',
-  'mwa-tailwind-v2',
+  'mwa-tailwind',
   'mwa-ssr',
-  'mwa-ssr-v2',
+  'mwa-ssr',
   'mwa-ssg',
-  'mwa-ssg-v2',
+  'mwa-ssg',
   'mwa-bff-koa',
-  'mwa-bff-koa-v2',
+  'mwa-bff-koa',
   'mwa-arco-pro',
-  'mwa-arco-pro-v2',
+  'mwa-arco-pro',
   'mwa-arco-pro-esbuild',
-  'mwa-arco-pro-esbuild-v2',
+  'mwa-arco-pro-esbuild',
 ];
 
-export const BUNDLE_SIZE_DEFAULT_CASE = ['mwa-initial', 'mwa-initial-v2'];
+export const BUNDLE_SIZE_DEFAULT_CASE = ['mwa-minimal', 'mwa-initial'];
 export const BUNDLE_SIZE_METRICS = ['minifiedBundleSize', 'gzippedBundleSize'];
 
-export const COMPILE_SPEED_DEFAULT_CASE = ['mwa-arco-pro', 'mwa-arco-pro-v2'];
+export const COMPILE_SPEED_DEFAULT_CASE = ['mwa-arco-pro', 'mwa-arco-pro-esbuild'];
 export const COMPILE_SPEED_METRICS = [
   'buildColdBootTime',
   'buildHotBootTime',
@@ -43,7 +43,7 @@ export const COMPILE_SPEED_METRICS = [
   'devPrepareTime',
 ];
 
-export const INSTALL_SPEED_DEFAULT_CASE = ['mwa-initial', 'mwa-initial-v2'];
+export const INSTALL_SPEED_DEFAULT_CASE = ['mwa-minimal', 'mwa-initial'];
 export const INSTALL_SPEED_METRICS = [
   'yarnInstallSize',
   'yarnDependenciesCount',
@@ -64,6 +64,7 @@ export const LINE_CHART_DEFAULT_CONFIG: Partial<LineOptions> = {
     },
   },
   point: {
-    size: 3,
+    size: 2,
   },
+  stepType: 'vh',
 };
