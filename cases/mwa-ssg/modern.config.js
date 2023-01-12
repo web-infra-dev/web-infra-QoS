@@ -8,7 +8,6 @@ import {
 export default {
   runtime: {
     router: true,
-    state: true,
   },
   output: {
     ssg: true,

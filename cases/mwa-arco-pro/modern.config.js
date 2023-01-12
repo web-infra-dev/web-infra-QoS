@@ -7,7 +7,6 @@ import {
 export default {
   runtime: {
     router: true,
-    state: true,
   },
   output: {
     disableTsChecker: process.env.NODE_ENV === 'development',
