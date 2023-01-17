@@ -11,5 +11,8 @@ export default {
   output: {
     disableTsChecker: process.env.NODE_ENV === 'development',
   },
+  tools: {
+    esbuild: {}
+  },
   plugins: [appTools(), measureCompileSpeedPlugin(), measureBundleSizePlugin()],
 };
