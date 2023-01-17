@@ -36,6 +36,10 @@ Created by `@modern-js/create`.
 
 Arco Pro project.
 
+### mwa-arco-pro-swc
+
+`mwa-arco-pro` + SWC.
+
 ### mwa-arco-pro-esbuild
 
 `mwa-arco-pro` + esbuild.

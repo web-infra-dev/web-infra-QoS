@@ -16,6 +16,7 @@ jobs:
           - mwa-ssg
           - mwa-bff-koa
           - mwa-arco-pro
+          - mwa-arco-pro-swc
           - mwa-arco-pro-esbuild
 
     runs-on: ubuntu-latest
