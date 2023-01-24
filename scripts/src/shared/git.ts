@@ -43,6 +43,10 @@ export async function cloneRepo(caseName: string) {
 
   await copy(join(CASES_SRC_PATH, caseName), join(CASES_DIST_PATH, caseName));
 
+  await updateFile(join(MODERN_PATH, 'package.json'), content =>
+    content.replace('--cache-dir=.turbo', '--cache-dir=../.turbo'),
+  );
+
   // run prepare before linking cases
   await runCommand(MODERN_PATH, 'pnpm i --ignore-scripts');
   await runCommand(MODERN_PATH, 'pnpm prepare');
