@@ -1,5 +1,7 @@
 # Modern.js Benchmark
 
+[Online Benchmark](https://web-infra-dev.github.io/modern-js-benchmark/index).
+
 ## Data
 
 Benchmark data is stored in the [gh-pages](https://github.com/modern-js-dev/modern-js-benchmark/tree/gh-pages) branch.
