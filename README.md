@@ -83,7 +83,7 @@ pnpm install
 pnpm dev
 ```
 
-Then visit https://modern.js.org/modern-js-benchmark/index.
+Then visit https://web-infra-dev.github.io/modern-js-benchmark/index
 
 ### Deploy Website
 

@@ -4,7 +4,7 @@ import { moveHTMLPlugin } from './move-html-plugin';
 
 export default defineConfig({
   output: {
-    assetPrefix: 'https://modern.js.org/modern-js-benchmark/',
+    assetPrefix: 'https://web-infra-dev.github.io/modern-js-benchmark/',
     disableSourceMap: true,
     distPath: {
       html: '/',
@@ -16,7 +16,7 @@ export default defineConfig({
   },
   dev: {
     proxy: {
-      'https://modern.js.org/modern-js-benchmark/index':
+      'https://web-infra-dev.github.io/modern-js-benchmark/index':
         'http://localhost:8080/',
       'https://modern.js.org/static': 'http://localhost:8080/static',
     },
