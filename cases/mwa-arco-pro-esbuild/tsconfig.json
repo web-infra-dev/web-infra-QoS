@@ -3,7 +3,7 @@
   "compilerOptions": {
     "declaration": false,
     "strict": false,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"],
