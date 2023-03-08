@@ -14,8 +14,8 @@ export async function cloneRepo(caseName: string) {
   if (!(await pathExists(MODERN_PATH))) {
     const { GITHUB_ACTOR, GITHUB_TOKEN, COMMIT_ID } = process.env;
     const repoURL = GITHUB_TOKEN
-      ? `https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/modern-js-dev/modern.js.git`
-      : 'git@github.com:modern-js-dev/modern.js.git';
+      ? `https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/web-infra-dev/modern.js.git`
+      : 'git@github.com:web-infra-dev/modern.js.git';
 
     const options = ['clone', '--single-branch'];
     if (!COMMIT_ID) {

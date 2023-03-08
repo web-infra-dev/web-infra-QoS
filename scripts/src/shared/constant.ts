@@ -9,4 +9,4 @@ export const CASES_SRC_PATH = join(ROOT_PATH, 'cases');
 export const CASES_DIST_PATH = join(MODERN_PATH, 'cases');
 export const COMMITS_INFO_PATH = join(DATA_PATH, 'commits-info.json');
 export const REMOTE_DATA_URL =
-  'https://github.com/modern-js-dev/modern-js-benchmark/raw/gh-pages/data';
+  'https://github.com/web-infra-dev/modern-js-benchmark/raw/gh-pages/data';

@@ -65,7 +65,7 @@ export const SideMenu = (props: {
         <IconSafe style={{ fontSize: 20 }} />
         Test Coverage
         <a
-          href="https://app.codecov.io/gh/modern-js-dev/modern.js/"
+          href="https://app.codecov.io/gh/web-infra-dev/modern.js/"
           target="_blank"
           style={{ position: 'absolute', top: 0, left: 0, bottom: 0, right: 0 }}
           onClick={e => {
@@ -77,7 +77,7 @@ export const SideMenu = (props: {
 
     <BottomLink>
       <a
-        href="https://github.com/modern-js-dev/modern-js-benchmark/tree/gh-pages/data"
+        href="https://github.com/web-infra-dev/modern-js-benchmark/tree/gh-pages/data"
         target="_blank"
         style={{ color: '#2972b7' }}
       >

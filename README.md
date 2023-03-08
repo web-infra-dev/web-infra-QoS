@@ -4,7 +4,7 @@
 
 ## Data
 
-Benchmark data is stored in the [gh-pages](https://github.com/modern-js-dev/modern-js-benchmark/tree/gh-pages) branch.
+Benchmark data is stored in the [gh-pages](https://github.com/web-infra-dev/modern-js-benchmark/tree/gh-pages) branch.
 
 ## Cases
 
