@@ -14,15 +14,14 @@
   "dependencies": {
     "@antv/g2plot": "^2.4.17",
     "@arco-design/web-react": "^2.41.2",
-    "@modern-js/runtime": "2.0.2",
+    "@modern-js/runtime": "2.8.0",
     "dayjs": "^1.11.2",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@modern-js/app-tools": "2.0.2",
-    "@modern-js/plugin-proxy": "2.0.2",
-    "@modern-js/tsconfig": "2.0.2",
+    "@modern-js/app-tools": "2.8.0",
+    "@modern-js/tsconfig": "2.8.0",
     "@types/node": "^14",
     "@types/react": "^18",
     "@types/react-dom": "^18",

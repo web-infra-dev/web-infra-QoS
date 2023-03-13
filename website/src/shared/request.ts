@@ -1,4 +1,4 @@
-import { COMMITS_INFO_URL } from './constant';
+import { COMMITS_INFO_URL, PUBLIC_PATH } from './constant';
 import type { Metrics } from '../../../scripts/src/shared/types';
 
 export type CommitInfo = {
@@ -33,7 +33,7 @@ export const fetchMetrics = async (
 
   const allMetrics: Metrics[] = await Promise.all(
     commitsInfo.map(info =>
-      fetchJsonWithCache(`./data/${info.id}/${caseName}.json`),
+      fetchJsonWithCache(PUBLIC_PATH + `/data/${info.id}/${caseName}.json`),
     ),
   );
 

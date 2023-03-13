@@ -24,7 +24,10 @@ export const CASES = [
 export const BUNDLE_SIZE_DEFAULT_CASE = ['mwa-minimal', 'mwa-initial'];
 export const BUNDLE_SIZE_METRICS = ['minifiedBundleSize', 'gzippedBundleSize'];
 
-export const COMPILE_SPEED_DEFAULT_CASE = ['mwa-arco-pro', 'mwa-arco-pro-esbuild'];
+export const COMPILE_SPEED_DEFAULT_CASE = [
+  'mwa-arco-pro',
+  'mwa-arco-pro-esbuild',
+];
 export const COMPILE_SPEED_METRICS = [
   'buildColdBootTime',
   'buildHotBootTime',
@@ -44,7 +47,9 @@ export const INSTALL_SPEED_METRICS = [
   'yarnHotInstallTime',
 ];
 
-export const COMMITS_INFO_URL = './data/commits-info.json';
+export const PUBLIC_PATH =
+  'https://web-infra-dev.github.io/modern-js-benchmark';
+export const COMMITS_INFO_URL = PUBLIC_PATH + '/data/commits-info.json';
 
 export const LINE_CHART_DEFAULT_CONFIG: Partial<LineOptions> = {
   height: 400,
