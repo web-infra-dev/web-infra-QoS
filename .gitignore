@@ -12,6 +12,7 @@
 *.report
 *.lcov
 lib-cov
+.turbo
 
 node_modules/
 .npm
