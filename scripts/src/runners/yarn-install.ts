@@ -2,6 +2,7 @@ import { join } from 'path';
 import {
   copy,
   ensureDir,
+  outputJson,
   readFile,
   readJson,
   remove,
@@ -92,6 +93,30 @@ const getResolutions = async (pkgJsonPath: string) => {
   return resolutions;
 };
 
+const setResolutions = async (pkgJsonPath: string) => {
+  const resolutions = await getResolutions(pkgJsonPath);
+  const pkgJson = await readJson(pkgJsonPath);
+
+  // override workspace protocol
+  Object.keys(resolutions).forEach(key => {
+    if (pkgJson.dependencies[key]) {
+      pkgJson.dependencies[key] = resolutions[key];
+    }
+    if (pkgJson.devDependencies[key]) {
+      pkgJson.devDependencies[key] = resolutions[key];
+    }
+  });
+
+  await outputJson(
+    pkgJsonPath,
+    {
+      ...pkgJson,
+      resolutions,
+    },
+    { spaces: 2 },
+  );
+};
+
 const parseLockFile = async (casePath: string) => {
   const parser = require('@yarnpkg/lockfile');
   const lockFile = join(casePath, 'yarn.lock');
@@ -141,8 +166,10 @@ const getInstallSize = async (casePath: string) => {
 
 export const yarnInstall = async (caseName: string) => {
   const casePath = join(TEMP_PATH, caseName);
+  const pkgJsonPath = join(TEMP_PATH, caseName, 'package.json');
 
   await copyCase(caseName, casePath);
+  await setResolutions(pkgJsonPath);
 
   const { hotInstallTime, coldInstallTime } = await runInstall(casePath);
   const installSize = await getInstallSize(casePath);
