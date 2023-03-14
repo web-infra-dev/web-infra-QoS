@@ -34,24 +34,26 @@ const getModernPkgInfo = async () => {
   const jsons = await Promise.all(pkgs.map(pkg => readJson(pkg)));
   const names = jsons.map(json => json.name);
 
-  return jsons
-    // ignore private packages
-    .filter(json => !json.private)
-    .map(json => {
-      const innerDeps: string[] = [];
-      const allDeps = getAllDeps(json);
+  return (
+    jsons
+      // ignore private packages
+      .filter(json => !json.private)
+      .map(json => {
+        const innerDeps: string[] = [];
+        const allDeps = getAllDeps(json);
 
-      Object.keys(allDeps).forEach(key => {
-        if (names.includes(key)) {
-          innerDeps.push(key);
-        }
-      });
+        Object.keys(allDeps).forEach(key => {
+          if (names.includes(key)) {
+            innerDeps.push(key);
+          }
+        });
 
-      return {
-        json,
-        innerDeps,
-      };
-    });
+        return {
+          json,
+          innerDeps,
+        };
+      })
+  );
 };
 
 const copyCase = async (caseName: string, casePath: string) => {
@@ -148,6 +150,9 @@ const getDepCount = async (casePath: string) => {
 
 const getInstallSize = async (casePath: string) => {
   const nodeModulesPath = join(casePath, 'node_modules');
+
+  await remove(join(nodeModulesPath, '.cache'));
+  await remove(join(nodeModulesPath, '.modern.js'));
 
   return new Promise<number>((resolve, reject) => {
     getFolderSize(nodeModulesPath, (err: Error, size: number) => {
