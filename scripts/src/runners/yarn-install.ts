@@ -62,16 +62,16 @@ const copyCase = async (caseName: string, casePath: string) => {
   await copy(join(CASES_SRC_PATH, caseName), casePath);
 };
 
-const getResolutions = async (pkgJsonPath: string) => {
+const getPkgVersions = async (pkgJsonPath: string) => {
   const modernPkgInfo = await getModernPkgInfo();
   const modernPkgNames = modernPkgInfo.map(item => item.json.name);
   const pkgJson = await readJson(pkgJsonPath);
   const allDeps = Object.keys(getAllDeps(pkgJson));
   const modernDeps = allDeps.filter(dep => modernPkgNames.includes(dep));
-  const resolutions: Record<string, string> = {};
+  const pkgVersions: Record<string, string> = {};
 
   const addResolution = (depName: string) => {
-    if (resolutions[depName]) {
+    if (pkgVersions[depName]) {
       return;
     }
     const matchedJson = modernPkgInfo.find(item => item.json.name === depName);
@@ -82,7 +82,7 @@ const getResolutions = async (pkgJsonPath: string) => {
     }
 
     if (matchedJson.json.version) {
-      resolutions[depName] = matchedJson.json.version;
+      pkgVersions[depName] = matchedJson.json.version;
     }
 
     matchedJson.innerDeps.forEach(addResolution);
@@ -90,31 +90,24 @@ const getResolutions = async (pkgJsonPath: string) => {
 
   modernDeps.forEach(addResolution);
 
-  return resolutions;
+  return pkgVersions;
 };
 
-const setResolutions = async (pkgJsonPath: string) => {
-  const resolutions = await getResolutions(pkgJsonPath);
+const setPkgVersion = async (pkgJsonPath: string) => {
+  const pkgVersions = await getPkgVersions(pkgJsonPath);
   const pkgJson = await readJson(pkgJsonPath);
 
   // override workspace protocol
-  Object.keys(resolutions).forEach(key => {
+  Object.keys(pkgVersions).forEach(key => {
     if (pkgJson.dependencies[key]) {
-      pkgJson.dependencies[key] = resolutions[key];
+      pkgJson.dependencies[key] = pkgVersions[key];
     }
     if (pkgJson.devDependencies[key]) {
-      pkgJson.devDependencies[key] = resolutions[key];
+      pkgJson.devDependencies[key] = pkgVersions[key];
     }
   });
 
-  await outputJson(
-    pkgJsonPath,
-    {
-      ...pkgJson,
-      resolutions,
-    },
-    { spaces: 2 },
-  );
+  await outputJson(pkgJsonPath, pkgJson, { spaces: 2 });
 };
 
 const parseLockFile = async (casePath: string) => {
@@ -169,7 +162,7 @@ export const yarnInstall = async (caseName: string) => {
   const pkgJsonPath = join(TEMP_PATH, caseName, 'package.json');
 
   await copyCase(caseName, casePath);
-  await setResolutions(pkgJsonPath);
+  await setPkgVersion(pkgJsonPath);
 
   const { hotInstallTime, coldInstallTime } = await runInstall(casePath);
   const installSize = await getInstallSize(casePath);
