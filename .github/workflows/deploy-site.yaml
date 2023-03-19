@@ -13,7 +13,7 @@ jobs:
           fetch-depth: 1
 
       - name: Install pnpm
-        run: npm i pnpm@7 -g
+        run: npm i pnpm@7.29.1 -g
 
       - uses: actions/setup-node@v2
         with:
