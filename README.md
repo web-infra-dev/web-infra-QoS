@@ -46,6 +46,10 @@ Arco Pro project.
 
 `mwa-arco-pro` + esbuild.
 
+### mwa-arco-pro-rspack
+
+`mwa-arco-pro` + rspack.
+
 ## Metrics
 
 ### Bundle Size

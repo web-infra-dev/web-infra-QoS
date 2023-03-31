@@ -15,6 +15,7 @@ jobs:
         case:
           - mwa-minimal
           - mwa-initial
+          - mwa-initial-rspack
           - mwa-tailwind
           - mwa-ssr
           - mwa-ssg
@@ -22,6 +23,7 @@ jobs:
           - mwa-arco-pro
           - mwa-arco-pro-swc
           - mwa-arco-pro-esbuild
+          - mwa-arco-pro-rspack
 
     runs-on: ubuntu-latest
 
