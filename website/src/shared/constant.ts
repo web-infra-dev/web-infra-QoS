@@ -23,13 +23,12 @@ export const CASES = [
   'mwa-arco-pro-rspack',
 ];
 
-export const BUNDLE_SIZE_DEFAULT_CASE = ['mwa-minimal', 'mwa-initial',  'mwa-arco-pro-rspack'];
+export const BUNDLE_SIZE_DEFAULT_CASE = ['mwa-minimal', 'mwa-initial'];
 export const BUNDLE_SIZE_METRICS = ['minifiedBundleSize', 'gzippedBundleSize'];
 
 export const COMPILE_SPEED_DEFAULT_CASE = [
   'mwa-arco-pro',
   'mwa-arco-pro-esbuild',
-  'mwa-arco-pro-rspack',
 ];
 export const COMPILE_SPEED_METRICS = [
   'buildColdBootTime',
