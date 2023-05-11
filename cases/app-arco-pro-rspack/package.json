@@ -14,7 +14,7 @@
     "@arco-design/color": "^0.4.0",
     "@arco-design/web-react": "^2.41.2",
     "@arco-themes/react-arco-pro": "^0.0.7",
-    "@modern-js/runtime": "workspace:*",
+    "@modern-js/runtime": "2.18.1",
     "@loadable/component": "^5.13.2",
     "@turf/turf": "^6.5.0",
     "arco-design-pro": "^2.4.0",
@@ -36,9 +36,9 @@
     "redux": "^4.1.2"
   },
   "devDependencies": {
-    "@modern-js/app-tools": "workspace:*",
-    "@modern-js/builder-rspack-provider": "workspace:*",
-    "@modern-js/tsconfig": "workspace:*",
+    "@modern-js/app-tools": "2.18.1",
+    "@modern-js/builder-rspack-provider": "2.18.1",
+    "@modern-js/tsconfig": "2.18.1",
     "rimraf": "^3.0.2",
     "lint-staged": "^11.2.6",
     "prettier": "^2.6.2",
