@@ -8,47 +8,47 @@ Benchmark data is stored in the [gh-pages](https://github.com/web-infra-dev/mode
 
 ## Cases
 
-### mwa-minimal
+### app-minimal
 
-Minimal MWA project, using ua polyfill, no Redux and Router.
+Minimal app project, using ua polyfill, no Redux and Router.
 
-### mwa-initial
+### app-initial
 
-Initial MWA project with TypeScript/Router/Redux enabled.
+Initial app project with TypeScript/Router/Redux enabled.
 
 Created by `@modern-js/create`.
 
-### mwa-ssr
+### app-ssr
 
-`mwa-initial` + SSR.
+`app-initial` + SSR.
 
-### mwa-ssg
+### app-ssg
 
-`mwa-initial` + SSG.
+`app-initial` + SSG.
 
-### mwa-bff-koa
+### app-bff-koa
 
-`mwa-initial` + BFF + Koa.
+`app-initial` + BFF + Koa.
 
-### mwa-tailwind
+### app-tailwind
 
-`mwa-initial` + Tailwind CSS.
+`app-initial` + Tailwind CSS.
 
-### mwa-arco-pro
+### app-arco-pro
 
 Arco Pro project.
 
-### mwa-arco-pro-swc
+### app-arco-pro-swc
 
-`mwa-arco-pro` + SWC.
+`app-arco-pro` + SWC.
 
-### mwa-arco-pro-esbuild
+### app-arco-pro-esbuild
 
-`mwa-arco-pro` + esbuild.
+`app-arco-pro` + esbuild.
 
-### mwa-arco-pro-rspack
+### app-arco-pro-rspack
 
-`mwa-arco-pro` + rspack.
+`app-arco-pro` + rspack.
 
 ## Metrics
 

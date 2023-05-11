@@ -1,5 +1,5 @@
 {
-  "name": "mwa-minimal",
+  "name": "app-minimal",
   "version": "0.1.0",
   "scripts": {
     "dev": "modern dev",

@@ -1,5 +1,5 @@
 {
-  "name": "mwa-initial",
+  "name": "app-initial",
   "version": "0.1.0",
   "scripts": {
     "reset": "npx rimraf ./**/node_modules",

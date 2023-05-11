@@ -10,25 +10,25 @@ export const MENU = {
 export const BASE_PADDING = 24;
 
 export const CASES = [
-  'mwa-minimal',
-  'mwa-initial',
-  'mwa-initial-rspack',
-  'mwa-tailwind',
-  'mwa-ssr',
-  'mwa-ssg',
-  'mwa-bff-koa',
-  'mwa-arco-pro',
-  'mwa-arco-pro-swc',
-  'mwa-arco-pro-esbuild',
-  'mwa-arco-pro-rspack',
+  'app-minimal',
+  'app-initial',
+  'app-initial-rspack',
+  'app-tailwind',
+  'app-ssr',
+  'app-ssg',
+  'app-bff-koa',
+  'app-arco-pro',
+  'app-arco-pro-swc',
+  'app-arco-pro-esbuild',
+  'app-arco-pro-rspack',
 ];
 
-export const BUNDLE_SIZE_DEFAULT_CASE = ['mwa-minimal', 'mwa-initial'];
+export const BUNDLE_SIZE_DEFAULT_CASE = ['app-minimal', 'app-initial'];
 export const BUNDLE_SIZE_METRICS = ['minifiedBundleSize', 'gzippedBundleSize'];
 
 export const COMPILE_SPEED_DEFAULT_CASE = [
-  'mwa-arco-pro',
-  'mwa-arco-pro-esbuild',
+  'app-arco-pro',
+  'app-arco-pro-esbuild',
 ];
 export const COMPILE_SPEED_METRICS = [
   'buildColdBootTime',
@@ -41,7 +41,7 @@ export const COMPILE_SPEED_METRICS = [
   'devPrepareTime',
 ];
 
-export const INSTALL_SPEED_DEFAULT_CASE = ['mwa-minimal', 'mwa-initial'];
+export const INSTALL_SPEED_DEFAULT_CASE = ['app-minimal', 'app-initial'];
 export const INSTALL_SPEED_METRICS = [
   'yarnInstallSize',
   'yarnDependenciesCount',

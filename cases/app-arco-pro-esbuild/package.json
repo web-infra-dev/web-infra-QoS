@@ -1,5 +1,5 @@
 {
-  "name": "mwa-arco-pro-swc",
+  "name": "app-arco-pro-esbuild",
   "version": "0.1.0",
   "scripts": {
     "reset": "npx rimraf ./**/node_modules",
@@ -37,7 +37,6 @@
   },
   "devDependencies": {
     "@modern-js/app-tools": "workspace:*",
-    "@modern-js/plugin-swc": "workspace:*",
     "@modern-js/tsconfig": "workspace:*",
     "rimraf": "^3.0.2",
     "lint-staged": "^11.2.6",

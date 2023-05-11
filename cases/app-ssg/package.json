@@ -1,5 +1,5 @@
 {
-  "name": "mwa-ssr",
+  "name": "app-ssg",
   "version": "0.1.0",
   "scripts": {
     "reset": "npx rimraf ./**/node_modules",
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@modern-js/runtime": "workspace:*",
+    "@modern-js/plugin-ssg": "workspace:*",
     "react": "^18",
     "react-dom": "^18"
   },

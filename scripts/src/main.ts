@@ -5,7 +5,7 @@ import { cloneRepo, DATA_PATH, mergeMetrics, saveCommitInfo } from './shared';
 import { remove } from 'fs-extra';
 import { yarnInstall } from './runners/yarn-install';
 
-const caseName = process.argv[2] || 'mwa-minimal';
+const caseName = process.argv[2] || 'app-minimal';
 
 async function main() {
   await cloneRepo(caseName);

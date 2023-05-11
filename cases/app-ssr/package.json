@@ -1,5 +1,5 @@
 {
-  "name": "mwa-initial-rspack",
+  "name": "app-ssr",
   "version": "0.1.0",
   "scripts": {
     "reset": "npx rimraf ./**/node_modules",
@@ -7,8 +7,7 @@
     "build": "modern build",
     "start": "modern start",
     "new": "modern new",
-    "lint": "modern lint",
-    "upgrade": "modern upgrade"
+    "lint": "modern lint"
   },
   "dependencies": {
     "@modern-js/runtime": "workspace:*",
@@ -17,12 +16,11 @@
   },
   "devDependencies": {
     "@modern-js/app-tools": "workspace:*",
-    "@modern-js/builder-rspack-provider": "workspace:*",
     "@modern-js/tsconfig": "workspace:*",
     "rimraf": "^3.0.2",
     "lint-staged": "^11.2.6",
     "prettier": "^2.6.2",
-    "husky": "^8.0.0",
+    "husky": "4.3.8",
     "typescript": "^4",
     "@types/react": "^18",
     "@types/react-dom": "^18",
