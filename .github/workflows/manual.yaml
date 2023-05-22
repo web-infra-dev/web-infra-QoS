@@ -64,4 +64,5 @@ jobs:
           branch: gh-pages
           folder: data
           target-folder: data
+          git-config-name: gh-pages-bot
           clean: false
