@@ -11,7 +11,7 @@ export default {
   },
   output: {
     ssg: true,
-    disableTsChecker: process.env.NODE_ENV === 'development',
+    disableTsChecker: true,
   },
   plugins: [appTools(), ssgPlugin(), measureBundleSizePlugin(), measureCompileSpeedPlugin()],
 };

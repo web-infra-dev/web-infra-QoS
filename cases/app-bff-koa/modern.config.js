@@ -11,7 +11,7 @@ export default {
     router: true,
   },
   output: {
-    disableTsChecker: process.env.NODE_ENV === 'development',
+    disableTsChecker: true,
   },
   plugins: [appTools(), bffPlugin(), koaPlugin(), measureBundleSizePlugin(), measureCompileSpeedPlugin()],
 };

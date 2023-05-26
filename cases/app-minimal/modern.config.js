@@ -7,7 +7,7 @@ import {
 export default {
   output: {
     polyfill: 'ua',
-    disableTsChecker: process.env.NODE_ENV === 'development',
+    disableTsChecker: true,
   },
   plugins: [appTools(), measureBundleSizePlugin(), measureCompileSpeedPlugin()],
 };

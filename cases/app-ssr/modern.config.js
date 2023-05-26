@@ -12,7 +12,7 @@ export default {
     ssr: true
   },
   output: {
-    disableTsChecker: process.env.NODE_ENV === 'development',
+    disableTsChecker: true,
   },
   plugins: [appTools(), measureBundleSizePlugin(), measureCompileSpeedPlugin()],
 };
