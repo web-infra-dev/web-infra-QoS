@@ -13,7 +13,7 @@ jobs:
           fetch-depth: 1
 
       - name: Install pnpm
-        run: npm i pnpm@7.29.1 -g
+        run: corepack enable
 
       - uses: actions/setup-node@v2
         with:
