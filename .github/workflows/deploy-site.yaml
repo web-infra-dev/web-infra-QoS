@@ -27,9 +27,16 @@ jobs:
       - name: Build Site
         run: cd website && npm run build
 
+      - name: Setup git user
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: gh-pages
           folder: website/dist
+          git-config-name: gh-pages-bot
+          git-config-email: 41898282+github-actions[bot]@users.noreply.github.com
           clean: false

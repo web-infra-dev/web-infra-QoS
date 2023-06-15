@@ -46,13 +46,18 @@ jobs:
           path: .turbo
           key: turbo-${{ github.ref_name }}-${{ github.sha }}
           restore-keys: |
-              turbo-${{ github.ref_name }}-
+            turbo-${{ github.ref_name }}-
 
       - name: Install Dependencies
         run: cd scripts && pnpm install
 
       - name: 🚀 Run benchmark
         run: cd scripts && GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} pnpm start ${{ matrix.case }}
+
+      - name: Setup git user
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Update data
         uses: JamesIves/github-pages-deploy-action@v4.4.1
@@ -61,4 +66,5 @@ jobs:
           folder: data
           target-folder: data
           git-config-name: gh-pages-bot
+          git-config-email: 41898282+github-actions[bot]@users.noreply.github.com
           clean: false
