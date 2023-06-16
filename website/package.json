@@ -13,21 +13,21 @@
   ],
   "packageManager": "pnpm@8.6.1",
   "dependencies": {
-    "@antv/g2plot": "^2.4.17",
+    "@antv/g2plot": "^2.4.31",
     "@arco-design/web-react": "^2.41.2",
-    "@modern-js/runtime": "2.8.0",
+    "@modern-js/runtime": "2.23.0",
     "dayjs": "^1.11.2",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@modern-js/app-tools": "2.8.0",
-    "@modern-js/tsconfig": "2.8.0",
+    "@modern-js/app-tools": "2.23.0",
+    "@modern-js/tsconfig": "2.23.0",
     "@types/node": "^14",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "prettier": "^2.6.2",
     "typescript": "^5",
-    "@modern-js/builder-rspack-provider": "2.8.0"
+    "@modern-js/builder-rspack-provider": "2.23.0"
   }
 }

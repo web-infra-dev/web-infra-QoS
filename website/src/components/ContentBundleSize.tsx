@@ -56,12 +56,12 @@ export const ContentBundleSize = () => {
 
         yAxis: {
           label: {
-            formatter: text => `${text} KB`,
+            formatter: (text: string) => `${text} KB`,
           },
         },
         tooltip: {
           fields: ['x', 'y', 'category'],
-          formatter: datum => ({
+          formatter: (datum: any) => ({
             name: datum.category,
             value: `${datum.y} KB`,
           }),

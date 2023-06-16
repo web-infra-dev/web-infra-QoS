@@ -53,12 +53,12 @@ export const ContentCompileSpeed = () => {
         data,
         yAxis: {
           label: {
-            formatter: text => `${text} s`,
+            formatter: (text: string) => `${text} s`,
           },
         },
         tooltip: {
           fields: ['x', 'y', 'category'],
-          formatter: datum => ({
+          formatter: (datum: any) => ({
             name: datum.category,
             value: datum.y + 's',
           }),

@@ -60,7 +60,7 @@ export const LINE_CHART_DEFAULT_CONFIG: Partial<LineOptions> = {
   yField: 'y',
   xAxis: {
     label: {
-      formatter: text => text.split(' ')[0],
+      formatter: (text: string) => text.split(' ')[0],
     },
   },
   point: {

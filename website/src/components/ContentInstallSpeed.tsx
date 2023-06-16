@@ -78,7 +78,7 @@ export const ContentInstallSpeed = () => {
         data,
         tooltip: {
           fields: ['x', 'y', 'category', 'metricsName'],
-          formatter: datum => {
+          formatter: (datum: any) => {
             let value = datum.y;
             if (datum.metricsName === 'yarnInstallSize') {
               value += 'MB';
