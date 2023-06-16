@@ -30,7 +30,7 @@ jobs:
           fetch-depth: 1
 
       - name: Install Pnpm
-        run: corepack enable
+        run: corepack enable && pnpm -v
 
       - name: Setup Node.js
         uses: actions/setup-node@v3

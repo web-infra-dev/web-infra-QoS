@@ -34,7 +34,7 @@ jobs:
           fetch-depth: 1
 
       - name: Install Pnpm
-        run: corepack enable
+        run: corepack enable && pnpm -v
 
       - name: Turbo Cache
         id: turbo-cache
