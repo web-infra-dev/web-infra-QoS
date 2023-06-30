@@ -1,4 +1,4 @@
-import appTools from '@modern-js/app-tools';
+import { appTools } from '@modern-js/app-tools';
 import {
   measureBundleSizePlugin,
   measureCompileSpeedPlugin,

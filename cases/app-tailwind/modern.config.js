@@ -1,5 +1,5 @@
-import appTools from '@modern-js/app-tools';
-import tailwindcssPlugin from '@modern-js/plugin-tailwindcss';
+import { appTools } from '@modern-js/app-tools';
+import { tailwindcssPlugin } from '@modern-js/plugin-tailwindcss';
 import {
   measureBundleSizePlugin,
   measureCompileSpeedPlugin,

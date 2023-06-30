@@ -1,6 +1,6 @@
-import appTools from '@modern-js/app-tools';
-import bffPlugin from '@modern-js/plugin-bff';
-import koaPlugin from '@modern-js/plugin-koa';
+import { appTools } from '@modern-js/app-tools';
+import { bffPlugin } from '@modern-js/plugin-bff';
+import { koaPlugin}  from '@modern-js/plugin-koa';
 import {
   measureBundleSizePlugin,
   measureCompileSpeedPlugin,

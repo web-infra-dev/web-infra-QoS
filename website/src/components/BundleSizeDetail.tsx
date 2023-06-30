@@ -19,6 +19,10 @@ const FileSizeTable = (props: {
   caseName: string;
   metricsName: string;
 }) => {
+  if (!props.data?.length) {
+    return;
+  }
+
   const latestData = props.data[props.data.length - 1];
   const { files = {} } = latestData.metrics[props.metricsName] || {};
   const tableData = Object.keys(files)
@@ -28,6 +32,7 @@ const FileSizeTable = (props: {
       file: key,
       size: `${formatFileSize(files[key])} KB`,
     }));
+
   return (
     <Grid.Col span={12}>
       <Typography.Title heading={6} style={{ marginTop: 0 }}>

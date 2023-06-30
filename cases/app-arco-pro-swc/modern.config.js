@@ -1,5 +1,5 @@
-import appTools from '@modern-js/app-tools';
-import swcPlugin from '@modern-js/plugin-swc';
+import { appTools } from '@modern-js/app-tools';
+import { swcPlugin } from '@modern-js/plugin-swc';
 import {
   measureBundleSizePlugin,
   measureCompileSpeedPlugin,

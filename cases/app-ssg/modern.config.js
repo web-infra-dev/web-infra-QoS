@@ -1,5 +1,5 @@
-import appTools from '@modern-js/app-tools';
-import ssgPlugin from '@modern-js/plugin-ssg';
+import { appTools } from '@modern-js/app-tools';
+import { ssgPlugin } from '@modern-js/plugin-ssg';
 import {
   measureBundleSizePlugin,
   measureCompileSpeedPlugin,
