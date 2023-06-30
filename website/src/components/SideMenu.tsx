@@ -1,5 +1,5 @@
 import { Menu, MenuProps } from '@arco-design/web-react';
-import styled from '@modern-js/runtime/styled';
+import { styled } from 'styled-components';
 import {
   IconLink,
   IconSafe,

@@ -20,7 +20,7 @@ const FileSizeTable = (props: {
   metricsName: string;
 }) => {
   if (!props.data?.length) {
-    return;
+    return null;
   }
 
   const latestData = props.data[props.data.length - 1];

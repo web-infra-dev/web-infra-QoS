@@ -1,4 +1,4 @@
-import styled from '@modern-js/runtime/styled';
+import { styled } from 'styled-components';
 import { IconGithub } from '@arco-design/web-react/icon';
 import { BASE_PADDING } from '@/shared/constant';
 
