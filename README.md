@@ -18,6 +18,10 @@ Initial app project with TypeScript/Router/Redux enabled.
 
 Created by `@modern-js/create`.
 
+### app-initial-rspack
+
+Initial app project with Rspack.
+
 ### app-ssr
 
 `app-initial` + SSR.
@@ -48,7 +52,7 @@ Arco Pro project.
 
 ### app-arco-pro-rspack
 
-`app-arco-pro` + rspack.
+`app-arco-pro` + Rspack.
 
 ## Metrics
 

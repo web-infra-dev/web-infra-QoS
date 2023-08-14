@@ -23,12 +23,12 @@ export const CASES = [
   'app-arco-pro-rspack',
 ];
 
-export const BUNDLE_SIZE_DEFAULT_CASE = ['app-minimal', 'app-initial'];
+export const BUNDLE_SIZE_DEFAULT_CASE = ['app-initial', 'app-initial-rspack'];
 export const BUNDLE_SIZE_METRICS = ['minifiedBundleSize', 'gzippedBundleSize'];
 
 export const COMPILE_SPEED_DEFAULT_CASE = [
   'app-arco-pro',
-  'app-arco-pro-esbuild',
+  'app-arco-pro-rspack',
 ];
 export const COMPILE_SPEED_METRICS = [
   'buildColdBootTime',
@@ -41,7 +41,7 @@ export const COMPILE_SPEED_METRICS = [
   'devPrepareTime',
 ];
 
-export const INSTALL_SPEED_DEFAULT_CASE = ['app-minimal', 'app-initial'];
+export const INSTALL_SPEED_DEFAULT_CASE = ['app-initial', 'app-initial-rspack'];
 export const INSTALL_SPEED_METRICS = [
   'yarnInstallSize',
   'yarnDependenciesCount',
