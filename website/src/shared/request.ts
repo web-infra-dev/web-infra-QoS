@@ -30,7 +30,9 @@ const cache = {
   set(key: string, data: Record<string, unknown>) {
     if (data) {
       map.set(key, data);
-      localStorage.setItem(key, JSON.stringify(data));
+      try {
+        localStorage.setItem(key, JSON.stringify(data));
+      } catch (err) {}
     }
   },
 };
