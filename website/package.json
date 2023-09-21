@@ -21,9 +21,9 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@modern-js/app-tools": "2.25.0",
-    "@modern-js/builder-rspack-provider": "2.25.0",
-    "@modern-js/tsconfig": "2.25.0",
+    "@modern-js/app-tools": "2.35.1",
+    "@modern-js/builder-rspack-provider": "2.35.1",
+    "@modern-js/tsconfig": "2.35.1",
     "@types/node": "^14",
     "@types/react": "^18",
     "@types/react-dom": "^18",
