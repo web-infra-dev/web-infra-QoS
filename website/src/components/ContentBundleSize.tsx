@@ -1,6 +1,5 @@
 import { Line } from '@antv/g2plot';
 import { Card, Typography } from '@arco-design/web-react';
-import { BundleSizeDetail } from './BundleSizeDetail';
 import {
   BUNDLE_SIZE_METRICS,
   BUNDLE_SIZE_DEFAULT_CASE,
@@ -100,11 +99,6 @@ export const ContentBundleSize = () => {
         </Typography.Title>
         <div ref={chartRoot} />
       </Card>
-      <BundleSizeDetail
-        data={data}
-        caseNames={caseNames}
-        metricsNames={metricsNames}
-      />
     </div>
   );
 };

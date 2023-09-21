@@ -1,6 +1,5 @@
 export type BundleSize = {
   total: number;
-  files: Record<string, number>;
 };
 
 export type Metrics = {

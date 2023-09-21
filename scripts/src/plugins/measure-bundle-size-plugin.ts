@@ -45,11 +45,9 @@ export const measureBundleSizePlugin = () => ({
         await saveMetrics({
           minifiedBundleSize: {
             total: sum(fileSizes),
-            files: fileSizes,
           },
           gzippedBundleSize: {
             total: sum(gzippedSizes),
-            files: gzippedSizes,
           },
         });
       },
