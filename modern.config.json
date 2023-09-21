@@ -1,0 +1,204 @@
+{
+  "autoLoadPlugins": false,
+  "source": {
+    "alias": {
+      "@_modern_js_internal": "/home/runner/work/modern-js-benchmark/modern-js-benchmark/website/node_modules/.modern-js",
+      "@_modern_js_src": "/home/runner/work/modern-js-benchmark/modern-js-benchmark/website/src",
+      "@": "/home/runner/work/modern-js-benchmark/modern-js-benchmark/website/src",
+      "@shared": "/home/runner/work/modern-js-benchmark/modern-js-benchmark/website/shared"
+    },
+    "aliasStrategy": "prefer-tsconfig",
+    "preEntry": [],
+    "globalVars": {},
+    "compileJsDataURI": true,
+    "define": {},
+    "mainEntryName": "main",
+    "enableAsyncEntry": false,
+    "disableDefaultEntries": false,
+    "entriesDir": "./src",
+    "configDir": "./config",
+    "include": [
+      "/home/runner/work/modern-js-benchmark/modern-js-benchmark/website/node_modules/.modern-js"
+    ]
+  },
+  "output": {
+    "distPath": {
+      "root": "dist",
+      "js": "static/js",
+      "css": "static/css",
+      "svg": "static/svg",
+      "font": "static/font",
+      "html": "/",
+      "wasm": "static/wasm",
+      "image": "static/image",
+      "media": "static/media",
+      "server": "bundles",
+      "worker": "worker"
+    },
+    "assetPrefix": "https://web-infra-dev.github.io/modern-js-benchmark/",
+    "filename": {},
+    "charset": "ascii",
+    "polyfill": "entry",
+    "dataUriLimit": {
+      "svg": 10000,
+      "font": 10000,
+      "image": 10000,
+      "media": 10000
+    },
+    "legalComments": "linked",
+    "cleanDistPath": true,
+    "svgDefaultExport": "url",
+    "disableSvgr": false,
+    "disableCssExtract": false,
+    "disableMinimize": false,
+    "disableSourceMap": true,
+    "disableTsChecker": false,
+    "disableFilenameHash": false,
+    "disableCssModuleExtension": false,
+    "disableInlineRuntimeChunk": false,
+    "enableAssetFallback": false,
+    "enableAssetManifest": false,
+    "enableLatestDecorators": false,
+    "enableCssModuleTSDeclaration": false,
+    "enableInlineScripts": false,
+    "enableInlineStyles": false,
+    "cssModules": {
+      "exportLocalsConvention": "camelCase"
+    },
+    "disableNodePolyfill": true,
+    "enableInlineRouteManifests": true
+  },
+  "server": {
+    "baseUrl": "/",
+    "port": 8080
+  },
+  "dev": {
+    "hmr": true,
+    "https": false,
+    "assetPrefix": "/",
+    "startUrl": false,
+    "progressBar": true,
+    "host": "0.0.0.0"
+  },
+  "html": {
+    "inject": "head",
+    "mountId": "root",
+    "crossorigin": false,
+    "disableHtmlFolder": false,
+    "scriptLoading": "defer",
+    "title": "Modern.js Benchmark",
+    "meta": {
+      "charset": {
+        "charset": "utf-8"
+      },
+      "viewport": "width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no",
+      "http-equiv": {
+        "http-equiv": "x-ua-compatible",
+        "content": "ie=edge"
+      },
+      "renderer": "webkit",
+      "layoutmode": "standard",
+      "imagemode": "force",
+      "wap-font-scale": "no",
+      "format-detection": "telephone=no"
+    },
+    "favicon": "./src/favicon.ico"
+  },
+  "tools": {
+    "tsChecker": {
+      "issue": {
+        "include": [
+          {
+            "file": "**/src/**/*"
+          }
+        ]
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "@modern-js/app-tools",
+      "post": [
+        "@modern-js/plugin-initialize",
+        "@modern-js/plugin-analyze",
+        "@modern-js/plugin-ssr",
+        "@modern-js/plugin-document",
+        "@modern-js/plugin-state",
+        "@modern-js/plugin-router",
+        "@modern-js/plugin-router-v5",
+        "@modern-js/plugin-polyfill"
+      ],
+      "registerHook": {
+        "modifyEntryExport": {},
+        "modifyEntryImports": {},
+        "modifyEntryRuntimePlugins": {},
+        "modifyEntryRenderFunction": {},
+        "modifyAsyncEntry": {},
+        "modifyFileSystemRoutes": {},
+        "modifyServerRoutes": {},
+        "htmlPartials": {},
+        "beforeGenerateRoutes": {},
+        "addDefineTypes": {},
+        "collectServerPlugins": {},
+        "beforeDev": {},
+        "afterDev": {},
+        "beforeCreateCompiler": {},
+        "afterCreateCompiler": {},
+        "beforePrintInstructions": {},
+        "beforeBuild": {},
+        "afterBuild": {},
+        "beforeDeploy": {},
+        "afterDeploy": {},
+        "beforeRestart": {},
+        "registerDev": {},
+        "beforeDevTask": {},
+        "registerBuildPlatform": {},
+        "beforeBuildPlatform": {}
+      },
+      "usePlugins": [
+        {
+          "name": "@modern-js/plugin-initialize",
+          "post": [
+            "@modern-js/plugin-ssr",
+            "@modern-js/plugin-document",
+            "@modern-js/plugin-state",
+            "@modern-js/plugin-router",
+            "@modern-js/plugin-router-v5",
+            "@modern-js/plugin-polyfill"
+          ]
+        },
+        {
+          "name": "@modern-js/plugin-analyze"
+        },
+        {
+          "name": "@modern-js/plugin-lint"
+        }
+      ]
+    },
+    {}
+  ],
+  "builderPlugins": [],
+  "runtime": {},
+  "runtimeByEntries": {},
+  "_raw": {
+    "output": {
+      "assetPrefix": "https://web-infra-dev.github.io/modern-js-benchmark/",
+      "disableSourceMap": true,
+      "distPath": {
+        "html": "/"
+      }
+    },
+    "html": {
+      "title": "Modern.js Benchmark",
+      "favicon": "./src/favicon.ico"
+    },
+    "plugins": [
+      "[Circular 0]",
+      "[Circular 1]"
+    ]
+  },
+  "bff": {},
+  "testing": {},
+  "deploy": {},
+  "performance": {}
+}
