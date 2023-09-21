@@ -169,9 +169,9 @@ export const yarnInstall = async (caseName: string) => {
   const depCount = await getDepCount(casePath);
 
   return saveMetrics({
-    yarnColdInstallTime: coldInstallTime,
-    yarnHotInstallTime: hotInstallTime,
-    yarnDependenciesCount: depCount,
-    yarnInstallSize: installSize,
+    coldInstallTime: coldInstallTime,
+    hotInstallTime: hotInstallTime,
+    dependenciesCount: depCount,
+    installSize: installSize,
   });
 };

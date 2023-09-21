@@ -20,7 +20,7 @@ const formatData = (
   mergeData(data1, data2, caseNames, metricsNames).map(item => ({
     category: caseNames[0] === caseNames[1] ? item.metricsName : item.caseName,
     x: formatDateWithId(item),
-    y: formatFileSize(item.metrics[item.metricsName].total),
+    y: formatFileSize(item.metrics[item.metricsName]),
   }));
 
 export const ContentBundleSize = () => {

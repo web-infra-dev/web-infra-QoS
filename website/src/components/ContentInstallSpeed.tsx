@@ -27,11 +27,11 @@ const formatData = (
     const initialValue = item.metrics[item.metricsName];
 
     switch (item.metricsName) {
-      case 'yarnInstallSize':
+      case 'installSize':
         y = formatFileSize(initialValue, 'MB');
         break;
-      case 'yarnHotInstallTime':
-      case 'yarnColdInstallTime':
+      case 'hotInstallTime':
+      case 'coldInstallTime':
         y = formatSecond(initialValue);
         break;
       default:
@@ -80,12 +80,12 @@ export const ContentInstallSpeed = () => {
           fields: ['x', 'y', 'category', 'metricsName'],
           formatter: (datum: any) => {
             let value = datum.y;
-            if (datum.metricsName === 'yarnInstallSize') {
+            if (datum.metricsName === 'installSize') {
               value += 'MB';
             }
             if (
-              datum.metricsName === 'yarnColdInstallTime' ||
-              datum.metricsName === 'yarnHotInstallTime'
+              datum.metricsName === 'coldInstallTime' ||
+              datum.metricsName === 'hotInstallTime'
             ) {
               value += 's';
             }

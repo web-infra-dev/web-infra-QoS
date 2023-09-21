@@ -78,10 +78,10 @@ The size of the bundles after the build.
 
 Install npm dependency related metrics.
 
-- `yarn-install-size`: the size of node_modules after yarn install .
-- `yarn-cold-install-time`: yarn install time, with cache and lock file.
-- `yarn-hot-install-time`: yarn install time, without cache and lock file.
-- `yarn-dependencies-count`: the total number of dependencies after yarn install.
+- `install-size`: the size of node_modules after yarn install .
+- `cold-install-time`: yarn install time, with cache and lock file.
+- `hot-install-time`: yarn install time, without cache and lock file.
+- `dependencies-count`: the total number of dependencies after yarn install.
 
 ## Website
 

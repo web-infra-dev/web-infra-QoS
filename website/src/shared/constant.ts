@@ -43,10 +43,10 @@ export const COMPILE_SPEED_METRICS = [
 
 export const INSTALL_SPEED_DEFAULT_CASE = ['app-initial', 'app-initial-rspack'];
 export const INSTALL_SPEED_METRICS = [
-  'yarnInstallSize',
-  'yarnDependenciesCount',
-  'yarnColdInstallTime',
-  'yarnHotInstallTime',
+  'installSize',
+  'dependenciesCount',
+  'coldInstallTime',
+  'hotInstallTime',
 ];
 
 export const PUBLIC_PATH =

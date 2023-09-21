@@ -1,7 +1,3 @@
-export type BundleSize = {
-  total: number;
-};
-
 export type Metrics = {
   // Compile speed (dev)
   devHotBootTime?: number;
@@ -18,12 +14,12 @@ export type Metrics = {
   buildPrepareTime?: number;
 
   // Bundle size
-  minifiedBundleSize?: BundleSize;
-  gzippedBundleSize?: BundleSize;
+  minifiedBundleSize?: number;
+  gzippedBundleSize?: number;
 
   // Install Size
-  yarnInstallSize?: number;
-  yarnHotInstallTime?: number;
-  yarnColdInstallTime?: number;
-  yarnDependenciesCount?: number;
+  installSize?: number;
+  hotInstallTime?: number;
+  coldInstallTime?: number;
+  dependenciesCount?: number;
 };
