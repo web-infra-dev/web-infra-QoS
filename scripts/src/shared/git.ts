@@ -48,6 +48,7 @@ export async function cloneRepo(caseName: string) {
   );
 
   // run prepare before linking cases
+  await runCommand(MODERN_PATH, 'corepack enable && pnpm -v');
   await runCommand(MODERN_PATH, 'pnpm i --ignore-scripts');
   await runCommand(MODERN_PATH, 'pnpm prepare');
 
