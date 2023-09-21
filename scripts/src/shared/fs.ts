@@ -9,12 +9,7 @@ import {
   pathExists,
 } from 'fs-extra';
 import logger from 'consola';
-import {
-  DATA_PATH,
-  MODERN_PATH,
-  REMOTE_DATA_URL,
-  COMMITS_INFO_PATH,
-} from './constant';
+import { DATA_PATH, MODERN_PATH, REMOTE_DATA_URL } from './constant';
 import type { Metrics } from './types';
 import { getCommitId, getCommitTime } from './git';
 
@@ -35,37 +30,12 @@ export async function updateFile(
   }
 }
 
-export async function saveCommitInfo() {
-  const id = await getCommitId(MODERN_PATH);
-  const time = await getCommitTime(MODERN_PATH);
-
-  let content: Array<{ id: string; time: number }>;
-
-  try {
-    const response = await axios.get(`${REMOTE_DATA_URL}/commits-info.json`);
-    content = response.data;
-  } catch (err) {
-    logger.error('failed to get commit-info.json: ', { id, time });
-    logger.error(err);
-    return;
-  }
-
-  if (content.find(item => item.id === id)) {
-    return;
-  }
-
-  content.push({ id, time });
-  content.sort((a, b) => a.time - b.time);
-  await outputJson(COMMITS_INFO_PATH, content, { spaces: 2 });
-}
-
 async function getMetricsPath(caseName: string) {
-  const commitId = await getCommitId(MODERN_PATH);
   const jsonName = `${caseName}.json`;
   return {
     jsonName,
-    jsonPath: join(DATA_PATH, commitId, jsonName),
-    remoteURL: `${REMOTE_DATA_URL}/${commitId}/${caseName}.json`,
+    jsonPath: join(DATA_PATH, jsonName),
+    remoteURL: `${REMOTE_DATA_URL}/${jsonName}`,
   };
 }
 
@@ -135,18 +105,22 @@ export async function mergeMetrics(caseName: string) {
       }
     });
 
+    const id = await getCommitId(MODERN_PATH);
+    const time = await getCommitTime(MODERN_PATH);
+
+    let allData = {};
     try {
       const response = await axios.get(remoteURL);
-      const remoteResult = response.data;
-      result = { ...remoteResult, ...result };
-      console.log(`Merge result metrics:`);
-      console.log(JSON.stringify(remoteResult, null, 2));
+      allData = response.data;
+      console.log(`Save metrics:`);
+      console.log(JSON.stringify(result, null, 2));
     } catch (err) {
       console.log(`Remote metrics may not exist: ${remoteURL}`);
     }
 
-    await outputJson(jsonPath, result, { spaces: 2 });
+    allData = { ...allData, [id]: { time, ...result } };
+
+    await outputJson(jsonPath, allData);
     logger.success(`Successfully merged metrics to ${jsonName}.`);
-    logger.log(JSON.stringify(result, null, 2) + '\n');
   }
 }

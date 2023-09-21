@@ -1,7 +1,7 @@
 import logger from 'consola';
 import { dev } from './runners/dev';
 import { build } from './runners/build';
-import { cloneRepo, DATA_PATH, mergeMetrics, saveCommitInfo } from './shared';
+import { cloneRepo, DATA_PATH, mergeMetrics } from './shared';
 import { remove } from 'fs-extra';
 import { yarnInstall } from './runners/yarn-install';
 
@@ -26,7 +26,6 @@ async function main() {
     }
 
     await mergeMetrics(caseName);
-    await saveCommitInfo();
   } else {
     logger.error(`Case not found: ${caseName}`);
   }
