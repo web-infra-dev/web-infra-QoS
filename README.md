@@ -10,11 +10,11 @@ Benchmark data is stored in the [gh-pages](https://github.com/web-infra-dev/mode
 
 ### app-minimal
 
-Minimal app project, using ua polyfill, no Redux and Router.
+Minimal app project, no polyfill or Router.
 
 ### app-initial
 
-Initial app project with TypeScript/Router/Redux enabled.
+Initial app project with TypeScript and nested routes enabled.
 
 Created by `@modern-js/create`.
 

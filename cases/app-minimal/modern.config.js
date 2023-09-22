@@ -6,7 +6,7 @@ import {
 
 export default {
   output: {
-    polyfill: 'ua',
+    polyfill: 'off',
     disableTsChecker: true,
   },
   plugins: [appTools(), measureBundleSizePlugin(), measureCompileSpeedPlugin()],
