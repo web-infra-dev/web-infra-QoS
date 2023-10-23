@@ -36,24 +36,15 @@ jobs:
       - name: Install Pnpm
         run: corepack enable && pnpm -v
 
-      - name: Turbo Cache
-        id: turbo-cache
-        uses: actions/cache@v2
-        with:
-          path: .turbo
-          key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
-          restore-keys: |
-            turbo-${{ github.job }}-${{ github.ref_name }}-
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: 'pnpm'
-          cache-dependency-path: scripts/pnpm-lock.yaml
+          cache-dependency-path: pnpm-lock.yaml
 
       - name: Install Dependencies
-        run: cd scripts && pnpm install
+        run: pnpm run install:scripts
 
       - name: 🚀 Run benchmark
         run: cd scripts && ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start ${{ matrix.case }}

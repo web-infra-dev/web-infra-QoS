@@ -19,13 +19,13 @@ jobs:
         with:
           node-version: '16'
           cache: 'pnpm'
-          cache-dependency-path: website/pnpm-lock.yaml
+          cache-dependency-path: pnpm-lock.yaml
 
       - name: Install dependencies
-        run: cd website && pnpm install
+        run: pnpm run install:website
 
       - name: Build Site
-        run: cd website && npm run build
+        run: pnpm run build:website
 
       - name: Setup git user
         run: |

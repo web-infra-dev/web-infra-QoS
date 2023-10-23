@@ -11,7 +11,6 @@
     "node_modules/",
     "dist/"
   ],
-  "packageManager": "pnpm@8.6.1",
   "dependencies": {
     "@antv/g2plot": "^2.4.31",
     "@arco-design/web-react": "^2.41.2",
@@ -21,9 +20,9 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@modern-js/app-tools": "2.35.1",
-    "@modern-js/builder-rspack-provider": "2.35.1",
-    "@modern-js/tsconfig": "2.35.1",
+    "@modern-js/app-tools": "2.37.2",
+    "@modern-js/builder-rspack-provider": "2.37.2",
+    "@modern-js/tsconfig": "2.37.2",
     "@types/node": "^14",
     "@types/react": "^18",
     "@types/react-dom": "^18",
