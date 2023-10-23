@@ -45,7 +45,7 @@ const Link = styled.a`
 const GitHubIcon = () => (
   <Link
     target="_blank"
-    href="https://github.com/web-infra-dev/modern-js-benchmark"
+    href="https://github.com/web-infra-dev/web-infra-QoS"
   >
     <IconGithub />
   </Link>

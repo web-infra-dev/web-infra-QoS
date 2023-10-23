@@ -1,10 +1,10 @@
 # Modern.js Benchmark
 
-[Online Benchmark](https://web-infra-dev.github.io/modern-js-benchmark/index).
+[Online Benchmark](https://web-infra-dev.github.io/web-infra-QoS/index).
 
 ## Data
 
-Benchmark data is stored in the [gh-pages](https://github.com/web-infra-dev/modern-js-benchmark/tree/gh-pages) branch.
+Benchmark data is stored in the [gh-pages](https://github.com/web-infra-dev/web-infra-QoS/tree/gh-pages) branch.
 
 ## Cases
 
@@ -93,7 +93,7 @@ pnpm install
 pnpm dev
 ```
 
-Then visit https://web-infra-dev.github.io/modern-js-benchmark/index
+Then visit https://web-infra-dev.github.io/web-infra-QoS/index
 
 ### Deploy Website
 

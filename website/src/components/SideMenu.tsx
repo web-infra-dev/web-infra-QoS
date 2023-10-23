@@ -77,7 +77,7 @@ export const SideMenu = (props: {
 
     <BottomLink>
       <a
-        href="https://github.com/web-infra-dev/modern-js-benchmark/tree/gh-pages/data"
+        href="https://github.com/web-infra-dev/web-infra-QoS/tree/gh-pages/data"
         target="_blank"
         style={{ color: '#2972b7' }}
       >
