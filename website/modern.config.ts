@@ -3,7 +3,7 @@ import { moveHTMLPlugin } from './move-html-plugin';
 
 export default defineConfig<'rspack'>({
   output: {
-    assetPrefix: 'https://web-infra-dev.github.io/modern-js-benchmark/',
+    assetPrefix: 'https://web-infra-dev.github.io/web-infra-QoS/',
     disableSourceMap: true,
     distPath: {
       html: '/',
