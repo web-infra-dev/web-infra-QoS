@@ -2,10 +2,10 @@
   "autoLoadPlugins": false,
   "source": {
     "alias": {
-      "@_modern_js_internal": "/home/runner/work/modern-js-benchmark/modern-js-benchmark/website/node_modules/.modern-js",
-      "@_modern_js_src": "/home/runner/work/modern-js-benchmark/modern-js-benchmark/website/src",
-      "@": "/home/runner/work/modern-js-benchmark/modern-js-benchmark/website/src",
-      "@shared": "/home/runner/work/modern-js-benchmark/modern-js-benchmark/website/shared"
+      "@_modern_js_internal": "/home/runner/work/web-infra-QoS/web-infra-QoS/website/node_modules/.modern-js",
+      "@_modern_js_src": "/home/runner/work/web-infra-QoS/web-infra-QoS/website/src",
+      "@": "/home/runner/work/web-infra-QoS/web-infra-QoS/website/src",
+      "@shared": "/home/runner/work/web-infra-QoS/web-infra-QoS/website/shared"
     },
     "aliasStrategy": "prefer-tsconfig",
     "preEntry": [],
@@ -18,7 +18,7 @@
     "entriesDir": "./src",
     "configDir": "./config",
     "include": [
-      "/home/runner/work/modern-js-benchmark/modern-js-benchmark/website/node_modules/.modern-js"
+      "/home/runner/work/web-infra-QoS/web-infra-QoS/website/node_modules/.modern-js"
     ]
   },
   "output": {
@@ -35,7 +35,7 @@
       "server": "bundles",
       "worker": "worker"
     },
-    "assetPrefix": "https://web-infra-dev.github.io/modern-js-benchmark/",
+    "assetPrefix": "https://web-infra-dev.github.io/web-infra-QoS/",
     "filename": {},
     "charset": "ascii",
     "polyfill": "entry",
@@ -182,7 +182,7 @@
   "runtimeByEntries": {},
   "_raw": {
     "output": {
-      "assetPrefix": "https://web-infra-dev.github.io/modern-js-benchmark/",
+      "assetPrefix": "https://web-infra-dev.github.io/web-infra-QoS/",
       "disableSourceMap": true,
       "distPath": {
         "html": "/"
