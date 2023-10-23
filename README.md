@@ -1,4 +1,4 @@
-# Modern.js Benchmark
+# Web Infra QoS
 
 [Online Benchmark](https://web-infra-dev.github.io/web-infra-QoS/index).
 
