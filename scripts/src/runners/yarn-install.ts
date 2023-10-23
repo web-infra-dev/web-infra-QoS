@@ -10,6 +10,7 @@ import {
 import {
   CASES_SRC_PATH,
   MODERN_PATH,
+  ROOT_PATH,
   TEMP_PATH,
   runCommand,
   saveMetrics,
@@ -160,11 +161,21 @@ const getInstallSize = async (casePath: string) => {
 export const yarnInstall = async (caseName: string) => {
   const casePath = join(TEMP_PATH, caseName);
   const pkgJsonPath = join(TEMP_PATH, caseName, 'package.json');
+  const rootPkgJsonPath = join(ROOT_PATH, 'package.json');
 
   await copyCase(caseName, casePath);
   await setPkgVersion(pkgJsonPath);
 
+  // to prevent Usage Error: This project is configured to use pnpm
+  const rootPkgJson = await readJson(rootPkgJsonPath);
+  const rootPkgJsonBak = await readJson(rootPkgJsonPath);
+  delete rootPkgJson.packageManager;
+  await outputJson(rootPkgJsonPath, rootPkgJson, { spaces: 2 });
+
   const { hotInstallTime, coldInstallTime } = await runInstall(casePath);
+
+  await outputJson(rootPkgJsonPath, rootPkgJsonBak, { spaces: 2 });
+
   const installSize = await getInstallSize(casePath);
   const depCount = await getDepCount(casePath);
 

@@ -37,19 +37,10 @@ jobs:
         with:
           node-version: 16
           cache: 'pnpm'
-          cache-dependency-path: scripts/pnpm-lock.yaml
-
-      - name: Turbo Cache
-        id: turbo-cache
-        uses: actions/cache@v2
-        with:
-          path: .turbo
-          key: turbo-${{ github.ref_name }}-${{ github.sha }}
-          restore-keys: |
-            turbo-${{ github.ref_name }}-
+          cache-dependency-path: pnpm-lock.yaml
 
       - name: Install Dependencies
-        run: cd scripts && pnpm install
+        run: pnpm run install:scripts
 
       - name: 🚀 Run benchmark
         run: cd scripts && GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} pnpm start ${{ matrix.case }}

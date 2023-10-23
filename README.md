@@ -88,9 +88,8 @@ Install npm dependency related metrics.
 ### Local Development
 
 ```bash
-cd website
-pnpm install
-pnpm dev
+pnpm run install:webiste
+pnpm run dev:website
 ```
 
 Then visit https://web-infra-dev.github.io/web-infra-QoS/index

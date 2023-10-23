@@ -1,3 +1,17 @@
 {
-  "name": "web-infra-QoS"
+  "name": "web-infra-qos-monorepo",
+  "packageManager": "pnpm@8.9.2",
+  "scripts": {
+    "bootstrap": "pnpm install",
+    "build:all": "pnpm -r run build",
+    "clean": "rm -rf node_modules && pnpm -r exec rm -rf node_modules",
+    "dev:scripts": "pnpm --filter @modern-js/benchmark-scripts run dev",
+    "dev:website": "pnpm --filter website run dev",
+    "start:scripts": "pnpm --filter @modern-js/benchmark-scripts run start",
+    "start:website": "pnpm --filter website run start",
+    "build:scripts": "pnpm --filter @modern-js/benchmark-scripts run build",
+    "build:website": "pnpm --filter website run build",
+    "install:scripts": "pnpm --filter @modern-js/benchmark-scripts install",
+    "install:website": "pnpm --filter website install"
+  }
 }
