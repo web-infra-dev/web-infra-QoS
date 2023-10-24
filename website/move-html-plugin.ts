@@ -1,5 +1,5 @@
 import { CliPlugin, AppTools } from '@modern-js/app-tools';
-import { renameSync } from 'fs';
+import { copyFileSync } from 'fs';
 import { join } from 'path';
 
 export const moveHTMLPlugin = (): CliPlugin<AppTools> => {
@@ -8,7 +8,7 @@ export const moveHTMLPlugin = (): CliPlugin<AppTools> => {
       return {
         afterBuild() {
           const { distDirectory } = api.useAppContext();
-          renameSync(
+          copyFileSync(
             join(distDirectory, 'main', 'index.html'),
             join(distDirectory, 'index.html'),
           );
