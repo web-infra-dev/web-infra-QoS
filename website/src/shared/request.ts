@@ -26,7 +26,7 @@ export const fetchMetrics = async (
   caseName: string,
 ): Promise<FetchedMetrics[]> => {
   const allMetrics: MetricsMap = await fetchJsonWithCache(
-    PUBLIC_PATH + `/data/${caseName}.json`,
+    PUBLIC_PATH + `/data/modernjs-framework/${caseName}.json`,
   );
 
   return Object.keys(allMetrics).map(id => {
