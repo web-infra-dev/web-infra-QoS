@@ -2,7 +2,7 @@
   "name": "web-infra-qos-monorepo",
   "packageManager": "pnpm@8.9.2",
   "scripts": {
-    "bootstrap": "pnpm install",
+    "bootstrap": "corepack enable && pnpm install",
     "build:all": "pnpm -r run build",
     "clean": "rm -rf node_modules && pnpm -r exec rm -rf node_modules",
     "dev:scripts": "pnpm --filter @modern-js/benchmark-scripts run dev",
