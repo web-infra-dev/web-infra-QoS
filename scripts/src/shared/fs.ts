@@ -9,9 +9,14 @@ import {
   pathExists,
 } from 'fs-extra';
 import logger from 'consola';
-import { DATA_PATH, MODERN_PATH, REMOTE_DATA_URL } from './constant';
 import type { Metrics } from './types';
 import { getCommitId, getCommitTime } from './git';
+import {
+  getDataPath,
+  getRemoteDataUrl,
+  getRepoName,
+  getRepoPath,
+} from './utils';
 
 export async function cleanCache(casePath: string) {
   await remove(join(casePath, 'node_modules', '.cache'));
@@ -30,17 +35,23 @@ export async function updateFile(
   }
 }
 
-async function getMetricsPath(caseName: string) {
+async function getMetricsPath(productName: string, caseName: string) {
   const jsonName = `${caseName}.json`;
   return {
     jsonName,
-    jsonPath: join(DATA_PATH, jsonName),
-    remoteURL: `${REMOTE_DATA_URL}/${jsonName}`,
+    jsonPath: join(getDataPath(productName), jsonName),
+    remoteURL: `${getRemoteDataUrl(productName)}/${jsonName}`,
   };
 }
 
 export async function saveMetrics(metrics: Metrics) {
-  const { CASE_NAME, CURRENT_INDEX = '0' } = process.env;
+  const { PRODUCT_NAME, CASE_NAME, CURRENT_INDEX = '0' } = process.env;
+  if (!PRODUCT_NAME) {
+    logger.log('missing PRODUCT_NAME.');
+    logger.log(JSON.stringify(metrics, null, 2) + '\n');
+    return;
+  }
+
   if (!CASE_NAME) {
     logger.log('missing CASE_NAME.');
     logger.log(JSON.stringify(metrics, null, 2) + '\n');
@@ -48,7 +59,7 @@ export async function saveMetrics(metrics: Metrics) {
   }
 
   const index = Number(CURRENT_INDEX);
-  const { jsonPath, jsonName } = await getMetricsPath(CASE_NAME);
+  const { jsonPath, jsonName } = await getMetricsPath(PRODUCT_NAME, CASE_NAME);
 
   if (await pathExists(jsonPath)) {
     const content: Metrics[] = await readJson(jsonPath);
@@ -86,8 +97,11 @@ const cleanData = (nums: number[]) => {
   return nums;
 };
 
-export async function mergeMetrics(caseName: string) {
-  const { jsonPath, jsonName, remoteURL } = await getMetricsPath(caseName);
+export async function mergeMetrics(productName: string, caseName: string) {
+  const { jsonPath, jsonName, remoteURL } = await getMetricsPath(
+    productName,
+    caseName,
+  );
 
   if (await pathExists(jsonPath)) {
     const allMetrics: Metrics[] = await readJson(jsonPath);
@@ -105,8 +119,9 @@ export async function mergeMetrics(caseName: string) {
       }
     });
 
-    const id = await getCommitId(MODERN_PATH);
-    const time = await getCommitTime(MODERN_PATH);
+    const repoPath = getRepoPath(getRepoName(productName));
+    const id = await getCommitId(repoPath);
+    const time = await getCommitTime(repoPath);
 
     let allData = {};
     try {

@@ -1,21 +1,24 @@
 import execa from 'execa';
 import { copy, pathExists } from 'fs-extra';
 import { updateFile } from './fs';
-import { runCommand } from './utils';
-import { join } from 'path';
 import {
-  ROOT_PATH,
-  MODERN_PATH,
-  CASES_DIST_PATH,
-  CASES_SRC_PATH,
-} from './constant';
+  getCaseDistPath,
+  getCaseSrcPath,
+  getRepoName,
+  getRepoPath,
+  runCommand,
+} from './utils';
+import { join } from 'path';
+import { ROOT_PATH } from './constant';
 
-export async function cloneRepo(caseName: string) {
-  if (!(await pathExists(MODERN_PATH))) {
+export async function cloneRepo(productName: string, caseName: string) {
+  const repoName = getRepoName(productName);
+  const localRepoPath = getRepoPath(repoName);
+  if (!(await pathExists(localRepoPath))) {
     const { GITHUB_ACTOR, GITHUB_TOKEN, COMMIT_ID } = process.env;
     const repoURL = GITHUB_TOKEN
-      ? `https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/web-infra-dev/modern.js.git`
-      : 'git@github.com:web-infra-dev/modern.js.git';
+      ? `https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/web-infra-dev/${repoName}.git`
+      : `git@github.com:web-infra-dev/${repoName}.git`;
 
     const options = ['clone', '--single-branch'];
     if (!COMMIT_ID) {
@@ -30,7 +33,7 @@ export async function cloneRepo(caseName: string) {
 
     if (COMMIT_ID) {
       await execa('git', ['checkout', COMMIT_ID], {
-        cwd: MODERN_PATH,
+        cwd: localRepoPath,
         stderr: 'inherit',
         stdout: 'inherit',
       });
@@ -41,38 +44,27 @@ export async function cloneRepo(caseName: string) {
     return;
   }
 
-  await copy(join(CASES_SRC_PATH, caseName), join(CASES_DIST_PATH, caseName));
-
-  await updateFile(join(MODERN_PATH, 'package.json'), content =>
-    content.replace('--cache-dir=.turbo', '--cache-dir=../.turbo'),
+  await copy(
+    join(getCaseSrcPath(productName), caseName),
+    join(getCaseDistPath(productName), caseName),
   );
 
   // run prepare before linking cases
-  await runCommand(MODERN_PATH, 'corepack enable && pnpm -v');
-  await runCommand(MODERN_PATH, 'pnpm i --ignore-scripts');
-  await runCommand(MODERN_PATH, 'pnpm prepare');
+  await runCommand(localRepoPath, 'corepack enable && pnpm -v');
+  await runCommand(localRepoPath, 'pnpm i --ignore-scripts');
+  await runCommand(localRepoPath, 'pnpm prepare');
 
   // add cases folder to workspace config
   await updateFile(
-    join(MODERN_PATH, 'pnpm-workspace.yaml'),
+    join(localRepoPath, 'pnpm-workspace.yaml'),
     content => `${content}\n - 'cases/*'`,
   );
 
-  // lock @types/react version
-  await updateFile(join(MODERN_PATH, 'package.json'), content => {
-    const json = JSON.parse(content);
-    json.pnpm = {
-      overrides: {
-        ...json.pnpm?.overrides,
-        '@types/react': '^18',
-        '@types/react-dom': '^18',
-      },
-    };
-    return JSON.stringify(json, null, 2);
-  });
-
-  await runCommand(MODERN_PATH, 'pnpm link ../scripts');
-  await runCommand(MODERN_PATH, 'pnpm i --ignore-scripts --no-frozen-lockfile');
+  await runCommand(localRepoPath, 'pnpm link ../scripts');
+  await runCommand(
+    localRepoPath,
+    'pnpm i --ignore-scripts --no-frozen-lockfile',
+  );
 }
 
 export async function getCommitId(cwd: string) {

@@ -1,33 +1,41 @@
 import logger from 'consola';
 import { dev } from './runners/dev';
 import { build } from './runners/build';
-import { cloneRepo, DATA_PATH, mergeMetrics } from './shared';
+import { cloneRepo, getDataPath, mergeMetrics } from './shared';
 import { remove } from 'fs-extra';
 import { yarnInstall } from './runners/yarn-install';
 
-const caseName = process.argv[2] || 'app-minimal';
+const productName = process.argv[2] || 'MODERNJS_FRAMEWORK';
+const caseName = process.argv[3] || 'app-minimal';
 
 async function main() {
-  await cloneRepo(caseName);
+  const dataPath = getDataPath(productName);
+
+  await cloneRepo(productName, caseName);
+
+  if (!productName) {
+    logger.error(`product not found: ${productName}`);
+  }
 
   if (caseName) {
+    process.env.PRODUCT_NAME = productName;
     process.env.CASE_NAME = caseName;
-    await remove(DATA_PATH);
+    await remove(dataPath);
 
     if (process.env.ONLY_INSTALL_SIZE !== 'true') {
-      await dev(caseName);
-      await build(caseName);
+      await dev(productName, caseName);
+      await build(productName, caseName);
     }
 
     try {
-      await yarnInstall(caseName);
+      await yarnInstall(productName, caseName);
     } catch (err) {
       console.log('failed to collect install size metrics:', err);
     }
 
-    await mergeMetrics(caseName);
+    await mergeMetrics(productName, caseName);
   } else {
-    logger.error(`Case not found: ${caseName}`);
+    logger.error(`Case not found: ${productName} ${caseName}`);
   }
 }
 
