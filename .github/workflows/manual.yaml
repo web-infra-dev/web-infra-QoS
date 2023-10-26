@@ -68,11 +68,11 @@ jobs:
         run: pnpm run install:scripts
 
       - name: 🚀 Run all benchmark
-        if: ${{ github.event.inputs.product === 'ALL' }}
+        if: ${{ github.event.inputs.product == 'ALL' }}
         run: cd scripts && ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start ${{ matrix.product }} ${{ matrix.case }}
 
       - name: 🚀 Run specified benchmark
-        if: ${{ github.event.inputs.product !== 'ALL' && github.event.inputs.product === matrix.product }}
+        if: ${{ github.event.inputs.product != 'ALL' && github.event.inputs.product == matrix.product }}
         run: cd scripts && ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start ${{ matrix.product }} ${{ matrix.case }}
 
       - name: Setup git user
