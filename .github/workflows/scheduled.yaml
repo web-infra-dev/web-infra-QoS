@@ -8,18 +8,29 @@ jobs:
   benchmark:
     strategy:
       matrix:
-        case:
-          - app-minimal
-          - app-initial
-          - app-initial-rspack
-          - app-tailwind
-          - app-ssr
-          - app-ssg
-          - app-bff-koa
-          - app-arco-pro
-          - app-arco-pro-swc
-          - app-arco-pro-esbuild
-          - app-arco-pro-rspack
+        include:
+          - product: MODERNJS_FRAMEWORK
+            case: app-minimal
+          - product: MODERNJS_FRAMEWORK
+            case: app-initial
+          - product: MODERNJS_FRAMEWORK
+            case: app-initial-rspack
+          - product: MODERNJS_FRAMEWORK
+            case: app-tailwind
+          - product: MODERNJS_FRAMEWORK
+            case: app-ssr
+          - product: MODERNJS_FRAMEWORK
+            case: app-ssg
+          - product: MODERNJS_FRAMEWORK
+            case: app-bff-koa
+          - product: MODERNJS_FRAMEWORK
+            case: app-arco-pro
+          - product: MODERNJS_FRAMEWORK
+            case: app-arco-pro-swc
+          - product: MODERNJS_FRAMEWORK
+            case: app-arco-pro-esbuild
+          - product: MODERNJS_FRAMEWORK
+            case: app-arco-pro-rspack
 
     runs-on: ubuntu-latest
 
@@ -43,7 +54,7 @@ jobs:
         run: pnpm run install:scripts
 
       - name: 🚀 Run benchmark
-        run: cd scripts && GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} pnpm start ${{ matrix.case }}
+        run: cd scripts && GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} pnpm start ${{ matrix.product }} ${{ matrix.case }}
 
       - name: Setup git user
         run: |

@@ -8,10 +8,11 @@ import {
   remove,
 } from 'fs-extra';
 import {
-  CASES_SRC_PATH,
-  MODERN_PATH,
   ROOT_PATH,
-  TEMP_PATH,
+  getCaseSrcPath,
+  getRepoName,
+  getRepoPath,
+  getTempPath,
   runCommand,
   saveMetrics,
 } from '../shared';
@@ -24,13 +25,10 @@ const getAllDeps = (json: Record<string, Record<string, string>>) => ({
   ...json.devDependencies,
 });
 
-const getModernPkgInfo = async () => {
-  const pkgs = fastGlob.sync(
-    join(MODERN_PATH, 'packages', '**', 'package.json'),
-    {
-      ignore: ['!**/node_modules/**', '!**/tests/**', '!**/compiled/**'],
-    },
-  );
+const getRepoPkgInfo = async (repoPath: string) => {
+  const pkgs = fastGlob.sync(join(repoPath, 'packages', '**', 'package.json'), {
+    ignore: ['!**/node_modules/**', '!**/tests/**', '!**/compiled/**'],
+  });
 
   const jsons = await Promise.all(pkgs.map(pkg => readJson(pkg)));
   const names = jsons.map(json => json.name);
@@ -57,25 +55,30 @@ const getModernPkgInfo = async () => {
   );
 };
 
-const copyCase = async (caseName: string, casePath: string) => {
-  await remove(TEMP_PATH);
-  await ensureDir(TEMP_PATH);
-  await copy(join(CASES_SRC_PATH, caseName), casePath);
+const copyCase = async (
+  productName: string,
+  caseName: string,
+  casePath: string,
+) => {
+  const tempPath = getTempPath(productName);
+  await remove(tempPath);
+  await ensureDir(tempPath);
+  await copy(join(getCaseSrcPath(productName), caseName), casePath);
 };
 
-const getPkgVersions = async (pkgJsonPath: string) => {
-  const modernPkgInfo = await getModernPkgInfo();
-  const modernPkgNames = modernPkgInfo.map(item => item.json.name);
+const getPkgVersions = async (repoPath: string, pkgJsonPath: string) => {
+  const repoPkgInfo = await getRepoPkgInfo(repoPath);
+  const repoPkgNames = repoPkgInfo.map(item => item.json.name);
   const pkgJson = await readJson(pkgJsonPath);
   const allDeps = Object.keys(getAllDeps(pkgJson));
-  const modernDeps = allDeps.filter(dep => modernPkgNames.includes(dep));
+  const repoDeps = allDeps.filter(dep => repoPkgNames.includes(dep));
   const pkgVersions: Record<string, string> = {};
 
   const addResolution = (depName: string) => {
     if (pkgVersions[depName]) {
       return;
     }
-    const matchedJson = modernPkgInfo.find(item => item.json.name === depName);
+    const matchedJson = repoPkgInfo.find(item => item.json.name === depName);
 
     if (!matchedJson) {
       console.log('not matched', depName);
@@ -89,13 +92,13 @@ const getPkgVersions = async (pkgJsonPath: string) => {
     matchedJson.innerDeps.forEach(addResolution);
   };
 
-  modernDeps.forEach(addResolution);
+  repoDeps.forEach(addResolution);
 
   return pkgVersions;
 };
 
-const setPkgVersion = async (pkgJsonPath: string) => {
-  const pkgVersions = await getPkgVersions(pkgJsonPath);
+const setPkgVersion = async (repoPath: string, pkgJsonPath: string) => {
+  const pkgVersions = await getPkgVersions(repoPath, pkgJsonPath);
   const pkgJson = await readJson(pkgJsonPath);
 
   // override workspace protocol
@@ -158,13 +161,15 @@ const getInstallSize = async (casePath: string) => {
   });
 };
 
-export const yarnInstall = async (caseName: string) => {
-  const casePath = join(TEMP_PATH, caseName);
-  const pkgJsonPath = join(TEMP_PATH, caseName, 'package.json');
+export const yarnInstall = async (productName: string, caseName: string) => {
+  const repoPath = getRepoPath(getRepoName(productName));
+  const tempPath = getTempPath(productName);
+  const casePath = join(tempPath, caseName);
+  const pkgJsonPath = join(tempPath, caseName, 'package.json');
   const rootPkgJsonPath = join(ROOT_PATH, 'package.json');
 
-  await copyCase(caseName, casePath);
-  await setPkgVersion(pkgJsonPath);
+  await copyCase(productName, caseName, casePath);
+  await setPkgVersion(repoPath, pkgJsonPath);
 
   // to prevent Usage Error: This project is configured to use pnpm
   const rootPkgJson = await readJson(rootPkgJsonPath);
