@@ -4,7 +4,7 @@ export const MENU = {
   BUNDLE_SIZE: 'bundle-size',
   COMPILE_SPEED: 'compile-speed',
   INSTALL_SPEED: 'install-speed',
-  TEST_COVERAGE: 'test-coverage',
+  CLI_SPEED: 'cli-speed',
 };
 
 export const BASE_PADDING = 24;
@@ -49,9 +49,7 @@ export const INSTALL_SPEED_METRICS = [
   'hotInstallTime',
 ];
 
-export const PUBLIC_PATH =
-  'https://web-infra-dev.github.io/web-infra-QoS';
-export const COMMITS_INFO_URL = PUBLIC_PATH + '/data/commits-info.json';
+export const PUBLIC_PATH = 'https://web-infra-dev.github.io/web-infra-QoS';
 
 export const LINE_CHART_DEFAULT_CONFIG: Partial<LineOptions> = {
   height: 400,
