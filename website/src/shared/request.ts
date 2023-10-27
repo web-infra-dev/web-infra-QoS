@@ -1,4 +1,4 @@
-import { COMMITS_INFO_URL, PUBLIC_PATH } from './constant';
+import { PUBLIC_PATH } from './constant';
 import type { Metrics } from '../../../scripts/src/shared/types';
 
 export type MetricsMap = Record<string, Metrics & { time: number }>;
@@ -18,9 +18,6 @@ const fetchJsonWithCache = async (url: string) => {
     .catch(() => {});
   return data;
 };
-
-export const fetchCommitsInfo = async () =>
-  fetchJsonWithCache(COMMITS_INFO_URL);
 
 export const fetchMetrics = async (
   caseName: string,
