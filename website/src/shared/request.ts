@@ -20,10 +20,11 @@ const fetchJsonWithCache = async (url: string) => {
 };
 
 export const fetchMetrics = async (
+  productName: string,
   caseName: string,
 ): Promise<FetchedMetrics[]> => {
   const allMetrics: MetricsMap = await fetchJsonWithCache(
-    PUBLIC_PATH + `/data/modernjs-framework/${caseName}.json`,
+    PUBLIC_PATH + `/data/${productName}/${caseName}.json`,
   );
 
   return Object.keys(allMetrics).map(id => {

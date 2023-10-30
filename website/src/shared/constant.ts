@@ -1,5 +1,15 @@
 import type { LineOptions } from '@antv/g2plot';
 
+export const BASE_PADDING = 24;
+
+export const PRODUCT = {
+  MODERNJS_FRAMEWORK: 'modernjs-framework',
+  MODERNJS_MODULE: 'modernjs-module',
+  RSBUILD: 'rsbuild',
+  RSPRESS: 'rspress',
+  RSPACK: 'rspack',
+};
+
 export const MENU = {
   BUNDLE_SIZE: 'bundle-size',
   COMPILE_SPEED: 'compile-speed',
@@ -7,47 +17,62 @@ export const MENU = {
   CLI_SPEED: 'cli-speed',
 };
 
-export const BASE_PADDING = 24;
+type ProductKey = keyof typeof PRODUCT;
 
-export const CASES = [
-  'app-minimal',
-  'app-initial',
-  'app-initial-rspack',
-  'app-tailwind',
-  'app-ssr',
-  'app-ssg',
-  'app-bff-koa',
-  'app-arco-pro',
-  'app-arco-pro-swc',
-  'app-arco-pro-esbuild',
-  'app-arco-pro-rspack',
-];
+type CaseorMetrics = {
+  [key in typeof PRODUCT[ProductKey]]: string[];
+};
 
-export const BUNDLE_SIZE_DEFAULT_CASE = ['app-initial', 'app-initial-rspack'];
-export const BUNDLE_SIZE_METRICS = ['minifiedBundleSize', 'gzippedBundleSize'];
+export const PRODUCT_CASES: CaseorMetrics = {
+  [PRODUCT.MODERNJS_FRAMEWORK]: [
+    'app-minimal',
+    'app-initial',
+    'app-initial-rspack',
+    'app-tailwind',
+    'app-ssr',
+    'app-ssg',
+    'app-bff-koa',
+    'app-arco-pro',
+    'app-arco-pro-swc',
+    'app-arco-pro-esbuild',
+    'app-arco-pro-rspack',
+  ],
+};
 
-export const COMPILE_SPEED_DEFAULT_CASE = [
-  'app-arco-pro',
-  'app-arco-pro-rspack',
-];
-export const COMPILE_SPEED_METRICS = [
-  'buildColdBootTime',
-  'buildHotBootTime',
-  'buildPluginSetupTime',
-  'buildPrepareTime',
-  'devColdBootTime',
-  'devHotBootTime',
-  'devPluginSetupTime',
-  'devPrepareTime',
-];
+export const BUNDLE_SIZE_DEFAULT_CASE = {
+  [PRODUCT.MODERNJS_FRAMEWORK]: ['app-initial', 'app-initial-rspack'],
+};
+export const BUNDLE_SIZE_METRICS = {
+  [PRODUCT.MODERNJS_FRAMEWORK]: ['minifiedBundleSize', 'gzippedBundleSize'],
+};
 
-export const INSTALL_SPEED_DEFAULT_CASE = ['app-initial', 'app-initial-rspack'];
-export const INSTALL_SPEED_METRICS = [
-  'installSize',
-  'dependenciesCount',
-  'coldInstallTime',
-  'hotInstallTime',
-];
+export const COMPILE_SPEED_DEFAULT_CASE = {
+  [PRODUCT.MODERNJS_FRAMEWORK]: ['app-arco-pro', 'app-arco-pro-rspack'],
+};
+export const COMPILE_SPEED_METRICS = {
+  [PRODUCT.MODERNJS_FRAMEWORK]: [
+    'buildColdBootTime',
+    'buildHotBootTime',
+    'buildPluginSetupTime',
+    'buildPrepareTime',
+    'devColdBootTime',
+    'devHotBootTime',
+    'devPluginSetupTime',
+    'devPrepareTime',
+  ],
+};
+
+export const INSTALL_SPEED_DEFAULT_CASE = {
+  [PRODUCT.MODERNJS_FRAMEWORK]: ['app-initial', 'app-initial-rspack'],
+};
+export const INSTALL_SPEED_METRICS = {
+  [PRODUCT.MODERNJS_FRAMEWORK]: [
+    'installSize',
+    'dependenciesCount',
+    'coldInstallTime',
+    'hotInstallTime',
+  ],
+};
 
 export const PUBLIC_PATH = 'https://web-infra-dev.github.io/web-infra-QoS';
 

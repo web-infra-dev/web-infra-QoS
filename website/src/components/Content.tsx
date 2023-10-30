@@ -1,17 +1,36 @@
-import { MENU } from '@/shared/constant';
+import { BASE_PADDING, MENU, PRODUCT } from '@/shared/constant';
 import { ContentBundleSize } from './ContentBundleSize';
 import { ContentCompileSpeed } from './ContentCompileSpeed';
 import { ContentInstallSpeed } from './ContentInstallSpeed';
+import { ContentCliSpeed } from './ContentCliSpeed';
 
-export const Content = (props: { menuIndex: string }) => {
+export const Content = (props: { productIndex: string; menuIndex: string }) => {
   const renderSubContent = () => {
+    if (props.productIndex === PRODUCT.RSPACK) {
+      return (
+        <div style={{ padding: BASE_PADDING }}>
+          <div>
+            <iframe
+              src="https://web-infra-dev.github.io/rspack-ecosystem-benchmark/"
+              title="Rspack Benchmark"
+              style={{ width: '100%', height: '900px' }}
+            ></iframe>
+          </div>
+        </div>
+      );
+    }
+    if (props.productIndex !== PRODUCT.MODERNJS_FRAMEWORK) {
+      return <div style={{ padding: BASE_PADDING }}>WIP</div>;
+    }
     switch (props.menuIndex) {
       case MENU.BUNDLE_SIZE:
-        return <ContentBundleSize />;
+        return <ContentBundleSize productIndex={props.productIndex} />;
       case MENU.COMPILE_SPEED:
-        return <ContentCompileSpeed />;
+        return <ContentCompileSpeed productIndex={props.productIndex} />;
       case MENU.INSTALL_SPEED:
-        return <ContentInstallSpeed />;
+        return <ContentInstallSpeed productIndex={props.productIndex} />;
+      case MENU.CLI_SPEED:
+        return <ContentCliSpeed productIndex={props.productIndex} />;
     }
     return null;
   };
