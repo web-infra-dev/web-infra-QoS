@@ -86,7 +86,7 @@
     "crossorigin": false,
     "disableHtmlFolder": false,
     "scriptLoading": "defer",
-    "title": "Modern.js Benchmark",
+    "title": "Web Infra QoS Dashboard",
     "meta": {
       "charset": {
         "charset": "utf-8"
@@ -102,7 +102,7 @@
       "wap-font-scale": "no",
       "format-detection": "telephone=no"
     },
-    "favicon": "./src/favicon.ico"
+    "favicon": "./src/web-infra.png"
   },
   "tools": {
     "tsChecker": {
@@ -189,8 +189,8 @@
       }
     },
     "html": {
-      "title": "Modern.js Benchmark",
-      "favicon": "./src/favicon.ico"
+      "title": "Web Infra QoS Dashboard",
+      "favicon": "./src/web-infra.png"
     },
     "plugins": [
       "[Circular 0]",
