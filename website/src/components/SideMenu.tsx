@@ -1,15 +1,27 @@
 import { Menu, MenuProps } from '@arco-design/web-react';
 import { styled } from 'styled-components';
 import {
-  IconLink,
+  IconApps,
+  IconBug,
+  IconBulb,
+  IconCommand,
+  IconCamera,
   IconInteraction,
   IconThunderbolt,
   IconCloudDownload,
   IconDashboard,
 } from '@arco-design/web-react/icon';
-import { MENU } from '@/shared/constant';
+import { MENU, PRODUCT } from '@/shared/constant';
 
 const MenuItem = Menu.Item;
+const SubMenu = Menu.SubMenu;
+
+const itemStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  height: 38,
+  fontSize: 13,
+};
 
 const Root = styled.div`
   position: fixed;
@@ -18,64 +30,179 @@ const Root = styled.div`
   bottom: 0;
   width: 260px;
   background: #fff;
+  overflow: auto;
 `;
-
-const BottomLink = styled.div`
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 6px;
-  text-align: center;
-`;
-
-const itemStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  height: 48,
-  fontSize: 15,
-  marginBottom: 8,
-};
 
 export const SideMenu = (props: {
+  openKeys: string[];
+  selectedKeys: string[];
   onClickMenuItem: MenuProps['onClickMenuItem'];
-  defaultSelectedKey: string;
+  onClickSubMenu: MenuProps['onClickSubMenu'];
 }) => (
   <Root>
     <Menu
       mode="vertical"
       style={{
         padding: '16px 4px',
+        fontSize: 15,
       }}
+      openKeys={props.openKeys}
+      selectedKeys={props.selectedKeys}
       onClickMenuItem={props.onClickMenuItem}
-      defaultSelectedKeys={[props.defaultSelectedKey]}
+      onClickSubMenu={props.onClickSubMenu}
     >
-      <MenuItem key={MENU.BUNDLE_SIZE} style={itemStyle}>
-        <IconInteraction style={{ fontSize: 20 }} />
-        Bundle Size
-      </MenuItem>
-      <MenuItem key={MENU.COMPILE_SPEED} style={itemStyle}>
-        <IconThunderbolt style={{ fontSize: 20 }} />
-        Compile Speed
-      </MenuItem>
-      <MenuItem key={MENU.INSTALL_SPEED} style={itemStyle}>
-        <IconCloudDownload style={{ fontSize: 20 }} />
-        Install Speed
-      </MenuItem>
-      <MenuItem key={MENU.CLI_SPEED} style={itemStyle}>
-        <IconDashboard style={{ fontSize: 20 }} />
-        Cli Speed
+      <SubMenu
+        key={PRODUCT.MODERNJS_FRAMEWORK}
+        title={
+          <>
+            <IconApps /> Modern.js Framework
+          </>
+        }
+      >
+        <MenuItem
+          key={`${PRODUCT.MODERNJS_FRAMEWORK}_${MENU.BUNDLE_SIZE}`}
+          style={itemStyle}
+        >
+          <IconInteraction />
+          Bundle Size
+        </MenuItem>
+        <MenuItem
+          key={`${PRODUCT.MODERNJS_FRAMEWORK}_${MENU.COMPILE_SPEED}`}
+          style={itemStyle}
+        >
+          <IconThunderbolt />
+          Compile Speed
+        </MenuItem>
+        <MenuItem
+          key={`${PRODUCT.MODERNJS_FRAMEWORK}_${MENU.INSTALL_SPEED}`}
+          style={itemStyle}
+        >
+          <IconCloudDownload />
+          Install Speed
+        </MenuItem>
+        <MenuItem
+          key={`${PRODUCT.MODERNJS_FRAMEWORK}_${MENU.CLI_SPEED}`}
+          style={itemStyle}
+        >
+          <IconDashboard />
+          Cli Speed
+        </MenuItem>
+      </SubMenu>
+      <SubMenu
+        key={PRODUCT.MODERNJS_MODULE}
+        title={
+          <>
+            <IconBug /> Modern.js Module
+          </>
+        }
+      >
+        <MenuItem
+          key={`${PRODUCT.MODERNJS_MODULE}_${MENU.BUNDLE_SIZE}`}
+          style={itemStyle}
+        >
+          <IconInteraction />
+          Bundle Size
+        </MenuItem>
+        <MenuItem
+          key={`${PRODUCT.MODERNJS_MODULE}_${MENU.COMPILE_SPEED}`}
+          style={itemStyle}
+        >
+          <IconThunderbolt />
+          Compile Speed
+        </MenuItem>
+        <MenuItem
+          key={`${PRODUCT.MODERNJS_MODULE}_${MENU.INSTALL_SPEED}`}
+          style={itemStyle}
+        >
+          <IconCloudDownload />
+          Install Speed
+        </MenuItem>
+        <MenuItem
+          key={`${PRODUCT.MODERNJS_MODULE}_${MENU.CLI_SPEED}`}
+          style={itemStyle}
+        >
+          <IconDashboard />
+          Cli Speed
+        </MenuItem>
+      </SubMenu>
+      <SubMenu
+        key={PRODUCT.RSBUILD}
+        title={
+          <>
+            <IconBulb /> Rsbuild
+          </>
+        }
+      >
+        <MenuItem
+          key={`${PRODUCT.RSBUILD}_${MENU.BUNDLE_SIZE}`}
+          style={itemStyle}
+        >
+          <IconInteraction />
+          Bundle Size
+        </MenuItem>
+        <MenuItem
+          key={`${PRODUCT.RSBUILD}_${MENU.COMPILE_SPEED}`}
+          style={itemStyle}
+        >
+          <IconThunderbolt />
+          Compile Speed
+        </MenuItem>
+        <MenuItem
+          key={`${PRODUCT.RSBUILD}_${MENU.INSTALL_SPEED}`}
+          style={itemStyle}
+        >
+          <IconCloudDownload />
+          Install Speed
+        </MenuItem>
+        <MenuItem
+          key={`${PRODUCT.RSBUILD}_${MENU.CLI_SPEED}`}
+          style={itemStyle}
+        >
+          <IconDashboard />
+          Cli Speed
+        </MenuItem>
+      </SubMenu>
+      <SubMenu
+        key={PRODUCT.RSPRESS}
+        title={
+          <>
+            <IconCommand /> Rspress
+          </>
+        }
+      >
+        <MenuItem
+          key={`${PRODUCT.RSPRESS}_${MENU.BUNDLE_SIZE}`}
+          style={itemStyle}
+        >
+          <IconInteraction />
+          Bundle Size
+        </MenuItem>
+        <MenuItem
+          key={`${PRODUCT.RSPRESS}_${MENU.COMPILE_SPEED}`}
+          style={itemStyle}
+        >
+          <IconThunderbolt />
+          Compile Speed
+        </MenuItem>
+        <MenuItem
+          key={`${PRODUCT.RSPRESS}_${MENU.INSTALL_SPEED}`}
+          style={itemStyle}
+        >
+          <IconCloudDownload />
+          Install Speed
+        </MenuItem>
+        <MenuItem
+          key={`${PRODUCT.RSPRESS}_${MENU.CLI_SPEED}`}
+          style={itemStyle}
+        >
+          <IconDashboard />
+          Cli Speed
+        </MenuItem>
+      </SubMenu>
+      <MenuItem key={PRODUCT.RSPACK}>
+        <IconCamera style={{ marginLeft: '4px' }} />
+        Rspack
       </MenuItem>
     </Menu>
-
-    <BottomLink>
-      <a
-        href="https://github.com/web-infra-dev/web-infra-QoS/tree/gh-pages/data"
-        target="_blank"
-        style={{ color: '#2972b7' }}
-      >
-        <IconLink style={{ fontSize: 18, marginRight: 6, verticalAlign: -4 }} />
-        View Raw Data
-      </a>
-    </BottomLink>
   </Root>
 );

@@ -23,13 +23,14 @@ const formatData = (
     y: formatFileSize(item.metrics[item.metricsName]),
   }));
 
-export const ContentBundleSize = () => {
+export const ContentBundleSize = (props: { productIndex: string }) => {
   const chartRoot = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<Line | null>(null);
   const { caseNames, metricsNames, onSubmitForm } = useFilterResult(
-    BUNDLE_SIZE_DEFAULT_CASE,
-    BUNDLE_SIZE_METRICS[0],
+    BUNDLE_SIZE_DEFAULT_CASE[props.productIndex],
+    BUNDLE_SIZE_METRICS[props.productIndex][0],
   );
+  const productName = props.productIndex;
   const [data, setData] = useState<FetchedMetrics[][] | null>(null);
 
   const renderLineChart = ({
@@ -72,24 +73,26 @@ export const ContentBundleSize = () => {
   };
 
   useEffect(() => {
-    Promise.all([fetchMetrics(caseNames[0]), fetchMetrics(caseNames[1])]).then(
-      ([data1, data2]) => {
-        setData([data1, data2]);
-        renderLineChart({
-          data1,
-          data2,
-          caseNames,
-          metricsNames,
-          root: chartRoot.current,
-        });
-      },
-    );
-  }, [caseNames, metricsNames]);
+    Promise.all([
+      fetchMetrics(productName, caseNames[0]),
+      fetchMetrics(productName, caseNames[1]),
+    ]).then(([data1, data2]) => {
+      setData([data1, data2]);
+      renderLineChart({
+        data1,
+        data2,
+        caseNames,
+        metricsNames,
+        root: chartRoot.current,
+      });
+    });
+  }, [productName, caseNames, metricsNames]);
 
   return (
     <div style={{ padding: BASE_PADDING }}>
       <Filters
-        metrics={BUNDLE_SIZE_METRICS}
+        productName={props.productIndex}
+        metrics={BUNDLE_SIZE_METRICS[props.productIndex]}
         initialCase={caseNames}
         onSubmit={onSubmitForm}
       />

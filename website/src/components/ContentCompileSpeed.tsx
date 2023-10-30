@@ -23,13 +23,14 @@ const formatData = (
     y: formatSecond(item.metrics[item.metricsName]),
   }));
 
-export const ContentCompileSpeed = () => {
+export const ContentCompileSpeed = (props: { productIndex: string }) => {
   const chartRoot = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<Line | null>(null);
   const { caseNames, metricsNames, onSubmitForm } = useFilterResult(
-    COMPILE_SPEED_DEFAULT_CASE,
-    COMPILE_SPEED_METRICS[0],
+    COMPILE_SPEED_DEFAULT_CASE[props.productIndex],
+    COMPILE_SPEED_METRICS[props.productIndex][0],
   );
+  const productName = props.productIndex;
 
   const renderLineChart = ({
     root,
@@ -70,23 +71,25 @@ export const ContentCompileSpeed = () => {
   };
 
   useEffect(() => {
-    Promise.all([fetchMetrics(caseNames[0]), fetchMetrics(caseNames[1])]).then(
-      ([data1, data2]) => {
-        renderLineChart({
-          data1,
-          data2,
-          caseNames,
-          metricsNames,
-          root: chartRoot.current,
-        });
-      },
-    );
+    Promise.all([
+      fetchMetrics(productName, caseNames[0]),
+      fetchMetrics(productName, caseNames[1]),
+    ]).then(([data1, data2]) => {
+      renderLineChart({
+        data1,
+        data2,
+        caseNames,
+        metricsNames,
+        root: chartRoot.current,
+      });
+    });
   }, [caseNames, metricsNames]);
 
   return (
     <div style={{ padding: BASE_PADDING }}>
       <Filters
-        metrics={COMPILE_SPEED_METRICS}
+        productName={props.productIndex}
+        metrics={COMPILE_SPEED_METRICS[props.productIndex]}
         initialCase={caseNames}
         onSubmit={onSubmitForm}
       />

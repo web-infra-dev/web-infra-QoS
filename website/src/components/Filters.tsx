@@ -1,4 +1,4 @@
-import { BASE_PADDING, CASES } from '@/shared/constant';
+import { BASE_PADDING, PRODUCT_CASES } from '@/shared/constant';
 import {
   Card,
   Grid,
@@ -12,10 +12,12 @@ import { useState } from 'react';
 
 const SelectGroup = ({
   index,
+  productName,
   metrics,
   initialCase,
 }: {
   index: number;
+  productName: string;
   metrics: string[];
   initialCase: string[];
 }) => {
@@ -33,7 +35,7 @@ const SelectGroup = ({
             style={{ marginBottom: 8 }}
           >
             <Select>
-              {CASES.map(caseName => (
+              {PRODUCT_CASES[productName]?.map(caseName => (
                 <Select.Option key={caseName} value={caseName}>
                   {caseName}
                 </Select.Option>
@@ -63,6 +65,7 @@ const SelectGroup = ({
 };
 
 export const Filters = (props: {
+  productName: string;
   metrics: string[];
   onSubmit: FormProps['onSubmit'];
   initialCase: string[];
