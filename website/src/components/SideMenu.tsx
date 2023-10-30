@@ -200,8 +200,8 @@ export const SideMenu = (props: {
         </MenuItem>
       </SubMenu>
       <MenuItem key={PRODUCT.RSPACK}>
-        <IconCamera style={{ marginLeft: '4px' }} />
-        Rspack
+        <IconCamera />
+        <span style={{ marginLeft: '4px' }}>Rspack</span>
       </MenuItem>
     </Menu>
   </Root>
