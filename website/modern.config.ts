@@ -10,8 +10,8 @@ export default defineConfig<'rspack'>({
     },
   },
   html: {
-    title: 'Modern.js Benchmark',
-    favicon: './src/favicon.ico',
+    title: 'Web Infra QoS Dashboard',
+    favicon: './src/web-infra.png',
   },
   plugins: [appTools({ bundler: 'experimental-rspack' }), moveHTMLPlugin()],
 });
