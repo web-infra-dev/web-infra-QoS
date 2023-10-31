@@ -121,8 +121,7 @@ export const useFilterResult = (
   };
 
   return {
-    caseNames,
-    metricsNames,
+    categories: data,
     handleAddData,
   };
 };

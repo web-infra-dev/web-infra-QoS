@@ -25,11 +25,13 @@ const formatData = (
 export const ContentBundleSize = (props: { productIndex: string }) => {
   const chartRoot = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<Line | null>(null);
-  const { caseNames, metricsNames, handleAddData } = useFilterResult(
+  const { categories, handleAddData } = useFilterResult(
     BUNDLE_SIZE_DEFAULT_CASE[props.productIndex],
     BUNDLE_SIZE_METRICS[props.productIndex][0],
   );
   const productName = props.productIndex;
+  const caseNames = categories.map(item => item.case);
+  const metricsNames = categories.map(item => item.metric);
 
   const renderLineChart = ({
     root,
@@ -84,7 +86,7 @@ export const ContentBundleSize = (props: { productIndex: string }) => {
     };
 
     fetchDataForCaseNames();
-  }, [productName, caseNames, metricsNames]);
+  }, [categories]);
 
   return (
     <div style={{ padding: BASE_PADDING }}>

@@ -25,11 +25,13 @@ const formatData = (
 export const ContentCompileSpeed = (props: { productIndex: string }) => {
   const chartRoot = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<Line | null>(null);
-  const { caseNames, metricsNames, handleAddData } = useFilterResult(
+  const { categories, handleAddData } = useFilterResult(
     COMPILE_SPEED_DEFAULT_CASE[props.productIndex],
     COMPILE_SPEED_METRICS[props.productIndex][0],
   );
   const productName = props.productIndex;
+  const caseNames = categories.map(item => item.case);
+  const metricsNames = categories.map(item => item.metric);
 
   const renderLineChart = ({
     root,
@@ -83,7 +85,7 @@ export const ContentCompileSpeed = (props: { productIndex: string }) => {
     };
 
     fetchDataForCaseNames();
-  }, [productName, caseNames, metricsNames]);
+  }, [categories]);
 
   return (
     <div style={{ padding: BASE_PADDING }}>
