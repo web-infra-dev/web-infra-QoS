@@ -7,30 +7,29 @@ import {
   Select,
   FormProps,
   Typography,
+  Tag,
 } from '@arco-design/web-react';
 import { useState } from 'react';
 
 const SelectGroup = ({
-  index,
   productName,
   metrics,
   initialCase,
 }: {
-  index: number;
   productName: string;
   metrics: string[];
   initialCase: string[];
 }) => {
   return (
     <>
-      <Typography.Title heading={6} style={{ marginTop: index > 1 ? 12 : 0 }}>
+      <Typography.Title heading={6} style={{ marginBottom: 24 }}>
         Add category by Cases and Metrics:
       </Typography.Title>
       <Grid.Row gutter={40}>
         <Grid.Col span={8}>
           <Form.Item
             label="Case"
-            field={`caseName${index}`}
+            field={`caseName`}
             initialValue={initialCase[0]}
             style={{ marginBottom: 8 }}
           >
@@ -46,7 +45,7 @@ const SelectGroup = ({
         <Grid.Col span={8}>
           <Form.Item
             label="Metrics"
-            field={`metricsName${index}`}
+            field={`metricsName`}
             initialValue={metrics[0]}
             style={{ marginBottom: 8 }}
           >
@@ -59,6 +58,11 @@ const SelectGroup = ({
             </Select>
           </Form.Item>
         </Grid.Col>
+        <Grid.Col span={8}>
+          <Button type="primary" htmlType="submit" style={{ width: 120 }}>
+            Add
+          </Button>
+        </Grid.Col>
       </Grid.Row>
     </>
   );
@@ -69,6 +73,7 @@ export const Filters = (props: {
   metrics: string[];
   handleAddData: FormProps['onSubmit'];
   initialCase: string[];
+  renderChoicesTags?: any;
 }) => {
   return (
     <Card bordered={false} style={{ marginBottom: BASE_PADDING }}>
@@ -77,15 +82,9 @@ export const Filters = (props: {
         labelAlign="left"
         onSubmit={props.handleAddData}
       >
-        <SelectGroup {...props} index={1} />
-        <Button
-          type="primary"
-          htmlType="submit"
-          style={{ width: 120, marginTop: 12 }}
-        >
-          Add
-        </Button>
+        <SelectGroup {...props} />
       </Form>
+      {props.renderChoicesTags()}
     </Card>
   );
 };
@@ -103,25 +102,45 @@ export const useFilterResult = (
   const [caseNames, setCaseNames] = useState([defaultCaseNames[0]]);
   const [metricsNames, setMetricsNames] = useState([defaultMetricsName]);
 
-  const handleAddData = (params: {
-    caseName1: string;
-    metricsName1: string;
-  }) => {
-    const choice = { case: params.caseName1, metric: params.metricsName1 };
+  const handleAddData = (params: { caseName: string; metricsName: string }) => {
+    const choice = { case: params.caseName, metric: params.metricsName };
     if (
       !data.some(
         item =>
-          item.case === params.caseName1 && item.metric === params.metricsName1,
+          item.case === params.caseName && item.metric === params.metricsName,
       )
     ) {
       setData([...data, choice]);
-      setCaseNames([...caseNames, params.caseName1]);
-      setMetricsNames([...metricsNames, params.metricsName1]);
+      setCaseNames([...caseNames, params.caseName]);
+      setMetricsNames([...metricsNames, params.metricsName]);
     }
+  };
+
+  const handleRemoveData = (index: number) => {
+    const newData = [...data];
+    newData.splice(index, 1);
+    setData(newData);
+  };
+
+  const renderChoicesTags = () => {
+    return (
+      <div
+        style={{ display: 'flex', flexWrap: 'wrap', marginTop: BASE_PADDING }}
+      >
+        {data.map((item, index) => (
+          <div key={index} style={{ marginRight: 12, marginBottom: 12 }}>
+            <Tag closable key={index} onClose={() => handleRemoveData(index)}>
+              {`${item.case}_${item.metric}`}
+            </Tag>
+          </div>
+        ))}
+      </div>
+    );
   };
 
   return {
     categories: data,
     handleAddData,
+    renderChoicesTags,
   };
 };

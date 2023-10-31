@@ -25,7 +25,7 @@ const formatData = (
 export const ContentCompileSpeed = (props: { productIndex: string }) => {
   const chartRoot = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<Line | null>(null);
-  const { categories, handleAddData } = useFilterResult(
+  const { categories, handleAddData, renderChoicesTags } = useFilterResult(
     COMPILE_SPEED_DEFAULT_CASE[props.productIndex],
     COMPILE_SPEED_METRICS[props.productIndex][0],
   );
@@ -94,6 +94,7 @@ export const ContentCompileSpeed = (props: { productIndex: string }) => {
         metrics={COMPILE_SPEED_METRICS[props.productIndex]}
         initialCase={caseNames}
         handleAddData={handleAddData}
+        renderChoicesTags={renderChoicesTags}
       />
       <Card bordered={false} style={{ height: 464 }}>
         <Typography.Title heading={5} style={{ marginTop: 0 }}>
