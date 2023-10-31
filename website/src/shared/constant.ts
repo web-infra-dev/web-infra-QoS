@@ -85,9 +85,17 @@ export const LINE_CHART_DEFAULT_CONFIG: Partial<LineOptions> = {
     label: {
       formatter: (text: string) => text.split(' ')[0],
     },
+    nice: true,
+  },
+  yAxis: {
+    nice: true,
   },
   point: {
     size: 3,
   },
   stepType: 'vh',
+  slider: {
+    start: 0,
+    end: 1,
+  },
 };

@@ -56,6 +56,7 @@ export const ContentCompileSpeed = (props: { productIndex: string }) => {
           label: {
             formatter: (text: string) => `${text} s`,
           },
+          nice: true,
         },
         tooltip: {
           fields: ['x', 'y', 'category'],
