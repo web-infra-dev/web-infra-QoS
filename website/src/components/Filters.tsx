@@ -133,7 +133,11 @@ export const useFilterResult = (
       >
         {data.map((item, index) => (
           <div key={index} style={{ marginRight: 12, marginBottom: 12 }}>
-            <Tag closable key={index} onClose={() => handleRemoveData(index)}>
+            <Tag
+              closable
+              key={`${item.case}_${item.metric}`}
+              onClose={() => handleRemoveData(index)}
+            >
               {`${item.case}_${item.metric}`}
             </Tag>
           </div>
