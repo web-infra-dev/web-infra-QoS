@@ -122,7 +122,7 @@ export const ContentInstallSpeed = (props: { productIndex: string }) => {
       <Filters
         productName={props.productIndex}
         metrics={INSTALL_SPEED_METRICS[props.productIndex]}
-        initialCase={caseNames}
+        initialCase={INSTALL_SPEED_DEFAULT_CASE[props.productIndex]}
         handleAddData={handleAddData}
         renderChoicesTags={renderChoicesTags}
       />

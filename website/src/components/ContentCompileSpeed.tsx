@@ -92,7 +92,7 @@ export const ContentCompileSpeed = (props: { productIndex: string }) => {
       <Filters
         productName={props.productIndex}
         metrics={COMPILE_SPEED_METRICS[props.productIndex]}
-        initialCase={caseNames}
+        initialCase={COMPILE_SPEED_DEFAULT_CASE[props.productIndex]}
         handleAddData={handleAddData}
         renderChoicesTags={renderChoicesTags}
       />

@@ -93,7 +93,7 @@ export const ContentBundleSize = (props: { productIndex: string }) => {
       <Filters
         productName={props.productIndex}
         metrics={BUNDLE_SIZE_METRICS[props.productIndex]}
-        initialCase={caseNames}
+        initialCase={BUNDLE_SIZE_DEFAULT_CASE[props.productIndex]}
         handleAddData={handleAddData}
         renderChoicesTags={renderChoicesTags}
       />

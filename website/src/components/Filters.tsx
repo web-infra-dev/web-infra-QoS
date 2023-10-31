@@ -98,8 +98,12 @@ export const useFilterResult = (
       case: defaultCaseNames[0],
       metric: defaultMetricsName,
     },
+    {
+      case: defaultCaseNames[1],
+      metric: defaultMetricsName,
+    },
   ]);
-  const [caseNames, setCaseNames] = useState([defaultCaseNames[0]]);
+  const [caseNames, setCaseNames] = useState([...defaultCaseNames]);
   const [metricsNames, setMetricsNames] = useState([defaultMetricsName]);
 
   const handleAddData = (params: { caseName: string; metricsName: string }) => {
