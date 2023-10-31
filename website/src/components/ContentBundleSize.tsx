@@ -58,6 +58,7 @@ export const ContentBundleSize = (props: { productIndex: string }) => {
           label: {
             formatter: (text: string) => `${text} KB`,
           },
+          nice: true,
         },
         tooltip: {
           fields: ['x', 'y', 'category'],
