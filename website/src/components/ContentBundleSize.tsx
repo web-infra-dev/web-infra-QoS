@@ -17,7 +17,7 @@ const formatData = (
   metricsNames: string[],
 ) =>
   mergeData(results, caseNames, metricsNames).map(item => ({
-    category: caseNames[0] === caseNames[1] ? item.metricsName : item.caseName,
+    category: `${item.caseName}_${item.metricsName}`,
     x: formatDateWithId(item),
     y: formatFileSize(item.metrics[item.metricsName]),
   }));
@@ -25,7 +25,7 @@ const formatData = (
 export const ContentBundleSize = (props: { productIndex: string }) => {
   const chartRoot = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<Line | null>(null);
-  const { caseNames, metricsNames, onSubmitForm } = useFilterResult(
+  const { caseNames, metricsNames, handleAddData } = useFilterResult(
     BUNDLE_SIZE_DEFAULT_CASE[props.productIndex],
     BUNDLE_SIZE_METRICS[props.productIndex][0],
   );
@@ -92,7 +92,7 @@ export const ContentBundleSize = (props: { productIndex: string }) => {
         productName={props.productIndex}
         metrics={BUNDLE_SIZE_METRICS[props.productIndex]}
         initialCase={caseNames}
-        onSubmit={onSubmitForm}
+        handleAddData={handleAddData}
       />
       <Card bordered={false} style={{ height: 464 }}>
         <Typography.Title heading={5} style={{ marginTop: 0 }}>

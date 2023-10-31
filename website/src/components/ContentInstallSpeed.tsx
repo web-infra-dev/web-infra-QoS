@@ -40,8 +40,7 @@ const formatData = (
 
     return {
       metricsName: item.metricsName,
-      category:
-        caseNames[0] === caseNames[1] ? item.metricsName : item.caseName,
+      category: `${item.caseName}_${item.metricsName}`,
       x: formatDateWithId(item),
       y,
     };
@@ -50,7 +49,7 @@ const formatData = (
 export const ContentInstallSpeed = (props: { productIndex: string }) => {
   const chartRoot = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<Line | null>(null);
-  const { caseNames, metricsNames, onSubmitForm } = useFilterResult(
+  const { caseNames, metricsNames, handleAddData } = useFilterResult(
     INSTALL_SPEED_DEFAULT_CASE[props.productIndex],
     INSTALL_SPEED_METRICS[props.productIndex][0],
   );
@@ -122,7 +121,7 @@ export const ContentInstallSpeed = (props: { productIndex: string }) => {
         productName={props.productIndex}
         metrics={INSTALL_SPEED_METRICS[props.productIndex]}
         initialCase={caseNames}
-        onSubmit={onSubmitForm}
+        handleAddData={handleAddData}
       />
       <Card bordered={false} style={{ height: 464 }}>
         <Typography.Title heading={5} style={{ marginTop: 0 }}>

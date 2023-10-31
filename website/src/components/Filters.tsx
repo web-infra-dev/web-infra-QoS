@@ -24,14 +24,14 @@ const SelectGroup = ({
   return (
     <>
       <Typography.Title heading={6} style={{ marginTop: index > 1 ? 12 : 0 }}>
-        Group{index}:
+        Add category by Cases and Metrics:
       </Typography.Title>
       <Grid.Row gutter={40}>
         <Grid.Col span={8}>
           <Form.Item
             label="Case"
             field={`caseName${index}`}
-            initialValue={initialCase[index - 1]}
+            initialValue={initialCase[0]}
             style={{ marginBottom: 8 }}
           >
             <Select>
@@ -67,20 +67,23 @@ const SelectGroup = ({
 export const Filters = (props: {
   productName: string;
   metrics: string[];
-  onSubmit: FormProps['onSubmit'];
+  handleAddData: FormProps['onSubmit'];
   initialCase: string[];
 }) => {
   return (
     <Card bordered={false} style={{ marginBottom: BASE_PADDING }}>
-      <Form layout="horizontal" labelAlign="left" onSubmit={props.onSubmit}>
+      <Form
+        layout="horizontal"
+        labelAlign="left"
+        onSubmit={props.handleAddData}
+      >
         <SelectGroup {...props} index={1} />
-        <SelectGroup {...props} index={2} />
         <Button
           type="primary"
           htmlType="submit"
           style={{ width: 120, marginTop: 12 }}
         >
-          Query
+          Add
         </Button>
       </Form>
     </Card>
@@ -91,25 +94,35 @@ export const useFilterResult = (
   defaultCaseNames: string[],
   defaultMetricsName: string,
 ) => {
-  const [caseNames, setCaseNames] = useState(defaultCaseNames);
-  const [metricsNames, setMetricsNames] = useState([
-    defaultMetricsName,
-    defaultMetricsName,
+  const [data, setData] = useState([
+    {
+      case: defaultCaseNames[0],
+      metric: defaultMetricsName,
+    },
   ]);
+  const [caseNames, setCaseNames] = useState([defaultCaseNames[0]]);
+  const [metricsNames, setMetricsNames] = useState([defaultMetricsName]);
 
-  const onSubmitForm = (params: {
+  const handleAddData = (params: {
     caseName1: string;
-    caseName2: string;
     metricsName1: string;
-    metricsName2: string;
   }) => {
-    setCaseNames([params.caseName1, params.caseName2]);
-    setMetricsNames([params.metricsName1, params.metricsName2]);
+    const choice = { case: params.caseName1, metric: params.metricsName1 };
+    if (
+      !data.some(
+        item =>
+          item.case === params.caseName1 && item.metric === params.metricsName1,
+      )
+    ) {
+      setData([...data, choice]);
+      setCaseNames([...caseNames, params.caseName1]);
+      setMetricsNames([...metricsNames, params.metricsName1]);
+    }
   };
 
   return {
     caseNames,
     metricsNames,
-    onSubmitForm,
+    handleAddData,
   };
 };
