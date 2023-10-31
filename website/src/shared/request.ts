@@ -1,5 +1,6 @@
 import { PUBLIC_PATH } from './constant';
 import type { Metrics } from '../../../scripts/src/shared/types';
+import * as localForage from 'localforage';
 
 export type MetricsMap = Record<string, Metrics & { time: number }>;
 
@@ -13,9 +14,21 @@ export type FetchedMetrics = CommitInfo & {
 };
 
 const fetchJsonWithCache = async (url: string) => {
+  const cacheKey = url;
+  const cachedData = await localForage.getItem(cacheKey).catch(() => {});
+
+  if (cachedData) {
+    return cachedData;
+  }
+
   const data = await fetch(url)
     .then(res => res.json())
     .catch(() => {});
+
+  if (data) {
+    await localForage.setItem(cacheKey, data);
+  }
+
   return data;
 };
 
