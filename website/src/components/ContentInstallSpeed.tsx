@@ -17,12 +17,11 @@ import {
 } from '@/shared/utils';
 
 const formatData = (
-  data1: FetchedMetrics[],
-  data2: FetchedMetrics[],
+  results: FetchedMetrics[][],
   caseNames: string[],
   metricsNames: string[],
 ) =>
-  mergeData(data1, data2, caseNames, metricsNames).map(item => {
+  mergeData(results, caseNames, metricsNames).map(item => {
     let y: number;
     const initialValue = item.metrics[item.metricsName];
 
@@ -59,18 +58,16 @@ export const ContentInstallSpeed = (props: { productIndex: string }) => {
 
   const renderLineChart = ({
     root,
-    data1,
-    data2,
+    results,
     caseNames,
     metricsNames,
   }: {
     root: HTMLElement | null;
-    data1: FetchedMetrics[];
-    data2: FetchedMetrics[];
+    results: FetchedMetrics[][];
     caseNames: string[];
     metricsNames: string[];
   }) => {
-    const data = formatData(data1, data2, caseNames, metricsNames);
+    const data = formatData(results, caseNames, metricsNames);
     if (chartInstance.current) {
       chartInstance.current.changeData(data);
     } else if (root) {
@@ -103,19 +100,21 @@ export const ContentInstallSpeed = (props: { productIndex: string }) => {
   };
 
   useEffect(() => {
-    Promise.all([
-      fetchMetrics(productName, caseNames[0]),
-      fetchMetrics(productName, caseNames[1]),
-    ]).then(([data1, data2]) => {
+    const fetchDataForCaseNames = async () => {
+      const promises = caseNames.map(caseName =>
+        fetchMetrics(productName, caseName),
+      );
+      const results = await Promise.all(promises);
       renderLineChart({
-        data1,
-        data2,
+        results,
         caseNames,
         metricsNames,
         root: chartRoot.current,
       });
-    });
-  }, [caseNames, metricsNames]);
+    };
+
+    fetchDataForCaseNames();
+  }, [productName, caseNames, metricsNames]);
 
   return (
     <div style={{ padding: BASE_PADDING }}>

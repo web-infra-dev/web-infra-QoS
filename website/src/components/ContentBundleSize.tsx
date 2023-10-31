@@ -7,17 +7,16 @@ import {
   BASE_PADDING,
 } from '@/shared/constant';
 import { Filters, useFilterResult } from './Filters';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { FetchedMetrics, fetchMetrics } from '@/shared/request';
 import { formatDateWithId, formatFileSize, mergeData } from '@/shared/utils';
 
 const formatData = (
-  data1: FetchedMetrics[],
-  data2: FetchedMetrics[],
+  results: FetchedMetrics[][],
   caseNames: string[],
   metricsNames: string[],
 ) =>
-  mergeData(data1, data2, caseNames, metricsNames).map(item => ({
+  mergeData(results, caseNames, metricsNames).map(item => ({
     category: caseNames[0] === caseNames[1] ? item.metricsName : item.caseName,
     x: formatDateWithId(item),
     y: formatFileSize(item.metrics[item.metricsName]),
@@ -31,22 +30,19 @@ export const ContentBundleSize = (props: { productIndex: string }) => {
     BUNDLE_SIZE_METRICS[props.productIndex][0],
   );
   const productName = props.productIndex;
-  const [data, setData] = useState<FetchedMetrics[][] | null>(null);
 
   const renderLineChart = ({
     root,
-    data1,
-    data2,
+    results,
     caseNames,
     metricsNames,
   }: {
     root: HTMLElement | null;
-    data1: FetchedMetrics[];
-    data2: FetchedMetrics[];
+    results: FetchedMetrics[][];
     caseNames: string[];
     metricsNames: string[];
   }) => {
-    const data = formatData(data1, data2, caseNames, metricsNames);
+    const data = formatData(results, caseNames, metricsNames);
     if (chartInstance.current) {
       chartInstance.current.changeData(data);
     } else if (root) {
@@ -74,19 +70,20 @@ export const ContentBundleSize = (props: { productIndex: string }) => {
   };
 
   useEffect(() => {
-    Promise.all([
-      fetchMetrics(productName, caseNames[0]),
-      fetchMetrics(productName, caseNames[1]),
-    ]).then(([data1, data2]) => {
-      setData([data1, data2]);
+    const fetchDataForCaseNames = async () => {
+      const promises = caseNames.map(caseName =>
+        fetchMetrics(productName, caseName),
+      );
+      const results = await Promise.all(promises);
       renderLineChart({
-        data1,
-        data2,
+        results,
         caseNames,
         metricsNames,
         root: chartRoot.current,
       });
-    });
+    };
+
+    fetchDataForCaseNames();
   }, [productName, caseNames, metricsNames]);
 
   return (
