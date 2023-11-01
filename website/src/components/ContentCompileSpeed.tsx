@@ -23,13 +23,13 @@ const formatData = (
   }));
 
 export const ContentCompileSpeed = (props: { productIndex: string }) => {
+  const productName = props.productIndex;
   const chartRoot = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<Line | null>(null);
   const { categories, handleAddData, renderChoicesTags } = useFilterResult(
-    COMPILE_SPEED_DEFAULT_CASE[props.productIndex],
-    COMPILE_SPEED_METRICS[props.productIndex][0],
+    COMPILE_SPEED_DEFAULT_CASE[productName],
+    COMPILE_SPEED_METRICS[productName][0],
   );
-  const productName = props.productIndex;
   const caseNames = categories.map(item => item.case);
   const metricsNames = categories.map(item => item.metric);
 
@@ -90,9 +90,9 @@ export const ContentCompileSpeed = (props: { productIndex: string }) => {
   return (
     <div style={{ padding: BASE_PADDING }}>
       <Filters
-        productName={props.productIndex}
-        metrics={COMPILE_SPEED_METRICS[props.productIndex]}
-        initialCase={COMPILE_SPEED_DEFAULT_CASE[props.productIndex]}
+        productName={productName}
+        metrics={COMPILE_SPEED_METRICS[productName]}
+        initialCase={COMPILE_SPEED_DEFAULT_CASE[productName]}
         handleAddData={handleAddData}
         renderChoicesTags={renderChoicesTags}
       />

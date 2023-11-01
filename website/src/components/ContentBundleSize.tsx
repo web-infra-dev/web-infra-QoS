@@ -23,13 +23,13 @@ const formatData = (
   }));
 
 export const ContentBundleSize = (props: { productIndex: string }) => {
+  const productName = props.productIndex;
   const chartRoot = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<Line | null>(null);
   const { categories, handleAddData, renderChoicesTags } = useFilterResult(
-    BUNDLE_SIZE_DEFAULT_CASE[props.productIndex],
-    BUNDLE_SIZE_METRICS[props.productIndex][0],
+    BUNDLE_SIZE_DEFAULT_CASE[productName],
+    BUNDLE_SIZE_METRICS[productName][0],
   );
-  const productName = props.productIndex;
   const caseNames = categories.map(item => item.case);
   const metricsNames = categories.map(item => item.metric);
 
@@ -51,7 +51,6 @@ export const ContentBundleSize = (props: { productIndex: string }) => {
       chartInstance.current = new Line(root, {
         ...LINE_CHART_DEFAULT_CONFIG,
         data,
-
         yAxis: {
           label: {
             formatter: (text: string) => `${text} KB`,
@@ -91,9 +90,9 @@ export const ContentBundleSize = (props: { productIndex: string }) => {
   return (
     <div style={{ padding: BASE_PADDING }}>
       <Filters
-        productName={props.productIndex}
-        metrics={BUNDLE_SIZE_METRICS[props.productIndex]}
-        initialCase={BUNDLE_SIZE_DEFAULT_CASE[props.productIndex]}
+        productName={productName}
+        metrics={BUNDLE_SIZE_METRICS[productName]}
+        initialCase={BUNDLE_SIZE_DEFAULT_CASE[productName]}
         handleAddData={handleAddData}
         renderChoicesTags={renderChoicesTags}
       />

@@ -28,7 +28,7 @@ const SelectGroup = ({
       <Grid.Row gutter={40}>
         <Grid.Col span={8}>
           <Form.Item
-            label="Case"
+            label="Cases"
             field={`caseName`}
             initialValue={initialCase[0]}
             style={{ marginBottom: 8 }}
@@ -59,7 +59,7 @@ const SelectGroup = ({
           </Form.Item>
         </Grid.Col>
         <Grid.Col span={8}>
-          <Button type="primary" htmlType="submit" style={{ width: 120 }}>
+          <Button type="primary" htmlType="submit" style={{ width: 80 }}>
             Add
           </Button>
         </Grid.Col>
@@ -71,9 +71,9 @@ const SelectGroup = ({
 export const Filters = (props: {
   productName: string;
   metrics: string[];
-  handleAddData: FormProps['onSubmit'];
   initialCase: string[];
-  renderChoicesTags?: any;
+  handleAddData: FormProps['onSubmit'];
+  renderChoicesTags: () => JSX.Element;
 }) => {
   return (
     <Card bordered={false} style={{ marginBottom: BASE_PADDING }}>
@@ -103,8 +103,6 @@ export const useFilterResult = (
       metric: defaultMetricsName,
     },
   ]);
-  const [caseNames, setCaseNames] = useState([...defaultCaseNames]);
-  const [metricsNames, setMetricsNames] = useState([defaultMetricsName]);
 
   const handleAddData = (params: { caseName: string; metricsName: string }) => {
     const choice = { case: params.caseName, metric: params.metricsName };
@@ -115,8 +113,6 @@ export const useFilterResult = (
       )
     ) {
       setData([...data, choice]);
-      setCaseNames([...caseNames, params.caseName]);
-      setMetricsNames([...metricsNames, params.metricsName]);
     }
   };
 
