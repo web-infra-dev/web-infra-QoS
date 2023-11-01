@@ -17,7 +17,7 @@ const formatData = (
   metricsNames: string[],
 ) =>
   mergeData(results, caseNames, metricsNames).map(item => ({
-    category: `${item.caseName}_${item.metricsName}`,
+    category: `${item.caseName} + ${item.metricsName}`,
     x: formatDateWithId(item),
     y: formatFileSize(item.metrics[item.metricsName]),
   }));

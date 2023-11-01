@@ -134,7 +134,7 @@ export const useFilterResult = (
               key={`${item.case}_${item.metric}`}
               onClose={() => handleRemoveData(index)}
             >
-              {`${item.case}_${item.metric}`}
+              {`${item.case} + ${item.metric}`}
             </Tag>
           </div>
         ))}

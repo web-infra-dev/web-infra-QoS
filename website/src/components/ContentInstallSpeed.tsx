@@ -40,7 +40,7 @@ const formatData = (
 
     return {
       metricsName: item.metricsName,
-      category: `${item.caseName}_${item.metricsName}`,
+      category: `${item.caseName} + ${item.metricsName}`,
       x: formatDateWithId(item),
       y,
     };
