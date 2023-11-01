@@ -13,6 +13,22 @@ on:
           - MODERNJS_MODULE
           - RSBUILD
           - RSPRESS
+      case:
+        description: 'case name of which to bench'
+        type: choice
+        default: 'ALL'
+        options:
+          - app-minimal
+          - app-initial
+          - app-initial-rspack
+          - app-tailwind
+          - app-ssr
+          - app-ssg
+          - app-bff-koa
+          - app-arco-pro
+          - app-arco-pro-swc
+          - app-arco-pro-esbuild
+          - app-arco-pro-rspack
       commitId:
         description: 'commitId of your repo'
       onlyInstallSize:
@@ -71,8 +87,12 @@ jobs:
         if: ${{ github.event.inputs.product == 'ALL' }}
         run: cd scripts && ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start ${{ matrix.product }} ${{ matrix.case }}
 
-      - name: 🚀 Run specified benchmark
-        if: ${{ github.event.inputs.product != 'ALL' && github.event.inputs.product == matrix.product }}
+      - name: 🚀 Run specified product benchmark
+        if: ${{ github.event.inputs.product != 'ALL' && github.event.inputs.case == 'ALL' && github.event.inputs.product == matrix.product }}
+        run: cd scripts && ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start ${{ matrix.product }} ${{ matrix.case }}
+
+       - name: 🚀 Run specified case benchmark
+        if: ${{ github.event.inputs.product != 'ALL' && github.event.inputs.case != 'ALL' && github.event.inputs.product == matrix.product && github.event.inputs.case == matrix.case }}
         run: cd scripts && ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start ${{ matrix.product }} ${{ matrix.case }}
 
       - name: Setup git user
