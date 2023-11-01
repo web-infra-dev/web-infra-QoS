@@ -34,7 +34,13 @@ on:
         description: "If only want install size, set to 'true'"
 
 jobs:
-  benchmark:
+  bench:
+    strategy:
+      matrix:
+        include:
+          - case: ${{ github.event.inputs.case }}
+            product: ${{ github.event.inputs.product }}
+
     runs-on: ubuntu-latest
 
     steps:
@@ -57,7 +63,7 @@ jobs:
         run: pnpm run install:scripts
 
       - name: 🚀 Run specified benchmark
-        run: cd scripts && ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start ${{ github.event.inputs.product }} ${{ github.event.inputs.case }}
+        run: cd scripts && ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start ${{ matrix.product }} ${{ matrix.case }}
 
       - name: Setup git user
         run: |
