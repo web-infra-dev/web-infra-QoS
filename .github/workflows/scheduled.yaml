@@ -3,6 +3,7 @@ name: Scheduled
 on:
   schedule:
     - cron: '0 1,13 * * *'
+  workflow_dispatch:
 
 jobs:
   benchmark:
