@@ -91,7 +91,7 @@ jobs:
         if: ${{ github.event.inputs.product != 'ALL' && github.event.inputs.case == 'ALL' && github.event.inputs.product == matrix.product }}
         run: cd scripts && ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start ${{ matrix.product }} ${{ matrix.case }}
 
-       - name: 🚀 Run specified case benchmark
+      - name: 🚀 Run specified case benchmark
         if: ${{ github.event.inputs.product != 'ALL' && github.event.inputs.case != 'ALL' && github.event.inputs.product == matrix.product && github.event.inputs.case == matrix.case }}
         run: cd scripts && ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start ${{ matrix.product }} ${{ matrix.case }}
 
