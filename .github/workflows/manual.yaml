@@ -6,13 +6,28 @@ on:
       product:
         description: 'product name of which to bench'
         type: choice
-        default: 'ALL'
+        required: true
         options:
-          - ALL
           - MODERNJS_FRAMEWORK
           - MODERNJS_MODULE
           - RSBUILD
           - RSPRESS
+      case:
+        description: 'case name of which to bench'
+        type: choice
+        required: true
+        options:
+          - app-minimal
+          - app-initial
+          - app-initial-rspack
+          - app-tailwind
+          - app-ssr
+          - app-ssg
+          - app-bff-koa
+          - app-arco-pro
+          - app-arco-pro-swc
+          - app-arco-pro-esbuild
+          - app-arco-pro-rspack
       commitId:
         description: 'commitId of your repo'
       onlyInstallSize:
@@ -20,32 +35,6 @@ on:
 
 jobs:
   benchmark:
-    strategy:
-      matrix:
-        include:
-          - case: app-minimal
-            product: MODERNJS_FRAMEWORK
-          - case: app-initial
-            product: MODERNJS_FRAMEWORK
-          - case: app-initial-rspack
-            product: MODERNJS_FRAMEWORK
-          - case: app-tailwind
-            product: MODERNJS_FRAMEWORK
-          - case: app-ssr
-            product: MODERNJS_FRAMEWORK
-          - case: app-ssg
-            product: MODERNJS_FRAMEWORK
-          - case: app-bff-koa
-            product: MODERNJS_FRAMEWORK
-          - case: app-arco-pro
-            product: MODERNJS_FRAMEWORK
-          - case: app-arco-pro-swc
-            product: MODERNJS_FRAMEWORK
-          - case: app-arco-pro-esbuild
-            product: MODERNJS_FRAMEWORK
-          - case: app-arco-pro-rspack
-            product: MODERNJS_FRAMEWORK
-
     runs-on: ubuntu-latest
 
     steps:
@@ -67,13 +56,8 @@ jobs:
       - name: Install Dependencies
         run: pnpm run install:scripts
 
-      - name: 🚀 Run all benchmark
-        if: ${{ github.event.inputs.product == 'ALL' }}
-        run: cd scripts && ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start ${{ matrix.product }} ${{ matrix.case }}
-
       - name: 🚀 Run specified benchmark
-        if: ${{ github.event.inputs.product != 'ALL' && github.event.inputs.product == matrix.product }}
-        run: cd scripts && ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start ${{ matrix.product }} ${{ matrix.case }}
+        run: cd scripts && ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start ${{ github.event.inputs.product }} ${{ github.event.inputs.case }}
 
       - name: Setup git user
         run: |
