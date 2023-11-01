@@ -12,40 +12,39 @@ import { FetchedMetrics, fetchMetrics } from '@/shared/request';
 import { formatDateWithId, formatSecond, mergeData } from '@/shared/utils';
 
 const formatData = (
-  data1: FetchedMetrics[],
-  data2: FetchedMetrics[],
+  results: FetchedMetrics[][],
   caseNames: string[],
   metricsNames: string[],
 ) =>
-  mergeData(data1, data2, caseNames, metricsNames).map(item => ({
-    category: caseNames[0] === caseNames[1] ? item.metricsName : item.caseName,
+  mergeData(results, caseNames, metricsNames).map(item => ({
+    category: `${item.caseName} + ${item.metricsName}`,
     x: formatDateWithId(item),
     y: formatSecond(item.metrics[item.metricsName]),
   }));
 
 export const ContentCompileSpeed = (props: { productIndex: string }) => {
+  const productName = props.productIndex;
   const chartRoot = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<Line | null>(null);
-  const { caseNames, metricsNames, onSubmitForm } = useFilterResult(
-    COMPILE_SPEED_DEFAULT_CASE[props.productIndex],
-    COMPILE_SPEED_METRICS[props.productIndex][0],
+  const { categories, handleAddData, renderChoicesTags } = useFilterResult(
+    COMPILE_SPEED_DEFAULT_CASE[productName],
+    COMPILE_SPEED_METRICS[productName][0],
   );
-  const productName = props.productIndex;
+  const caseNames = categories.map(item => item.case);
+  const metricsNames = categories.map(item => item.metric);
 
   const renderLineChart = ({
     root,
-    data1,
-    data2,
+    results,
     caseNames,
     metricsNames,
   }: {
     root: HTMLElement | null;
-    data1: FetchedMetrics[];
-    data2: FetchedMetrics[];
+    results: FetchedMetrics[][];
     caseNames: string[];
     metricsNames: string[];
   }) => {
-    const data = formatData(data1, data2, caseNames, metricsNames);
+    const data = formatData(results, caseNames, metricsNames);
     if (chartInstance.current) {
       chartInstance.current.changeData(data);
     } else if (root) {
@@ -72,27 +71,30 @@ export const ContentCompileSpeed = (props: { productIndex: string }) => {
   };
 
   useEffect(() => {
-    Promise.all([
-      fetchMetrics(productName, caseNames[0]),
-      fetchMetrics(productName, caseNames[1]),
-    ]).then(([data1, data2]) => {
+    const fetchDataForCaseNames = async () => {
+      const promises = caseNames.map(caseName =>
+        fetchMetrics(productName, caseName),
+      );
+      const results = await Promise.all(promises);
       renderLineChart({
-        data1,
-        data2,
+        results,
         caseNames,
         metricsNames,
         root: chartRoot.current,
       });
-    });
-  }, [caseNames, metricsNames]);
+    };
+
+    fetchDataForCaseNames();
+  }, [categories]);
 
   return (
     <div style={{ padding: BASE_PADDING }}>
       <Filters
-        productName={props.productIndex}
-        metrics={COMPILE_SPEED_METRICS[props.productIndex]}
-        initialCase={caseNames}
-        onSubmit={onSubmitForm}
+        productName={productName}
+        metrics={COMPILE_SPEED_METRICS[productName]}
+        initialCase={COMPILE_SPEED_DEFAULT_CASE[productName]}
+        handleAddData={handleAddData}
+        renderChoicesTags={renderChoicesTags}
       />
       <Card bordered={false} style={{ height: 464 }}>
         <Typography.Title heading={5} style={{ marginTop: 0 }}>

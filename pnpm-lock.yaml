@@ -58,6 +58,9 @@ importers:
       dayjs:
         specifier: ^1.11.2
         version: 1.11.10
+      localforage:
+        specifier: ^1.10.0
+        version: 1.10.0
       react:
         specifier: ^18
         version: 18.2.0
@@ -2352,7 +2355,7 @@ packages:
       terser-webpack-plugin: 5.3.9(esbuild@0.17.19)(webpack@5.89.0)
       ts-loader: 9.4.4(typescript@5.2.2)(webpack@5.89.0)
       tsconfig-paths-webpack-plugin: 4.1.0
-      webpack: 5.89.0(esbuild@0.17.19)
+      webpack: 5.89.0
       webpack-subresource-integrity: 5.1.0(html-webpack-plugin@5.5.3)(webpack@5.89.0)
     transitivePeerDependencies:
       - '@babel/traverse'
@@ -2807,7 +2810,7 @@ packages:
       react-refresh: 0.14.0
       schema-utils: 3.3.0
       source-map: 0.7.4
-      webpack: 5.89.0(esbuild@0.17.19)
+      webpack: 5.89.0
     dev: true
 
   /@remix-run/node@1.19.3:
@@ -5697,7 +5700,7 @@ packages:
       lodash: 4.17.21
       pretty-error: 4.0.0
       tapable: 2.2.1
-      webpack: 5.89.0(esbuild@0.17.19)
+      webpack: 5.89.0
     dev: true
 
   /htmlparser2@6.1.0:
@@ -5797,6 +5800,10 @@ packages:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
     engines: {node: '>= 4'}
     dev: true
+
+  /immediate@3.0.6:
+    resolution: {integrity: sha512-XXOFtyqDjNDAQxVfYxuF7g9Il/IbWmmlQg2MYKOH8ExIT1qg6xc4zyS3HaEEATgs1btfzxq15ciUiY7gjSXRGQ==}
+    dev: false
 
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
@@ -6192,6 +6199,12 @@ packages:
       type-check: 0.4.0
     dev: true
 
+  /lie@3.1.1:
+    resolution: {integrity: sha512-RiNhHysUjhrDQntfYSfY4MU24coXXdEOgw9WGcKHNeEwffDYbF//u87M1EWaMGzuFoSbqW0C9C6lEEhDOAswfw==}
+    dependencies:
+      immediate: 3.0.6
+    dev: false
+
   /lilconfig@2.1.0:
     resolution: {integrity: sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==}
     engines: {node: '>=10'}
@@ -6220,6 +6233,12 @@ packages:
       emojis-list: 3.0.0
       json5: 2.2.3
     dev: true
+
+  /localforage@1.10.0:
+    resolution: {integrity: sha512-14/H1aX7hzBBmmh7sGPd+AOMkkIrHM3Z1PAyGgZigA1H1p5O5ANnMyWzvpAETtG68/dC4pC0ncy3+PPGzXZHPg==}
+    dependencies:
+      lie: 3.1.1
+    dev: false
 
   /locate-path@3.0.0:
     resolution: {integrity: sha512-7AO748wWnIhNqAuaty2ZWHkQHRSNfPVIsPIfwEOWO22AmaoVrWavlOcMR5nzTLNYvp36X220/maaRsrec1G65A==}
@@ -6400,7 +6419,7 @@ packages:
       webpack: ^5.0.0
     dependencies:
       schema-utils: 4.2.0
-      webpack: 5.89.0(esbuild@0.17.19)
+      webpack: 5.89.0
     dev: true
 
   /minimalistic-assert@1.0.1:
@@ -8061,7 +8080,7 @@ packages:
       schema-utils: 3.3.0
       serialize-javascript: 6.0.1
       terser: 5.22.0
-      webpack: 5.89.0(esbuild@0.17.19)
+      webpack: 5.89.0
     dev: true
 
   /terser-webpack-plugin@5.3.9(webpack@5.89.0):
@@ -8156,7 +8175,7 @@ packages:
       micromatch: 4.0.5
       semver: 7.5.4
       typescript: 5.2.2
-      webpack: 5.89.0(esbuild@0.17.19)
+      webpack: 5.89.0
     dev: true
 
   /tsconfig-paths-webpack-plugin@4.1.0:
@@ -8447,7 +8466,7 @@ packages:
     dependencies:
       html-webpack-plugin: 5.5.3(webpack@5.89.0)
       typed-assert: 1.0.9
-      webpack: 5.89.0(esbuild@0.17.19)
+      webpack: 5.89.0
     dev: true
 
   /webpack@5.89.0:

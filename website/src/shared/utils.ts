@@ -19,22 +19,29 @@ export const formatFileSize = (size: number, target = 'KB') => {
 export const formatSecond = (ms: number) => Number((ms / 1000).toFixed(2));
 
 export const mergeData = (
-  data1: FetchedMetrics[],
-  data2: FetchedMetrics[],
+  results: FetchedMetrics[][],
   caseNames: string[],
   metricsNames: string[],
-) =>
-  [
-    ...data1.map(item => ({
+) => {
+  const mergedData: {
+    id: string;
+    time: number;
+    metrics: Record<string, any>;
+    caseName: string;
+    metricsName: string;
+  }[] = [];
+
+  results.forEach((data, index) => {
+    const mergedDataForCase = data.map(item => ({
       ...item,
-      caseName: caseNames[0],
-      metricsName: metricsNames[0],
-    })),
-    ...data2.map(item => ({
-      ...item,
-      caseName: caseNames[1],
-      metricsName: metricsNames[1],
-    })),
-  ]
+      caseName: caseNames[index],
+      metricsName: metricsNames[index],
+    }));
+
+    mergedData.push(...mergedDataForCase);
+  });
+
+  return mergedData
     .sort((a, b) => a.time - b.time)
     .filter(item => item.metrics[item.metricsName]);
+};

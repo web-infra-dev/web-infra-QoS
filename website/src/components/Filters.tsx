@@ -7,31 +7,30 @@ import {
   Select,
   FormProps,
   Typography,
+  Tag,
 } from '@arco-design/web-react';
 import { useState } from 'react';
 
 const SelectGroup = ({
-  index,
   productName,
   metrics,
   initialCase,
 }: {
-  index: number;
   productName: string;
   metrics: string[];
   initialCase: string[];
 }) => {
   return (
     <>
-      <Typography.Title heading={6} style={{ marginTop: index > 1 ? 12 : 0 }}>
-        Group{index}:
+      <Typography.Title heading={6} style={{ marginBottom: 24 }}>
+        Add category by Cases and Metrics:
       </Typography.Title>
       <Grid.Row gutter={40}>
         <Grid.Col span={8}>
           <Form.Item
-            label="Case"
-            field={`caseName${index}`}
-            initialValue={initialCase[index - 1]}
+            label="Cases"
+            field={`caseName`}
+            initialValue={initialCase[0]}
             style={{ marginBottom: 8 }}
           >
             <Select>
@@ -46,7 +45,7 @@ const SelectGroup = ({
         <Grid.Col span={8}>
           <Form.Item
             label="Metrics"
-            field={`metricsName${index}`}
+            field={`metricsName`}
             initialValue={metrics[0]}
             style={{ marginBottom: 8 }}
           >
@@ -59,6 +58,11 @@ const SelectGroup = ({
             </Select>
           </Form.Item>
         </Grid.Col>
+        <Grid.Col span={8}>
+          <Button type="primary" htmlType="submit" style={{ width: 80 }}>
+            Add
+          </Button>
+        </Grid.Col>
       </Grid.Row>
     </>
   );
@@ -67,22 +71,20 @@ const SelectGroup = ({
 export const Filters = (props: {
   productName: string;
   metrics: string[];
-  onSubmit: FormProps['onSubmit'];
   initialCase: string[];
+  handleAddData: FormProps['onSubmit'];
+  renderChoicesTags: () => JSX.Element;
 }) => {
   return (
     <Card bordered={false} style={{ marginBottom: BASE_PADDING }}>
-      <Form layout="horizontal" labelAlign="left" onSubmit={props.onSubmit}>
-        <SelectGroup {...props} index={1} />
-        <SelectGroup {...props} index={2} />
-        <Button
-          type="primary"
-          htmlType="submit"
-          style={{ width: 120, marginTop: 12 }}
-        >
-          Query
-        </Button>
+      <Form
+        layout="horizontal"
+        labelAlign="left"
+        onSubmit={props.handleAddData}
+      >
+        <SelectGroup {...props} />
       </Form>
+      {props.renderChoicesTags()}
     </Card>
   );
 };
@@ -91,25 +93,58 @@ export const useFilterResult = (
   defaultCaseNames: string[],
   defaultMetricsName: string,
 ) => {
-  const [caseNames, setCaseNames] = useState(defaultCaseNames);
-  const [metricsNames, setMetricsNames] = useState([
-    defaultMetricsName,
-    defaultMetricsName,
+  const [data, setData] = useState([
+    {
+      case: defaultCaseNames[0],
+      metric: defaultMetricsName,
+    },
+    {
+      case: defaultCaseNames[1],
+      metric: defaultMetricsName,
+    },
   ]);
 
-  const onSubmitForm = (params: {
-    caseName1: string;
-    caseName2: string;
-    metricsName1: string;
-    metricsName2: string;
-  }) => {
-    setCaseNames([params.caseName1, params.caseName2]);
-    setMetricsNames([params.metricsName1, params.metricsName2]);
+  const handleAddData = (params: { caseName: string; metricsName: string }) => {
+    const choice = { case: params.caseName, metric: params.metricsName };
+    if (
+      !data.some(
+        item =>
+          item.case === params.caseName && item.metric === params.metricsName,
+      )
+    ) {
+      setData([...data, choice]);
+    }
+  };
+
+  const handleRemoveData = (index: number) => {
+    const newData = [...data];
+    newData.splice(index, 1);
+    setData(newData);
+  };
+
+  const renderChoicesTags = () => {
+    return (
+      <div
+        style={{ display: 'flex', flexWrap: 'wrap', marginTop: BASE_PADDING }}
+      >
+        {data.map((item, index) => (
+          <div key={index} style={{ marginRight: 12, marginBottom: 12 }}>
+            <Tag
+              closable
+              key={`${item.case}_${item.metric}`}
+              onClose={() => handleRemoveData(index)}
+            >
+              {`${item.case} + ${item.metric}`}
+            </Tag>
+          </div>
+        ))}
+      </div>
+    );
   };
 
   return {
-    caseNames,
-    metricsNames,
-    onSubmitForm,
+    categories: data,
+    handleAddData,
+    renderChoicesTags,
   };
 };

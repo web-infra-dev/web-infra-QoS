@@ -7,53 +7,50 @@ import {
   BASE_PADDING,
 } from '@/shared/constant';
 import { Filters, useFilterResult } from './Filters';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { FetchedMetrics, fetchMetrics } from '@/shared/request';
 import { formatDateWithId, formatFileSize, mergeData } from '@/shared/utils';
 
 const formatData = (
-  data1: FetchedMetrics[],
-  data2: FetchedMetrics[],
+  results: FetchedMetrics[][],
   caseNames: string[],
   metricsNames: string[],
 ) =>
-  mergeData(data1, data2, caseNames, metricsNames).map(item => ({
-    category: caseNames[0] === caseNames[1] ? item.metricsName : item.caseName,
+  mergeData(results, caseNames, metricsNames).map(item => ({
+    category: `${item.caseName} + ${item.metricsName}`,
     x: formatDateWithId(item),
     y: formatFileSize(item.metrics[item.metricsName]),
   }));
 
 export const ContentBundleSize = (props: { productIndex: string }) => {
+  const productName = props.productIndex;
   const chartRoot = useRef<HTMLDivElement | null>(null);
   const chartInstance = useRef<Line | null>(null);
-  const { caseNames, metricsNames, onSubmitForm } = useFilterResult(
-    BUNDLE_SIZE_DEFAULT_CASE[props.productIndex],
-    BUNDLE_SIZE_METRICS[props.productIndex][0],
+  const { categories, handleAddData, renderChoicesTags } = useFilterResult(
+    BUNDLE_SIZE_DEFAULT_CASE[productName],
+    BUNDLE_SIZE_METRICS[productName][0],
   );
-  const productName = props.productIndex;
-  const [data, setData] = useState<FetchedMetrics[][] | null>(null);
+  const caseNames = categories.map(item => item.case);
+  const metricsNames = categories.map(item => item.metric);
 
   const renderLineChart = ({
     root,
-    data1,
-    data2,
+    results,
     caseNames,
     metricsNames,
   }: {
     root: HTMLElement | null;
-    data1: FetchedMetrics[];
-    data2: FetchedMetrics[];
+    results: FetchedMetrics[][];
     caseNames: string[];
     metricsNames: string[];
   }) => {
-    const data = formatData(data1, data2, caseNames, metricsNames);
+    const data = formatData(results, caseNames, metricsNames);
     if (chartInstance.current) {
       chartInstance.current.changeData(data);
     } else if (root) {
       chartInstance.current = new Line(root, {
         ...LINE_CHART_DEFAULT_CONFIG,
         data,
-
         yAxis: {
           label: {
             formatter: (text: string) => `${text} KB`,
@@ -74,28 +71,30 @@ export const ContentBundleSize = (props: { productIndex: string }) => {
   };
 
   useEffect(() => {
-    Promise.all([
-      fetchMetrics(productName, caseNames[0]),
-      fetchMetrics(productName, caseNames[1]),
-    ]).then(([data1, data2]) => {
-      setData([data1, data2]);
+    const fetchDataForCaseNames = async () => {
+      const promises = caseNames.map(caseName =>
+        fetchMetrics(productName, caseName),
+      );
+      const results = await Promise.all(promises);
       renderLineChart({
-        data1,
-        data2,
+        results,
         caseNames,
         metricsNames,
         root: chartRoot.current,
       });
-    });
-  }, [productName, caseNames, metricsNames]);
+    };
+
+    fetchDataForCaseNames();
+  }, [categories]);
 
   return (
     <div style={{ padding: BASE_PADDING }}>
       <Filters
-        productName={props.productIndex}
-        metrics={BUNDLE_SIZE_METRICS[props.productIndex]}
-        initialCase={caseNames}
-        onSubmit={onSubmitForm}
+        productName={productName}
+        metrics={BUNDLE_SIZE_METRICS[productName]}
+        initialCase={BUNDLE_SIZE_DEFAULT_CASE[productName]}
+        handleAddData={handleAddData}
+        renderChoicesTags={renderChoicesTags}
       />
       <Card bordered={false} style={{ height: 464 }}>
         <Typography.Title heading={5} style={{ marginTop: 0 }}>
