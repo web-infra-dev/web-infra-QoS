@@ -7,12 +7,12 @@
     "build": "rm -rf ./dist && tsc"
   },
   "exports": {
-    "./plugins": "./dist/plugins/index.js"
+    "./plugins/modernjs-framework": "./dist/plugins/modernjs-framework/index.js"
   },
   "typesVersions": {
     "*": {
-      "plugins": [
-        "./dist/plugins/index.d.ts"
+      "plugins/modernjs-framework": [
+        "./dist/plugins/modernjs-framework/index.d.ts"
       ]
     }
   },
