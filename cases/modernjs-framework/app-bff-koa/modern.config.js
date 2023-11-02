@@ -4,7 +4,7 @@ import { koaPlugin}  from '@modern-js/plugin-koa';
 import {
   measureBundleSizePlugin,
   measureCompileSpeedPlugin,
-} from '@modern-js/benchmark-scripts/plugins';
+} from '@modern-js/benchmark-scripts/plugins/modernjs-framework';
 
 export default {
   runtime: {

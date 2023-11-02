@@ -3,7 +3,7 @@ import { swcPlugin } from '@modern-js/plugin-swc';
 import {
   measureBundleSizePlugin,
   measureCompileSpeedPlugin,
-} from '@modern-js/benchmark-scripts/plugins';
+} from '@modern-js/benchmark-scripts/plugins/modernjs-framework';
 
 export default {
   runtime: {

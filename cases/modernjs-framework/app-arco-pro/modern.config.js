@@ -2,7 +2,7 @@ import { appTools } from '@modern-js/app-tools';
 import {
   measureBundleSizePlugin,
   measureCompileSpeedPlugin,
-} from '@modern-js/benchmark-scripts/plugins';
+} from '@modern-js/benchmark-scripts/plugins/modernjs-framework';
 
 export default {
   runtime: {
