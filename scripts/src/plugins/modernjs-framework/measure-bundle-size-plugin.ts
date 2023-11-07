@@ -3,20 +3,7 @@ import { readFileSync, statSync } from 'fs';
 import glob from 'fast-glob';
 import gzipSize from 'gzip-size';
 import { saveMetrics } from '../../shared/fs';
-
-function removeHash(filename: string) {
-  if (filename.endsWith('.js') || filename.endsWith('.css')) {
-    const pairs = filename.split('.');
-    const ext = pairs.pop();
-    pairs.pop();
-    return [...pairs, ext].join('.');
-  }
-  return filename;
-}
-
-function sum(files: Record<string, number>) {
-  return Object.values(files).reduce((ret, num) => ret + num, 0);
-}
+import { removeHash, sum } from '../../shared/utils';
 
 export const measureBundleSizePlugin = () => ({
   name: 'measureBundleSizePlugin',
