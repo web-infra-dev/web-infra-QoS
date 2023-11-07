@@ -32,6 +32,8 @@ jobs:
             product: MODERNJS_FRAMEWORK
           - case: app-arco-pro-rspack
             product: MODERNJS_FRAMEWORK
+          - case: module-initial
+            product: MODERNJS_MODULE
 
     runs-on: ubuntu-latest
 
