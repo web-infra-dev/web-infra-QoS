@@ -12,10 +12,16 @@ export type Metrics = {
   buildColdBootTime?: number;
   buildPluginSetupTime?: number;
   buildPrepareTime?: number;
+  beforeBulidCjsTime?: number;
+  bulidCjsTime?: number;
+  bulidEsmTime?: number;
+  bulidDtsTime?: number;
 
   // Bundle size
   minifiedBundleSize?: number;
   gzippedBundleSize?: number;
+  distSize?: number;
+  gzippedDistSize?: number;
 
   // Install Size
   installSize?: number;

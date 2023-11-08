@@ -32,6 +32,20 @@ jobs:
             product: MODERNJS_FRAMEWORK
           - case: app-arco-pro-rspack
             product: MODERNJS_FRAMEWORK
+          - case: module-initial
+            product: MODERNJS_MODULE
+          - case: module-library
+            product: MODERNJS_MODULE
+          - case: module-library-sourcemap
+            product: MODERNJS_MODULE
+          - case: module-library-noautoexternal
+            product: MODERNJS_MODULE
+          - case: module-library-minify-esbuild
+            product: MODERNJS_MODULE
+          - case: module-library-minify-terser
+            product: MODERNJS_MODULE
+          - case: module-component
+            product: MODERNJS_MODULE
 
     runs-on: ubuntu-latest
 

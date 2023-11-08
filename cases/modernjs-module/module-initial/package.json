@@ -1,0 +1,27 @@
+{
+  "name": "module-initial",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "modern dev",
+    "build": "modern build",
+    "build:watch": "modern build -w"
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "dist/"
+  ],
+  "dependencies": {},
+  "peerDependencies": {},
+  "devDependencies": {
+    "@modern-js/module-tools": "workspace:*",
+    "@modern-js/eslint-config": "workspace:*",
+    "typescript": "5.0.4",
+    "@types/jest": "29.2.4",
+    "@types/node": "16.11.7",
+    "@types/react": "18.0.26",
+    "rimraf": "3.0.2",
+    "lint-staged": "13.1.0",
+    "prettier": "2.8.1",
+    "husky": "8.0.1"
+  }
+}

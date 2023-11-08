@@ -64,3 +64,17 @@ export function getRemoteDataUrl(product: string) {
     PRODUCT_NAME[product as keyof typeof PRODUCT_NAME]
   }`;
 }
+
+export function removeHash(filename: string) {
+  if (filename.endsWith('.js') || filename.endsWith('.css')) {
+    const pairs = filename.split('.');
+    const ext = pairs.pop();
+    pairs.pop();
+    return [...pairs, ext].join('.');
+  }
+  return filename;
+}
+
+export function sum(files: Record<string, number>) {
+  return Object.values(files).reduce((ret, num) => ret + num, 0);
+}

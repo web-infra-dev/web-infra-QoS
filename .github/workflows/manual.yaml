@@ -28,6 +28,13 @@ on:
           - app-arco-pro-swc
           - app-arco-pro-esbuild
           - app-arco-pro-rspack
+          - module-initial
+          - module-library
+          - module-library-sourcemap
+          - module-library-noautoexternal
+          - module-library-minify-esbuild
+          - module-library-minify-terser
+          - module-component
       commitId:
         description: 'commitId of your repo'
       onlyInstallSize:

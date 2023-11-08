@@ -23,7 +23,9 @@ async function main() {
     await remove(dataPath);
 
     if (process.env.ONLY_INSTALL_SIZE !== 'true') {
-      await dev(productName, caseName);
+      if (productName !== 'MODERNJS_MODULE') {
+        await dev(productName, caseName);
+      }
       await build(productName, caseName);
     }
 
