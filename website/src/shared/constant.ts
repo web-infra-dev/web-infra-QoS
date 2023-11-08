@@ -37,7 +37,11 @@ export const PRODUCT_CASES: CaseorMetrics = {
     'app-arco-pro-esbuild',
     'app-arco-pro-rspack',
   ],
-  [PRODUCT.MODERNJS_MODULE]: ['module-initial', 'module-library'],
+  [PRODUCT.MODERNJS_MODULE]: [
+    'module-initial',
+    'module-library',
+    'module-library-sourcemap',
+  ],
 };
 
 export const BUNDLE_SIZE_DEFAULT_CASE = {
