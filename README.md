@@ -54,6 +54,36 @@ Arco Pro project.
 
 `app-arco-pro` + Rspack.
 
+### module-initial
+
+Initial module project.
+
+Created by `@modern-js/create`.
+
+### module-library
+
+Utils project with `npm-library-with-umd` buildPreset.
+
+### module-library-sourcemap
+
+`module-library` + `sourceMap: true`.
+
+### module-library-noautoexternal
+
+`module-library` + `autoExternal: false`.
+
+### module-library-minify-esbuild
+
+`module-library` + `minify: 'esbuild'` + `target: 'es5'`.
+
+### module-library-minify-terser
+
+`module-library` + `minify: 'terser'` + `target: 'es5'`.
+
+### module-component
+
+Component project with `npm-component` buildPreset.
+
 ## Metrics
 
 ### Bundle Size
@@ -62,6 +92,8 @@ The size of the bundles after the build.
 
 - `minified-bundle-size`: the compressed size of bundles.
 - `gzipped-bundle-size`: the size of bundles after compression & gzip.
+- `dist-size`: file size of output in module.
+- `gzipped-dist-size`: file size of output in module after gzip.
 
 ### Compile Speed
 
@@ -73,6 +105,9 @@ The size of the bundles after the build.
 - `build-prepare-time`: the time taken from when the plugins are loaded to when the build prep process is fully completed. Corresponding hooks: `loadPlugin -> prepare`.
 - `build-cold-boot-time`: the time it takes for the build to complete without caching. Corresponding hooks: `beforeBuild -> afterBuild`.
 - `build-hot-boot-time`: the time it takes to complete a build with caching. Corresponding hooks: `beforeBuild -> afterBuild`.
+- `bulid-cjs-time`: the time it takes to complete a build task for cjs in module build. Corresponding hooks: `beforeBuildTask -> afterBuildTask`.
+- `bulid-esm-time`: the time it takes to complete a build task for esm in module build. Corresponding hooks: `beforeBuildTask -> afterBuildTask`.
+- `bulid-dts-time`: the time it takes to complete a build task for dts in module build. Corresponding hooks: `beforeBuildTask -> afterBuildTask`.
 
 ### Install Speed
 

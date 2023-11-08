@@ -72,7 +72,13 @@ export const COMPILE_SPEED_METRICS = {
     'devPluginSetupTime',
     'devPrepareTime',
   ],
-  [PRODUCT.MODERNJS_MODULE]: ['buildColdBootTime', 'buildPluginSetupTime'],
+  [PRODUCT.MODERNJS_MODULE]: [
+    'buildColdBootTime',
+    'buildPluginSetupTime',
+    'bulidCjsTime',
+    'bulidEsmTime',
+    'bulidDtsTime',
+  ],
 };
 
 export const INSTALL_SPEED_DEFAULT_CASE = {
