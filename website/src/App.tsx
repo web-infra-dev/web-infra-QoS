@@ -45,7 +45,11 @@ const App = () => {
         onClickMenuItem={handleClickMenuItem}
         onClickSubMenu={handleClickSubMenu}
       />
-      <Content productIndex={productIndex} menuIndex={menuIndex} />
+      <Content
+        key={productIndex}
+        productIndex={productIndex}
+        menuIndex={menuIndex}
+      />
     </Container>
   );
 };
