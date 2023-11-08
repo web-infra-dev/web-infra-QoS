@@ -42,6 +42,8 @@ jobs:
             product: MODERNJS_MODULE
           - case: module-library-minify-esbuild
             product: MODERNJS_MODULE
+          - case: module-library-minify-terser
+            product: MODERNJS_MODULE
 
     runs-on: ubuntu-latest
 

@@ -33,6 +33,7 @@ on:
           - module-library-sourcemap
           - module-library-noautoexternal
           - module-library-minify-esbuild
+          - module-library-minify-terser
       commitId:
         description: 'commitId of your repo'
       onlyInstallSize:

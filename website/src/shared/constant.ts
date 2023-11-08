@@ -43,6 +43,7 @@ export const PRODUCT_CASES: CaseorMetrics = {
     'module-library-sourcemap',
     'module-library-noautoexternal',
     'module-library-minify-esbuild',
+    'module-library-minify-terser',
   ],
 };
 
