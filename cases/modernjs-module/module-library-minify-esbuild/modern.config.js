@@ -6,5 +6,6 @@ export default defineConfig({
   buildPreset: "npm-library-with-umd",
   buildConfig: {
     minify: "esbuild",
+    target: "es5",
   },
 });
