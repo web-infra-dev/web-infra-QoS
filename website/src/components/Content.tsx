@@ -19,7 +19,10 @@ export const Content = (props: { productIndex: string; menuIndex: string }) => {
         </div>
       );
     }
-    if (props.productIndex !== PRODUCT.MODERNJS_FRAMEWORK) {
+    if (
+      props.productIndex !== PRODUCT.MODERNJS_FRAMEWORK &&
+      props.productIndex !== PRODUCT.MODERNJS_MODULE
+    ) {
       return <div style={{ padding: BASE_PADDING }}>WIP</div>;
     }
     switch (props.menuIndex) {
