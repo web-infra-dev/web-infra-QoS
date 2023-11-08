@@ -44,12 +44,13 @@ export const PRODUCT_CASES: CaseorMetrics = {
     'module-library-noautoexternal',
     'module-library-minify-esbuild',
     'module-library-minify-terser',
+    'module-component',
   ],
 };
 
 export const BUNDLE_SIZE_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-initial', 'app-initial-rspack'],
-  [PRODUCT.MODERNJS_MODULE]: ['module-initial', 'module-library'],
+  [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
 };
 export const BUNDLE_SIZE_METRICS = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['minifiedBundleSize', 'gzippedBundleSize'],
@@ -58,7 +59,7 @@ export const BUNDLE_SIZE_METRICS = {
 
 export const COMPILE_SPEED_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-arco-pro', 'app-arco-pro-rspack'],
-  [PRODUCT.MODERNJS_MODULE]: ['module-initial', 'module-library'],
+  [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
 };
 export const COMPILE_SPEED_METRICS = {
   [PRODUCT.MODERNJS_FRAMEWORK]: [
@@ -76,7 +77,7 @@ export const COMPILE_SPEED_METRICS = {
 
 export const INSTALL_SPEED_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-initial', 'app-initial-rspack'],
-  [PRODUCT.MODERNJS_MODULE]: ['module-initial', 'module-library'],
+  [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
 };
 export const INSTALL_SPEED_METRICS = {
   [PRODUCT.MODERNJS_FRAMEWORK]: [

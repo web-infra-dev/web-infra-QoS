@@ -1,11 +1,11 @@
-import { moduleTools, defineConfig } from "@modern-js/module-tools";
+import { moduleTools, defineConfig } from '@modern-js/module-tools';
 import { measurePlugin } from '@modern-js/benchmark-scripts/plugins/modernjs-module';
 
 export default defineConfig({
   plugins: [moduleTools(), measurePlugin()],
-  buildPreset: "npm-library-with-umd",
+  buildPreset: 'npm-library-with-umd',
   buildConfig: {
-    minify: "esbuild",
-    target: "es5",
+    minify: 'esbuild',
+    target: 'es5',
   },
 });
