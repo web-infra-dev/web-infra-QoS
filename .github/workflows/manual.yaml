@@ -31,6 +31,7 @@ on:
           - module-initial
           - module-library
           - module-library-sourcemap
+          - module-library-noautoexternal
       commitId:
         description: 'commitId of your repo'
       onlyInstallSize:

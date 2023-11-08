@@ -41,6 +41,7 @@ export const PRODUCT_CASES: CaseorMetrics = {
     'module-initial',
     'module-library',
     'module-library-sourcemap',
+    'module-library-noautoexternal',
   ],
 };
 
