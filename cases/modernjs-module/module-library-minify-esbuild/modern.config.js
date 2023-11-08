@@ -5,7 +5,6 @@ export default defineConfig({
   plugins: [moduleTools(), measurePlugin()],
   buildPreset: "npm-library-with-umd",
   buildConfig: {
-    autoExternal: false,
-    platform: "node",
+    minify: "esbuild",
   },
 });

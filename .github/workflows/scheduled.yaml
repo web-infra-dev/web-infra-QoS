@@ -40,6 +40,8 @@ jobs:
             product: MODERNJS_MODULE
           - case: module-library-noautoexternal
             product: MODERNJS_MODULE
+          - case: module-library-minify-esbuild
+            product: MODERNJS_MODULE
 
     runs-on: ubuntu-latest
 

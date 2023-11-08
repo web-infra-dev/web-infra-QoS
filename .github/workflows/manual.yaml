@@ -32,6 +32,7 @@ on:
           - module-library
           - module-library-sourcemap
           - module-library-noautoexternal
+          - module-library-minify-esbuild
       commitId:
         description: 'commitId of your repo'
       onlyInstallSize:
