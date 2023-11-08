@@ -1,0 +1,16 @@
+{
+  "name": "module-library",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "modern build"
+  },
+  "devDependencies": {
+    "@modern-js/module-tools": "workspace:*",
+    "@types/node": "18.7.11",
+    "typescript": "5.2.2"
+  },
+  "dependencies": {
+    "art-template": "4.13.2",
+    "glob": "10.3.3"
+  }
+}

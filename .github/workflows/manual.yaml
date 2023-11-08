@@ -29,6 +29,7 @@ on:
           - app-arco-pro-esbuild
           - app-arco-pro-rspack
           - module-initial
+          - module-library
       commitId:
         description: 'commitId of your repo'
       onlyInstallSize:
