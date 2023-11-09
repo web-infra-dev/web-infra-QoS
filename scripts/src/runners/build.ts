@@ -21,11 +21,13 @@ export const build = async (productName: string, caseName: string) => {
     });
 
     // hot boot
-    await runCommand(casePath, 'npm run build', {
-      PRODUCT_NAME: productName,
-      CASE_NAME: caseName,
-      WITH_CACHE: 'true',
-      CURRENT_INDEX: String(i),
-    });
+    if (productName === 'MODERNJS_FRAMEWORK') {
+      await runCommand(casePath, 'npm run build', {
+        PRODUCT_NAME: productName,
+        CASE_NAME: caseName,
+        WITH_CACHE: 'true',
+        CURRENT_INDEX: String(i),
+      });
+    }
   }
 };
