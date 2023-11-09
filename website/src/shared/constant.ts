@@ -46,20 +46,24 @@ export const PRODUCT_CASES: CaseorMetrics = {
     'module-library-minify-terser',
     'module-component',
   ],
+  [PRODUCT.RSPRESS]: ['rspress-minimal'],
 };
 
 export const BUNDLE_SIZE_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-initial', 'app-initial-rspack'],
   [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
+  [PRODUCT.RSPRESS]: ['rspress-minimal'],
 };
 export const BUNDLE_SIZE_METRICS = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['minifiedBundleSize', 'gzippedBundleSize'],
   [PRODUCT.MODERNJS_MODULE]: ['distSize', 'gzippedDistSize'],
+  [PRODUCT.RSPRESS]: ['minifiedBundleSize', 'gzippedBundleSize'],
 };
 
 export const COMPILE_SPEED_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-arco-pro', 'app-arco-pro-rspack'],
   [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
+  [PRODUCT.RSPRESS]: ['rspress-minimal'],
 };
 export const COMPILE_SPEED_METRICS = {
   [PRODUCT.MODERNJS_FRAMEWORK]: [
@@ -79,11 +83,17 @@ export const COMPILE_SPEED_METRICS = {
     'bulidEsmTime',
     'bulidDtsTime',
   ],
+  [PRODUCT.RSPRESS]: [
+    'buildColdBootTime',
+    'devColdBootTime',
+    'routeGenerateTime',
+  ],
 };
 
 export const INSTALL_SPEED_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-initial', 'app-initial-rspack'],
   [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
+  [PRODUCT.RSPRESS]: ['rspress-minimal'],
 };
 export const INSTALL_SPEED_METRICS = {
   [PRODUCT.MODERNJS_FRAMEWORK]: [
@@ -93,6 +103,12 @@ export const INSTALL_SPEED_METRICS = {
     'hotInstallTime',
   ],
   [PRODUCT.MODERNJS_MODULE]: [
+    'installSize',
+    'dependenciesCount',
+    'coldInstallTime',
+    'hotInstallTime',
+  ],
+  [PRODUCT.RSPRESS]: [
     'installSize',
     'dependenciesCount',
     'coldInstallTime',

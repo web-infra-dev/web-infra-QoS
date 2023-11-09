@@ -46,6 +46,8 @@ jobs:
             product: MODERNJS_MODULE
           - case: module-component
             product: MODERNJS_MODULE
+          - case: rspress-minimal
+            product: RSPRESS
 
     runs-on: ubuntu-latest
 

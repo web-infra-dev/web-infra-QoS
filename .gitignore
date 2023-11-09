@@ -46,3 +46,5 @@ modern.js
 cases/**/pnpm-lock.yaml
 data/**/*
 temp/**/*
+rspress
+!/cases/rspress/

@@ -16,6 +16,7 @@ export type Metrics = {
   bulidCjsTime?: number;
   bulidEsmTime?: number;
   bulidDtsTime?: number;
+  routeGenerateTime?: number;
 
   // Bundle size
   minifiedBundleSize?: number;
