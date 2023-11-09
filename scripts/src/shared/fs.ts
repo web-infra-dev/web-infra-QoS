@@ -20,7 +20,10 @@ import {
 
 export async function cleanCache(casePath: string) {
   await remove(join(casePath, 'node_modules', '.cache'));
-  await remove(join(casePath, 'node_modules', '.modern.js'));
+
+  if (casePath.includes('modern.js')) {
+    await remove(join(casePath, 'node_modules', '.modern.js'));
+  }
 }
 
 export async function updateFile(

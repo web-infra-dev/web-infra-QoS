@@ -149,7 +149,10 @@ const getInstallSize = async (casePath: string) => {
   const nodeModulesPath = join(casePath, 'node_modules');
 
   await remove(join(nodeModulesPath, '.cache'));
-  await remove(join(nodeModulesPath, '.modern.js'));
+
+  if (casePath.includes('modernjs')) {
+    await remove(join(nodeModulesPath, '.modern.js'));
+  }
 
   return new Promise<number>((resolve, reject) => {
     getFolderSize(nodeModulesPath, (err: Error, size: number) => {
