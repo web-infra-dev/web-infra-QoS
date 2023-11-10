@@ -1,0 +1,194 @@
+# 构建配置
+
+## builderConfig
+
+- Type: `Object`
+
+用于自定义 Rsbuild 的配置项，完整配置项请查看 [Rsbuild - 配置](https://rsbuild.dev/zh/config/)。
+
+比如，将产物目录修改为 `doc_dist`：
+
+```ts title="rspress.config.ts"
+export default defineConfig({
+  builderConfig: {
+    output: {
+      distPath: {
+        root: 'doc_dist',
+      },
+    },
+  },
+});
+```
+
+## builderPlugins
+
+- Type: `RsbuildPlugin[]`
+
+用于加入 [Rsbuild 的插件](https://rsbuild.dev/zh/plugins/list/)，比如：
+
+```ts title="rspress.config.ts"
+import { defineConfig } from 'rspress/config';
+import { pluginStylus } from '@rsbuild/plugin-stylus';
+
+export default defineConfig({
+  builderPlugins: [pluginStylus()],
+});
+```
+
+### 默认配置
+
+如果你需要查看默认的 `builderConfig`，可以在执行 `rspress dev` 或 `rspress build` 命令时，添加 `DEBUG=rsbuild` 参数：
+
+```bash
+DEBUG=rsbuild rspress dev
+```
+
+在执行后，`doc_build` 目录下会生成 `rsbuild.config.js` 文件，里面包含了完整的 `builderConfig`。
+
+> 请查看 [Rsbuild - 调试模式](https://rsbuild.dev/zh/guide/debug/debug-mode) 来了解更多调试 Rsbuild 的方法。
+
+## markdown
+
+- Type: `Object`
+
+配置 MDX 相关的编译能力。
+
+### markdown.remarkPlugins
+
+- Type: `Array`
+- Default: `[]`
+
+配置 remark 插件。比如：
+
+```ts title="rspress.config.ts"
+import { defineConfig } from 'rspress/config';
+
+export default defineConfig({
+  markdown: {
+    remarkPlugins: [
+      [
+        require('remark-autolink-headings'),
+        {
+          behavior: 'wrap',
+        },
+      ],
+    ],
+  },
+});
+```
+
+### markdown.rehypePlugins
+
+- Type: `Array`
+
+配置 rehype 插件。比如：
+
+```ts title="rspress.config.ts"
+import { defineConfig } from 'rspress/config';
+
+export default defineConfig({
+  markdown: {
+    rehypePlugins: [
+      [
+        require('rehype-autolink-headings'),
+        {
+          behavior: 'wrap',
+        },
+      ],
+    ],
+  },
+});
+```
+
+### markdown.checkDeadLinks
+
+- Type: `boolean`
+- Default: `false`
+
+是否检查死链。比如：
+
+```ts title="rspress.config.ts"
+import { defineConfig } from 'rspress/config';
+
+export default defineConfig({
+  markdown: {
+    checkDeadLinks: true,
+  },
+});
+```
+
+开启这个配置后，框架会基于约定式路由表对文档中的链接进行检查，若出现无法访问的链接，构建会抛出错误并退出。
+
+### markdown.mdxRs
+
+- Type: `boolean`
+- Default: `true`
+
+是否使用 MDX 的 Rust 版本编译器，默认开启。比如：
+
+import MdxRs from '../../fragments/mdx-rs';
+
+<MdxRs />
+
+### markdown.showLineNumbers
+
+- Type: `boolean`
+
+是否显示代码块的行号。默认为 `false`。
+
+### markdown.defaultWrapCode
+
+- Type: `boolean`
+
+是否默认启用长代码换行展示。默认为 `false`。
+
+### markdown.globalComponents
+
+- Type: `string[]`
+
+注册全局组件，无需通过导入声明，就可以在每个 MDX 文件中使用。比如：
+
+```ts title="rspress.config.ts"
+import { defineConfig } from 'rspress/config';
+import path from 'path';
+
+export default defineConfig({
+  markdown: {
+    globalComponents: [path.join(__dirname, 'src/src/components/Alert.tsx')],
+  },
+});
+```
+
+这样你就可以在 MDX 文件中使用 `Alert` 组件了：
+
+```mdx title="test.mdx"
+<Alert type="info">This is a info alert</Alert>
+```
+
+:::danger 警告
+请在配置 `globalComponents` 时设置 `markdown.mdxRs` 为 `false` 以开启 JS 版本的编译器，否则会导致全局组件不生效。
+:::
+
+### markdown.highlightLanguages
+
+- Type: `(string | [string, string])[]`
+
+注册需要高亮的语言。默认支持的语言包括`js`、`jsx`、`ts`、`tsx`、`json`、`css`、`scss`、`less`、`xml`、`diff`、`yaml`、`md`、`mdx`、`bash`，你可以在这些语言的基础上进行扩展。比如：
+
+```ts title="rspress.config.ts"
+import { defineConfig } from 'rspress/config';
+import path from 'path';
+
+export default defineConfig({
+  markdown: {
+    highlightLanguages: [
+      'ejs',
+      'go',
+      // 别名为 md, 全名为 markdown
+      ['md', 'markdown'],
+    ],
+  },
+});
+```
+
+每项语言的配置支持 `string` 和 `[string, string]` 两种格式，在数组的格式下，前者为语言的别名，后者为语言的全名，你可以前往[文件列表](https://github.com/react-syntax-highlighter/react-syntax-highlighter/tree/master/src/languages/prism)查看所有支持的语言全名。

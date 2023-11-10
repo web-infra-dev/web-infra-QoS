@@ -92,6 +92,10 @@ Minimal doc project.
 
 Website project with rspress.
 
+### rspress-website-mdxjs
+
+`rspress-website` + `mdxRs: false`.
+
 ## Metrics
 
 ### Bundle Size

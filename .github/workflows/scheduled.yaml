@@ -50,6 +50,8 @@ jobs:
             product: RSPRESS
           - case: rspress-website
             product: RSPRESS
+          - case: rspress-website-mdxjs
+            product: RSPRESS
 
     runs-on: ubuntu-latest
 

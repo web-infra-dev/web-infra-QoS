@@ -1,0 +1,142 @@
+# @rspress/plugin-preview
+
+import { PackageManagerTabs } from '@theme';
+
+> [源码地址](https://github.com/web-infra-dev/rspress/tree/main/packages/plugin-preview)
+
+用于预览 md(x) 文件代码块中的组件。
+
+## 安装
+
+<PackageManagerTabs command="add @rspress/plugin-preview -D" />
+
+## 使用
+
+### 引入插件
+
+首先在配置文件中写入以下的配置：
+
+```ts title="rspress.config.ts"
+import { defineConfig } from 'rspress/config';
+import { pluginPreview } from '@rspress/plugin-preview';
+
+export default defineConfig({
+  plugins: [pluginPreview()],
+});
+```
+
+:::warning 注意
+在加入该插件后，请设置 `markdown.mdxRs` 配置为 `false`，否则会导致插件失效。未来 Rspress 团队会将该插件移植到 Rust 版本的编译器中，届时此配置项就不再需要。
+:::
+
+### 内部组件
+
+内部组件的组件代码声明在 mdx 文件内。你可以在 mdx 文件中声明如下的代码块：
+
+````mdx
+```tsx
+function App() {
+  return (
+    <div>
+      <span>Hello World</span>
+    </div>
+  );
+}
+
+export default App;
+```
+````
+
+值得注意的是，你需要将组件作为 default 导出，Rspress 会自动渲染这个组件。
+
+但是如果你想保留代码块的样式，而不是将其作为组件渲染，你可以添加 `pure` 标识符来指定，使用方式如下：
+
+````mdx
+```tsx pure
+function App() {
+  return <div>Hello World</div>;
+}
+export default App;
+```
+````
+
+如果你配置了 `defaultRenderMode` 为 `'pure'`，那么默认情况下，Rspress 将不会渲染这个组件，而是将其作为代码块来渲染。这种情况下，如果需要将某个代码块渲染为组件，可以通过添加 `preview` 标识符来指定，使用方式如下：
+
+````mdx
+```tsx preview
+function App() {
+  return <div>Hello World</div>;
+}
+export default App;
+```
+````
+
+:::tip 提示
+需要保证文档为 `.mdx` 结尾的文件。
+:::
+
+### 外部组件
+
+除了将组件代码写在 mdx 文件的代码块中，你还可以将组件代码写在外部文件中，然后在 mdx 文件中通过 code 标签引入。比如
+
+```md title="example.mdx"
+<code src="./Demo.tsx" />
+```
+
+```tsx title="Demo.tsx"
+export default function App() {
+  return <div>Hello World</div>;
+}
+```
+
+外部组件中同样需要将组件作为 default 导出。而通过 code 标签的 src 属性，你可以指定外部组件的路径，该插件同时支持相对路径以及别名路径(alias)。
+
+对于某些比较复杂的组件，这种外部组件的使用方式会更加方便。
+
+## 配置
+
+这个插件接受一个对象参数，类型如下:
+
+```ts
+interface PreviewOptions {
+  isMobile?: boolean;
+  iframePosition?: 'fixed' | 'follow';
+  enableCodesandbox?: boolean;
+  defaultRenderMode?: 'pure' | 'preview';
+}
+```
+
+### isMobile
+
+`isMobile` 参数用于指定预览模式是否为移动端模式，默认为 `false`。默认 PC 模式的展示效果如下：
+
+![](https://lf3-static.bytednsdoc.com/obj/eden-cn/uhbfnupenuhf/rspress/demo-preview-pc.jpeg)
+
+### iframePosition
+
+在移动端预览模式下时，你可以通过 `iframePosition` 参数来决定预览区 iframe 的位置，是跟随页面滚动(`follow` 模式)还是固定在页面中(`fixed` 模式)，默认为 `follow`。
+
+`follow` 模式效果如下：
+
+![](https://lf3-static.bytednsdoc.com/obj/eden-cn/uhbfnupenuhf/rspress/demo-preview-mobile-follow.png)
+
+`fixed` 模式效果如下：
+
+![](https://lf3-static.bytednsdoc.com/obj/eden-cn/uhbfnupenuhf/rspress/demo-preview-mobile-fixed.png)
+
+### enableCodesandbox
+
+**试验性功能**，支持在 Codesandbox 打开 Demo，目前不支持 iframePosition 为 fixed 的情况。
+
+此功能，仍有一些使用上的限制：
+
+- 不能自定义 sandbox 依赖：默认仅会声明 react、react-dom、self 三个依赖，这意味着你无法在 demo 里引用其他依赖，
+  同时，你需要确保 self 已经发包至 npm，这适用于模块类型的项目。
+- 不能自定义文件：这意味着你无法在 demo 里引用其他文件。
+
+### defaultRenderMode
+
+支持用户配置没有主动声明 `pure` 或 `preview` 标识符的内部代码块的默认行为，默认为 `preview`。
+
+- `pure`: 渲染为普通代码块
+- `preview`: 渲染为预览组件
