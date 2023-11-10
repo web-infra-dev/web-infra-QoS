@@ -1,0 +1,194 @@
+# Build Config
+
+## builderConfig
+
+- Type: `Object`
+
+Used to customize the configurations of Rsbuild. For complete configurations, please refer to [Rsbuild - Config](https://rsbuild.dev/config/).
+
+For example, change the output directory to `doc_dist`:
+
+```ts title="rspress.config.ts"
+export default defineConfig({
+  builderConfig: {
+    output: {
+      distPath: {
+        root: 'doc_dist',
+      },
+    },
+  },
+});
+```
+
+## builderPlugins
+
+- Type: `RsbuildPlugin[]`
+
+Used to customize the [plugins of Rsbuild](https://rsbuild.dev). For example:
+
+```ts title="rspress.config.ts"
+import { defineConfig } from 'rspress/config';
+import { pluginStylus } from '@rsbuild/plugin-stylus';
+
+export default defineConfig({
+  builderPlugins: [pluginStylus()],
+});
+```
+
+### Default Config
+
+If you need to see the default `builderConfig`, you can add the `DEBUG=rsbuild` parameter when running the `rspress dev` or `rspress build` command:
+
+```bash
+DEBUG=rsbuild rspress dev
+```
+
+After execution, the `rsbuild.config.js` file is created in the `doc_build` directory, which contains the complete `builderConfig`.
+
+> Please refer to [Rsbuild - Debug Mode](https://rsbuild.dev/guide/debug/debug-mode) for more information on how to debug the Rsbuild.
+
+## markdown
+
+- Type: `Object`
+
+Configure MDX-related compilation abilities.
+
+### markdown.remarkPlugins
+
+- Type: `Array`
+- Default: `[]`
+
+Configure the remark plugins. for example:
+
+```ts title="rspress.config.ts"
+import { defineConfig } from 'rspress/config';
+
+export default defineConfig({
+  markdown: {
+    remarkPlugins: [
+      [
+        require('remark-autolink-headings'),
+        {
+          behavior: 'wrap',
+        },
+      ],
+    ],
+  },
+});
+```
+
+### markdown.rehypePlugins
+
+- Type: `Array`
+
+Configure the rehype plugin. for example:
+
+```ts title="rspress.config.ts"
+import { defineConfig } from 'rspress/config';
+
+export default defineConfig({
+  markdown: {
+    rehypePlugins: [
+      [
+        require('rehype-autolink-headings'),
+        {
+          behavior: 'wrap',
+        },
+      ],
+    ],
+  },
+});
+```
+
+### markdown.checkDeadLinks
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to check for dead links. for example:
+
+```ts title="rspress.config.ts"
+import { defineConfig } from 'rspress/config';
+
+export default defineConfig({
+  markdown: {
+    checkDeadLinks: true,
+  },
+});
+```
+
+After enabling this config, the framework will check the links in the document based on the conventional routing table. If there is an unreachable link, the build will throw an error and exit.
+
+### markdown.mdxRs
+
+- Type: `boolean`
+- Default: `true`
+
+Whether to use the Rust version of the MDX compiler. For example:
+
+import MdxRs from '../../fragments/mdx-rs';
+
+<MdxRs />
+
+### markdown.showLineNumbers
+
+- Type: `boolean`
+
+Whether to display the line number of the code block. Defaults to `false`.
+
+### markdown.defaultWrapCode
+
+- Type: `boolean`
+
+Whether to enable long code line wrapping display by default. Defaults to `false`.
+
+### markdown.globalComponents
+
+- Type: `string[]`
+
+Register component to the global scope, which will make it automatically available in every MDX file, without any import statements.For example:
+
+```ts title="rspress.config.ts"
+import { defineConfig } from 'rspress/config';
+import path from 'path';
+
+export default defineConfig({
+  markdown: {
+    globalComponents: [path.join(__dirname, 'src/src/components/Alert.tsx')],
+  },
+});
+```
+
+Then you can use the `Alert` component in any MDX file:
+
+```mdx title="test.mdx"
+<Alert type="info">This is a info alert</Alert>
+```
+
+:::danger Danger
+Please set `markdown.mdxRs` to `false` when configuring `globalComponents`, otherwise the global components will not take effect.
+:::
+
+### markdown.highlightLanguages
+
+- Type: `(string | [string, string])[]`
+
+Register the languages that need to be highlighted. The default supported languages include `js`, `jsx`, `ts`, `tsx`, `json`, `css`, `scss`, `less`, `xml`, `diff`, `yaml`, `md`, `mdx`, `bash`. You can extend based on these languages. For example:
+
+```ts title="rspress.config.ts"
+import { defineConfig } from 'rspress/config';
+import path from 'path';
+
+export default defineConfig({
+  markdown: {
+    highlightLanguages: [
+      'ejs',
+      'go',
+      // Alias as md, full name as markdown
+      ['md', 'markdown'],
+    ],
+  },
+});
+```
+
+Each language config supports both `string` and `[string, string]` formats. In the array format, the former is the alias of the language, and the latter is the full name of the language. You can go to the [file list](https://github.com/react-syntax-highlighter/react-syntax-highlighter/tree/master/src/languages/prism) to view all supported language full names.

@@ -19,10 +19,7 @@ export const Content = (props: { productIndex: string; menuIndex: string }) => {
         </div>
       );
     }
-    if (
-      props.productIndex !== PRODUCT.MODERNJS_FRAMEWORK &&
-      props.productIndex !== PRODUCT.MODERNJS_MODULE
-    ) {
+    if (props.productIndex === PRODUCT.RSBUILD) {
       return <div style={{ padding: BASE_PADDING }}>WIP</div>;
     }
     switch (props.menuIndex) {

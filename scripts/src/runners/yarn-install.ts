@@ -103,10 +103,10 @@ const setPkgVersion = async (repoPath: string, pkgJsonPath: string) => {
 
   // override workspace protocol
   Object.keys(pkgVersions).forEach(key => {
-    if (pkgJson.dependencies[key]) {
+    if (pkgJson.dependencies?.[key]) {
       pkgJson.dependencies[key] = pkgVersions[key];
     }
-    if (pkgJson.devDependencies[key]) {
+    if (pkgJson.devDependencies?.[key]) {
       pkgJson.devDependencies[key] = pkgVersions[key];
     }
   });

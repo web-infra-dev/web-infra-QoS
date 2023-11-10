@@ -1,0 +1,6 @@
+{
+  "root": ".",
+  "include": ["**/*.md", "**/*.mdx"],
+  "exclude": ["**/node_modules/**"],
+  "backend": ""
+}

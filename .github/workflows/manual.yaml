@@ -36,6 +36,7 @@ on:
           - module-library-minify-terser
           - module-component
           - rspress-minimal
+          - rspress-website
       commitId:
         description: 'commitId of your repo'
       onlyInstallSize:

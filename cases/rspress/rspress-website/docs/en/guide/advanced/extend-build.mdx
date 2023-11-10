@@ -1,0 +1,65 @@
+# Build Extension
+
+## Rsbuild
+
+Rspress builds documents based on [Rsbuild](https://github.com/web-infra-dev/rsbuild).
+
+Rsbuild provides flexible build configurations, you can use [builderConfig](/api/config/config-build.html#builderconfig) to customize these configurations. For example, change the output directory to `doc_dist`:
+
+```ts title="rspress.config.ts"
+import { defineConfig } from 'rspress/config';
+
+export default defineConfig({
+  builderConfig: {
+    output: {
+      distPath: {
+        root: 'doc_dist',
+      },
+    },
+    tools: {
+      rspack(options) {
+        // change rspack's options
+      },
+    },
+  },
+});
+```
+
+:::tip
+
+You can learn more configurations through the [Rsbuild - Config](https://rsbuild.dev/config/) documentation.
+
+Note that Rspress only supports Rspack bundler, so some configurations related to webpack will not work, such as `tools.webpack`. Of course, you can use the `tools.rspack` to customize the Rspack config.
+
+:::
+
+## MDX Compilation
+
+The compilation of MDX in the framework is based on [unified](https://github.com/unifiedjs/unified), and you can add related compilation plugins through `markdown` configuration. for example
+:
+
+```ts title="rspress.config.ts"
+import { defineConfig } from 'rspress/config';
+
+export default defineConfig({
+  markdown: {
+    // It's necessary to use JS version compiler
+    mdxRs: false,
+    remarkPlugins: [
+      [
+        require('remark-autolink-headings'),
+        {
+          behavior: 'wrap',
+        },
+      ],
+    ],
+    rehypePlugins: [require('rehype-slug')],
+  },
+});
+```
+
+:::warning
+
+Only the JS version of the MDX compiler supports compilation plugins.
+
+:::

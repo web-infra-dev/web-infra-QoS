@@ -88,6 +88,10 @@ Component project with `npm-component` buildPreset.
 
 Minimal doc project.
 
+### rspress-website
+
+Website project with rspress.
+
 ## Metrics
 
 ### Bundle Size
