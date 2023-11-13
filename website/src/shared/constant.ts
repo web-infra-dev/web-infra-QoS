@@ -61,7 +61,7 @@ export const BUNDLE_SIZE_DEFAULT_CASE = {
 export const BUNDLE_SIZE_METRICS = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['minifiedBundleSize', 'gzippedBundleSize'],
   [PRODUCT.MODERNJS_MODULE]: ['distSize', 'gzippedDistSize'],
-  [PRODUCT.RSPRESS]: ['minifiedBundleSize', 'gzippedBundleSize'],
+  [PRODUCT.RSPRESS]: ['initialJsSize', 'gzipInitialJsSize'],
 };
 
 export const COMPILE_SPEED_DEFAULT_CASE = {

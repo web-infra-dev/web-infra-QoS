@@ -106,6 +106,8 @@ The size of the bundles after the build.
 - `gzipped-bundle-size`: the size of bundles after compression & gzip.
 - `dist-size`: file size of output in module.
 - `gzipped-dist-size`: file size of output in module after gzip.
+- `initial-js-size`: initial js size in rspress.
+- `gzip-initial-js-size`: initial js size in rspress after gzip.
 
 ### Compile Speed
 

@@ -23,6 +23,8 @@ export type Metrics = {
   gzippedBundleSize?: number;
   distSize?: number;
   gzippedDistSize?: number;
+  initialJsSize?: number;
+  gzipInitialJsSize?: number;
 
   // Install Size
   installSize?: number;

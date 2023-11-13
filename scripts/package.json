@@ -10,7 +10,8 @@
     "./plugins/modernjs-framework": "./dist/plugins/modernjs-framework/index.js",
     "./plugins/modernjs-module": "./dist/plugins/modernjs-module/index.js",
     "./plugins/rspress": "./dist/plugins/rspress/index.js",
-    "./plugins/rsbuild": "./dist/plugins/rsbuild/index.js"
+    "./plugins/rsbuild": "./dist/plugins/rsbuild/index.js",
+    "./plugins/rspack": "./dist/plugins/rspack/index.js"
   },
   "typesVersions": {
     "*": {
@@ -25,6 +26,9 @@
       ],
       "plugins/rsbuild": [
         "./dist/plugins/rsbuild/index.d.ts"
+      ],
+      "plugins/rspack": [
+        "./dist/plugins/rspack/index.d.ts"
       ]
     }
   },

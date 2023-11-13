@@ -1,5 +1,6 @@
 import type { Metrics } from '../../shared/types';
 import { saveMetrics } from '../../shared/fs';
+import { InitialJsSizePlugin } from '../rspack/initial-js-size-plugin';
 
 export const measureRspressBuildPlugin = () => ({
   name: 'measureRspressBuildPlugin',
@@ -10,6 +11,10 @@ export const measureRspressBuildPlugin = () => ({
 
     const isDev = process.env.NODE_ENV === 'development';
     const metrics: Metrics = {};
+
+    api.modifyBundlerChain(async (chain: any) => {
+      chain.plugin('InitialJsSizePlugin').use(InitialJsSizePlugin);
+    });
 
     api.onBeforeBuild(() => {
       if (!isDev) {
