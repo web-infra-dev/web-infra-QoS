@@ -1,8 +1,8 @@
 import type { Metrics } from '../../shared/types';
 import { saveMetrics } from '../../shared/fs';
 
-export const measureRsbuildPlugin = () => ({
-  name: 'measureRsbuildPlugin',
+export const measureRspressBuildPlugin = () => ({
+  name: 'measureRspressBuildPlugin',
 
   setup: (api: any) => {
     let beforeDevTime: number;

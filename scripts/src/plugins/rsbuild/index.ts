@@ -1,1 +1,1 @@
-export * from './measure-rsbuild-plugin';
+export * from './measure-rspress-build-plugin';

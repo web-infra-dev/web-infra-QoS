@@ -1,7 +1,7 @@
 import path from 'path';
 import { defineConfig } from 'rspress/config';
 import { measurePlugin } from '@modern-js/benchmark-scripts/plugins/rspress';
-import { measureRsbuildPlugin } from '@modern-js/benchmark-scripts/plugins/rsbuild';
+import { measureRspressBuildPlugin } from '@modern-js/benchmark-scripts/plugins/rsbuild';
 
 export default defineConfig({
   markdown: {
@@ -102,5 +102,5 @@ gtag('config', 'G-66B2Z6KG0J');`,
     ],
   },
   plugins: [measurePlugin()],
-  builderPlugins: [measureRsbuildPlugin()],
+  builderPlugins: [measureRspressBuildPlugin()],
 });
