@@ -80,13 +80,13 @@ export const SideMenu = (props: {
           <IconCloudDownload />
           Install Speed
         </MenuItem>
-        <MenuItem
+        {/* <MenuItem
           key={`${PRODUCT.MODERNJS_FRAMEWORK}_${MENU.CLI_SPEED}`}
           style={itemStyle}
         >
           <IconDashboard />
           Cli Speed
-        </MenuItem>
+        </MenuItem> */}
       </SubMenu>
       <SubMenu
         key={PRODUCT.MODERNJS_MODULE}
@@ -117,50 +117,13 @@ export const SideMenu = (props: {
           <IconCloudDownload />
           Install Speed
         </MenuItem>
-        <MenuItem
+        {/* <MenuItem
           key={`${PRODUCT.MODERNJS_MODULE}_${MENU.CLI_SPEED}`}
           style={itemStyle}
         >
           <IconDashboard />
           Cli Speed
-        </MenuItem>
-      </SubMenu>
-      <SubMenu
-        key={PRODUCT.RSBUILD}
-        title={
-          <>
-            <IconBulb /> Rsbuild
-          </>
-        }
-      >
-        <MenuItem
-          key={`${PRODUCT.RSBUILD}_${MENU.BUNDLE_SIZE}`}
-          style={itemStyle}
-        >
-          <IconInteraction />
-          Bundle Size
-        </MenuItem>
-        <MenuItem
-          key={`${PRODUCT.RSBUILD}_${MENU.COMPILE_SPEED}`}
-          style={itemStyle}
-        >
-          <IconThunderbolt />
-          Compile Speed
-        </MenuItem>
-        <MenuItem
-          key={`${PRODUCT.RSBUILD}_${MENU.INSTALL_SPEED}`}
-          style={itemStyle}
-        >
-          <IconCloudDownload />
-          Install Speed
-        </MenuItem>
-        <MenuItem
-          key={`${PRODUCT.RSBUILD}_${MENU.CLI_SPEED}`}
-          style={itemStyle}
-        >
-          <IconDashboard />
-          Cli Speed
-        </MenuItem>
+        </MenuItem> */}
       </SubMenu>
       <SubMenu
         key={PRODUCT.RSPRESS}
@@ -191,13 +154,50 @@ export const SideMenu = (props: {
           <IconCloudDownload />
           Install Speed
         </MenuItem>
-        <MenuItem
+        {/* <MenuItem
           key={`${PRODUCT.RSPRESS}_${MENU.CLI_SPEED}`}
           style={itemStyle}
         >
           <IconDashboard />
           Cli Speed
+        </MenuItem> */}
+      </SubMenu>
+      <SubMenu
+        key={PRODUCT.RSBUILD}
+        title={
+          <>
+            <IconBulb /> Rsbuild
+          </>
+        }
+      >
+        <MenuItem
+          key={`${PRODUCT.RSBUILD}_${MENU.BUNDLE_SIZE}`}
+          style={itemStyle}
+        >
+          <IconInteraction />
+          Bundle Size
         </MenuItem>
+        <MenuItem
+          key={`${PRODUCT.RSBUILD}_${MENU.COMPILE_SPEED}`}
+          style={itemStyle}
+        >
+          <IconThunderbolt />
+          Compile Speed
+        </MenuItem>
+        <MenuItem
+          key={`${PRODUCT.RSBUILD}_${MENU.INSTALL_SPEED}`}
+          style={itemStyle}
+        >
+          <IconCloudDownload />
+          Install Speed
+        </MenuItem>
+        {/* <MenuItem
+          key={`${PRODUCT.RSBUILD}_${MENU.CLI_SPEED}`}
+          style={itemStyle}
+        >
+          <IconDashboard />
+          Cli Speed
+        </MenuItem> */}
       </SubMenu>
       <MenuItem key={PRODUCT.RSPACK}>
         <IconCamera />

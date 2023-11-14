@@ -84,6 +84,18 @@ Utils project with `npm-library-with-umd` buildPreset.
 
 Component project with `npm-component` buildPreset.
 
+### rspress-minimal
+
+Minimal doc project.
+
+### rspress-website
+
+Website project with rspress.
+
+### rspress-website-mdxjs
+
+`rspress-website` + `mdxRs: false`.
+
 ## Metrics
 
 ### Bundle Size
@@ -94,6 +106,8 @@ The size of the bundles after the build.
 - `gzipped-bundle-size`: the size of bundles after compression & gzip.
 - `dist-size`: file size of output in module.
 - `gzipped-dist-size`: file size of output in module after gzip.
+- `initial-js-size`: initial js size in rspress.
+- `gzip-initial-js-size`: initial js size in rspress after gzip.
 
 ### Compile Speed
 
@@ -108,6 +122,7 @@ The size of the bundles after the build.
 - `bulid-cjs-time`: the time it takes to complete a build task for cjs in module build. Corresponding hooks: `beforeBuildTask -> afterBuildTask`.
 - `bulid-esm-time`: the time it takes to complete a build task for esm in module build. Corresponding hooks: `beforeBuildTask -> afterBuildTask`.
 - `bulid-dts-time`: the time it takes to complete a build task for dts in module build. Corresponding hooks: `beforeBuildTask -> afterBuildTask`.
+- `route-generate-time`: the time it takes to generate routes in rspress. Corresponding hooks: `beforeBuild -> routeGenerated`.
 
 ### Install Speed
 

@@ -35,6 +35,9 @@ on:
           - module-library-minify-esbuild
           - module-library-minify-terser
           - module-component
+          - rspress-minimal
+          - rspress-website
+          - rspress-website-mdxjs
       commitId:
         description: 'commitId of your repo'
       onlyInstallSize:

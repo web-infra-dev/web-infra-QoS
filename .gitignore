@@ -46,3 +46,9 @@ modern.js
 cases/**/pnpm-lock.yaml
 data/**/*
 temp/**/*
+rspress
+rsbuild
+!/cases/rspress/
+!/scripts/**/*/rspress
+!/cases/rsbuild/
+!/scripts/**/*/rsbuild

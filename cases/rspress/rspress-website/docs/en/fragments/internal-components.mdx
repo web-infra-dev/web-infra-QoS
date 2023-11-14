@@ -1,0 +1,159 @@
+## NoSSR
+
+Used to skip the ssr for some components.For example
+
+```tsx
+import { NoSSR } from 'rspress/runtime';
+
+const Component = () => {
+  return (
+    <NoSSR>
+      <div>The content here will only be rendered on the client side</div>
+    </NoSSR>
+  );
+};
+```
+
+## Helmet
+
+It is generally used to set custom head content in documents (using `react-helmet-async` at the underlying level). The usage is as follows:
+
+```tsx title="index.tsx"
+// Below is a custom component, you can import it into your document
+import { Helmet } from 'rspress/runtime';
+
+function App() {
+  return (
+    <Helmet>
+      <meta property="og:description"  value="Out-of-box Rspack build tools">
+    </Helmet>
+  );
+}
+```
+
+## Tab/Tabs
+
+You can directly use the Tab/Tabs component in the document to achieve the effect of tab switching. for example:
+
+```tsx title="index.mdx"
+import { Tab, Tabs } from 'rspress/theme';
+
+function App() {
+  return (
+    <Tabs>
+      <Tab label="Tab 1">Tab 1 content</Tab>
+      <Tab label="Tab 2">Tab 2 content</Tab>
+    </Tabs>
+  );
+}
+```
+
+import { Tab, Tabs } from '@theme';
+
+<Tabs>
+  <Tab label="1" value="1">
+    Tab 1 content
+  </Tab>
+  <Tab label="2" value="2">
+    Tab 2 content
+  </Tab>
+</Tabs>
+
+:::info Note
+In order to make it easier for you to use these components, the `rspress/theme` package has been aliased inside the framework, so you can directly use `@theme` to import these components.
+:::
+
+The props type of the Tabs component is as follows:
+
+```ts
+interface TabsProps {
+  children: React.ReactNode;
+  defaultValue?: string;
+  groupId?: string;
+  tabPosition?: 'left' | 'center';
+}
+```
+
+`defaultValue` is used to set the tab item selected by default. This value will be compared with the value field of the Tab component props, and if they are equal, the tab will be selected.
+
+`groupId` is used to sync the selected tab item between multiple Tabs components.The groups with the same groupId will be synchronized.
+
+`tabPosition` is used to set the position of the tab list, it has two values: `left` and `center`, the default is `left`.
+
+The props types of the Tab component are as follows:
+
+```ts
+interface TabProps {
+  label: string;
+  // Used to identify the current tab, if not passed, the default label will be used
+  value?: string;
+  children: React.ReactNode;
+}
+```
+
+The `value` field is used to identify the current tab, if not passed, the default label will be used.
+
+## PackageManagerTabs
+
+The PackageManagerTabs component is used to display commands for different package managers in the documentation. The usage is as follows:
+
+```tsx title="index.mdx"
+import { PackageManagerTabs } from '@theme';
+
+function App() {
+  return <PackageManagerTabs command="install rspress -D" />;
+}
+```
+
+The effect is as follows:
+
+import { PackageManagerTabs } from '@theme';
+
+<PackageManagerTabs command="install rspress -D" />
+
+The types of props included are as follows:
+
+```ts
+interface PackageManagerTabsProps {
+  command:
+    | string
+    | {
+        // Used to set commands for different package managers
+        npm?: string;
+        yarn?: string;
+        pnpm?: string;
+        bun?: string;
+      };
+  // Used to set additional tabs
+  additionalTabs: {
+    // Used to set additional package managers
+    tool: string;
+    // Used to set the icon of the additional package manager
+    icon?: React.ReactNode;
+  }[];
+}
+```
+
+When `command` is set to a string, it will default to displaying three tabs: npm, yarn, pnpm and bun, and the component will automatically add the corresponding package manager command before the command. If you need to display additional tabs, you can achieve this through `additionalTabs`.
+
+:::tip
+
+In the install command, special processing has been done for yarn and bun. If your command is `install some-packages`, the install will be automatically replaced with add in the yarn/bun tab.
+
+:::
+
+## Table of Contents
+
+Render TOC of current page
+
+```tsx title="index.mdx"
+import { Toc } from '@theme';
+
+function App() {
+  return <Toc />;
+}
+```
+
+import { Toc } from '@theme';
+
+<Toc />

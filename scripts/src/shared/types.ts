@@ -16,12 +16,15 @@ export type Metrics = {
   bulidCjsTime?: number;
   bulidEsmTime?: number;
   bulidDtsTime?: number;
+  routeGenerateTime?: number;
 
   // Bundle size
   minifiedBundleSize?: number;
   gzippedBundleSize?: number;
   distSize?: number;
   gzippedDistSize?: number;
+  initialJsSize?: number;
+  gzipInitialJsSize?: number;
 
   // Install Size
   installSize?: number;

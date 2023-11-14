@@ -55,9 +55,11 @@ export async function cloneRepo(productName: string, caseName: string) {
   await runCommand(localRepoPath, 'pnpm prepare');
 
   // add cases folder to workspace config
+  const addWorkspace =
+    productName === 'RSPRESS' ? "  - 'cases/*'" : " - 'cases/*'";
   await updateFile(
     join(localRepoPath, 'pnpm-workspace.yaml'),
-    content => `${content}\n - 'cases/*'`,
+    content => `${content}\n${addWorkspace}`,
   );
 
   await runCommand(localRepoPath, 'pnpm link ../scripts');
