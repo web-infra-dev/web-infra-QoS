@@ -19,9 +19,7 @@ export const Content = (props: { productIndex: string; menuIndex: string }) => {
         </div>
       );
     }
-    if (props.productIndex === PRODUCT.RSBUILD) {
-      return <div style={{ padding: BASE_PADDING }}>WIP</div>;
-    }
+
     switch (props.menuIndex) {
       case MENU.BUNDLE_SIZE:
         return <ContentBundleSize productIndex={props.productIndex} />;
