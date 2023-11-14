@@ -52,7 +52,18 @@ jobs:
             product: RSPRESS
           - case: rspress-website-mdxjs
             product: RSPRESS
-
+          - case: rsbuild-react
+            product: RSBUILD
+          - case: rsbuild-vue2
+            product: RSBUILD
+          - case: rsbuild-vue3
+            product: RSBUILD
+          - case: rsbuild-lit
+            product: RSBUILD
+          - case: rsbuild-svelte
+            product: RSBUILD
+          - case: rsbuild-vanilla
+            product: RSBUILD
     runs-on: ubuntu-latest
 
     steps:

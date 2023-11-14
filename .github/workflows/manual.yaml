@@ -10,8 +10,8 @@ on:
         options:
           - MODERNJS_FRAMEWORK
           - MODERNJS_MODULE
-          - RSBUILD
           - RSPRESS
+          - RSBUILD
       case:
         description: 'case name of which to bench'
         type: choice
@@ -38,6 +38,12 @@ on:
           - rspress-minimal
           - rspress-website
           - rspress-website-mdxjs
+          - rsbuild-react
+          - rsbuild-vue2
+          - rsbuild-vue3
+          - rsbuild-lit
+          - rsbuild-svelte
+          - rsbuild-vanilla
       commitId:
         description: 'commitId of your repo'
       onlyInstallSize:

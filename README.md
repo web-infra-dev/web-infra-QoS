@@ -96,6 +96,30 @@ Website project with rspress.
 
 `rspress-website` + `mdxRs: false`.
 
+### rsbuild-react
+
+Rsbuild project + react.
+
+### rsbuild-vue2
+
+Rsbuild project + vue2.
+
+### rsbuild-vue3
+
+Rsbuild project + vue3.
+
+### rsbuild-lit
+
+Rsbuild project + lit.
+
+### rsbuild-svelte
+
+Rsbuild project + svelte.
+
+### rsbuild-vanilla
+
+Rsbuild project + vanilla.
+
 ## Metrics
 
 ### Bundle Size

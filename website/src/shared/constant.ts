@@ -51,12 +51,21 @@ export const PRODUCT_CASES: CaseorMetrics = {
     'rspress-website',
     'rspress-website-mdxjs',
   ],
+  [PRODUCT.RSBUILD]: [
+    'rsbuild-react',
+    'rsbuild-vue2',
+    'rsbuild-vue3',
+    'rsbuild-lit',
+    'rsbuild-svelte',
+    'rsbuild-vanilla',
+  ],
 };
 
 export const BUNDLE_SIZE_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-initial', 'app-initial-rspack'],
   [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
   [PRODUCT.RSPRESS]: ['rspress-website', 'rspress-website-mdxjs'],
+  [PRODUCT.RSBUILD]: ['rsbuild-react', 'rsbuild-vue3'],
 };
 export const BUNDLE_SIZE_METRICS = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['minifiedBundleSize', 'gzippedBundleSize'],
@@ -67,12 +76,14 @@ export const BUNDLE_SIZE_METRICS = {
     'minifiedBundleSize',
     'gzippedBundleSize',
   ],
+  [PRODUCT.RSBUILD]: ['minifiedBundleSize', 'gzippedBundleSize'],
 };
 
 export const COMPILE_SPEED_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-arco-pro', 'app-arco-pro-rspack'],
   [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
   [PRODUCT.RSPRESS]: ['rspress-website', 'rspress-website-mdxjs'],
+  [PRODUCT.RSBUILD]: ['rsbuild-react', 'rsbuild-vue3'],
 };
 export const COMPILE_SPEED_METRICS = {
   [PRODUCT.MODERNJS_FRAMEWORK]: [
@@ -97,32 +108,26 @@ export const COMPILE_SPEED_METRICS = {
     'devColdBootTime',
     'routeGenerateTime',
   ],
+  [PRODUCT.RSBUILD]: ['buildColdBootTime', 'devColdBootTime'],
 };
 
 export const INSTALL_SPEED_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-initial', 'app-initial-rspack'],
   [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
   [PRODUCT.RSPRESS]: ['rspress-website', 'rspress-website-mdxjs'],
+  [PRODUCT.RSBUILD]: ['rsbuild-react', 'rsbuild-vue3'],
 };
+export const DEFAULT_INSTALL_SPEED_METRICS = [
+  'installSize',
+  'dependenciesCount',
+  'coldInstallTime',
+  'hotInstallTime',
+];
 export const INSTALL_SPEED_METRICS = {
-  [PRODUCT.MODERNJS_FRAMEWORK]: [
-    'installSize',
-    'dependenciesCount',
-    'coldInstallTime',
-    'hotInstallTime',
-  ],
-  [PRODUCT.MODERNJS_MODULE]: [
-    'installSize',
-    'dependenciesCount',
-    'coldInstallTime',
-    'hotInstallTime',
-  ],
-  [PRODUCT.RSPRESS]: [
-    'installSize',
-    'dependenciesCount',
-    'coldInstallTime',
-    'hotInstallTime',
-  ],
+  [PRODUCT.MODERNJS_FRAMEWORK]: DEFAULT_INSTALL_SPEED_METRICS,
+  [PRODUCT.MODERNJS_MODULE]: DEFAULT_INSTALL_SPEED_METRICS,
+  [PRODUCT.RSPRESS]: DEFAULT_INSTALL_SPEED_METRICS,
+  [PRODUCT.RSBUILD]: DEFAULT_INSTALL_SPEED_METRICS,
 };
 
 export const PUBLIC_PATH = 'https://web-infra-dev.github.io/web-infra-QoS';
