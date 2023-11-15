@@ -8,6 +8,8 @@ on:
 jobs:
   benchmark:
     strategy:
+      max-parallel: 2
+      continue-on-error: true
       matrix:
         include:
           - case: app-minimal
