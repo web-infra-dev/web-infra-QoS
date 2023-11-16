@@ -67,10 +67,13 @@ jobs:
       - name: Install Dependencies
         run: pnpm run install:scripts
 
+      - name: 🚀 Run specified benchmark
+        run: cd scripts && PR_NUMBER=${{ inputs.prNumber }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} pnpm start ${{ inputs.product }}
+
       - id: print-results
-        name: 🚀 Run specified benchmark and Print results
+        name: Print results
         run: |
-          result=$(cd scripts && PR_NUMBER=${{ inputs.prNumber }} pnpm start ${{ inputs.product }})
+          result=$(cd scripts && node ./dist/compare.js ${{ inputs.product }})
           echo "$result"
           echo "diff-result=${result//$'\n'/'@@'}" >> $GITHUB_OUTPUT
   update-comment:

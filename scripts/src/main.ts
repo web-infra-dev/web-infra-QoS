@@ -9,7 +9,6 @@ import {
 } from './shared';
 import { remove } from 'fs-extra';
 import { yarnInstall } from './runners/yarn-install';
-import { compare } from './shared/compare';
 
 const productName = process.argv[2] || 'MODERNJS_FRAMEWORK';
 const caseName =
@@ -43,11 +42,7 @@ async function main() {
       console.log('failed to collect install size metrics:', err);
     }
 
-    const jsonPath = await mergeMetrics(productName, caseName);
-
-    if (process.env.PR_NUMBER) {
-      await compare(jsonPath);
-    }
+    await mergeMetrics(productName, caseName);
   } else {
     logger.error(`Case not found: ${productName} ${caseName}`);
   }

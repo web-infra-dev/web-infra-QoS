@@ -40,7 +40,7 @@ export async function updateFile(
   }
 }
 
-async function getMetricsPath(productName: string, caseName: string) {
+export async function getMetricsPath(productName: string, caseName: string) {
   const jsonName = `${caseName}.json`;
   return {
     jsonName,
@@ -102,10 +102,7 @@ const cleanData = (nums: number[]) => {
   return nums;
 };
 
-export async function mergeMetrics(
-  productName: string,
-  caseName: string,
-): Promise<string> {
+export async function mergeMetrics(productName: string, caseName: string) {
   const { jsonPath, jsonName, remoteURL } = await getMetricsPath(
     productName,
     caseName,
@@ -146,6 +143,4 @@ export async function mergeMetrics(
     await outputJson(jsonPath, allData);
     logger.success(`Successfully merged metrics to ${jsonName}.`);
   }
-
-  return jsonPath;
 }
