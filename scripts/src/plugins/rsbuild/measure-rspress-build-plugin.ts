@@ -25,7 +25,9 @@ export const measureRspressBuildPlugin = () => ({
     api.onAfterBuild(async () => {
       const buildTime = performance.now() - beforeBuildTime;
       metrics.buildColdBootTime = buildTime;
-      await saveMetrics(metrics);
+      if (api.context.target === 'web') {
+        await saveMetrics(metrics);
+      }
     });
 
     api.onBeforeStartDevServer(() => {
