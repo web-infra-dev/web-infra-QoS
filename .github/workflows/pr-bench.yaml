@@ -70,7 +70,7 @@ jobs:
       - id: print-results
         name: 🚀 Run specified benchmark and Print results
         run: |
-          result=$(cd scripts && PR_NUMBER=${{ inputs.prNumber }} pnpm start ${{ inputs.product }})
+          result=$(cd scripts && PR_NUMBER=${{ inputs.prNumber }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} pnpm start ${{ inputs.product }})
           echo "$result"
           echo "diff-result=${result//$'\n'/'@@'}" >> $GITHUB_OUTPUT
   update-comment:
