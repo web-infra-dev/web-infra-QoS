@@ -1,12 +1,20 @@
 import logger from 'consola';
 import { dev } from './runners/dev';
 import { build } from './runners/build';
-import { cloneRepo, getDataPath, mergeMetrics } from './shared';
+import {
+  DefaultBenchCase,
+  cloneRepo,
+  getDataPath,
+  mergeMetrics,
+} from './shared';
 import { remove } from 'fs-extra';
 import { yarnInstall } from './runners/yarn-install';
+import { compare } from './shared/compare';
 
 const productName = process.argv[2] || 'MODERNJS_FRAMEWORK';
-const caseName = process.argv[3] || 'app-minimal';
+const caseName =
+  process.argv[3] ||
+  DefaultBenchCase[productName as keyof typeof DefaultBenchCase];
 
 async function main() {
   const dataPath = getDataPath(productName);
@@ -35,7 +43,11 @@ async function main() {
       console.log('failed to collect install size metrics:', err);
     }
 
-    await mergeMetrics(productName, caseName);
+    const jsonPath = await mergeMetrics(productName, caseName);
+
+    if (process.env.PR_NUMBER) {
+      await compare(jsonPath);
+    }
   } else {
     logger.error(`Case not found: ${productName} ${caseName}`);
   }

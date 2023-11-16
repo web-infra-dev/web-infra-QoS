@@ -13,3 +13,10 @@ export enum REPO_NAME {
   RSPRESS = 'rspress',
   RSPACK = 'rspack',
 }
+
+export const DefaultBenchCase = {
+  MODERNJS_FRAMEWORK: 'app-arco-pro-rspack',
+  MODERNJS_MODULE: 'module-library',
+  RSPRESS: 'rspress-website',
+  RSBUILD: 'rsbuild-react',
+};

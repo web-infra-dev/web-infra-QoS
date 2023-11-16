@@ -15,13 +15,14 @@ export async function cloneRepo(productName: string, caseName: string) {
   const repoName = getRepoName(productName);
   const localRepoPath = getRepoPath(repoName);
   if (!(await pathExists(localRepoPath))) {
-    const { GITHUB_ACTOR, GITHUB_TOKEN, COMMIT_ID } = process.env;
+    const { GITHUB_ACTOR, GITHUB_TOKEN, COMMIT_ID, PR_NUMBER } = process.env;
     const repoURL = GITHUB_TOKEN
       ? `https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/web-infra-dev/${repoName}.git`
       : `git@github.com:web-infra-dev/${repoName}.git`;
 
     const options = ['clone', '--single-branch'];
-    if (!COMMIT_ID) {
+
+    if (!COMMIT_ID && !PR_NUMBER) {
       options.push('--depth', '1');
     }
 
@@ -33,6 +34,24 @@ export async function cloneRepo(productName: string, caseName: string) {
 
     if (COMMIT_ID) {
       await execa('git', ['checkout', COMMIT_ID], {
+        cwd: localRepoPath,
+        stderr: 'inherit',
+        stdout: 'inherit',
+      });
+    }
+
+    if (PR_NUMBER) {
+      const branchName = String(new Date().valueOf());
+      await execa(
+        'git',
+        ['fetch', 'origin', `pull/${PR_NUMBER}/head:${branchName}`],
+        {
+          cwd: localRepoPath,
+          stderr: 'inherit',
+          stdout: 'inherit',
+        },
+      );
+      await execa('git', ['checkout', `${branchName}`], {
         cwd: localRepoPath,
         stderr: 'inherit',
         stdout: 'inherit',
