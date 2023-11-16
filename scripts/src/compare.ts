@@ -1,5 +1,8 @@
 import { readJson } from 'fs-extra';
-import { Metrics } from './types';
+import { Metrics } from './shared/types';
+import { DefaultBenchCase, getMetricsPath } from './shared';
+
+const productName = process.argv[2] || 'MODERNJS_FRAMEWORK';
 
 const formatFileSize = (size: number, target = 'KB') => {
   if (target === 'KB') {
@@ -60,7 +63,11 @@ function generateTable(
   return table.join('\n');
 }
 
-export async function compare(jsonPath: string) {
+export async function compare(productName: string) {
+  const caseName =
+    process.argv[3] ||
+    DefaultBenchCase[productName as keyof typeof DefaultBenchCase];
+  const { jsonPath } = await getMetricsPath(productName, caseName);
   const allMetrics: Metrics[] = await readJson(jsonPath);
   const keys = Object.keys(allMetrics);
   const currentKey = keys[keys.length - 1];
@@ -71,3 +78,5 @@ export async function compare(jsonPath: string) {
   const formatTable = generateTable(base, current);
   console.log(formatTable);
 }
+
+compare(productName);
