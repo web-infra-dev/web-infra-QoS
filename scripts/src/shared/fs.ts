@@ -7,6 +7,8 @@ import {
   outputJson,
   outputFile,
   pathExists,
+  readJsonSync,
+  outputJsonSync,
 } from 'fs-extra';
 import logger from 'consola';
 import type { Metrics } from './types';
@@ -65,7 +67,7 @@ export async function saveMetrics(metrics: Metrics) {
   const { jsonPath, jsonName } = await getMetricsPath(PRODUCT_NAME, CASE_NAME);
 
   if (await pathExists(jsonPath)) {
-    const content: Metrics[] = await readJson(jsonPath);
+    const content: Metrics[] = readJsonSync(jsonPath);
 
     if (content[index]) {
       Object.assign(content[index], metrics);
@@ -73,9 +75,9 @@ export async function saveMetrics(metrics: Metrics) {
       content.push(metrics);
     }
 
-    await outputJson(jsonPath, content, { spaces: 2 });
+    outputJsonSync(jsonPath, content, { spaces: 2 });
   } else {
-    await outputJson(jsonPath, [metrics], { spaces: 2 });
+    outputJsonSync(jsonPath, [metrics], { spaces: 2 });
   }
 
   logger.success(`Successfully write metrics to ${jsonName}.`);
