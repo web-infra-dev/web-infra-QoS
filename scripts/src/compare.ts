@@ -76,6 +76,7 @@ export async function compare(productName: string) {
   const base = allMetrics[baseKey as any];
 
   const formatTable = generateTable(base, current);
+  console.log(`case: ${caseName}`);
   console.log(formatTable);
 }
 
