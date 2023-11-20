@@ -150,8 +150,4 @@ export const LINE_CHART_DEFAULT_CONFIG: Partial<LineOptions> = {
     size: 3,
   },
   stepType: 'vh',
-  slider: {
-    start: 0,
-    end: 1,
-  },
 };

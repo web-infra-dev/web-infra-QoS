@@ -5,6 +5,7 @@ import {
   INSTALL_SPEED_METRICS,
   INSTALL_SPEED_DEFAULT_CASE,
   LINE_CHART_DEFAULT_CONFIG,
+  PRODUCT,
 } from '@/shared/constant';
 import { Filters, useFilterResult } from './Filters';
 import { useEffect, useRef } from 'react';
@@ -93,6 +94,10 @@ export const ContentInstallSpeed = (props: { productIndex: string }) => {
               value,
             };
           },
+        },
+        slider: {
+          start: productName === PRODUCT.MODERNJS_FRAMEWORK ? 0.85 : 0,
+          end: 1,
         },
       });
 
