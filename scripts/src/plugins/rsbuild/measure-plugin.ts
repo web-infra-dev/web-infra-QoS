@@ -26,7 +26,7 @@ export const measurePlugin = () => ({
       const buildTime = performance.now() - beforeBuildTime;
       metrics.buildColdBootTime = buildTime;
 
-      const distDirectory = stats?.toJson().children[0].outputPath;
+      const distDirectory = api.context.distPath;
       const files = glob.sync(join(distDirectory, '**', '*.{js,css,html}'));
       const fileSizes: Record<string, number> = {};
       const gzippedSizes: Record<string, number> = {};
