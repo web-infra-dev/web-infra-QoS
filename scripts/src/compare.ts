@@ -1,6 +1,11 @@
 import axios from 'axios';
 import { readJson } from 'fs-extra';
-import { DefaultBenchCase, getCommitLink, getMetricsPath } from './shared';
+import {
+  DefaultBenchCase,
+  ValidMetricsForCase,
+  getCommitLink,
+  getMetricsPath,
+} from './shared';
 
 const productName = process.argv[2] || 'MODERNJS_FRAMEWORK';
 
@@ -30,6 +35,7 @@ function formatValue(value: number, property: string) {
 function generateTable(
   base: Record<string, number>,
   current: Record<string, number>,
+  caseName: string,
 ) {
   const overThresholdTags: string[] = [];
   const properties = Object.keys(base);
@@ -58,55 +64,65 @@ function generateTable(
     ).padEnd(10)} | ${formatValue(current[property], property).padEnd(
       10,
     )} | ${formattedPercent.padEnd(10)} |`;
-    table.push(row);
 
-    if (percent > 5 && !property.includes('InstallTime')) {
-      overThresholdTags.push(property);
+    if (
+      ValidMetricsForCase[
+        caseName as keyof typeof ValidMetricsForCase
+      ]?.includes(property) ||
+      !ValidMetricsForCase[caseName as keyof typeof ValidMetricsForCase]
+    ) {
+      table.push(row);
+      if (percent > 5 && !property.includes('InstallTime')) {
+        overThresholdTags.push(property);
+      }
     }
   });
 
   console.log('');
   console.log(table.join('\n'));
+  console.log('');
 
   return overThresholdTags;
 }
 
 export async function compare(productName: string) {
-  const caseName =
-    process.argv[3] ||
-    DefaultBenchCase[productName as keyof typeof DefaultBenchCase];
-  const { jsonPath, remoteURL } = await getMetricsPath(productName, caseName);
+  const cases = DefaultBenchCase[productName as keyof typeof DefaultBenchCase];
 
-  const allMetrics =
-    process.env.MONITOR === '1'
-      ? (await axios.get(remoteURL)).data
-      : await readJson(jsonPath);
+  for (const caseName of cases) {
+    const { jsonPath, remoteURL } = await getMetricsPath(productName, caseName);
 
-  let arr = Object.keys(allMetrics).map(key => {
-    return { key: key, value: allMetrics[key] };
-  });
+    const allMetrics =
+      process.env.MONITOR === '1'
+        ? (await axios.get(remoteURL)).data
+        : await readJson(jsonPath);
 
-  arr.sort((a, b) => a.value.time - b.value.time);
+    let arr = Object.keys(allMetrics).map(key => {
+      return { key: key, value: allMetrics[key] };
+    });
 
-  const currentKey = arr[arr.length - 1].key;
-  const baseKey = arr[arr.length - 2].key;
-  const current = allMetrics[currentKey as any];
-  const base = allMetrics[baseKey as any];
-  const baseCommitLink = getCommitLink(productName, baseKey);
-  const currentCommitLink = getCommitLink(productName, currentKey);
+    arr.sort((a, b) => a.value.time - b.value.time);
 
-  console.log(`case: ${caseName}`);
-  console.log('base: ', baseCommitLink);
-  console.log('current: ', currentCommitLink);
+    const currentKey = arr[arr.length - 1].key;
+    const baseKey = arr[arr.length - 2].key;
+    const current = allMetrics[currentKey as any];
+    const base = allMetrics[baseKey as any];
+    const baseCommitLink = getCommitLink(productName, baseKey);
+    const currentCommitLink = getCommitLink(productName, currentKey);
 
-  const overThresholdTags = generateTable(base, current);
+    console.log(`case: ${caseName}`);
+    console.log('base: ', baseCommitLink);
+    console.log('current: ', currentCommitLink);
 
-  if (overThresholdTags.length > 0) {
-    console.log('');
-    console.log(
-      `Threshold exceeded in ${caseName}: `,
-      JSON.stringify(overThresholdTags),
-    );
+    const overThresholdTags = generateTable(base, current, caseName);
+
+    if (overThresholdTags.length > 0) {
+      console.log('');
+      console.log(
+        `Threshold exceeded in ${caseName}: `,
+        JSON.stringify(overThresholdTags),
+      );
+      console.log('');
+    }
   }
 }
 

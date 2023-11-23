@@ -68,12 +68,12 @@ jobs:
         run: pnpm run install:scripts
 
       - name: 🚀 Run specified benchmark
-        run: cd scripts && PR_NUMBER=${{ inputs.prNumber }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} pnpm start ${{ inputs.product }}
+        run: cd scripts && PR_NUMBER=${{ inputs.prNumber }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} pnpm start:pr ${{ inputs.product }}
 
       - id: print-results
         name: Print results
         run: |
-          result=$(cd scripts && node ./dist/compare.js ${{ inputs.product }})
+          result=$(cd scripts && pnpm compare ${{ inputs.product }})
           echo "$result"
           echo "diff-result=${result//$'\n'/'@@'}" >> $GITHUB_OUTPUT
           if [[ $result =~ "Threshold exceeded" ]]; then

@@ -15,8 +15,23 @@ export enum REPO_NAME {
 }
 
 export const DefaultBenchCase = {
-  MODERNJS_FRAMEWORK: 'app-arco-pro-rspack',
-  MODERNJS_MODULE: 'module-library',
-  RSPRESS: 'rspress-website',
-  RSBUILD: 'rsbuild-react',
+  MODERNJS_FRAMEWORK: ['app-arco-pro-rspack'],
+  MODERNJS_MODULE: ['module-library'],
+  RSPRESS: ['rspress-website'],
+  RSBUILD: ['rsbuild-react', 'rsbuild-arco-pro'],
+};
+
+export const ValidMetricsForCase = {
+  'rsbuild-react': [
+    'coldInstallTime',
+    'hotInstallTime',
+    'dependenciesCount',
+    'installSize',
+  ],
+  'rsbuild-arco-pro': [
+    'devColdBootTime',
+    'buildColdBootTime',
+    'minifiedBundleSize',
+    'gzippedBundleSize',
+  ],
 };
