@@ -65,6 +65,12 @@ export function getRemoteDataUrl(product: string) {
   }`;
 }
 
+export function getCommitLink(product: string, commitId: string) {
+  return `https://github.com/web-infra-dev/${getRepoName(
+    product,
+  )}/commit/${commitId}`;
+}
+
 export function removeHash(filename: string) {
   if (filename.endsWith('.js') || filename.endsWith('.css')) {
     const pairs = filename.split('.');
