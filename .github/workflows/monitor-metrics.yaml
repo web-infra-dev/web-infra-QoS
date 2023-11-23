@@ -1,0 +1,47 @@
+name: Monitor Metrics
+
+on:
+  # schedule:
+  #   - cron: '0 21 * * *'
+  workflow_dispatch:
+
+jobs:
+  monitor:
+    strategy:
+      matrix:
+        include:
+          - product: MODERNJS_FRAMEWORK
+          - product: MODERNJS_MODULE
+          - product: RSPRESS
+          - product: RSBUILD
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install Pnpm
+        run: corepack enable && pnpm -v && pnpm store path
+
+      - name: Install Dependencies
+        run: pnpm run install:scripts
+
+      - name: Build Scripts
+        run: cd scripts && pnpm run build
+
+      - name: Monitor Metrics
+        run: |
+          result=$(cd scripts && MONITOR=1 node ./dist/compare.js ${{ matrix.product }})
+          echo "$result"
+          echo "diff-result=${result//$'\n'/'@@'}" >> $GITHUB_OUTPUT
+          if [[ $result =~ "Threshold exceeded" ]]; then
+            echo "Some benchmark metrics exceed the threshold, please visit the previous step for more information"
+            exit 1
+          fi
