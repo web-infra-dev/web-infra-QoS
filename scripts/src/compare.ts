@@ -3,8 +3,11 @@ import { readJson } from 'fs-extra';
 import {
   DefaultBenchCase,
   ValidMetricsForCase,
+  getCommitId,
   getCommitLink,
   getMetricsPath,
+  getRepoName,
+  getRepoPath,
 } from './shared';
 
 const productName = process.argv[2] || 'MODERNJS_FRAMEWORK';
@@ -102,8 +105,18 @@ export async function compare(productName: string) {
 
     arr.sort((a, b) => a.value.time - b.value.time);
 
-    const currentKey = arr[arr.length - 1].key;
-    const baseKey = arr[arr.length - 2].key;
+    let currentKey = arr[arr.length - 1].key;
+    let baseKey = arr[arr.length - 2]?.key || currentKey;
+
+    if (process.env.MONITOR !== '1') {
+      const repoPath = getRepoPath(getRepoName(productName));
+      const id = await getCommitId(repoPath);
+      if (id !== currentKey) {
+        baseKey = currentKey;
+        currentKey = id;
+      }
+    }
+
     const current = allMetrics[currentKey as any];
     const base = allMetrics[baseKey as any];
     const baseCommitLink = getCommitLink(productName, baseKey);
