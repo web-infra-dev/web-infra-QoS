@@ -1,5 +1,5 @@
 import execa from 'execa';
-import { copy, pathExists } from 'fs-extra';
+import { copy, pathExists, remove } from 'fs-extra';
 import { updateFile } from './fs';
 import {
   getCaseDistPath,
@@ -14,8 +14,13 @@ import { ROOT_PATH } from './constant';
 export async function cloneRepo(productName: string, caseName: string) {
   const repoName = getRepoName(productName);
   const localRepoPath = getRepoPath(repoName);
+  const { GITHUB_ACTOR, GITHUB_TOKEN, COMMIT_ID, PR_NUMBER } = process.env;
+
+  if (PR_NUMBER) {
+    await remove(localRepoPath);
+  }
+
   if (!(await pathExists(localRepoPath))) {
-    const { GITHUB_ACTOR, GITHUB_TOKEN, COMMIT_ID, PR_NUMBER } = process.env;
     const repoURL = GITHUB_TOKEN
       ? `https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/web-infra-dev/${repoName}.git`
       : `git@github.com:web-infra-dev/${repoName}.git`;
