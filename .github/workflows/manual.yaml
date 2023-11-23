@@ -44,6 +44,7 @@ on:
           - rsbuild-lit
           - rsbuild-svelte
           - rsbuild-vanilla
+          - rsbuild-arco-pro
       commitId:
         description: 'commitId of your repo'
       onlyInstallSize:

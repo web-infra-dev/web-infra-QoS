@@ -53,6 +53,7 @@ export const PRODUCT_CASES: CaseorMetrics = {
   ],
   [PRODUCT.RSBUILD]: [
     'rsbuild-react',
+    'rsbuild-arco-pro',
     'rsbuild-vue2',
     'rsbuild-vue3',
     'rsbuild-lit',
@@ -65,7 +66,7 @@ export const BUNDLE_SIZE_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-initial', 'app-initial-rspack'],
   [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
   [PRODUCT.RSPRESS]: ['rspress-website', 'rspress-website-mdxjs'],
-  [PRODUCT.RSBUILD]: ['rsbuild-react', 'rsbuild-vue3'],
+  [PRODUCT.RSBUILD]: ['rsbuild-react', 'rsbuild-arco-pro'],
 };
 export const BUNDLE_SIZE_METRICS = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['minifiedBundleSize', 'gzippedBundleSize'],
@@ -83,7 +84,7 @@ export const COMPILE_SPEED_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-arco-pro', 'app-arco-pro-rspack'],
   [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
   [PRODUCT.RSPRESS]: ['rspress-website', 'rspress-website-mdxjs'],
-  [PRODUCT.RSBUILD]: ['rsbuild-react', 'rsbuild-vue3'],
+  [PRODUCT.RSBUILD]: ['rsbuild-react', 'rsbuild-arco-pro'],
 };
 export const COMPILE_SPEED_METRICS = {
   [PRODUCT.MODERNJS_FRAMEWORK]: [
@@ -115,7 +116,7 @@ export const INSTALL_SPEED_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-initial', 'app-initial-rspack'],
   [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
   [PRODUCT.RSPRESS]: ['rspress-website', 'rspress-website-mdxjs'],
-  [PRODUCT.RSBUILD]: ['rsbuild-react', 'rsbuild-vue3'],
+  [PRODUCT.RSBUILD]: ['rsbuild-react', 'rsbuild-arco-pro'],
 };
 export const DEFAULT_INSTALL_SPEED_METRICS = [
   'installSize',

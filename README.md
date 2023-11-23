@@ -120,6 +120,10 @@ Rsbuild project + svelte.
 
 Rsbuild project + vanilla.
 
+### rsbuild-arco-pro
+
+Arco Pro project with rsbuild.
+
 ## Metrics
 
 ### Bundle Size

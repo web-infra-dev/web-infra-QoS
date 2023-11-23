@@ -66,6 +66,8 @@ jobs:
             product: RSBUILD
           - case: rsbuild-vanilla
             product: RSBUILD
+          - case: rsbuild-arco-pro
+            product: RSBUILD
 
     runs-on: ${{ fromJSON(vars.SELF_LINUX_LABELS || '"ubuntu-latest"') }}
 
