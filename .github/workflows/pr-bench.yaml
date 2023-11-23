@@ -76,6 +76,10 @@ jobs:
           result=$(cd scripts && node ./dist/compare.js ${{ inputs.product }})
           echo "$result"
           echo "diff-result=${result//$'\n'/'@@'}" >> $GITHUB_OUTPUT
+          if [[ $result =~ "Threshold exceeded" ]]; then
+            echo "Some benchmark metrics exceed the threshold, please visit the previous step for more information"
+            exit 1
+          fi
   update-comment:
     runs-on: ubuntu-latest
     needs: [create-comment, run-bench]

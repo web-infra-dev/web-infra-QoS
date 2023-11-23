@@ -1,6 +1,6 @@
 import { readJson } from 'fs-extra';
 import { Metrics } from './shared/types';
-import { DefaultBenchCase, getMetricsPath } from './shared';
+import { DefaultBenchCase, getCommitLink, getMetricsPath } from './shared';
 
 const productName = process.argv[2] || 'MODERNJS_FRAMEWORK';
 
@@ -31,6 +31,7 @@ function generateTable(
   base: Record<string, number>,
   current: Record<string, number>,
 ) {
+  const overThresholdTags: string[] = [];
   const properties = Object.keys(base);
 
   const maxPropertyLength = Math.max(...properties.map(p => p.length));
@@ -58,9 +59,16 @@ function generateTable(
       10,
     )} | ${formattedPercent.padEnd(10)} |`;
     table.push(row);
+
+    if (percent > 5 && !property.includes('InstallTime')) {
+      overThresholdTags.push(property);
+    }
   });
 
-  return table.join('\n');
+  console.log('');
+  console.log(table.join('\n'));
+
+  return overThresholdTags;
 }
 
 export async function compare(productName: string) {
@@ -74,10 +82,22 @@ export async function compare(productName: string) {
   const baseKey = keys[keys.length - 2];
   const current = allMetrics[currentKey as any];
   const base = allMetrics[baseKey as any];
+  const baseCommitLink = getCommitLink(productName, baseKey);
+  const currentCommitLink = getCommitLink(productName, currentKey);
 
-  const formatTable = generateTable(base, current);
   console.log(`case: ${caseName}`);
-  console.log(formatTable);
+  console.log('base: ', baseCommitLink);
+  console.log('current: ', currentCommitLink);
+
+  const overThresholdTags = generateTable(base, current);
+
+  if (overThresholdTags.length > 0) {
+    console.log('');
+    console.log(
+      `Threshold exceeded in ${caseName}: `,
+      JSON.stringify(overThresholdTags),
+    );
+  }
 }
 
 compare(productName);
