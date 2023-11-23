@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { readJson } from 'fs-extra';
-import { Metrics } from './shared/types';
 import { DefaultBenchCase, getCommitLink, getMetricsPath } from './shared';
 
 const productName = process.argv[2] || 'MODERNJS_FRAMEWORK';
@@ -77,13 +76,20 @@ export async function compare(productName: string) {
     process.argv[3] ||
     DefaultBenchCase[productName as keyof typeof DefaultBenchCase];
   const { jsonPath, remoteURL } = await getMetricsPath(productName, caseName);
-  const allMetrics: Metrics[] =
+
+  const allMetrics =
     process.env.MONITOR === '1'
       ? (await axios.get(remoteURL)).data
       : await readJson(jsonPath);
-  const keys = Object.keys(allMetrics);
-  const currentKey = keys[keys.length - 1];
-  const baseKey = keys[keys.length - 2];
+
+  let arr = Object.keys(allMetrics).map(key => {
+    return { key: key, value: allMetrics[key] };
+  });
+
+  arr.sort((a, b) => a.value.time - b.value.time);
+
+  const currentKey = arr[arr.length - 1].key;
+  const baseKey = arr[arr.length - 2].key;
   const current = allMetrics[currentKey as any];
   const base = allMetrics[baseKey as any];
   const baseCommitLink = getCommitLink(productName, baseKey);
