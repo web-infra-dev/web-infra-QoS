@@ -4,7 +4,7 @@
   "scripts": {
     "start": "npm run build && node ./dist/main.js",
     "start:pr": "npm run build && node ./dist/pr-bench.js",
-    "compare": "npm run build && node ./dist/compare.js",
+    "compare": "node ./dist/compare.js",
     "dev": "tsc --watch",
     "build": "rm -rf ./dist && tsc"
   },
