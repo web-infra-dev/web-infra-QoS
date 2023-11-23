@@ -1,12 +1,13 @@
 name: Monitor Metrics
 
 on:
-  # schedule:
-  #   - cron: '0 21 * * *'
+  schedule:
+    - cron: '0 21 * * *'
   workflow_dispatch:
 
 jobs:
   monitor:
+    continue-on-error: true
     strategy:
       matrix:
         include:
@@ -37,6 +38,7 @@ jobs:
         run: cd scripts && pnpm run build
 
       - name: Monitor Metrics
+        id: monitor
         run: |
           result=$(cd scripts && MONITOR=1 node ./dist/compare.js ${{ matrix.product }})
           echo "$result"
@@ -45,3 +47,39 @@ jobs:
             echo "Some benchmark metrics exceed the threshold, please visit the previous step for more information"
             exit 1
           fi
+      - name: Create Issue on Failure
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.RSPACK_BOT_ACCESS_TOKEN }}
+          script: |
+            const diffResult = `${{ steps.monitor.outputs.diff-result }}`
+            let result = "task ${{ steps.monitor.outputs.result }}"
+            if (diffResult) {
+              result = diffResult.replace(/@@/g, "\n");
+            }
+            const url = `${context.serverUrl}//${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
+            const urlLink = `[Open](${url})`
+            const issueTitle = `Benchmark Performance Degradation`
+            const issueBody = `
+            📝 Benchmark detail: ${urlLink}
+
+            ${result}
+            `
+
+            let repo = context.repo.repo
+            const product = "${{ matrix.product }}"
+            if (product === "MODERNJS_FRAMEWORK" || product === "MODERNJS_MODULE") {
+              repo = "modern.js"
+            } else if (product === "RSBUILD") {
+              repo = "rsbuild"
+            } else if (product === "RSPRESS") {
+              repo = "rspress"
+            }
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: repo,
+              title: issueTitle,
+              body: issueBody,
+            });
