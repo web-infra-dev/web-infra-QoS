@@ -1,19 +1,12 @@
 import logger from 'consola';
 import { dev } from './runners/dev';
 import { build } from './runners/build';
-import {
-  DefaultBenchCase,
-  cloneRepo,
-  getDataPath,
-  mergeMetrics,
-} from './shared';
+import { cloneRepo, getDataPath, mergeMetrics } from './shared';
 import { remove } from 'fs-extra';
 import { yarnInstall } from './runners/yarn-install';
 
-const productName = process.argv[2] || 'MODERNJS_FRAMEWORK';
-const caseName =
-  process.argv[3] ||
-  DefaultBenchCase[productName as keyof typeof DefaultBenchCase];
+const productName = process.argv[2];
+const caseName = process.argv[3];
 
 async function main() {
   const dataPath = getDataPath(productName);
