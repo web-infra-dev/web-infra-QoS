@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { readJson } from 'fs-extra';
 import { Metrics } from './shared/types';
 import { DefaultBenchCase, getCommitLink, getMetricsPath } from './shared';
@@ -75,8 +76,11 @@ export async function compare(productName: string) {
   const caseName =
     process.argv[3] ||
     DefaultBenchCase[productName as keyof typeof DefaultBenchCase];
-  const { jsonPath } = await getMetricsPath(productName, caseName);
-  const allMetrics: Metrics[] = await readJson(jsonPath);
+  const { jsonPath, remoteURL } = await getMetricsPath(productName, caseName);
+  const allMetrics: Metrics[] =
+    process.env.MONITOR === '1'
+      ? (await axios.get(remoteURL)).data
+      : await readJson(jsonPath);
   const keys = Object.keys(allMetrics);
   const currentKey = keys[keys.length - 1];
   const baseKey = keys[keys.length - 2];
