@@ -73,7 +73,7 @@ jobs:
       - id: print-results
         name: Print results
         run: |
-          result=$(cd scripts && pnpm compare ${{ inputs.product }})
+          result=$(cd scripts && node ./dist/compare.js ${{ inputs.product }})
           echo "$result"
           echo "diff-result=${result//$'\n'/'@@'}" >> $GITHUB_OUTPUT
           if [[ $result =~ "Threshold exceeded" ]]; then
