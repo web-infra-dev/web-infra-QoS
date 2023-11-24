@@ -2,6 +2,7 @@ import { dev } from './runners/dev';
 import { build } from './runners/build';
 import {
   DefaultBenchCase,
+  ValidMetricsForCase,
   cloneRepo,
   getDataPath,
   mergeMetrics,
@@ -29,10 +30,17 @@ async function prBench() {
 
     await build(productName, caseName);
 
-    try {
-      await yarnInstall(productName, caseName);
-    } catch (err) {
-      console.log('failed to collect install size metrics:', err);
+    if (
+      ValidMetricsForCase[
+        caseName as keyof typeof ValidMetricsForCase
+      ]?.includes('installSize') ||
+      !ValidMetricsForCase[caseName as keyof typeof ValidMetricsForCase]
+    ) {
+      try {
+        await yarnInstall(productName, caseName);
+      } catch (err) {
+        console.log('failed to collect install size metrics:', err);
+      }
     }
 
     await mergeMetrics(productName, caseName);
