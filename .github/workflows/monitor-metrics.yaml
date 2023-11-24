@@ -40,7 +40,7 @@ jobs:
       - name: Monitor Metrics
         id: monitor
         run: |
-          result=$(cd scripts && MONITOR=1 pnpm compare ${{ matrix.product }})
+          result=$(cd scripts && MONITOR=1 node ./dist/compare.js ${{ matrix.product }})
           echo "$result"
           echo "diff-result=${result//$'\n'/'@@'}" >> $GITHUB_OUTPUT
           if [[ $result =~ "Threshold exceeded" ]]; then
