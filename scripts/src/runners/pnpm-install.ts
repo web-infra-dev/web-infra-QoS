@@ -3,12 +3,12 @@ import {
   copy,
   ensureDir,
   outputJson,
-  readFile,
   readJson,
   remove,
+  rename,
+  writeFile,
 } from 'fs-extra';
 import {
-  ROOT_PATH,
   getCaseSrcPath,
   getRepoName,
   getRepoPath,
@@ -19,6 +19,7 @@ import {
 import fastGlob from 'fast-glob';
 import { performance } from 'perf_hooks';
 import getFolderSize from 'get-folder-size';
+import { familySync as getLibcFamilySync } from 'detect-libc';
 
 const getAllDeps = (json: Record<string, Record<string, string>>) => ({
   ...json.dependencies,
@@ -99,7 +100,7 @@ const getPkgVersions = async (repoPath: string, pkgJsonPath: string) => {
 
 const setPkgVersion = async (repoPath: string, pkgJsonPath: string) => {
   const pkgVersions = await getPkgVersions(repoPath, pkgJsonPath);
-  const pkgJson = await readJson(pkgJsonPath);
+  let pkgJson = await readJson(pkgJsonPath);
 
   // override workspace protocol
   Object.keys(pkgVersions).forEach(key => {
@@ -111,38 +112,42 @@ const setPkgVersion = async (repoPath: string, pkgJsonPath: string) => {
     }
   });
 
-  await outputJson(pkgJsonPath, pkgJson, { spaces: 2 });
-};
+  // use supportedArchitectures, see https://github.com/pnpm/pnpm/releases/tag/v8.10.0
+  pkgJson = {
+    ...pkgJson,
+    packageManager: 'pnpm@8.10.0',
+    pnpm: {
+      supportedArchitectures: {
+        os: ['linux'],
+        cpu: ['x64'],
+        libc: ['glibc'],
+      },
+    },
+  };
 
-const parseLockFile = async (casePath: string) => {
-  const parser = require('@yarnpkg/lockfile');
-  const lockFile = join(casePath, 'yarn.lock');
-  const content = await readFile(lockFile, 'utf-8');
-  const result = parser.parse(content);
-  if (result.type === 'success') {
-    return result.object;
-  }
-  throw new Error(`failed to parse ${lockFile}`);
+  await outputJson(pkgJsonPath, pkgJson, { spaces: 2 });
 };
 
 const runInstall = async (casePath: string) => {
   const coldStartTime = performance.now();
-  await runCommand(casePath, 'yarn --registry https://registry.npmjs.org/');
+  await runCommand(casePath, 'corepack enable && pnpm -v');
+  await runCommand(
+    casePath,
+    'pnpm install --registry https://registry.npmjs.org/',
+  );
   const coldInstallTime = performance.now() - coldStartTime;
 
   const hotStartTime = performance.now();
-  await runCommand(casePath, 'yarn --registry https://registry.npmjs.org/');
+  await runCommand(
+    casePath,
+    'pnpm install --registry https://registry.npmjs.org/',
+  );
   const hotInstallTime = performance.now() - hotStartTime;
 
   return {
     hotInstallTime,
     coldInstallTime,
   };
-};
-
-const getDepCount = async (casePath: string) => {
-  const lockInfo = await parseLockFile(casePath);
-  return Object.keys(lockInfo).length;
 };
 
 const getInstallSize = async (casePath: string) => {
@@ -164,28 +169,46 @@ const getInstallSize = async (casePath: string) => {
   });
 };
 
-export const yarnInstall = async (productName: string, caseName: string) => {
+const getDepCount = async (casePath: string) => {
+  const { readWantedLockfile } = await import('@pnpm/lockfile-file');
+  const lockfile = await readWantedLockfile(casePath, {
+    ignoreIncompatible: true,
+  });
+  const packages = lockfile?.packages || {};
+
+  return Object.keys(packages).length;
+};
+
+export const pnpmInstall = async (productName: string, caseName: string) => {
+  console.log('getLibcFamilySync: ', getLibcFamilySync());
   const repoPath = getRepoPath(getRepoName(productName));
   const tempPath = getTempPath(productName);
   const casePath = join(tempPath, caseName);
   const pkgJsonPath = join(tempPath, caseName, 'package.json');
-  const rootPkgJsonPath = join(ROOT_PATH, 'package.json');
 
   await copyCase(productName, caseName, casePath);
   await setPkgVersion(repoPath, pkgJsonPath);
 
-  // to prevent Usage Error: This project is configured to use pnpm
-  const rootPkgJson = await readJson(rootPkgJsonPath);
-  const rootPkgJsonBak = await readJson(rootPkgJsonPath);
-  delete rootPkgJson.packageManager;
-  await outputJson(rootPkgJsonPath, rootPkgJson, { spaces: 2 });
+  let workspacePath = join(casePath, '../../../pnpm-workspace.yaml');
+  let backupPath = join(casePath, '../../../pnpm-workspace-backup.yaml');
+
+  await copy(workspacePath, backupPath);
+  await remove(workspacePath);
+
+  let npmrcPath = join(casePath, '.npmrc');
+
+  let content = `auto-install-peers=false\npackage-import-method=copy\nshamefully-hoist=true\nnode-linker=hoisted`;
+
+  await writeFile(npmrcPath, content);
 
   const { hotInstallTime, coldInstallTime } = await runInstall(casePath);
 
-  await outputJson(rootPkgJsonPath, rootPkgJsonBak, { spaces: 2 });
+  await rename(backupPath, workspacePath);
 
   const installSize = await getInstallSize(casePath);
   const depCount = await getDepCount(casePath);
+
+  await runCommand(join(casePath, 'node_modules/@rspack'), 'ls -l');
 
   return saveMetrics({
     coldInstallTime: coldInstallTime,

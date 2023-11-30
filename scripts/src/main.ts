@@ -3,7 +3,7 @@ import { dev } from './runners/dev';
 import { build } from './runners/build';
 import { cloneRepo, getDataPath, mergeMetrics } from './shared';
 import { remove } from 'fs-extra';
-import { yarnInstall } from './runners/yarn-install';
+import { pnpmInstall } from './runners/pnpm-install';
 
 const productName = process.argv[2];
 const caseName = process.argv[3];
@@ -30,7 +30,7 @@ async function main() {
     }
 
     try {
-      await yarnInstall(productName, caseName);
+      await pnpmInstall(productName, caseName);
     } catch (err) {
       console.log('failed to collect install size metrics:', err);
     }

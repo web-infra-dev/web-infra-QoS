@@ -96,21 +96,21 @@ jobs:
       - name: 🚀 Run specified benchmark
         run: cd scripts && ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start ${{ matrix.product }} ${{ matrix.case }}
 
-      - name: Setup git user
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      # - name: Setup git user
+      #   run: |
+      #     git config --global user.name "github-actions[bot]"
+      #     git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Install rsync
-        run: |
-          apt-get update && apt-get install -y rsync
+      # - name: Install rsync
+      #   run: |
+      #     apt-get update && apt-get install -y rsync
 
-      - name: Update data
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
-        with:
-          branch: gh-pages
-          folder: data
-          target-folder: data
-          git-config-name: gh-pages-bot
-          git-config-email: 41898282+github-actions[bot]@users.noreply.github.com
-          clean: false
+      # - name: Update data
+      #   uses: JamesIves/github-pages-deploy-action@v4.4.1
+      #   with:
+      #     branch: gh-pages
+      #     folder: data
+      #     target-folder: data
+      #     git-config-name: gh-pages-bot
+      #     git-config-email: 41898282+github-actions[bot]@users.noreply.github.com
+      #     clean: false

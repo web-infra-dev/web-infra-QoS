@@ -8,7 +8,7 @@ import {
   mergeMetrics,
 } from './shared';
 import { remove } from 'fs-extra';
-import { yarnInstall } from './runners/yarn-install';
+import { pnpmInstall } from './runners/pnpm-install';
 
 const productName = process.argv[2];
 
@@ -37,7 +37,7 @@ async function prBench() {
       !ValidMetricsForCase[caseName as keyof typeof ValidMetricsForCase]
     ) {
       try {
-        await yarnInstall(productName, caseName);
+        await pnpmInstall(productName, caseName);
       } catch (err) {
         console.log('failed to collect install size metrics:', err);
       }
