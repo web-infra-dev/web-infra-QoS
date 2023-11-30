@@ -19,6 +19,7 @@ import {
 import fastGlob from 'fast-glob';
 import { performance } from 'perf_hooks';
 import getFolderSize from 'get-folder-size';
+import { familySync as getLibcFamilySync } from 'detect-libc';
 
 const getAllDeps = (json: Record<string, Record<string, string>>) => ({
   ...json.dependencies,
@@ -99,7 +100,7 @@ const getPkgVersions = async (repoPath: string, pkgJsonPath: string) => {
 
 const setPkgVersion = async (repoPath: string, pkgJsonPath: string) => {
   const pkgVersions = await getPkgVersions(repoPath, pkgJsonPath);
-  const pkgJson = await readJson(pkgJsonPath);
+  let pkgJson = await readJson(pkgJsonPath);
 
   // override workspace protocol
   Object.keys(pkgVersions).forEach(key => {
@@ -111,11 +112,25 @@ const setPkgVersion = async (repoPath: string, pkgJsonPath: string) => {
     }
   });
 
+  // use supportedArchitectures, see https://github.com/pnpm/pnpm/releases/tag/v8.10.0
+  pkgJson = {
+    ...pkgJson,
+    packageManager: 'pnpm@8.10.0',
+    pnpm: {
+      supportedArchitectures: {
+        os: ['linux'],
+        cpu: ['x64'],
+        libc: ['glibc'],
+      },
+    },
+  };
+
   await outputJson(pkgJsonPath, pkgJson, { spaces: 2 });
 };
 
 const runInstall = async (casePath: string) => {
   const coldStartTime = performance.now();
+  await runCommand(casePath, 'corepack enable && pnpm -v');
   await runCommand(
     casePath,
     'pnpm install --registry https://registry.npmjs.org/',
@@ -165,6 +180,7 @@ const getDepCount = async (casePath: string) => {
 };
 
 export const pnpmInstall = async (productName: string, caseName: string) => {
+  console.log('getLibcFamilySync: ', getLibcFamilySync());
   const repoPath = getRepoPath(getRepoName(productName));
   const tempPath = getTempPath(productName);
   const casePath = join(tempPath, caseName);
@@ -191,6 +207,8 @@ export const pnpmInstall = async (productName: string, caseName: string) => {
 
   const installSize = await getInstallSize(casePath);
   const depCount = await getDepCount(casePath);
+
+  await runCommand(join(casePath, 'node_modules/@rspack'), 'ls -l');
 
   return saveMetrics({
     coldInstallTime: coldInstallTime,
