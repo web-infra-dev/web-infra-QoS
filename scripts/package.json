@@ -35,9 +35,9 @@
     }
   },
   "dependencies": {
+    "@pnpm/lockfile-file": "8.1.4",
     "@types/node": "17.0.35",
     "@types/fs-extra": "9.0.13",
-    "@yarnpkg/lockfile": "1.1.0",
     "get-folder-size": "2.0.1",
     "axios": "0.27.2",
     "execa": "5.1.1",
