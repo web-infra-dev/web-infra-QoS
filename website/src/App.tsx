@@ -1,3 +1,5 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
 import '@arco-design/web-react/dist/css/arco.css';
 import './App.scss';
 import { styled } from 'styled-components';
@@ -12,14 +14,27 @@ const Container = styled.div`
 `;
 
 const App = () => {
-  const [productIndex, setProductIndex] = useState(PRODUCT.MODERNJS_FRAMEWORK);
-  const [menuIndex, setMenuIndex] = useState(MENU.BUNDLE_SIZE);
+  const query = new URLSearchParams(window.location.search);
+  const initialProductIndex =
+    query.get('product') || PRODUCT.MODERNJS_FRAMEWORK;
+  const initialMenuIndex = query.get('metrics') || MENU.BUNDLE_SIZE;
+
+  const [productIndex, setProductIndex] = useState(initialProductIndex);
+  const [menuIndex, setMenuIndex] = useState(initialMenuIndex);
   const [openKeys, setOpenKeys] = useState<string[]>([
-    `${PRODUCT.MODERNJS_FRAMEWORK}`,
+    `${initialProductIndex}`,
   ]);
   const [selectKeys, setSelectedKeys] = useState<string[]>([
-    `${PRODUCT.MODERNJS_FRAMEWORK}_${MENU.BUNDLE_SIZE}`,
+    `${initialProductIndex}_${initialMenuIndex}`,
   ]);
+
+  useEffect(() => {
+    window.history.replaceState(
+      null,
+      '',
+      `?product=${productIndex}&metrics=${menuIndex}`,
+    );
+  }, [productIndex, menuIndex]);
 
   const handleClickSubMenu = (key: string): void => {
     if (openKeys.includes(key)) {
@@ -37,20 +52,29 @@ const App = () => {
   };
 
   return (
-    <Container>
-      <NavBar />
-      <SideMenu
-        openKeys={openKeys}
-        selectedKeys={selectKeys}
-        onClickMenuItem={handleClickMenuItem}
-        onClickSubMenu={handleClickSubMenu}
-      />
-      <Content
-        key={productIndex}
-        productIndex={productIndex}
-        menuIndex={menuIndex}
-      />
-    </Container>
+    <Router>
+      <Container>
+        <NavBar />
+        <SideMenu
+          openKeys={openKeys}
+          selectedKeys={selectKeys}
+          onClickMenuItem={handleClickMenuItem}
+          onClickSubMenu={handleClickSubMenu}
+        />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Content
+                key={productIndex}
+                productIndex={productIndex}
+                menuIndex={menuIndex}
+              />
+            }
+          />
+        </Routes>
+      </Container>
+    </Router>
   );
 };
 

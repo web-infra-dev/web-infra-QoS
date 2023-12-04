@@ -67,6 +67,9 @@ importers:
       react-dom:
         specifier: ^18
         version: 18.2.0(react@18.2.0)
+      react-router-dom:
+        specifier: ^6.20.1
+        version: 6.20.1(react-dom@18.2.0)(react@18.2.0)
       styled-components:
         specifier: 6.0.1
         version: 6.0.1(react-dom@18.2.0)(react@18.2.0)
@@ -2355,7 +2358,7 @@ packages:
       terser-webpack-plugin: 5.3.9(esbuild@0.17.19)(webpack@5.89.0)
       ts-loader: 9.4.4(typescript@5.2.2)(webpack@5.89.0)
       tsconfig-paths-webpack-plugin: 4.1.0
-      webpack: 5.89.0
+      webpack: 5.89.0(esbuild@0.17.19)
       webpack-subresource-integrity: 5.1.0(html-webpack-plugin@5.5.3)(webpack@5.89.0)
     transitivePeerDependencies:
       - '@babel/traverse'
@@ -2810,7 +2813,7 @@ packages:
       react-refresh: 0.14.0
       schema-utils: 3.3.0
       source-map: 0.7.4
-      webpack: 5.89.0
+      webpack: 5.89.0(esbuild@0.17.19)
     dev: true
 
   /@remix-run/node@1.19.3:
@@ -2827,6 +2830,11 @@ packages:
       source-map-support: 0.5.21
       stream-slice: 0.1.2
     dev: true
+
+  /@remix-run/router@1.13.1:
+    resolution: {integrity: sha512-so+DHzZKsoOcoXrILB4rqDkMDy7NLMErRdOxvzvOKb507YINKUP4Di+shbTZDhSE/pBZ+vr7XGIpcOO0VLSA+Q==}
+    engines: {node: '>=14.0.0'}
+    dev: false
 
   /@remix-run/router@1.7.2:
     resolution: {integrity: sha512-7Lcn7IqGMV+vizMPoEl5F0XDshcdDYtMI6uJLQdQz5CfZAwy3vvGKYSUk789qndt5dEC4HfSjviSYlSoHGL2+A==}
@@ -5700,7 +5708,7 @@ packages:
       lodash: 4.17.21
       pretty-error: 4.0.0
       tapable: 2.2.1
-      webpack: 5.89.0
+      webpack: 5.89.0(esbuild@0.17.19)
     dev: true
 
   /htmlparser2@6.1.0:
@@ -6419,7 +6427,7 @@ packages:
       webpack: ^5.0.0
     dependencies:
       schema-utils: 4.2.0
-      webpack: 5.89.0
+      webpack: 5.89.0(esbuild@0.17.19)
     dev: true
 
   /minimalistic-assert@1.0.1:
@@ -7308,6 +7316,19 @@ packages:
       react-router: 6.15.0(react@18.2.0)
     dev: true
 
+  /react-router-dom@6.20.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-npzfPWcxfQN35psS7rJgi/EW0Gx6EsNjfdJSAk73U/HqMEJZ2k/8puxfwHFgDQhBGmS3+sjnGbMdMSV45axPQw==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.13.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-router: 6.20.1(react@18.2.0)
+    dev: false
+
   /react-router@6.15.0(react@18.2.0):
     resolution: {integrity: sha512-NIytlzvzLwJkCQj2HLefmeakxxWHWAP+02EGqWEZy+DgfHHKQMUoBBjUQLOtFInBMhWtb3hiUy6MfFgwLjXhqg==}
     engines: {node: '>=14.0.0'}
@@ -7317,6 +7338,16 @@ packages:
       '@remix-run/router': 1.8.0
       react: 18.2.0
     dev: true
+
+  /react-router@6.20.1(react@18.2.0):
+    resolution: {integrity: sha512-ccvLrB4QeT5DlaxSFFYi/KR8UMQ4fcD8zBcR71Zp1kaYTC5oJKYAp1cbavzGrogwxca+ubjkd7XjFZKBW8CxPA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.13.1
+      react: 18.2.0
+    dev: false
 
   /react-transition-group@4.4.5(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
@@ -8080,7 +8111,7 @@ packages:
       schema-utils: 3.3.0
       serialize-javascript: 6.0.1
       terser: 5.22.0
-      webpack: 5.89.0
+      webpack: 5.89.0(esbuild@0.17.19)
     dev: true
 
   /terser-webpack-plugin@5.3.9(webpack@5.89.0):
@@ -8175,7 +8206,7 @@ packages:
       micromatch: 4.0.5
       semver: 7.5.4
       typescript: 5.2.2
-      webpack: 5.89.0
+      webpack: 5.89.0(esbuild@0.17.19)
     dev: true
 
   /tsconfig-paths-webpack-plugin@4.1.0:
@@ -8466,7 +8497,7 @@ packages:
     dependencies:
       html-webpack-plugin: 5.5.3(webpack@5.89.0)
       typed-assert: 1.0.9
-      webpack: 5.89.0
+      webpack: 5.89.0(esbuild@0.17.19)
     dev: true
 
   /webpack@5.89.0:
