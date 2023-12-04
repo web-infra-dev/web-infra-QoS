@@ -13,6 +13,9 @@ const Container = styled.div`
   min-height: 100vh;
 `;
 
+const BASENAME =
+  process.env.NODE_ENV === 'development' ? '' : '/web-infra-QoS/index';
+
 const App = () => {
   const query = new URLSearchParams(window.location.search);
   const initialProductIndex =
@@ -32,7 +35,7 @@ const App = () => {
     window.history.replaceState(
       null,
       '',
-      `?product=${productIndex}&metrics=${menuIndex}`,
+      `${BASENAME}?product=${productIndex}&metrics=${menuIndex}`,
     );
   }, [productIndex, menuIndex]);
 
@@ -52,7 +55,7 @@ const App = () => {
   };
 
   return (
-    <Router>
+    <Router basename={BASENAME}>
       <Container>
         <NavBar />
         <SideMenu
