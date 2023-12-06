@@ -2,15 +2,9 @@
   "name": "website",
   "version": "0.1.0",
   "scripts": {
-    "dev": "modern dev",
-    "build": "modern build",
-    "start": "modern start",
-    "new": "modern new"
+    "dev": "rsbuild dev",
+    "build": "rsbuild build"
   },
-  "eslintIgnore": [
-    "node_modules/",
-    "dist/"
-  ],
   "dependencies": {
     "@antv/g2plot": "^2.4.31",
     "@arco-design/web-react": "^2.41.2",
@@ -22,8 +16,8 @@
     "styled-components": "6.0.1"
   },
   "devDependencies": {
-    "@modern-js/app-tools": "2.37.2",
-    "@modern-js/builder-rspack-provider": "2.37.2",
+    "@rsbuild/core": "0.1.9",
+    "@rsbuild/plugin-react": "0.1.9",
     "@modern-js/tsconfig": "2.37.2",
     "@types/node": "^14",
     "@types/react": "^18",
