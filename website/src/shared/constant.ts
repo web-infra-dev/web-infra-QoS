@@ -116,7 +116,7 @@ export const INSTALL_SPEED_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-initial', 'app-initial-rspack'],
   [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
   [PRODUCT.RSPRESS]: ['rspress-website', 'rspress-website-mdxjs'],
-  [PRODUCT.RSBUILD]: ['rsbuild-react', 'rsbuild-arco-pro'],
+  [PRODUCT.RSBUILD]: ['rsbuild-vanilla', 'rsbuild-react'],
 };
 export const DEFAULT_INSTALL_SPEED_METRICS = [
   'installSize',
