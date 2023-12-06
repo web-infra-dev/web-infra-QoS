@@ -1,0 +1,7482 @@
+/*! @antv/matrix-util */
+
+/*! @antv/g2 */
+
+/*! tslib */
+
+/*! ./is-array */
+
+/*! ../util/util */
+
+/*! ../../utils */
+
+/*! ../abstract/group-component */
+
+/*! @antv/util */
+
+/*! ../util/split-points */
+
+/*! ./util */
+
+/*! @antv/g2 */
+
+/*! ./eachBefore.js */
+
+/*! ../../util/theme */
+
+/*! @antv/util */
+
+/*! ../../_util/hooks/useStateWithPromise */
+
+/*! ./util */
+
+/*! ./path */
+
+/*! ../util/matrix */
+
+/*! ../constant */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ../group */
+
+/*! @antv/g-math */
+
+/*! ../_class/VirtualList */
+
+/*! @antv/adjust */
+
+/*! ../base */
+
+/*! react */
+
+/*! ./slice.js */
+
+/*! ./opt-group */
+
+/*! @antv/util */
+
+/*! ./item-group */
+
+/*! @antv/util */
+
+/*! @antv/component */
+
+/*! ../../icon/react-icon/IconRight */
+
+/*! ./path-2-curve */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! ./point-in-polygon */
+
+/*! ../_util/hooks/useMergeValue */
+
+/*! ../util/arrow */
+
+/*! ./interaction/action/active-region */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! @antv/g-canvas */
+
+/*! ../_util/classNames */
+
+/*! ../../adaptor/common */
+
+/*! ../_util/hooks/useUpdate */
+
+/*! ../../../utils */
+
+/*! ../_util/omit */
+
+/*! ./abstract/group-component */
+
+/*! ../util/scale */
+
+/*! tslib */
+
+/*! ../../animate/ */
+
+/*! @antv/util */
+
+/*! ../_class/select-view */
+
+/*! ./context */
+
+/*! ./adaptor */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! ./base */
+
+/*! ./tick-method/index */
+
+/*! tslib */
+
+/*! react */
+
+/*! ../ConfigProvider */
+
+/*! ../../dependents */
+
+/*! ../_util/classNames */
+
+/*! ./mix */
+
+/*! ./util */
+
+/*! ../../constant */
+
+/*! tslib */
+
+/*! ../_util/warning */
+
+/*! tslib */
+
+/*! ./TransitionGroupContext */
+
+/*! tslib */
+
+/*! ../context */
+
+/*! @antv/util */
+
+/*! ../util/util */
+
+/*! ./base */
+
+/*! ./util */
+
+/*! ../line/adaptor */
+
+/*! @antv/util */
+
+/*! ../base */
+
+/*! ./find.js */
+
+/*! ./sin.js */
+
+/*! ./utils */
+
+/*! ../../util/graphics */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ../util/graphic */
+
+/*! ../../util/coordinate */
+
+/*! @antv/g2 */
+
+/*! ./bezier */
+
+/*! resize-observer-polyfill */
+
+/*! ./base.js */
+
+/*! ../util/coordinate */
+
+/*! ./shape */
+
+/*! tslib */
+
+/*! ../../utils/padding */
+
+/*! ../../adaptor/geometries */
+
+/*! ../_util/is */
+
+/*! ./abstract/canvas */
+
+/*! ./constant */
+
+/*! ../_util/hooks/useMergeValue */
+
+/*! ../../core/locale */
+
+/*! @antv/util */
+
+/*! ./round.js */
+
+/*! @antv/g-math */
+
+/*! ../_util/classNames */
+
+/*! @antv/util */
+
+/*! react */
+
+/*! ../../../../util/graphics */
+
+/*! @antv/util */
+
+/*! ../theme/util */
+
+/*! @antv/color-util */
+
+/*! ./util */
+
+/*! ../../utils */
+
+/*! ./option */
+
+/*! ./polyline */
+
+/*! ../../core/plot */
+
+/*! ../../utils/view */
+
+/*! ./utils */
+
+/*! ./textarea */
+
+/*! ./base */
+
+/*! @antv/path-util */
+
+/*! ./resizeObserver */
+
+/*! ../ConfigProvider */
+
+/*! ./css-const */
+
+/*! ./constant */
+
+/*! ../_util/is */
+
+/*! @antv/util */
+
+/*! ../ConfigProvider */
+
+/*! ../Grid */
+
+/*! tslib */
+
+/*! ../_util/is */
+
+/*! ./types */
+
+/*! ../../utils */
+
+/*! tslib */
+
+/*! react */
+
+/*! @antv/adjust */
+
+/*! ../../adaptor/geometries */
+
+/*! ../../util/matrix */
+
+/*! @antv/util */
+
+/*! react */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ../../../interactions/drill-down */
+
+/*! ../_util/classNames */
+
+/*! ./checkbox */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! @antv/matrix-util */
+
+/*! ./facet */
+
+/*! ../Tag */
+
+/*! ./interaction/action/view/button */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ../_util/omit */
+
+/*! ../ConfigProvider */
+
+/*! ./group */
+
+/*! ./input-element */
+
+/*! ../../utils */
+
+/*! ./util */
+
+/*! ../../../../utils */
+
+/*! @antv/util */
+
+/*! ../util/graphics */
+
+/*! ./scale-transform */
+
+/*! ./is-type */
+
+/*! ./sort.js */
+
+/*! ./arrow */
+
+/*! ./circle */
+
+/*! ./base */
+
+/*! detect-browser */
+
+/*! @antv/util */
+
+/*! ./geometries/dynamic-height */
+
+/*! ./base */
+
+/*! ../util/theme */
+
+/*! @antv/util */
+
+/*! ../util/in-stroke/rect */
+
+/*! ./is-array-like */
+
+/*! ./index.less */
+
+/*! ../../Empty/style */
+
+/*! ../Checkbox */
+
+/*! @antv/g2 */
+
+/*! tslib */
+
+/*! @antv/g-base */
+
+/*! ./set */
+
+/*! ../_util/pick */
+
+/*! ./utils/reflow */
+
+/*! ./factory */
+
+/*! ../../style/index.less */
+
+/*! tslib */
+
+/*! d3-hierarchy */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! ./graphics */
+
+/*! ../../utils/data */
+
+/*! ./highlight-util */
+
+/*! @antv/util */
+
+/*! ../util/facet */
+
+/*! ./input */
+
+/*! ./pattern */
+
+/*! react */
+
+/*! ../_util/constant */
+
+/*! ../../../adaptor/geometries/base */
+
+/*! ./control */
+
+/*! ./interaction/action/view/scale-translate */
+
+/*! ../base */
+
+/*! @antv/dom-util */
+
+/*! ./text */
+
+/*! ./adaptor */
+
+/*! ../../utils/transform/percent */
+
+/*! react */
+
+/*! ../ConfigProvider */
+
+/*! ../base */
+
+/*! ./interface */
+
+/*! ./treemap/squarify.js */
+
+/*! ./fill-path-by-diff */
+
+/*! ../ConfigProvider */
+
+/*! ../util/util */
+
+/*! ./utils */
+
+/*! ./Enum.js */
+
+/*! ./ancestors.js */
+
+/*! ../ConfigProvider */
+
+/*! ../ConfigProvider */
+
+/*! ./circle */
+
+/*! ./utils */
+
+/*! tslib */
+
+/*! ../../../utils/tooltip */
+
+/*! ../tiny-area/adaptor */
+
+/*! ./base */
+
+/*! ../../../icon/react-icon/IconDown */
+
+/*! tslib */
+
+/*! ./facet */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ./layout/diagram */
+
+/*! ./geometries/basic */
+
+/*! ./portal */
+
+/*! ./index.less */
+
+/*! @antv/util */
+
+/*! ../ConfigProvider */
+
+/*! ../context */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ./util/path */
+
+/*! ./util/offscreen */
+
+/*! tslib */
+
+/*! ./head */
+
+/*! ./util */
+
+/*! ./util */
+
+/*! ../abstract/group-component */
+
+/*! tslib */
+
+/*! ./geometry/element */
+
+/*! @antv/util */
+
+/*! react */
+
+/*! ./ext */
+
+/*! react */
+
+/*! ./rules/object.js */
+
+/*! ../util/split-points */
+
+/*! ./parse-path */
+
+/*! ../ConfigProvider */
+
+/*! ../context */
+
+/*! ./interaction/action/element/highlight */
+
+/*! ../../../../util/bbox */
+
+/*! ../../core/plot */
+
+/*! ../util/graphic */
+
+/*! react */
+
+/*! ./base */
+
+/*! ../context */
+
+/*! react */
+
+/*! ../../core/plot */
+
+/*! ./geometry/shape/interval/hollow-rect */
+
+/*! ../../adaptor/geometries */
+
+/*! ../_util/classNames */
+
+/*! tslib */
+
+/*! ../abstract/group-component */
+
+/*! ../util */
+
+/*! tslib */
+
+/*! ../../_util/hooks/useForceUpdate */
+
+/*! tslib */
+
+/*! ../../adaptor/common */
+
+/*! @antv/matrix-util */
+
+/*! ./geometry/shape/line */
+
+/*! react-transition-group */
+
+/*! ../../../util/graphics */
+
+/*! tslib */
+
+/*! ../base */
+
+/*! tslib */
+
+/*! ./get-width */
+
+/*! react */
+
+/*! tslib */
+
+/*! ../util/util */
+
+/*! ./highlight-util */
+
+/*! ./tree.js */
+
+/*! ./constant */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! ./interaction/action/element/link-by-color */
+
+/*! @antv/util */
+
+/*! ./html */
+
+/*! ./animate/animation/zoom */
+
+/*! ./arc */
+
+/*! ../util/interval */
+
+/*! ../../Button/style */
+
+/*! ./plots/word-cloud */
+
+/*! ../../utils */
+
+/*! @antv/scale */
+
+/*! ../../core/plot */
+
+/*! ../util/util */
+
+/*! ./input */
+
+/*! ./util/arc-params */
+
+/*! ./item */
+
+/*! ../../icon/react-icon/IconInfoCircleFill */
+
+/*! @antv/util */
+
+/*! ./shape */
+
+/*! ./range-state */
+
+/*! ../../utils */
+
+/*! ./pick */
+
+/*! tslib */
+
+/*! ./facet/circle */
+
+/*! ./each */
+
+/*! ./util */
+
+/*! react */
+
+/*! ../../icon/react-icon/IconClose */
+
+/*! @antv/g2 */
+
+/*! @antv/util */
+
+/*! ../../util/direction */
+
+/*! ./chart */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! tslib */
+
+/*! lodash/cloneDeepWith */
+
+/*! ./useMessage */
+
+/*! ./node-draggable */
+
+/*! ../../util/matrix */
+
+/*! ../_util/keycode */
+
+/*! ./path-2-curve */
+
+/*! ./group-to-map */
+
+/*! ../../Dropdown */
+
+/*! ./index.less */
+
+/*! ./is-function */
+
+/*! ../../_util/warning */
+
+/*! ./util */
+
+/*! ./debounce */
+
+/*! ../../util/direction */
+
+/*! react */
+
+/*! ./parse-path-string */
+
+/*! ../_util/throttleByRaf */
+
+/*! ./shape */
+
+/*! react */
+
+/*! ../util/bbox */
+
+/*! ../util/path */
+
+/*! ./plugin */
+
+/*! ./adaptor */
+
+/*! tslib */
+
+/*! ../util/get-style */
+
+/*! ./poly.js */
+
+/*! tslib */
+
+/*! ../_util/react-dom */
+
+/*! react */
+
+/*! ../../../icon/react-icon/IconRight */
+
+/*! ../../utils */
+
+/*! ./shape/base */
+
+/*! ../context */
+
+/*! ./utils */
+
+/*! ./input */
+
+/*! @antv/util */
+
+/*! ./interaction/action/element/single-active */
+
+/*! ./polyline */
+
+/*! ../../core/plot */
+
+/*! ./ellipse */
+
+/*! ./base */
+
+/*! ../../utils/view */
+
+/*! ../constant */
+
+/*! ./interaction/action/element/filter */
+
+/*! ./line */
+
+/*! ./min */
+
+/*! ../_util/is */
+
+/*! ../_util/is */
+
+/*! tslib */
+
+/*! stylis */
+
+/*! ../utils */
+
+/*! ./highlight */
+
+/*! ./index */
+
+/*! ./pick */
+
+/*! tslib */
+
+/*! ../../util/scale */
+
+/*! ./action */
+
+/*! ./has-key */
+
+/*! ./text */
+
+/*! ./linear */
+
+/*! tslib */
+
+/*! ./legend */
+
+/*! ./interactions */
+
+/*! @antv/util */
+
+/*! ./geometry/label/layout/point/adjust-position */
+
+/*! @antv/util */
+
+/*! ../../adaptor/common */
+
+/*! ../../icon/react-icon/IconLoading */
+
+/*! ./highlight-util */
+
+/*! ./scrollbar */
+
+/*! ./marker */
+
+/*! ../../utils */
+
+/*! ./utils/pattern */
+
+/*! ./interaction/action/util */
+
+/*! ../ConfigProvider */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ./shape */
+
+/*! ../base */
+
+/*! ../../utils */
+
+/*! ./abstract/component */
+
+/*! ./pop */
+
+/*! ./path */
+
+/*! ../util/get-style */
+
+/*! tslib */
+
+/*! ./util/draw */
+
+/*! ./base */
+
+/*! ./meta */
+
+/*! @antv/util */
+
+/*! ./controller/coordinate */
+
+/*! ../_util/hooks/useMergeValue */
+
+/*! ../utils/conversion */
+
+/*! ../_util/is */
+
+/*! @antv/g2 */
+
+/*! ./reduce */
+
+/*! ../_util/is */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ../util/color */
+
+/*! pdfast */
+
+/*! @antv/util */
+
+/*! ../../utils */
+
+/*! ./coordinate */
+
+/*! ./base */
+
+/*! ./color.js */
+
+/*! ../constant */
+
+/*! ./interactions */
+
+/*! @antv/path-util */
+
+/*! react */
+
+/*! @antv/util */
+
+/*! ./polyline */
+
+/*! ../../_util/pick */
+
+/*! ../../utils/data */
+
+/*! ../_util/fillNBSP */
+
+/*! ../util/in-path/polygon */
+
+/*! ./utils */
+
+/*! @antv/util */
+
+/*! ./is-object */
+
+/*! ./is-array */
+
+/*! tslib */
+
+/*! react-transition-group */
+
+/*! react */
+
+/*! ../../../../util/graphics */
+
+/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */
+
+/*! @antv/util */
+
+/*! ./plots/gauge */
+
+/*! @antv/util */
+
+/*! ./noop */
+
+/*! tslib */
+
+/*! ../../utils */
+
+/*! ../util/get-style */
+
+/*! @antv/g2 */
+
+/*! ../util/event */
+
+/*! tslib */
+
+/*! react */
+
+/*! ./interaction/action/cursor */
+
+/*! @antv/util */
+
+/*! react */
+
+/*! tslib */
+
+/*! ../util/get-style */
+
+/*! ../../adaptor/geometries */
+
+/*! @antv/util */
+
+/*! react */
+
+/*! @antv/g-math */
+
+/*! ./util/geometry */
+
+/*! react */
+
+/*! ../_util/hooks/useMergeValue */
+
+/*! ../../../util/color */
+
+/*! react */
+
+/*! tslib */
+
+/*! ./region */
+
+/*! ./highlight */
+
+/*! ./geometry/label/layout/limit-in-shape */
+
+/*! ./constant */
+
+/*! ../utils */
+
+/*! ../../../util/transform */
+
+/*! ./bbox */
+
+/*! ./base */
+
+/*! ../_util/classNames */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ../bar */
+
+/*! ../util/theme */
+
+/*! ./circle.js */
+
+/*! @antv/util */
+
+/*! ./dom */
+
+/*! ./Transition */
+
+/*! ../_util/mergedToString */
+
+/*! ../../icon/react-icon/IconExclamationCircleFill */
+
+/*! ../../_util/raf */
+
+/*! ../util/theme */
+
+/*! ../_util/hooks/useMergeValue */
+
+/*! ../../adaptor/common */
+
+/*! ./group */
+
+/*! ../../adaptor/common */
+
+/*! ./util */
+
+/*! ../constant */
+
+/*! ./base */
+
+/*! ./icon-check */
+
+/*! ../_util/classNames */
+
+/*! tslib */
+
+/*! ./base */
+
+/*! ../../Popover/style */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! @antv/util */
+
+/*! ../../utils */
+
+/*! ./indent */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ./is-polygons-intersect */
+
+/*! tslib */
+
+/*! ../util */
+
+/*! tslib */
+
+/*! ../util/get-path-points */
+
+/*! ./constants */
+
+/*! ./shape/point */
+
+/*! ./interaction/action/element/range-selected */
+
+/*! ../_util/keycode */
+
+/*! ./constant */
+
+/*! ../../adaptor/geometries */
+
+/*! ./is-array */
+
+/*! ../constant */
+
+/*! ../util/util */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! react */
+
+/*! ../context */
+
+/*! ../abstract/html-component */
+
+/*! ./adaptor */
+
+/*! ./number.js */
+
+/*! ./path.js */
+
+/*! ../../icon/react-icon/IconCheckCircleFill */
+
+/*! ./shape/schema */
+
+/*! ../base */
+
+/*! .. */
+
+/*! ./pull-at */
+
+/*! lodash/get */
+
+/*! ./path */
+
+/*! ./get-arc-params */
+
+/*! ./stat */
+
+/*! ../_util/raf */
+
+/*! detect-browser */
+
+/*! ./element */
+
+/*! react */
+
+/*! ./rect */
+
+/*! @antv/util */
+
+/*! ../_util/omit */
+
+/*! ./geometry/shape/edge/arc */
+
+/*! ../Tooltip */
+
+/*! tslib */
+
+/*! ./geometry/label/base */
+
+/*! ../util/svg */
+
+/*! ../util/time */
+
+/*! tslib */
+
+/*! ./utils */
+
+/*! ./marker */
+
+/*! react */
+
+/*! ./base */
+
+/*! react */
+
+/*! ../../dependents */
+
+/*! ./plots/rose */
+
+/*! ../util/util */
+
+/*! ./layout/layout */
+
+/*! ../tiny-area */
+
+/*! @antv/g-math */
+
+/*! scroll-into-view-if-needed */
+
+/*! ./group-by */
+
+/*! ../util.js */
+
+/*! ./resize-trigger */
+
+/*! ./adaptor */
+
+/*! ../trend/trend */
+
+/*! ./shape/line */
+
+/*! tslib */
+
+/*! ./axis */
+
+/*! ./plots/sankey */
+
+/*! ../Input/input-element */
+
+/*! ./parse */
+
+/*! ./rules/custom.js */
+
+/*! ./constant */
+
+/*! @antv/util */
+
+/*! ./elastic.js */
+
+/*! ./group */
+
+/*! ./polyline */
+
+/*! ./interaction/action/data/range-filter */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! tslib */
+
+/*! ./auto-hide */
+
+/*! ../../adaptor/geometries */
+
+/*! ./plots/stock */
+
+/*! ../constant */
+
+/*! dayjs/locale/zh-cn */
+
+/*! tslib */
+
+/*! ./constant */
+
+/*! ./links.js */
+
+/*! ../../../../utils/statistic */
+
+/*! ./util */
+
+/*! @antv/util */
+
+/*! ./invariant */
+
+/*! ../../utils/padding */
+
+/*! @antv/util */
+
+/*! ../../utils */
+
+/*! ./Enum.js */
+
+/*! ./index */
+
+/*! ./path */
+
+/*! ../../utils */
+
+/*! ../../utils */
+
+/*! ./useForm */
+
+/*! ../util/createWorker */
+
+/*! ../_util/omit */
+
+/*! ./is-number-equal */
+
+/*! ./define.js */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ../../icon/react-icon/IconEye */
+
+/*! tslib */
+
+/*! ./is-array */
+
+/*! ../../../dependents */
+
+/*! ../../adaptor/brush */
+
+/*! tslib */
+
+/*! @antv/g-base */
+
+/*! react */
+
+/*! ../../utils/transform/quantile */
+
+/*! ../../util/helper */
+
+/*! tslib */
+
+/*! ../_class/notification */
+
+/*! ./interaction */
+
+/*! ./index.less */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! d3-regression */
+
+/*! ../histogram/adaptor */
+
+/*! ../util */
+
+/*! tslib */
+
+/*! ./grid */
+
+/*! ./constants */
+
+/*! @antv/util */
+
+/*! ./utils */
+
+/*! tslib */
+
+/*! ../util */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ./to-array */
+
+/*! ./base */
+
+/*! ../../util/helper */
+
+/*! ./common.js */
+
+/*! ./helper */
+
+/*! ../util/path */
+
+/*! ../../utils/transform/percent */
+
+/*! ./geometry/shape/area/smooth */
+
+/*! ./is-type */
+
+/*! @antv/util */
+
+/*! ./contains */
+
+/*! @antv/util */
+
+/*! ./util */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! react */
+
+/*! tslib */
+
+/*! ../../util/legend */
+
+/*! ./base.js */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ./util */
+
+/*! ./event */
+
+/*! ../util/strict-limit */
+
+/*! ../ConfigProvider */
+
+/*! ./constants */
+
+/*! ../interface */
+
+/*! ./facet */
+
+/*! @antv/util */
+
+/*! ./utils */
+
+/*! react-transition-group */
+
+/*! ../_util/resizeObserver */
+
+/*! ../../../adaptor/geometries/base */
+
+/*! ../util/extended */
+
+/*! ./interaction/action/mask/path */
+
+/*! ./interaction/action/data/filter */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ./useCssEllipsis */
+
+/*! ./parse-path */
+
+/*! ./index.less */
+
+/*! ./enclose.js */
+
+/*! ../../util/graphics */
+
+/*! ../../adaptor/common */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ../../base */
+
+/*! ./continuous/pow */
+
+/*! react */
+
+/*! ../util/in-path/polygon */
+
+/*! ./identity/index */
+
+/*! ../../../interactions/drill-down */
+
+/*! ../../adaptor/common */
+
+/*! ./is-object-like */
+
+/*! @antv/util */
+
+/*! ../../../utils */
+
+/*! tslib */
+
+/*! ../_class/icon-hover */
+
+/*! ../../../utils/tooltip */
+
+/*! @antv/util */
+
+/*! ./util */
+
+/*! @antv/util */
+
+/*! ../_util/resizeObserver */
+
+/*! @antv/g2 */
+
+/*! ./base */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ./shape */
+
+/*! ../../../util/transform */
+
+/*! react-transition-group */
+
+/*! ../../adaptor/geometries/base */
+
+/*! ./util */
+
+/*! ../../icon/react-icon/IconCloseCircleFill */
+
+/*! lodash/throttle */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ../../Spin/style */
+
+/*! ./constant */
+
+/*! ../constant */
+
+/*! ./base */
+
+/*! ../../../util/graphics */
+
+/*! @antv/g2 */
+
+/*! tslib */
+
+/*! @antv/g2 */
+
+/*! ../../utils */
+
+/*! ./adjust */
+
+/*! ./tooltip */
+
+/*! ./arc */
+
+/*! ./constants */
+
+/*! react */
+
+/*! ../../adaptor/geometries */
+
+/*! ./constant */
+
+/*! ./is-plain-object */
+
+/*! @antv/util */
+
+/*! ./util */
+
+/*! ../_util/dom */
+
+/*! ./update-label */
+
+/*! react */
+
+/*! ./util/util */
+
+/*! ../util/util */
+
+/*! ./animate/animation/fade */
+
+/*! ./coord/cartesian */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! @emotion/memoize */
+
+/*! @antv/g-svg */
+
+/*! ../abstract/group-component */
+
+/*! @antv/util */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! @antv/util */
+
+/*! ../context */
+
+/*! ../_util/hooks/useMergeValue */
+
+/*! ./utils */
+
+/*! ./polygon */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ./context */
+
+/*! ../context */
+
+/*! ../../animate/ */
+
+/*! @antv/util */
+
+/*! ../context */
+
+/*! ./to-string */
+
+/*! ./arc */
+
+/*! ../../style/index.less */
+
+/*! ../constant */
+
+/*! ./min */
+
+/*! @antv/g2 */
+
+/*! ./base */
+
+/*! ./bisector */
+
+/*! ./interaction/action/element/range-highlight */
+
+/*! ./util/shape-size */
+
+/*! ../../util/helper */
+
+/*! ./adjust */
+
+/*! ./first-value */
+
+/*! ./adjusts/adjust */
+
+/*! react */
+
+/*! react */
+
+/*! ../util/get-style */
+
+/*! @antv/util */
+
+/*! ./polygon */
+
+/*! tslib */
+
+/*! ./constant */
+
+/*! react */
+
+/*! ../../InputTag/style */
+
+/*! ./dom */
+
+/*! lodash/escapeRegExp */
+
+/*! tslib */
+
+/*! ../ConfigProvider */
+
+/*! ../../core/plot */
+
+/*! @antv/util */
+
+/*! ../constant */
+
+/*! ../../../_util/getStringLength */
+
+/*! ../../core/plot */
+
+/*! ./util */
+
+/*! ../tiny-line/constants */
+
+/*! ./util */
+
+/*! compute-scroll-into-view */
+
+/*! @antv/util */
+
+/*! ../../core/locale */
+
+/*! @antv/util */
+
+/*! ./useCheckbox */
+
+/*! ./uniq */
+
+/*! @antv/matrix-util */
+
+/*! tslib */
+
+/*! ./is-nil */
+
+/*! ./util */
+
+/*! @antv/util */
+
+/*! ./line */
+
+/*! ./is-plain-object */
+
+/*! ../../Input/style */
+
+/*! ../base */
+
+/*! tslib */
+
+/*! ./min-by */
+
+/*! @antv/util */
+
+/*! ./base */
+
+/*! ./constant */
+
+/*! ./geometry/label/layout/adjust-color */
+
+/*! ../../utils/tooltip */
+
+/*! ../../utils/conversion */
+
+/*! ./ellipse */
+
+/*! @antv/util */
+
+/*! @antv/component */
+
+/*! ./actions/node-drag */
+
+/*! ../_util/classNames */
+
+/*! ./hierarchy/index.js */
+
+/*! ../../utils */
+
+/*! ./common */
+
+/*! ./is-array-like */
+
+/*! ./ellipse */
+
+/*! ../../icon/react-icon/IconCaretRight */
+
+/*! ../tiny-column/adaptor */
+
+/*! ./quantile */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! ./config */
+
+/*! ../../adaptor/common */
+
+/*! ../context */
+
+/*! ../../util */
+
+/*! ../../util */
+
+/*! ./partition.js */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! react */
+
+/*! tslib */
+
+/*! ../../icon/react-icon/IconQuestionCircle */
+
+/*! ./constants */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ./data-region */
+
+/*! ../_util/classNames */
+
+/*! ./is-array */
+
+/*! ../util/math */
+
+/*! tslib */
+
+/*! react */
+
+/*! react */
+
+/*! ../ConfigProvider */
+
+/*! ../../adaptor/geometries/point */
+
+/*! ./interactions */
+
+/*! ./geometry/shape/polygon/square */
+
+/*! react */
+
+/*! tslib */
+
+/*! ../base */
+
+/*! ../_util/classNames */
+
+/*! ./plots/tiny-line */
+
+/*! @antv/g2 */
+
+/*! ../../core/plot */
+
+/*! ../funnel */
+
+/*! ./base */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! ../_util/omit */
+
+/*! ../../_util/classNames */
+
+/*! ./edge */
+
+/*! ../tiny-area/adaptor */
+
+/*! ../base */
+
+/*! ../../constant */
+
+/*! ./worker/hide-overlap */
+
+/*! @antv/g2 */
+
+/*! ./color.js */
+
+/*! ./interaction/action/element/highlight-by-x */
+
+/*! ./constant */
+
+/*! ./Enum.js */
+
+/*! ./handler */
+
+/*! tslib */
+
+/*! ../progress/utils */
+
+/*! ./footer */
+
+/*! ../../animate */
+
+/*! @antv/util */
+
+/*! ./util.js */
+
+/*! ./hierarchy/index.js */
+
+/*! ./deep-assign */
+
+/*! @antv/util */
+
+/*! ../_util/classNames */
+
+/*! ./align */
+
+/*! ./line */
+
+/*! tslib */
+
+/*! ../_util/classNames */
+
+/*! ../is.js */
+
+/*! ../../icon/react-icon/IconMenuUnfold */
+
+/*! ../../utils */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ../../utils */
+
+/*! ../util/get-path-points */
+
+/*! tslib */
+
+/*! ../../utils */
+
+/*! ../../core/plot */
+
+/*! ../ConfigProvider */
+
+/*! ./association */
+
+/*! ../context */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ../util/util */
+
+/*! size-sensor */
+
+/*! ./utils */
+
+/*! tslib */
+
+/*! ./d3-linear */
+
+/*! ../../util/label */
+
+/*! tslib */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ../_class/icon-hover */
+
+/*! @antv/g-base */
+
+/*! ../util */
+
+/*! ../_class/notice */
+
+/*! @antv/util */
+
+/*! ./register */
+
+/*! ./util/diff */
+
+/*! ../context */
+
+/*! ../../icon/react-icon/context */
+
+/*! ../base */
+
+/*! gl-matrix */
+
+/*! ../../core/plot */
+
+/*! ../histogram */
+
+/*! ./base */
+
+/*! ./constant */
+
+/*! ../_util/hooks/useMergeValue */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ./helper */
+
+/*! ./html */
+
+/*! ../_util/is */
+
+/*! lodash/get */
+
+/*! ./constant */
+
+/*! react */
+
+/*! @antv/color-util */
+
+/*! @antv/event-emitter */
+
+/*! ../dim-rect */
+
+/*! react */
+
+/*! ./plots/bidirectional-bar */
+
+/*! react */
+
+/*! ../../utils */
+
+/*! ../ConfigProvider */
+
+/*! tslib */
+
+/*! ./geometry/shape/interval/funnel */
+
+/*! @antv/util */
+
+/*! ./geometry/label/layout/pie/spider */
+
+/*! ./base */
+
+/*! tslib */
+
+/*! ../../util */
+
+/*! @antv/dom-util */
+
+/*! tslib */
+
+/*! ../../icon/react-icon/IconDragDotVertical */
+
+/*! ../base */
+
+/*! ../context */
+
+/*! ./memoize */
+
+/*! @antv/util */
+
+/*! ../util/get-style */
+
+/*! ../../icon/react-icon/IconCaretDown */
+
+/*! ../constant */
+
+/*! ../util/in-stroke/polyline */
+
+/*! ../ConfigProvider */
+
+/*! ./util */
+
+/*! ../_util/style */
+
+/*! ../constant */
+
+/*! @antv/util */
+
+/*! ./sub-menu */
+
+/*! ../util */
+
+/*! ./mat3.js */
+
+/*! ./animate/animation/sector-path-update */
+
+/*! ../../utils */
+
+/*! ../base */
+
+/*! ./shape */
+
+/*! ../../utils/hierarchy/pack */
+
+/*! ../_util/classNames */
+
+/*! @antv/util */
+
+/*! ../_class/icon-hover */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ./interactions */
+
+/*! ../../util/direction */
+
+/*! ../util */
+
+/*! ../../style/index.less */
+
+/*! ../geometry/label */
+
+/*! ../../style/index.less */
+
+/*! @babel/runtime/helpers/esm/inheritsLoose */
+
+/*! react */
+
+/*! ./constant */
+
+/*! ../util/scale */
+
+/*! tslib */
+
+/*! ../util */
+
+/*! ./utils */
+
+/*! ./constant */
+
+/*! react */
+
+/*! ../Tooltip */
+
+/*! ./facet */
+
+/*! ./abstract/group */
+
+/*! @antv/g-base */
+
+/*! ../util/facet */
+
+/*! ./flow */
+
+/*! ../_util/is */
+
+/*! tslib */
+
+/*! ./interactions */
+
+/*! ./plots/facet */
+
+/*! ../indent */
+
+/*! ./css-const */
+
+/*! ../constant */
+
+/*! ./is-number */
+
+/*! ../constant */
+
+/*! ./shape */
+
+/*! gl-matrix/vec2 */
+
+/*! ./basic */
+
+/*! ./plots/funnel */
+
+/*! ../../core/plot */
+
+/*! ./shadow */
+
+/*! ../../util */
+
+/*! ./util/transform */
+
+/*! ./is-type */
+
+/*! ../_util/omit */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ./some */
+
+/*! .. */
+
+/*! ../base */
+
+/*! ../base */
+
+/*! ./geometry/shape/edge/vhv */
+
+/*! ./hierarchy/index.js */
+
+/*! tslib */
+
+/*! ../_util/hooks/useKeyboardEvent */
+
+/*! ./util/tooltip */
+
+/*! ../_util/is */
+
+/*! ../../_util/keycode */
+
+/*! ../_util/is */
+
+/*! ../_util/dom */
+
+/*! ../../core/plot */
+
+/*! @antv/util */
+
+/*! ./geometry/area */
+
+/*! react */
+
+/*! tslib */
+
+/*! ../../icon/react-icon/IconCaretLeft */
+
+/*! ./plots/heatmap */
+
+/*! tslib */
+
+/*! ../abstract/group-component */
+
+/*! tslib */
+
+/*! ./utils */
+
+/*! ../../interactions/actions/drill-down */
+
+/*! @antv/util */
+
+/*! ./keys */
+
+/*! @antv/util */
+
+/*! ../../../utils */
+
+/*! ./actions/statistic-active */
+
+/*! ./interaction/action/mask/multiple/circle */
+
+/*! ./each */
+
+/*! @antv/path-util */
+
+/*! ./parse-path-string */
+
+/*! ../ConfigProvider */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ./geometry/point */
+
+/*! ../../utils */
+
+/*! ../_util/is */
+
+/*! ../abstract/html-component */
+
+/*! ./context */
+
+/*! ../../util/annotation */
+
+/*! tslib */
+
+/*! ../rect */
+
+/*! ../../utils */
+
+/*! ../../../util/coordinate */
+
+/*! @antv/util */
+
+/*! react */
+
+/*! ./password */
+
+/*! ./adjusts/dodge */
+
+/*! ../../../utils */
+
+/*! ../constant */
+
+/*! ./interaction */
+
+/*! ../../../util/text */
+
+/*! @antv/util */
+
+/*! ./adjusts/symmetric */
+
+/*! ./constant */
+
+/*! ./adaptor */
+
+/*! ./parse-path-string */
+
+/*! ../../style/index.less */
+
+/*! ../_util/classNames */
+
+/*! @antv/matrix-util */
+
+/*! ../util/facet */
+
+/*! ../../base */
+
+/*! ./animate/animation/scale-in */
+
+/*! ./interactions */
+
+/*! ../util */
+
+/*! ../util/matrix */
+
+/*! ./layout/auto */
+
+/*! ./geometry/shape/point/image */
+
+/*! ./flatten */
+
+/*! tslib */
+
+/*! ../util/get-style */
+
+/*! react */
+
+/*! tslib */
+
+/*! ./is-string */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ../ConfigProvider */
+
+/*! ../context */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! @antv/util */
+
+/*! ../ConfigProvider */
+
+/*! ./is-plain-object */
+
+/*! ../_util/omit */
+
+/*! ./html-theme */
+
+/*! ../_util/resizeObserver */
+
+/*! ./interaction/action/mask/circle */
+
+/*! ./interaction/action/component/tooltip/sibling */
+
+/*! ../stock */
+
+/*! ./pack/enclose.js */
+
+/*! ../../utils */
+
+/*! @antv/util */
+
+/*! ./pack/index.js */
+
+/*! ../column/adaptor */
+
+/*! ../base */
+
+/*! ./cluster.js */
+
+/*! ./descendants.js */
+
+/*! ../constant */
+
+/*! ./option */
+
+/*! ./catmull-rom-2-bezier */
+
+/*! react */
+
+/*! ./icon-hover */
+
+/*! ../abstract/group-component */
+
+/*! ./add-event-listener */
+
+/*! @antv/util */
+
+/*! ../../util/graphics */
+
+/*! tslib */
+
+/*! ../base */
+
+/*! ../util/matrix */
+
+/*! ../_util/dom */
+
+/*! ./plots/radial-bar */
+
+/*! ./lower-case */
+
+/*! ./contants */
+
+/*! ./is-equal */
+
+/*! ./path */
+
+/*! @antv/g2 */
+
+/*! ./header */
+
+/*! @antv/util */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ../../adaptor/geometries */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ../../core/plot */
+
+/*! ./geometry/label/layout/limit-in-canvas */
+
+/*! ./region-filter */
+
+/*! tslib */
+
+/*! ./plots/scatter */
+
+/*! ./clamp */
+
+/*! ../_util/include */
+
+/*! ./list-highlight-util */
+
+/*! ../../core/plot */
+
+/*! ./geometry/shape/area/smooth-line */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ../_util/classNames */
+
+/*! ../../../util/helper */
+
+/*! ../util/get-style */
+
+/*! react */
+
+/*! ../../Trigger/style */
+
+/*! ./pull */
+
+/*! ./segments */
+
+/*! react */
+
+/*! ./src/Utility.js */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! ./base */
+
+/*! ./treemap/dice.js */
+
+/*! ../_util/is */
+
+/*! @antv/util */
+
+/*! ../_util/classNames */
+
+/*! tslib */
+
+/*! ./interaction/action/component/list-radio */
+
+/*! @antv/g-base */
+
+/*! ./form-label */
+
+/*! ../context */
+
+/*! @antv/g2 */
+
+/*! ../../utils */
+
+/*! @antv/util */
+
+/*! ../_util/dom */
+
+/*! ./util */
+
+/*! ./register */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ./Enum.js */
+
+/*! ./common */
+
+/*! ./attr */
+
+/*! ./index.less */
+
+/*! tslib */
+
+/*! @antv/path-util */
+
+/*! ../../utils */
+
+/*! ../_util/classNames */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ../_util/hooks/useKeyboardEvent */
+
+/*! ./each */
+
+/*! ./accessors.js */
+
+/*! ../util */
+
+/*! ../base */
+
+/*! ./base */
+
+/*! ./in-stroke/line */
+
+/*! ./get-height */
+
+/*! ../../utils */
+
+/*! react */
+
+/*! ./interaction/action/element/single-highlight */
+
+/*! ../../adaptor/common */
+
+/*! react */
+
+/*! tslib */
+
+/*! ../constant */
+
+/*! ./operations */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! ./line */
+
+/*! ./adaptor */
+
+/*! ./content */
+
+/*! tslib */
+
+/*! ./util */
+
+/*! @antv/util */
+
+/*! ../_util/is */
+
+/*! ./path */
+
+/*! ../util/theme */
+
+/*! @antv/g2 */
+
+/*! ./checkbox */
+
+/*! tslib */
+
+/*! ./is-array */
+
+/*! ../abstract/group-component */
+
+/*! ./lab */
+
+/*! ./path-intersection */
+
+/*! tslib */
+
+/*! ../util/util */
+
+/*! @antv/util */
+
+/*! ../ConfigProvider */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! @babel/runtime/helpers/esm/extends */
+
+/*! ../abstract/html-component */
+
+/*! @antv/util */
+
+/*! ./base */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! @antv/matrix-util */
+
+/*! ./kebab-case */
+
+/*! ./difference */
+
+/*! react */
+
+/*! ../../adaptor/geometries */
+
+/*! ../is.js */
+
+/*! ../_util/is */
+
+/*! fmin */
+
+/*! ./timer.js */
+
+/*! ../constant */
+
+/*! ../util/interval */
+
+/*! @antv/util */
+
+/*! ./constant */
+
+/*! @antv/attr */
+
+/*! ./animate/animation/grow-in */
+
+/*! ./gradient */
+
+/*! ./adjust */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ./overlap */
+
+/*! @antv/util */
+
+/*! ../../_util/is */
+
+/*! tslib */
+
+/*! ./constants */
+
+/*! react */
+
+/*! ../_util/hooks/useMergeValue */
+
+/*! ./overflow-wrap */
+
+/*! ./unique-id */
+
+/*! ../../../../dependents */
+
+/*! ../../_util/responsiveObserve */
+
+/*! ./adaptor */
+
+/*! react */
+
+/*! ../_util/classNames */
+
+/*! ../context */
+
+/*! ../_util/omit */
+
+/*! ../../utils/hierarchy/treemap */
+
+/*! ../../dependents */
+
+/*! react-dom */
+
+/*! ../_util/is */
+
+/*! @antv/util */
+
+/*! ../util/axis */
+
+/*! ./util */
+
+/*! ../_util/omit */
+
+/*! ./rgb.js */
+
+/*! ../constant */
+
+/*! @antv/util */
+
+/*! ../core/plot */
+
+/*! ./context */
+
+/*! ../../_util/hooks/useId */
+
+/*! ../_class/icon-hover */
+
+/*! ./util */
+
+/*! ./vec2.js */
+
+/*! lodash/get */
+
+/*! ../util/in-stroke/rect-radius */
+
+/*! ./adaptor */
+
+/*! ../_util/is */
+
+/*! ../../constant */
+
+/*! ./pretty-number */
+
+/*! ../../adaptor/common */
+
+/*! ./util */
+
+/*! @antv/g-base */
+
+/*! @antv/util */
+
+/*! react */
+
+/*! tslib */
+
+/*! ../progress/adaptor */
+
+/*! ./autoSizeTextAreaHeight */
+
+/*! dom-helpers/removeClass */
+
+/*! ./context */
+
+/*! react */
+
+/*! ../util/arrow */
+
+/*! @antv/util */
+
+/*! @antv/matrix-util */
+
+/*! tslib */
+
+/*! ./util/svg */
+
+/*! @antv/dom-util */
+
+/*! tslib */
+
+/*! ./is-object-like */
+
+/*! ../../adaptor/common */
+
+/*! tslib */
+
+/*! ./category */
+
+/*! tslib */
+
+/*! ./is-function */
+
+/*! ./is-nil */
+
+/*! ../../_util/keycode */
+
+/*! tslib */
+
+/*! @antv/matrix-util */
+
+/*! react */
+
+/*! @antv/util */
+
+/*! ./interaction/action/component/list-active */
+
+/*! ./geometry/schema */
+
+/*! ./geometry/edge */
+
+/*! ../../adaptor/geometries */
+
+/*! react */
+
+/*! ../util/matrix */
+
+/*! tslib */
+
+/*! ../_util/hooks/useMergeValue */
+
+/*! ../constant */
+
+/*! ../_util/classNames */
+
+/*! tslib */
+
+/*! ./text */
+
+/*! ../_util/hooks/useId */
+
+/*! ./circle */
+
+/*! tslib */
+
+/*! ./shape/violin */
+
+/*! ../util/parse */
+
+/*! ../../util/bbox */
+
+/*! ../constant */
+
+/*! ./base */
+
+/*! ./actions/drill-down */
+
+/*! ../scatter/adaptor */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ./contants */
+
+/*! react-dom */
+
+/*! ./is-array */
+
+/*! @antv/util */
+
+/*! ./linear */
+
+/*! @antv/util */
+
+/*! ./form-item */
+
+/*! ../../icon/react-icon/IconSearch */
+
+/*! @antv/attr */
+
+/*! ./base.js */
+
+/*! ../constant */
+
+/*! @antv/path-util */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ../../../utils */
+
+/*! ./util */
+
+/*! ../_util/classNames */
+
+/*! ./constants */
+
+/*! ./is-nil */
+
+/*! tslib */
+
+/*! ./attributes/base */
+
+/*! @antv/util */
+
+/*! ../../utils */
+
+/*! ../../style/index.less */
+
+/*! ./chart/controller/tooltip */
+
+/*! @antv/dom-util */
+
+/*! ./actions/legend-active */
+
+/*! ./values-of-key */
+
+/*! ./is-number */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ./util/util */
+
+/*! tslib */
+
+/*! @antv/g-base */
+
+/*! tslib */
+
+/*! ./state */
+
+/*! ../../utils/view */
+
+/*! ./sider */
+
+/*! ../../utils/tooltip */
+
+/*! ./base */
+
+/*! ../_util/is */
+
+/*! @antv/util */
+
+/*! ../../core/plot */
+
+/*! @antv/g2 */
+
+/*! b-validate */
+
+/*! ./index.less */
+
+/*! @antv/util */
+
+/*! ./is-plain-object */
+
+/*! ./path-2-curve */
+
+/*! lodash/setWith */
+
+/*! ../util/get-style */
+
+/*! @antv/matrix-util */
+
+/*! ./tick-method/register */
+
+/*! ./shape */
+
+/*! @antv/util */
+
+/*! ./interaction/action/component/list-checked */
+
+/*! @antv/matrix-util */
+
+/*! @antv/g2 */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! ../../adaptor/common */
+
+/*! ../_util/keycode */
+
+/*! react */
+
+/*! ./util/dom */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ./is-prototype */
+
+/*! ./util/is-model-change */
+
+/*! tslib */
+
+/*! ../base */
+
+/*! @antv/scale */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ./is-array-like */
+
+/*! ../../../utils */
+
+/*! ./utils */
+
+/*! ./chart/controller/slider */
+
+/*! tslib */
+
+/*! ./option */
+
+/*! ./promisify */
+
+/*! @antv/util */
+
+/*! ../context */
+
+/*! ../../adaptor/pattern */
+
+/*! ./chart/controller/tooltip */
+
+/*! ./utils */
+
+/*! tslib */
+
+/*! lodash/setWith */
+
+/*! ./rules/number.js */
+
+/*! ../util/draw */
+
+/*! ../../utils */
+
+/*! ../tiny-line/constants */
+
+/*! @antv/util */
+
+/*! ./path */
+
+/*! ./interaction/action/base */
+
+/*! ./utils */
+
+/*! ../constant */
+
+/*! fmin */
+
+/*! ./base.js */
+
+/*! ../../adaptor/common */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ../_util/hooks/useIsomorphicLayoutEffect */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! tslib */
+
+/*! ./path */
+
+/*! ./to-integer */
+
+/*! ./usePrevious */
+
+/*! ./plots/treemap */
+
+/*! ../debounce */
+
+/*! @antv/util */
+
+/*! ./treemap/binary.js */
+
+/*! ../../adaptor/common */
+
+/*! @antv/util */
+
+/*! ../_util/classNames */
+
+/*! tslib */
+
+/*! ../util/get-style */
+
+/*! ../_util/keycode */
+
+/*! ./hooks/useContext */
+
+/*! ./omit */
+
+/*! tslib */
+
+/*! react */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ../../../../util/graphics */
+
+/*! tslib */
+
+/*! ../../utils */
+
+/*! ../../dependents */
+
+/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */
+
+/*! @antv/util */
+
+/*! ./shape/polygon */
+
+/*! ../constant */
+
+/*! ./indent */
+
+/*! ./util */
+
+/*! @antv/util */
+
+/*! react */
+
+/*! ./src/Serializer.js */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ../../utils/transform/percent */
+
+/*! ../ConfigProvider */
+
+/*! ./is-function */
+
+/*! @antv/util */
+
+/*! ../base */
+
+/*! ./grammar-interaction */
+
+/*! @antv/dom-util */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ./view */
+
+/*! ../_util/classNames */
+
+/*! ../util/facet */
+
+/*! ../gauge */
+
+/*! ./pull-at */
+
+/*! ./constants */
+
+/*! ../util/strict-limit */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! react */
+
+/*! react */
+
+/*! ../../core/plot */
+
+/*! ../../adaptor/common */
+
+/*! ../base */
+
+/*! ./item */
+
+/*! @antv/util */
+
+/*! ./geometry/shape/schema/candle */
+
+/*! ./in-stroke/arc */
+
+/*! ./col */
+
+/*! ../../utils/deep-assign */
+
+/*! ../../core/plot */
+
+/*! ../../utils/tooltip */
+
+/*! ./is-string */
+
+/*! ./label */
+
+/*! @antv/util */
+
+/*! ../util/pretty */
+
+/*! ./adaptor */
+
+/*! ./base */
+
+/*! ./animate/animation/wave-in */
+
+/*! ./line */
+
+/*! ./base */
+
+/*! react */
+
+/*! ../base */
+
+/*! @antv/g-base */
+
+/*! ./chart/controller/annotation */
+
+/*! @antv/util */
+
+/*! ../../core/plot */
+
+/*! ./basis.js */
+
+/*! ./path-2-absolute */
+
+/*! ./align */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! ../../adaptor/geometries */
+
+/*! ../util/helper */
+
+/*! ./reduce */
+
+/*! ../../adaptor/common */
+
+/*! ../Tooltip */
+
+/*! ../../adaptor/geometries */
+
+/*! ../util/util */
+
+/*! d3-color */
+
+/*! ../util/get-style */
+
+/*! ../../core/plot */
+
+/*! tslib */
+
+/*! ../util/tooltip */
+
+/*! ./adaptor */
+
+/*! ../_util/responsiveObserve */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! tslib */
+
+/*! ../geometry/label/util */
+
+/*! ./actions/highlight */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ./facet/rect */
+
+/*! @antv/util */
+
+/*! @antv/g2 */
+
+/*! ./utils */
+
+/*! ../constant */
+
+/*! ./index.less */
+
+/*! ../util/util */
+
+/*! ./has */
+
+/*! ../../utils/number */
+
+/*! react */
+
+/*! ./utils */
+
+/*! react */
+
+/*! ./constants */
+
+/*! ./plots/dual-axes */
+
+/*! ../util/path */
+
+/*! ./values */
+
+/*! ../../util/graphics */
+
+/*! ./plots/bar */
+
+/*! ./remove */
+
+/*! tslib */
+
+/*! ../_util/classNames */
+
+/*! ../util/get-style */
+
+/*! ../_util/clipboard */
+
+/*! ../../utils */
+
+/*! ../util/coordinate */
+
+/*! ../base */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ../../util/bbox */
+
+/*! @antv/util */
+
+/*! react-transition-group */
+
+/*! react */
+
+/*! ./base */
+
+/*! ./interaction/action/element/highlight-by-color */
+
+/*! ./interaction/action/element/active */
+
+/*! ../../_util/classNames */
+
+/*! d3-hierarchy */
+
+/*! ./dice.js */
+
+/*! ./action/register */
+
+/*! ../utils */
+
+/*! ../../util/bbox */
+
+/*! ./line */
+
+/*! ../../utils/tooltip */
+
+/*! ./dice.js */
+
+/*! ./interactions */
+
+/*! ../../_util/hooks/useId */
+
+/*! ./svg */
+
+/*! ../../constant */
+
+/*! ../base */
+
+/*! ./is-string */
+
+/*! ./padding-cal */
+
+/*! ../util/time */
+
+/*! ../Popover */
+
+/*! @antv/util */
+
+/*! @antv/g2 */
+
+/*! ./shape/edge */
+
+/*! ./grid */
+
+/*! ./find-index */
+
+/*! ../../../../dependents */
+
+/*! ./geometry */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ./utils */
+
+/*! @antv/util */
+
+/*! ../util/state */
+
+/*! @antv/g2 */
+
+/*! tslib */
+
+/*! ./utils/itemUtil */
+
+/*! ./is-array-like */
+
+/*! ./utils */
+
+/*! ../context */
+
+/*! @antv/util */
+
+/*! ../../Button/style */
+
+/*! ../_util/pick */
+
+/*! ./base */
+
+/*! tslib */
+
+/*! ../util/arrow */
+
+/*! ./title */
+
+/*! ./vec3.js */
+
+/*! ../_util/is */
+
+/*! tslib */
+
+/*! ../../utils */
+
+/*! ../../../../utils/matrix */
+
+/*! ../is.js */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ../../core/plot */
+
+/*! ./common */
+
+/*! ./plots/line */
+
+/*! ../ConfigProvider */
+
+/*! ../base */
+
+/*! ./squarify.js */
+
+/*! @antv/util */
+
+/*! ./interface */
+
+/*! react */
+
+/*! ./geometry/shape/edge/smooth */
+
+/*! ../abstract/group-component */
+
+/*! ./polyline */
+
+/*! react */
+
+/*! @antv/util */
+
+/*! ./layout/padding-cal */
+
+/*! ./plots/liquid */
+
+/*! ./view */
+
+/*! ../../utils */
+
+/*! ./interaction/action/element/range-active */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ./interaction/action/component/list-selected */
+
+/*! ./path-2-curve */
+
+/*! ../util/get-path-points */
+
+/*! ../util/util */
+
+/*! ./util */
+
+/*! tslib */
+
+/*! ../context */
+
+/*! @antv/g2 */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! ../../utils */
+
+/*! ./base */
+
+/*! ../context */
+
+/*! react */
+
+/*! ../base */
+
+/*! ./util/scale-pool */
+
+/*! ../util/get-style */
+
+/*! ./util/text */
+
+/*! @antv/util */
+
+/*! ../base */
+
+/*! tslib */
+
+/*! ./container */
+
+/*! ../util/util */
+
+/*! @antv/util */
+
+/*! ./parse-path-string */
+
+/*! ../../adaptor/geometries */
+
+/*! ../../utils */
+
+/*! ./group-by */
+
+/*! @antv/util */
+
+/*! ../constant */
+
+/*! ./index.less */
+
+/*! react */
+
+/*! lodash/get */
+
+/*! ./dot-loading */
+
+/*! ../../util */
+
+/*! d3-color */
+
+/*! react */
+
+/*! ../../style/index.less */
+
+/*! ../../adaptor/geometries/base */
+
+/*! ./interface */
+
+/*! react-dom */
+
+/*! ../../../utils */
+
+/*! ../_util/hooks/useIsFirstRender */
+
+/*! ./getPopupStyle */
+
+/*! ./group-to-map */
+
+/*! @antv/util */
+
+/*! @antv/g2 */
+
+/*! ./plots/ring-progress */
+
+/*! ../abstract/group-component */
+
+/*! @antv/event-emitter */
+
+/*! @antv/g-base */
+
+/*! tslib */
+
+/*! ./utils */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ./plots/pie */
+
+/*! ./base */
+
+/*! @antv/g2 */
+
+/*! ../ConfigProvider */
+
+/*! react */
+
+/*! react */
+
+/*! ./form-list */
+
+/*! ./values */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ../../utils */
+
+/*! ../_util/keycode */
+
+/*! tslib */
+
+/*! ./paragraph */
+
+/*! ./geometry/shape/base */
+
+/*! ./constant */
+
+/*! ../../core/plot */
+
+/*! ./utils */
+
+/*! ./base */
+
+/*! ./violin */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! ../../utils/hierarchy/partition */
+
+/*! ../../_util/classNames */
+
+/*! ../_util/dom */
+
+/*! ../util/svg */
+
+/*! ./geometry/base */
+
+/*! ./get-outer-height */
+
+/*! ./context */
+
+/*! ../../util/coordinate */
+
+/*! @antv/util */
+
+/*! react */
+
+/*! ../util */
+
+/*! ./state-base */
+
+/*! @antv/g2 */
+
+/*! ../util/dom */
+
+/*! ../_util/warning */
+
+/*! ../../core/plot */
+
+/*! lodash-es */
+
+/*! ./base */
+
+/*! react */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ./base */
+
+/*! ../../constant */
+
+/*! ../_util/is */
+
+/*! ./modify-css */
+
+/*! ../_util/react-dom */
+
+/*! ./plots/sunburst */
+
+/*! tslib */
+
+/*! ./constants */
+
+/*! ./adaptor */
+
+/*! ../../../icon/react-icon/IconDown */
+
+/*! ../../utils */
+
+/*! ./is-type */
+
+/*! ./helper */
+
+/*! @antv/util */
+
+/*! ../../utils */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ./utils */
+
+/*! ./request-animation-frame */
+
+/*! ./chart/controller/base */
+
+/*! ../util/util */
+
+/*! ./math.js */
+
+/*! react */
+
+/*! tslib */
+
+/*! ../../Dropdown/style */
+
+/*! tslib */
+
+/*! ./bbox */
+
+/*! tslib */
+
+/*! ../_util/is */
+
+/*! ./get-style */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ./id */
+
+/*! ../../Trigger/style */
+
+/*! ../../_util/omit */
+
+/*! ./list-state */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! tslib */
+
+/*! ./split */
+
+/*! ../util/theme */
+
+/*! ./plots/waterfall */
+
+/*! tslib */
+
+/*! ../../utils */
+
+/*! ./geometry/shape/line/step */
+
+/*! @antv/util */
+
+/*! ./interval */
+
+/*! ../../core/plot */
+
+/*! ./interaction/action/component/list-highlight */
+
+/*! ./animate/animation */
+
+/*! ./index.less */
+
+/*! @antv/util */
+
+/*! ../../util/bbox */
+
+/*! ./map-values */
+
+/*! ./base.js */
+
+/*! tslib */
+
+/*! ./constant */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! @antv/g2 */
+
+/*! ./interaction/action/view/move */
+
+/*! tslib */
+
+/*! react */
+
+/*! ./animate/animation/path-in */
+
+/*! ../../dependents */
+
+/*! @antv/util */
+
+/*! ../utils */
+
+/*! ./base */
+
+/*! ./time */
+
+/*! ./label */
+
+/*! ./facet */
+
+/*! ../../util/bbox */
+
+/*! ./interaction/action/mask/multiple/path */
+
+/*! ../../icon/react-icon/IconClose */
+
+/*! @antv/util */
+
+/*! ./adaptor */
+
+/*! ./context */
+
+/*! @antv/util */
+
+/*! ../is.js */
+
+/*! tslib */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! @antv/util */
+
+/*! ./marker */
+
+/*! ./geometry/label/pie */
+
+/*! ../../utils */
+
+/*! @antv/matrix-util */
+
+/*! ../../utils/tooltip */
+
+/*! ../constant */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ./geometry/shape/interval/tick */
+
+/*! ../_util/classNames */
+
+/*! ../util/facet */
+
+/*! ../util/theme */
+
+/*! @antv/util */
+
+/*! ../util/util */
+
+/*! @antv/util */
+
+/*! ./sub-menu */
+
+/*! ./to-string */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ../style-sheet/light */
+
+/*! ../_util/is */
+
+/*! ./util/draw */
+
+/*! ./useNotification */
+
+/*! ../context */
+
+/*! ./geometry/label/interval */
+
+/*! ./dependents */
+
+/*! ./util/hit */
+
+/*! @antv/util */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ../../core/locale */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ../../../utils */
+
+/*! ./number */
+
+/*! ../../core/plot */
+
+/*! ../util/padding */
+
+/*! tslib */
+
+/*! ./util */
+
+/*! tslib */
+
+/*! ./interactions */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! @antv/g2 */
+
+/*! ../../adaptor/common */
+
+/*! ./time-pretty */
+
+/*! ./event/graph-event */
+
+/*! ./scale-transform */
+
+/*! ../engine */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ../../icon/react-icon/IconClose */
+
+/*! ../../core/plot */
+
+/*! ./geometry */
+
+/*! ../../../utils */
+
+/*! ../../util/grid */
+
+/*! ./scrollbar */
+
+/*! ../_util/classNames */
+
+/*! tslib */
+
+/*! ../ConfigProvider */
+
+/*! ../context */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ../util/format */
+
+/*! tslib */
+
+/*! @antv/scale */
+
+/*! ./CSSTransition */
+
+/*! ./abstract/shape */
+
+/*! tslib */
+
+/*! ./square */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! ../../utils */
+
+/*! ../../utils/transform/histogram */
+
+/*! ../_util/is */
+
+/*! @antv/g2 */
+
+/*! @antv/util */
+
+/*! ../constant */
+
+/*! react */
+
+/*! ../../../interactions/drill-down */
+
+/*! ../abstract/group-component */
+
+/*! ../../adaptor/common */
+
+/*! ../../utils */
+
+/*! ../context */
+
+/*! ../shape */
+
+/*! tslib */
+
+/*! ./geometry/shape/violin/hollow */
+
+/*! ./range-state */
+
+/*! ./get */
+
+/*! ../_util/hooks/useUpdate */
+
+/*! ./bezier */
+
+/*! ./log */
+
+/*! ./interaction/action/mask/dim-rect */
+
+/*! ../base */
+
+/*! ./sort-by */
+
+/*! ../util/graphic */
+
+/*! @antv/util */
+
+/*! ./adaptor */
+
+/*! ./form */
+
+/*! tslib */
+
+/*! ../_util/constant */
+
+/*! @antv/util */
+
+/*! ../../../chart */
+
+/*! ../ring-progress/adaptor */
+
+/*! @antv/g2 */
+
+/*! ./base */
+
+/*! ./attributes/shape */
+
+/*! ./interaction/action/data/sibling-filter */
+
+/*! ../pie/adaptor */
+
+/*! ../_class/icon-hover */
+
+/*! ./context */
+
+/*! tslib */
+
+/*! ../util/align */
+
+/*! ../../adaptor/pattern */
+
+/*! ../../util/coordinate */
+
+/*! . */
+
+/*! ../util/dom */
+
+/*! ../_util/is */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! ../util/draw */
+
+/*! ./geometry/label/layout/limit-in-plot */
+
+/*! react-dom */
+
+/*! ./util */
+
+/*! ./group */
+
+/*! tslib */
+
+/*! ../../style/index.less */
+
+/*! ./interactions */
+
+/*! ./base */
+
+/*! ./theme/style-sheet/dark */
+
+/*! @antv/util */
+
+/*! ../_util/hooks/useKeyboardEvent */
+
+/*! ./adjusts/jitter */
+
+/*! ../base */
+
+/*! ./util/render-sider */
+
+/*! ./Filler */
+
+/*! @antv/path-util */
+
+/*! react */
+
+/*! ../_util/is */
+
+/*! ../constant */
+
+/*! @antv/util */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! @antv/util */
+
+/*! ./treemap/resquarify.js */
+
+/*! ../util/dom */
+
+/*! ../../adaptor/pattern */
+
+/*! tslib */
+
+/*! ../../adaptor/common */
+
+/*! ./is-function */
+
+/*! ../../column/adaptor */
+
+/*! ./container */
+
+/*! react */
+
+/*! tslib */
+
+/*! ../_util/is */
+
+/*! ./base */
+
+/*! ./bounce.js */
+
+/*! tslib */
+
+/*! ./annotation */
+
+/*! ./css-const */
+
+/*! react */
+
+/*! ./schema */
+
+/*! ../../utils/hierarchy/treemap */
+
+/*! ./base */
+
+/*! ./control */
+
+/*! ./util/shape-size */
+
+/*! ../../utils */
+
+/*! ../../../util/marker */
+
+/*! ../ConfigProvider */
+
+/*! @antv/util */
+
+/*! @antv/g-math */
+
+/*! @antv/util */
+
+/*! ./utils */
+
+/*! ./base */
+
+/*! ./is-object */
+
+/*! lodash/get */
+
+/*! ../stock/adaptor */
+
+/*! ../animate/timeline */
+
+/*! ../../adaptor/conversion-tag */
+
+/*! ./is-array */
+
+/*! ./constant */
+
+/*! ../_util/classNames */
+
+/*! react */
+
+/*! ./component */
+
+/*! ./data-marker */
+
+/*! ./element */
+
+/*! tslib */
+
+/*! ../base */
+
+/*! ./object.js */
+
+/*! ./context */
+
+/*! ./back.js */
+
+/*! @antv/component */
+
+/*! ./constant */
+
+/*! react */
+
+/*! ../../utils */
+
+/*! ./form-provider */
+
+/*! lodash/set */
+
+/*! ../../core/plot */
+
+/*! ./is.js */
+
+/*! tslib */
+
+/*! ../../constant */
+
+/*! ../../icon/react-icon/IconSearch */
+
+/*! tslib */
+
+/*! ./value.js */
+
+/*! ../../adaptor/common */
+
+/*! ../ConfigProvider */
+
+/*! ../_util/hooks/useForceUpdate */
+
+/*! ../../utils */
+
+/*! @antv/util */
+
+/*! ./core/global */
+
+/*! ../_util/hooks/useMergeValue */
+
+/*! ./Tokenizer.js */
+
+/*! ../context */
+
+/*! ../_class/notification */
+
+/*! ../util/theme */
+
+/*! ./list-state */
+
+/*! @antv/util */
+
+/*! ./treemap/slice.js */
+
+/*! ./utils */
+
+/*! ../funnel/adaptor */
+
+/*! ./memoize */
+
+/*! @antv/path-util */
+
+/*! ./element */
+
+/*! ./base */
+
+/*! ../../component/labels */
+
+/*! tslib */
+
+/*! ../_util/dom */
+
+/*! ../_util/classNames */
+
+/*! ../../base */
+
+/*! react */
+
+/*! ./crosshair */
+
+/*! tslib */
+
+/*! ../util/get-style */
+
+/*! ./interaction/action/view/mousewheel-scroll */
+
+/*! d3-ease */
+
+/*! ../base */
+
+/*! ../../utils */
+
+/*! ../_util/omit */
+
+/*! ../util/util */
+
+/*! ../../constant */
+
+/*! ../../../icon/react-icon/IconLeft */
+
+/*! ./is-nil */
+
+/*! ../util/math */
+
+/*! react */
+
+/*! tslib */
+
+/*! ../util/theme */
+
+/*! ../../adaptor/geometries */
+
+/*! ./geometry/label/layout/hide-overlap */
+
+/*! ./line */
+
+/*! tslib */
+
+/*! ../../utils/padding */
+
+/*! ../ConfigProvider */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ../../constant */
+
+/*! ./is-array-like */
+
+/*! ../../style/index.less */
+
+/*! ./context */
+
+/*! ./line */
+
+/*! ../../utils */
+
+/*! ../context */
+
+/*! ../ConfigProvider */
+
+/*! tslib */
+
+/*! ./common.js */
+
+/*! react */
+
+/*! ./base */
+
+/*! ../_util/fillNBSP */
+
+/*! tslib */
+
+/*! ../theme */
+
+/*! ../util/get-style */
+
+/*! ../util/math */
+
+/*! ./index.less */
+
+/*! ../Trigger */
+
+/*! ../ConfigProvider */
+
+/*! @antv/util */
+
+/*! ../../constant */
+
+/*! @antv/util */
+
+/*! @antv/g-math */
+
+/*! ../util/pretty */
+
+/*! ../_util/is */
+
+/*! ../context */
+
+/*! ./measure-text */
+
+/*! ../_util/hooks/useKeyboardEvent */
+
+/*! ./range-filter */
+
+/*! ./statistic */
+
+/*! ../../../utils/matrix */
+
+/*! tslib */
+
+/*! ../../utils/transform/word-cloud */
+
+/*! ../util/coordinate */
+
+/*! ../base */
+
+/*! ./state */
+
+/*! ../base */
+
+/*! ../util/math */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! react */
+
+/*! ./interaction/action/component/list-unchecked */
+
+/*! ../base */
+
+/*! ../../core/plot */
+
+/*! ./get-arc-params */
+
+/*! ../_util/classNames */
+
+/*! ./util/group-data */
+
+/*! ../../Tag/style */
+
+/*! react */
+
+/*! ../array.js */
+
+/*! ../util/coordinate */
+
+/*! ./Prefixer.js */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ./context */
+
+/*! @antv/util */
+
+/*! react */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ../context */
+
+/*! @emotion/unitless */
+
+/*! ../../core/plot */
+
+/*! tslib */
+
+/*! ./shape/line */
+
+/*! ../../icon/react-icon/IconLoading */
+
+/*! ./constant */
+
+/*! lodash/isEqualWith */
+
+/*! ./rect */
+
+/*! ./line */
+
+/*! ../util/get-style */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ../_class/icon-hover */
+
+/*! ./util */
+
+/*! ../../adaptor/common */
+
+/*! ./select */
+
+/*! ./every */
+
+/*! @antv/util */
+
+/*! ../util/graphics */
+
+/*! tslib */
+
+/*! ../../interactions/actions/drill-down */
+
+/*! ./utils */
+
+/*! ./continuous/time */
+
+/*! @antv/g-base */
+
+/*! ../constant */
+
+/*! shallowequal */
+
+/*! tslib */
+
+/*! ../_util/keycode */
+
+/*! ./line */
+
+/*! @antv/util */
+
+/*! ./adaptor */
+
+/*! ../dependents */
+
+/*! ../../core/plot */
+
+/*! ../../util/graphics */
+
+/*! ../../icon/react-icon/IconLoading */
+
+/*! ./utils */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! tslib */
+
+/*! ../_util/resizeObserver */
+
+/*! ./base */
+
+/*! ./base */
+
+/*! @antv/util */
+
+/*! ../../adaptor/common */
+
+/*! ./base */
+
+/*! @antv/util */
+
+/*! ../area */
+
+/*! react */
+
+/*! ./has-value */
+
+/*! ../../utils */
+
+/*! tslib */
+
+/*! react */
+
+/*! ../../adaptor/geometries */
+
+/*! ./deep-mix */
+
+/*! ./tooltip/css-const */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ./abstract/base */
+
+/*! ../util */
+
+/*! ./offscreen */
+
+/*! ./adaptor */
+
+/*! ../../icon/react-icon/IconLeft */
+
+/*! ../../utils */
+
+/*! ../../util/helper */
+
+/*! ./plots/chord */
+
+/*! tslib */
+
+/*! ../util/theme */
+
+/*! ./is-array */
+
+/*! ../ConfigProvider */
+
+/*! ../area/adaptor */
+
+/*! ../_util/classNames */
+
+/*! ./Utility.js */
+
+/*! ./base */
+
+/*! ./view */
+
+/*! ./base.js */
+
+/*! ../../adaptor/geometries */
+
+/*! ./interactions */
+
+/*! ../../constant */
+
+/*! react */
+
+/*! @antv/util */
+
+/*! ./util/draw */
+
+/*! ../../utils */
+
+/*! ../ConfigProvider */
+
+/*! @antv/util */
+
+/*! ../../utils */
+
+/*! ./index.less */
+
+/*! ../util/get-style */
+
+/*! ../circle */
+
+/*! ./image */
+
+/*! ../pie */
+
+/*! lodash/get */
+
+/*! ./array.js */
+
+/*! ../base */
+
+/*! ./util */
+
+/*! ./geometry/shape/point/solid */
+
+/*! ../util/coordinate */
+
+/*! @antv/g-math */
+
+/*! react */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ../_util/classNames */
+
+/*! ../../core/plot */
+
+/*! @antv/util */
+
+/*! ./base */
+
+/*! ./is */
+
+/*! ./value.js */
+
+/*! tslib */
+
+/*! ../constant.js */
+
+/*! ../../_util/hooks/usePrevious */
+
+/*! ../../geometry/shape/util/path */
+
+/*! ./sensors */
+
+/*! react */
+
+/*! ./constant */
+
+/*! ./base */
+
+/*! ../_util/classNames */
+
+/*! ./adaptor */
+
+/*! ../../../util/coordinate */
+
+/*! ../util/time */
+
+/*! ../constant */
+
+/*! ../_util/pick */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ./util */
+
+/*! ../../../adaptor/geometries */
+
+/*! @antv/util */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! ../../util/helper */
+
+/*! ../../utils/data */
+
+/*! ../ConfigProvider */
+
+/*! ./base */
+
+/*! ./utils */
+
+/*! ./util/dom */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ../../Checkbox/style */
+
+/*! ./is-match */
+
+/*! ./util */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ./is-match */
+
+/*! ../abstract/group-component */
+
+/*! ./index-of */
+
+/*! ./list-state */
+
+/*! @babel/runtime/helpers/esm/inheritsLoose */
+
+/*! ./adjusts/stack */
+
+/*! ./is */
+
+/*! ../ConfigProvider */
+
+/*! react */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ./attributes/base */
+
+/*! ./shape */
+
+/*! ../../utils */
+
+/*! react */
+
+/*! ./util */
+
+/*! ../../constant */
+
+/*! gl-matrix */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ../../utils/color/blend */
+
+/*! ../_util/throttleByRaf */
+
+/*! @antv/util */
+
+/*! ../constant.js */
+
+/*! ../../utils */
+
+/*! ../../_util/is */
+
+/*! ./hooks/useResponsiveState */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ../../adaptor/geometries */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ../_util/warning */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! ../base */
+
+/*! ../_util/omit */
+
+/*! tslib */
+
+/*! ./interaction/action/mask/smooth-path */
+
+/*! @antv/util */
+
+/*! ../_util/hooks/useForceUpdate */
+
+/*! ../../core/plot */
+
+/*! ../_util/is */
+
+/*! ../_util/classNames */
+
+/*! ./index.less */
+
+/*! react */
+
+/*! @antv/event-emitter */
+
+/*! ./group */
+
+/*! ./path-2-segments */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ./values */
+
+/*! @antv/util */
+
+/*! ./clip */
+
+/*! ../../adaptor/common */
+
+/*! ./constant */
+
+/*! ./area */
+
+/*! ./list-state */
+
+/*! ../util/util */
+
+/*! ../../utils */
+
+/*! @antv/util */
+
+/*! react */
+
+/*! ../../core/plot */
+
+/*! @antv/util */
+
+/*! ../util/theme */
+
+/*! ../abstract/group-component */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ../_util/classNames */
+
+/*! ../../_util/resizeObserver */
+
+/*! ./linear.js */
+
+/*! ../../animate */
+
+/*! ./base */
+
+/*! tslib */
+
+/*! ../util/get-style */
+
+/*! ../base */
+
+/*! ./global */
+
+/*! gl-matrix */
+
+/*! ./Utility.js */
+
+/*! ./facet */
+
+/*! ./cubic */
+
+/*! @antv/matrix-util */
+
+/*! ../util/helper */
+
+/*! ../locale/en-US.js */
+
+/*! ./util */
+
+/*! ./context */
+
+/*! tslib */
+
+/*! ../../icon/react-icon/IconCheckCircleFill */
+
+/*! ./rules/boolean.js */
+
+/*! ./plots/radar */
+
+/*! ./number.js */
+
+/*! ./adaptor */
+
+/*! ./r-prettry */
+
+/*! ./rules/array.js */
+
+/*! react */
+
+/*! ../../adaptor/geometries */
+
+/*! ../is */
+
+/*! ../../icon/react-icon/IconEmpty */
+
+/*! ../../adaptor/pattern */
+
+/*! gl-matrix/vec3 */
+
+/*! ./get-style */
+
+/*! ../../adaptor/common */
+
+/*! tslib */
+
+/*! @antv/g2 */
+
+/*! ./pattern */
+
+/*! ../../ConfigProvider */
+
+/*! ../../base */
+
+/*! ../../../constant */
+
+/*! ../../adaptor/connected-area */
+
+/*! ../tiny-line/utils */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ./is-array-like */
+
+/*! ../_class/notice */
+
+/*! ../_util/omit */
+
+/*! ../../utils */
+
+/*! @antv/g2 */
+
+/*! ./line */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ./useForm */
+
+/*! @antv/g2 */
+
+/*! @antv/util */
+
+/*! ../Empty */
+
+/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */
+
+/*! react */
+
+/*! ./element */
+
+/*! ./treemap/index.js */
+
+/*! ./is-array */
+
+/*! ./theme */
+
+/*! @antv/util */
+
+/*! ./hooks/useState */
+
+/*! ../ConfigProvider */
+
+/*! @antv/util */
+
+/*! ../interactions/brush */
+
+/*! ../../util/graphics */
+
+/*! ../types */
+
+/*! @antv/matrix-util */
+
+/*! tslib */
+
+/*! ../Modal/config */
+
+/*! ./facet */
+
+/*! ./common.js */
+
+/*! ./group */
+
+/*! ./base.js */
+
+/*! ./base */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! ./util */
+
+/*! ./is-integer */
+
+/*! ./index */
+
+/*! tslib */
+
+/*! ./max */
+
+/*! ../../utils/tooltip */
+
+/*! tslib */
+
+/*! ../_util/hooks/useIsomorphicLayoutEffect */
+
+/*! ../abstract/group-component */
+
+/*! @antv/util */
+
+/*! ./label */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ../util/get-style */
+
+/*! ../context */
+
+/*! ../gauge/adaptor */
+
+/*! d3-timer */
+
+/*! ../context */
+
+/*! ./adaptor */
+
+/*! @antv/util */
+
+/*! ./is-element */
+
+/*! ../../_util/hooks/useIsFirstRender */
+
+/*! ./engine */
+
+/*! ../../utils */
+
+/*! tslib */
+
+/*! ../ConfigProvider */
+
+/*! @antv/util */
+
+/*! ../../adaptor/geometries */
+
+/*! d3-interpolate */
+
+/*! ../../utils */
+
+/*! @antv/util */
+
+/*! lodash/merge */
+
+/*! @antv/util */
+
+/*! ../util */
+
+/*! ./base */
+
+/*! tslib */
+
+/*! ./constants */
+
+/*! ./inline */
+
+/*! tslib */
+
+/*! ../../icon/react-icon/IconCopy */
+
+/*! tslib */
+
+/*! ../_util/classNames */
+
+/*! @antv/util */
+
+/*! ./line */
+
+/*! ../../utils/transform/chord */
+
+/*! ./dom */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! react-dom */
+
+/*! ./max */
+
+/*! ./html */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ../context */
+
+/*! ./continuous/quantize */
+
+/*! ./slider */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ../../utils */
+
+/*! ../util/in-path/point-in-path */
+
+/*! react */
+
+/*! ./is-type */
+
+/*! tslib */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! @antv/util */
+
+/*! ../../icon/react-icon/IconExclamationCircleFill */
+
+/*! ./continuous/linear */
+
+/*! ../_util/classNames */
+
+/*! @antv/util */
+
+/*! ./time-cat */
+
+/*! tslib */
+
+/*! ../omit */
+
+/*! ./constant */
+
+/*! ./create-by-style-sheet */
+
+/*! react */
+
+/*! tslib */
+
+/*! ./base */
+
+/*! @antv/util */
+
+/*! ../../../util/helper */
+
+/*! ./single-state */
+
+/*! ./actions/active */
+
+/*! tslib */
+
+/*! ../../utils/padding */
+
+/*! ../util */
+
+/*! ../_util/contextHolder */
+
+/*! @antv/util */
+
+/*! ../_util/dom */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ../constant */
+
+/*! ../constant */
+
+/*! ../../constant */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! ../../util/bbox */
+
+/*! ./is-type */
+
+/*! ./shapes/meter-gauge */
+
+/*! ./util */
+
+/*! ./max-by */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ../../util/tooltip */
+
+/*! ./is */
+
+/*! ../../_util/warning */
+
+/*! ../../icon/react-icon/IconLoading */
+
+/*! tslib */
+
+/*! react */
+
+/*! ./is-array */
+
+/*! ./constant */
+
+/*! react */
+
+/*! ./each */
+
+/*! ../_util/classNames */
+
+/*! @antv/util */
+
+/*! ../ConfigProvider */
+
+/*! @antv/util */
+
+/*! ./geometry/label/base */
+
+/*! ../util/path */
+
+/*! @antv/g2 */
+
+/*! ../_util/is */
+
+/*! ./typography */
+
+/*! ./padding */
+
+/*! react */
+
+/*! ./rect */
+
+/*! ./circle */
+
+/*! ../../core/plot */
+
+/*! ./interaction/action/view/scale-zoom */
+
+/*! ../../util/padding */
+
+/*! tslib */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! tslib */
+
+/*! ./path-2-absolute */
+
+/*! ../../dependents */
+
+/*! ../../utils */
+
+/*! @antv/g-base */
+
+/*! tslib */
+
+/*! @antv/matrix-util */
+
+/*! ../../_util/classNames */
+
+/*! react */
+
+/*! ./pretty-number */
+
+/*! ../util */
+
+/*! tslib */
+
+/*! ../../adaptor/common */
+
+/*! ./utils/algorithmUtil */
+
+/*! ../../utils */
+
+/*! @antv/util */
+
+/*! ../_util/classNames */
+
+/*! ./geometry/interval */
+
+/*! ./controller */
+
+/*! ./chart/controller/scrollbar */
+
+/*! ../Trigger */
+
+/*! ../../utils */
+
+/*! ./base */
+
+/*! @antv/dom-util */
+
+/*! @antv/g2 */
+
+/*! ./path-2-absolute */
+
+/*! ../../../../util/transform */
+
+/*! ./measure-text-width */
+
+/*! ./slice.js */
+
+/*! ./base */
+
+/*! ../_util/classNames */
+
+/*! ./adaptor */
+
+/*! ../../utils */
+
+/*! @antv/util */
+
+/*! ../../utils/padding */
+
+/*! ./polygon */
+
+/*! ./slice.js */
+
+/*! react */
+
+/*! ./grid */
+
+/*! ../../utils */
+
+/*! tslib */
+
+/*! ./utils */
+
+/*! ./list-state */
+
+/*! react */
+
+/*! ./geometries/facet */
+
+/*! @antv/util */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! ./coord/polar */
+
+/*! react */
+
+/*! ./adaptor */
+
+/*! @antv/util */
+
+/*! ./callback */
+
+/*! ../../core/plot */
+
+/*! ./is-function */
+
+/*! @antv/util */
+
+/*! . */
+
+/*! @antv/util */
+
+/*! ../progress/adaptor */
+
+/*! react */
+
+/*! ./is-nil */
+
+/*! @antv/util */
+
+/*! ../tiny-line/utils */
+
+/*! tslib */
+
+/*! ./shapes/word-cloud */
+
+/*! ./interactions */
+
+/*! @antv/color-util */
+
+/*! ./date.js */
+
+/*! ../../../util/marker */
+
+/*! ../../utils/transform/percent */
+
+/*! ../../Tooltip/style */
+
+/*! lodash/get */
+
+/*! ./is-array-like */
+
+/*! tslib */
+
+/*! ../_util/hooks/useMergeValue */
+
+/*! ../_util/is */
+
+/*! ./base */
+
+/*! ./css-const */
+
+/*! ./util/option */
+
+/*! ../ConfigProvider */
+
+/*! ../_util/classNames */
+
+/*! ../constant */
+
+/*! ../_util/is */
+
+/*! ../../core/plot */
+
+/*! ./constant */
+
+/*! ../_util/omit */
+
+/*! ./geometry/shape/interval/line */
+
+/*! ../utils */
+
+/*! ./is-nil */
+
+/*! @antv/util */
+
+/*! ./math.js */
+
+/*! ./actions/reset-button */
+
+/*! ./utils/reflow */
+
+/*! @antv/g2 */
+
+/*! react */
+
+/*! ./constants */
+
+/*! ../../utils */
+
+/*! @antv/util */
+
+/*! ./state-base */
+
+/*! ../Spin */
+
+/*! ./is-array-like */
+
+/*! ../../icon/react-icon/IconEyeInvisible */
+
+/*! ../../constant */
+
+/*! ./funnel-conversion-tag */
+
+/*! ./base */
+
+/*! ./utils */
+
+/*! @antv/util */
+
+/*! ../_util/classNames */
+
+/*! @antv/util */
+
+/*! ../_util/classNames */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ./get-range */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ../tiny-line/adaptor */
+
+/*! ./core/locale */
+
+/*! ./pick */
+
+/*! ./util */
+
+/*! ./adaptor */
+
+/*! ./animate/register */
+
+/*! ./context */
+
+/*! ./utils */
+
+/*! ./is-function */
+
+/*! ./button */
+
+/*! ./util/matrix */
+
+/*! ../../utils */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! ../_util/classNames */
+
+/*! ./symbols */
+
+/*! ../../utils */
+
+/*! ./basis.js */
+
+/*! ./auto-ellipsis */
+
+/*! ./mod */
+
+/*! ../../icon/react-icon/context */
+
+/*! ./base */
+
+/*! ./utils */
+
+/*! ./constant */
+
+/*! ../constant */
+
+/*! ./rules/type.js */
+
+/*! ./resize-trigger */
+
+/*! ./split-group */
+
+/*! react */
+
+/*! ../../../util/collision-detect */
+
+/*! ./action/util */
+
+/*! tslib */
+
+/*! ./value.js */
+
+/*! tslib */
+
+/*! ../../icon/react-icon/IconCloseCircleFill */
+
+/*! ./plots/tiny-column */
+
+/*! ./interaction/action/mask/multiple/dim-rect */
+
+/*! ../../../interactions/drag-move */
+
+/*! ../interaction */
+
+/*! ./chart/controller/legend */
+
+/*! ./quad.js */
+
+/*! lodash/isEqualWith */
+
+/*! ./overlap */
+
+/*! @antv/util */
+
+/*! ../ConfigProvider */
+
+/*! ./arc-params */
+
+/*! ../../style/index.less */
+
+/*! ../util */
+
+/*! ../_util/hooks/useIsomorphicLayoutEffect */
+
+/*! ../util */
+
+/*! ./constant.js */
+
+/*! tslib */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! ./utils */
+
+/*! ./base */
+
+/*! ./path */
+
+/*! ./context */
+
+/*! ./store */
+
+/*!
+    localForage -- Offline Storage, Improved
+    Version 1.10.0
+    https://localforage.github.io/localForage
+    (c) 2013-2017 Mozilla, Apache License 2.0
+*/
+
+/*! ../Input */
+
+/*! ./interactions */
+
+/*! react */
+
+/*! ../../utils */
+
+/*! ./last */
+
+/*! ../../core/plot */
+
+/*! ../constant */
+
+/*! ./get-style */
+
+/*! @antv/matrix-util */
+
+/*! ./group */
+
+/*! ./sankey */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ./adaptor */
+
+/*! react */
+
+/*! @antv/util */
+
+/*! ../../adaptor/common */
+
+/*! @antv/util */
+
+/*! ../util/interval */
+
+/*! ./dice.js */
+
+/*! ./util/parse-fields */
+
+/*! ./constant */
+
+/*! @antv/util */
+
+/*! ./utils */
+
+/*! ../ConfigProvider */
+
+/*! ./defs */
+
+/*! ./abstract/html-component */
+
+/*! ../../animate */
+
+/*! tslib */
+
+/*! ./Utility.js */
+
+/*! @antv/util */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! react */
+
+/*! ./circleintersection */
+
+/*! ./Tokenizer.js */
+
+/*! ../context */
+
+/*! ../../core/plot */
+
+/*! react */
+
+/*! ../context */
+
+/*! react */
+
+/*! ../base */
+
+/*! ./base */
+
+/*! ./facet/list */
+
+/*! ./filter */
+
+/*! ./adaptor */
+
+/*! ./contains */
+
+/*! ../../util/scale */
+
+/*! ./pick */
+
+/*! ../base */
+
+/*! lodash/debounce */
+
+/*! ./continuous/quantile */
+
+/*! ./facet/matrix */
+
+/*! ./is-plain-object */
+
+/*! @emotion/is-prop-valid */
+
+/*! ../../core/plot */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ./circle */
+
+/*! ./facet/mirror */
+
+/*! ../../../util/padding */
+
+/*! ./is-array-like */
+
+/*! ./constants */
+
+/*! ../context */
+
+/*! ../utils */
+
+/*! ./is-number */
+
+/*! react */
+
+/*! tslib */
+
+/*! ./helper */
+
+/*! tslib */
+
+/*! ../Tooltip */
+
+/*! @antv/g-math */
+
+/*! ./adaptor */
+
+/*! ./to-string */
+
+/*! ./base */
+
+/*! ./interaction/action/component/tooltip/geometry */
+
+/*! ./useComposition */
+
+/*! ../../utils */
+
+/*! ../constant */
+
+/*! ../../util/coordinate */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ../_util/is */
+
+/*! ../../util/axis */
+
+/*! ./plots/box */
+
+/*! ../_util/classNames */
+
+/*! tslib */
+
+/*! ./get-style */
+
+/*! @antv/matrix-util */
+
+/*! ./controller */
+
+/*! ./adaptor */
+
+/*! ./is-function */
+
+/*! ./polygon */
+
+/*! ./geometry/shape/schema/box */
+
+/*! ./theme/util/create-by-style-sheet */
+
+/*! ./interaction/action/view/drag */
+
+/*! ./plots/bullet */
+
+/*! ../geometries/compare */
+
+/*! ./line */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! resize-observer-polyfill */
+
+/*! tslib */
+
+/*! ../../adaptor/geometries */
+
+/*! ./context */
+
+/*! ../util/get-path-points */
+
+/*! ./search */
+
+/*! ./util/path */
+
+/*! @antv/g-canvas */
+
+/*! ../locale/default */
+
+/*! @antv/component */
+
+/*! tslib */
+
+/*! ../geometries/common */
+
+/*! ./utils */
+
+/*! ./shapes/indicator */
+
+/*! tslib */
+
+/*! react */
+
+/*! ./util/event */
+
+/*! ./point */
+
+/*! ./util/legend */
+
+/*! react */
+
+/*! tslib */
+
+/*! ../constant */
+
+/*! @antv/g-base */
+
+/*! tslib */
+
+/*! @antv/g2 */
+
+/*! ./base */
+
+/*! ./radar-tooltip-action */
+
+/*! ./squarify.js */
+
+/*! @antv/util */
+
+/*! ../util/matrix */
+
+/*! ./each */
+
+/*! ../../adaptor/common */
+
+/*! ./is-nil */
+
+/*! ./coord/base */
+
+/*! ./is-array */
+
+/*! tslib */
+
+/*! ./matrix */
+
+/*! ../accessors.js */
+
+/*! ../util/in-stroke/line */
+
+/*! ./exp.js */
+
+/*! react */
+
+/*! ./warning */
+
+/*! ../util/get-path-points */
+
+/*! ./plots/histogram */
+
+/*! ../animate */
+
+/*! ../base */
+
+/*! ./geometry/line */
+
+/*! react */
+
+/*! @antv/util */
+
+/*! @antv/matrix-util */
+
+/*! ../util/in-stroke/polyline */
+
+/*! ./base */
+
+/*! ../../util/coordinate */
+
+/*! ./src/Prefixer.js */
+
+/*! ../_util/classNames */
+
+/*! ../util */
+
+/*! ../../icon/react-icon/IconCheckCircleFill */
+
+/*! ./to-string */
+
+/*! @antv/util */
+
+/*! ../_util/omit */
+
+/*! @antv/util */
+
+/*! ./is-type */
+
+/*! ../../util/util */
+
+/*! tslib */
+
+/*! ./siblings.js */
+
+/*! ../../adaptor/geometries */
+
+/*! ../../constant */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! ./constant */
+
+/*! ./data */
+
+/*! ../../adaptor/common */
+
+/*! ../_util/is */
+
+/*! ../ConfigProvider */
+
+/*! ./is-array */
+
+/*! ../scatter */
+
+/*! ../accessors.js */
+
+/*! ./base */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ./src/Enum.js */
+
+/*! tslib */
+
+/*! ../util/get-style */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ../../Tooltip/style */
+
+/*! ./is-array */
+
+/*! react */
+
+/*! ../../icon/react-icon/IconLoading */
+
+/*! ../../utils/transform/percent */
+
+/*! ./TransitionGroupContext */
+
+/*! ../_util/is */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! ./index.less */
+
+/*! ../Trigger */
+
+/*! ../util */
+
+/*! ../_util/is */
+
+/*! ./cache */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ./input */
+
+/*! ../../adaptor/geometries */
+
+/*! ./animation */
+
+/*! @antv/g-base */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! tslib */
+
+/*! ../line/adaptor */
+
+/*! ./factory */
+
+/*! ../../utils */
+
+/*! ./path-intersection */
+
+/*! .. */
+
+/*! ./cat */
+
+/*! ./group */
+
+/*! ../Layout */
+
+/*! ./circleintersection */
+
+/*! ../_util/mergeProps */
+
+/*! ./util */
+
+/*! ./index.less */
+
+/*! ../base */
+
+/*! ./text */
+
+/*! ../util/dom */
+
+/*! ./path-2-absolute */
+
+/*! ./shapes/liquid */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ../util/text */
+
+/*! ./geometry/label/layout/pie/distribute */
+
+/*! ./util/draw */
+
+/*! ../util/path */
+
+/*! ../Message */
+
+/*! @antv/g2 */
+
+/*! ../constant */
+
+/*! ../../adaptor/geometries */
+
+/*! tslib */
+
+/*! ../path */
+
+/*! tslib */
+
+/*! ./constant */
+
+/*! @antv/util */
+
+/*! ./plots/progress */
+
+/*! @antv/matrix-util */
+
+/*! react */
+
+/*! ./context */
+
+/*! ./constant */
+
+/*! ./adaptor/geometries */
+
+/*! ../Notification */
+
+/*! ../Button */
+
+/*! ../_util/fillNBSP */
+
+/*! ./locales/en_US */
+
+/*! ./geometry/label */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ../util */
+
+/*! ../tiny-line */
+
+/*! ./slider */
+
+/*! ./single-state */
+
+/*! ../constant */
+
+/*! ./state */
+
+/*! ./facet */
+
+/*! d3-hierarchy */
+
+/*! ./path */
+
+/*! ./leaves.js */
+
+/*! @antv/util */
+
+/*! ../../utils */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! ./util/diff */
+
+/*! @antv/util */
+
+/*! ./base */
+
+/*! ./chart */
+
+/*! ../../utils */
+
+/*! ../../constant */
+
+/*! tslib */
+
+/*! ../dependents */
+
+/*! ./raf */
+
+/*! @antv/util */
+
+/*! ./interaction/action/element/single-selected */
+
+/*! ../abstract/group-component */
+
+/*! ../_util/classNames */
+
+/*! ./text */
+
+/*! ./constant */
+
+/*! tslib */
+
+/*! ./create-theme */
+
+/*! ./upper-first */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ./util */
+
+/*! ../util/graphic */
+
+/*! ../util */
+
+/*! ../constant */
+
+/*! ./util */
+
+/*! tslib */
+
+/*! ../../adaptor/common */
+
+/*! ./hooks/useWatch */
+
+/*! ./count.js */
+
+/*! @antv/util */
+
+/*! ../_util/is */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ../_util/resizeObserver */
+
+/*! ../../style/index.less */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ../../dependents */
+
+/*! ./map */
+
+/*! ./clone */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ./cat */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ./constant */
+
+/*! ./base */
+
+/*! @antv/g2 */
+
+/*! ./interaction/action/mask/rect */
+
+/*! tslib */
+
+/*! ./base */
+
+/*! @antv/util */
+
+/*! ./Utility.js */
+
+/*! ./base */
+
+/*! ./throttle */
+
+/*! tslib */
+
+/*! react */
+
+/*! ../../core/plot */
+
+/*! @antv/util */
+
+/*! ../tiny-line/utils */
+
+/*! react */
+
+/*! ./shapes/circle */
+
+/*! ../abstract/group-component */
+
+/*! ./geometry/label/polar */
+
+/*! ./polygon */
+
+/*! @antv/g2 */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ./edit-content */
+
+/*! ./is-boolean */
+
+/*! tslib */
+
+/*! ./constant */
+
+/*! ../../style/index.less */
+
+/*! ../_util/classNames */
+
+/*! ../constant */
+
+/*! @antv/util */
+
+/*! ../abstract/group-component */
+
+/*! ../util */
+
+/*! ./Serializer.js */
+
+/*! ./utils */
+
+/*! ../tiny-line/constants */
+
+/*! ./input-tag */
+
+/*! ./adjust */
+
+/*! ../mix/utils */
+
+/*! tslib */
+
+/*! ./constant */
+
+/*! ../../adaptor/geometries */
+
+/*! @antv/util */
+
+/*! ./geometry/label/layout/interval/adjust-position */
+
+/*! ../constant */
+
+/*! tslib */
+
+/*! ./text */
+
+/*! ../_util/classNames */
+
+/*! ./base */
+
+/*! ./state-base */
+
+/*! tslib */
+
+/*! ../_util/classNames */
+
+/*! react */
+
+/*! ../../style/index.less */
+
+/*! ../util/util */
+
+/*! ../../utils */
+
+/*! ../../adaptor/brush */
+
+/*! @antv/component */
+
+/*! tslib */
+
+/*! ./useEllipsis */
+
+/*! ../util/util */
+
+/*! ./interaction/action/util */
+
+/*! @antv/g2 */
+
+/*! ../number */
+
+/*! ../_util/responsiveObserve */
+
+/*! ../_util/hooks/useIsFirstRender */
+
+/*! ../constant */
+
+/*! ../ResizeBox */
+
+/*! ./factory */
+
+/*! tslib */
+
+/*! ../util/util */
+
+/*! @antv/util */
+
+/*! ../Input/input-element */
+
+/*! @antv/util */
+
+/*! ../../../chart */
+
+/*! ./row */
+
+/*! @antv/g-base */
+
+/*! ../../core/plot */
+
+/*! tslib */
+
+/*! ./utils */
+
+/*! @antv/util */
+
+/*! ./label */
+
+/*! ./ellipse */
+
+/*! ./circle */
+
+/*! tslib */
+
+/*! ../../_util/hooks/useStateWithPromise */
+
+/*! @antv/util */
+
+/*! ./interaction/action/mask/multiple/rect */
+
+/*! ../_util/contextHolder */
+
+/*! ./helper */
+
+/*! @antv/util */
+
+/*! ./geometry/shape/area/line */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ../_util/mergedToString */
+
+/*! ./util/shape-size */
+
+/*! ./interaction/action/component/list-focus */
+
+/*! ../../icon/react-icon/IconLoading */
+
+/*! react */
+
+/*! ./sankey */
+
+/*! ../util/in-path/point-in-path */
+
+/*! ./range-state */
+
+/*! ../../core/plot */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! ./base */
+
+/*! ../../constant */
+
+/*! ./index.less */
+
+/*! @antv/util */
+
+/*! ./geometry/shape/interval/pyramid */
+
+/*! ../../_util/is */
+
+/*! ../../utils/transform/percent */
+
+/*! ./constant */
+
+/*! ../_util/getHighlightText */
+
+/*! ../util/dom */
+
+/*! ../../_util/warning */
+
+/*! tslib */
+
+/*! ./adaptor */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! ./base */
+
+/*! tslib */
+
+/*! ./base */
+
+/*! ../../icon/react-icon/IconDown */
+
+/*! react-transition-group */
+
+/*! ../util/get-style */
+
+/*! ./html-theme */
+
+/*! ../../ConfigProvider */
+
+/*! ../constant */
+
+/*! ../../../interactions/drag-move */
+
+/*! @antv/util */
+
+/*! @antv/matrix-util */
+
+/*! ./constant */
+
+/*! ../is.js */
+
+/*! @antv/color-util */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ./geometry/violin */
+
+/*! tslib */
+
+/*! ../context */
+
+/*! ./is-function */
+
+/*! ../../utils */
+
+/*! ./geometry/polygon */
+
+/*! tslib */
+
+/*! ./get-ellipsis-text */
+
+/*! ./shape/interval */
+
+/*! ../array.js */
+
+/*! dom-helpers/addClass */
+
+/*! ../util/dom */
+
+/*! ../base */
+
+/*! ./util/svg */
+
+/*! ../animate */
+
+/*! @antv/util */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! tslib */
+
+/*! lodash/omit */
+
+/*! ./is-null */
+
+/*! ../../core/plot */
+
+/*! ./grid-item */
+
+/*! tslib */
+
+/*! @antv/g2 */
+
+/*! @babel/runtime/helpers/esm/extends */
+
+/*! ../../icon/react-icon/IconLoading */
+
+/*! ./attributes/opacity */
+
+/*! ./util/legend */
+
+/*! ./is-array */
+
+/*! ../../adaptor/common */
+
+/*! @babel/runtime/helpers/esm/inheritsLoose */
+
+/*! ../../core/plot */
+
+/*! tslib */
+
+/*! ../../utils/tooltip */
+
+/*! ./is-string */
+
+/*! ../util/scale */
+
+/*! ../util/get-style */
+
+/*! react */
+
+/*! ./dom */
+
+/*! ../debounce */
+
+/*! ../../Grid/style */
+
+/*! ../../../util/marker */
+
+/*! ./array.js */
+
+/*! ./list-state */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ./size */
+
+/*! ./circle */
+
+/*! tslib */
+
+/*! ./constant */
+
+/*! tslib */
+
+/*! ./geometry/shape/violin/smooth */
+
+/*! ../../icon/react-icon/IconEdit */
+
+/*! ../util/facet */
+
+/*! ./quadratic */
+
+/*! ./keys */
+
+/*! ../util/util */
+
+/*! ./interaction/action/mask/multiple/smooth-path */
+
+/*! lodash/has */
+
+/*! react */
+
+/*! ../../adaptor/geometries */
+
+/*! ./base */
+
+/*! ./base */
+
+/*! ../context */
+
+/*! ../_util/is */
+
+/*! @antv/coord */
+
+/*! ./image */
+
+/*! ../../core/plot */
+
+/*! ../_util/classNames */
+
+/*! ./is-array */
+
+/*! lodash/set */
+
+/*! ./is-function */
+
+/*! ./base */
+
+/*! ../event */
+
+/*! ./component */
+
+/*! ../../core/plot */
+
+/*! ./adaptor */
+
+/*! ./pack/siblings.js */
+
+/*! ../../adaptor/common */
+
+/*! ../base */
+
+/*! ./is-object */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ../util/time */
+
+/*! ../../utils/transform/histogram */
+
+/*! ./scale */
+
+/*! ../util/util */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! ../_util/pick */
+
+/*! ./segments */
+
+/*! ../_util/pick */
+
+/*! @antv/util */
+
+/*! ../../util/tooltip */
+
+/*! react */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! ../util */
+
+/*! ./utils */
+
+/*! ./treemap/sliceDice.js */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! ../util */
+
+/*! ../_util/classNames */
+
+/*! ../_util/is */
+
+/*! ./adjusts/adjust */
+
+/*! @antv/util */
+
+/*! ./adaptor */
+
+/*! ./interaction */
+
+/*! ../context */
+
+/*! ./locales/zh_CN */
+
+/*! ./is-array-like */
+
+/*! @antv/color-util */
+
+/*! ../facet */
+
+/*! ../../icon/react-icon/IconMore */
+
+/*! ./canvas */
+
+/*! ./get-outer-width */
+
+/*! ../tiny-line/utils */
+
+/*! ./is-string */
+
+/*! ../../utils */
+
+/*! ../context */
+
+/*! ../Button */
+
+/*! ./create-dom */
+
+/*! ../_util/is */
+
+/*! ../context */
+
+/*! tslib */
+
+/*! ./hasClass */
+
+/*! @antv/util */
+
+/*! ./is-prototype */
+
+/*! lodash/has */
+
+/*! ../_class/Draggable */
+
+/*! ../../utils */
+
+/*! tslib */
+
+/*! ./shape/area */
+
+/*! ./invariant */
+
+/*! react */
+
+/*! ../../adaptor/common */
+
+/*! ./plots/mix */
+
+/*! ./treemap/dice.js */
+
+/*! ../util/matrix */
+
+/*! ../../style/index.less */
+
+/*! tslib */
+
+/*! ../Tooltip */
+
+/*! ./base */
+
+/*! ./plots/tiny-area */
+
+/*! ../InputTag */
+
+/*! ../ConfigProvider */
+
+/*! ../../utils/tooltip */
+
+/*! ../../constant */
+
+/*! ./constant */
+
+/*! ./register */
+
+/*! ./treemap/round.js */
+
+/*! ../util/strict-limit */
+
+/*! ./base */
+
+/*! ./list-state */
+
+/*! ../_util/fillNBSP */
+
+/*! tslib */
+
+/*! ./numberArray.js */
+
+/*! ../util/d3-linear */
+
+/*! lodash/get */
+
+/*! ../../Tooltip/style */
+
+/*! ./auto-rotate */
+
+/*! ./constant.js */
+
+/*! ./to-radian */
+
+/*! @antv/util */
+
+/*! @antv/g2 */
+
+/*! ./geometry/shape/util/get-path-points */
+
+/*! tslib */
+
+/*! ../../style/index.less */
+
+/*! ../../adaptor/common */
+
+/*! ./index.less */
+
+/*! tslib */
+
+/*! ../_util/hooks/useId */
+
+/*! ../shape/constant */
+
+/*! ./sensorPool */
+
+/*! @antv/util */
+
+/*! ../dom */
+
+/*! ./object */
+
+/*! ./chart/controller/axis */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! ../_util/getHotkeyHandler */
+
+/*! ./filter */
+
+/*! @antv/util */
+
+/*! ../_util/classNames */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ./rect */
+
+/*! ./hooks/useResponsiveState */
+
+/*! ./Utility.js */
+
+/*! ./util/is-model-change */
+
+/*! @antv/util */
+
+/*! ./each.js */
+
+/*! ./quantize */
+
+/*! react */
+
+/*! ./util */
+
+/*! ../_util/hooks/useMergeValue */
+
+/*! react */
+
+/*! ../util/split-points */
+
+/*! @antv/util */
+
+/*! ./util */
+
+/*! ./shapes/square */
+
+/*! ../../utils/hierarchy/util */
+
+/*! ./graph-event */
+
+/*! ./for-in */
+
+/*! ./get-line-intersect */
+
+/*! ../base */
+
+/*! @antv/util */
+
+/*! ./utils */
+
+/*! ../../utils */
+
+/*! ../../core/plot */
+
+/*! tslib */
+
+/*! ./rect */
+
+/*! ./eachAfter.js */
+
+/*! ../../core/plot */
+
+/*! ./util */
+
+/*! tslib */
+
+/*! ./resize-trigger */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ./constant */
+
+/*! react */
+
+/*! ./base */
+
+/*! ../util/util */
+
+/*! ./adaptor */
+
+/*! ./base */
+
+/*! ./template */
+
+/*! ./utils/ChildMapping */
+
+/*! @antv/util */
+
+/*! ../utils/pattern */
+
+/*! ../_util/omit */
+
+/*! ./register */
+
+/*! ../../../util/marker */
+
+/*! ./plots/area */
+
+/*! ../constant */
+
+/*! ./category/base */
+
+/*! ../_util/getHotkeyHandler */
+
+/*! ../_util/classNames */
+
+/*! ../index */
+
+/*! ./is-date */
+
+/*! react */
+
+/*! ./src/Middleware.js */
+
+/*! ./constants */
+
+/*! ./src/Parser.js */
+
+/*! ./actions/selected */
+
+/*! ../constant */
+
+/*! ./adaptor */
+
+/*! ./continuous/log */
+
+/*! ./is.js */
+
+/*! @antv/util */
+
+/*! ../line */
+
+/*! @antv/util */
+
+/*! ./is-array-like */
+
+/*! @antv/util */
+
+/*! ./category/time */
+
+/*! ../util/transform */
+
+/*! tslib */
+
+/*! ./plots/circle-packing */
+
+/*! ./constant */
+
+/*! ./utils */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ./adaptor */
+
+/*! ../../icon/react-icon/IconMenuFold */
+
+/*! ./geometry/label/layout/overlap */
+
+/*! ./option */
+
+/*! ../../utils */
+
+/*! ../../utils */
+
+/*! ../animate */
+
+/*! ../../base */
+
+/*! ../util */
+
+/*! ../util/arrow */
+
+/*! ../../adaptor/pattern */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ../constant */
+
+/*! tslib */
+
+/*! ./plots/column */
+
+/*! tslib */
+
+/*! ./interaction/action/element/selected */
+
+/*! ./util/attr */
+
+/*! ./facet/tree */
+
+/*! ../constant */
+
+/*! ../../adaptor/geometries */
+
+/*! ../util/label */
+
+/*! react */
+
+/*! tslib */
+
+/*! ./constants */
+
+/*! ./TransitionGroup */
+
+/*! ../indent */
+
+/*! ../util/draw */
+
+/*! ./pick */
+
+/*! ./find */
+
+/*! ./interaction/action/component/axis/axis-description */
+
+/*! ../group */
+
+/*! ../ConfigProvider */
+
+/*! @antv/matrix-util */
+
+/*! ../_util/omit */
+
+/*! ./interactions */
+
+/*! @antv/g-math */
+
+/*! tslib */
+
+/*! @antv/util */
+
+/*! @antv/g-math */
+
+/*! ../../../adaptor/geometries/base */
+
+/*! @antv/util */
+
+/*! ../_util/omit */
+
+/*! react */
+
+/*! fecha */
+
+/*! ./util/graphics */
+
+/*! ../geometries/basic */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ../context */
+
+/*! ../../_util/hooks/useIsomorphicLayoutEffect */
+
+/*! ./polar */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ../column/adaptor */
+
+/*! @antv/util */
+
+/*! ../../core/plot */
+
+/*! ./sum.js */
+
+/*! @antv/g2 */
+
+/*! ../util */
+
+/*! tslib */
+
+/*! ../../util/label */
+
+/*! ./is-array */
+
+/*! @antv/util */
+
+/*! react */
+
+/*! ../../adaptor/common */
+
+/*! tslib */
+
+/*! ../../../utils/tooltip */
+
+/*! @antv/util */
+
+/*! ../../_util/omit */
+
+/*! tslib */
+
+/*! ./geometry/label/layout/pie/outer */
+
+/*! ../context */
+
+/*! ../keycode */
+
+/*! ./geometry/heatmap */
+
+/*! ../../../util/bbox */
+
+/*! ./attributes/size */
+
+/*! ./line */
+
+/*! ./coord/helix */
+
+/*! ../ConfigProvider */
+
+/*! ../_util/is */
+
+/*! @antv/util */
+
+/*! ../_util/omit */
+
+/*! ./attributes/position */
+
+/*! ./geometry/path */
+
+/*! ./event */
+
+/*! ./factory */
+
+/*! ../_util/hooks/useMergeValue */
+
+/*! ./util/sync-view-padding */
+
+/*! ./adaptor */
+
+/*! ../util/matrix */
+
+/*! react */
+
+/*! ./base */
+
+/*! ../_util/hooks/useMergeValue */
+
+/*! ../utils */
+
+/*! ./continuous */
+
+/*! ../abstract/group-component */
+
+/*! ./form-item */
+
+/*! ../_util/resizeObserver */
+
+/*! ./measure-text-width */
+
+/*! ../../icon/react-icon/IconClose */
+
+/*! ../util/theme */
+
+/*! ../../style/index.less */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ../../Trigger/style */
+
+/*! ../../utils */
+
+/*! ./constant */
+
+/*! tslib */
+
+/*! ./base */
+
+/*! ../ring-progress */
+
+/*! ../util */
+
+/*! ./is */
+
+/*! ../bar/adaptor */
+
+/*! ../progress */
+
+/*! ./attributes/color */
+
+/*! ./constant */
+
+/*! ../_util/hooks/useMergeProps */
+
+/*! ../util/dom */
+
+/*! ./pow */
+
+/*! ./constant */
+
+/*! tslib */
+
+/*! tslib */
+
+/*! ../event/event-contoller */
+
+/*! ./layout */
+
+/*! ./base */
+
+/*! ../util/get-path-points */
+
+/*! tslib */
+
+/*! react */
+
+/*! ../_util/omit */
+
+/*! ../../../utils */
+
+/*! ./scale */
+
+/*! ../_util/omit */
+
+/*! ./constant */
+
+/*! ./interaction/action/component/tooltip/ellipsis-text */
+
+/*! ./plots/mix */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! ../../utils */
+
+/*! ./core */
+
+/*! ../_util/is */
+
+/*! @babel/runtime/helpers/esm/assertThisInitialized */
+
+/*! ./zh-CN */
+
+/*! ./util */
+
+/*! ./interface */
+
+/*! tslib */
+
+/*! ../is.js */
+
+/*! ../util/state */
+
+/*! ../../core/plot */
+
+/*! ./is-empty */
+
+/*! ./adaptor/common */
+
+/*! ./layout */
+
+/*! ./utils */
+
+/*! ./base */
+
+/*! tslib */
+
+/*! ./each */
+
+/*! ./geometry/label/layout/interval/hide-overlap */
+
+/*! @antv/util */
+
+/*! ./geometries/compare */
+
+/*! ./util/util */
+
+/*! ../../utils/hierarchy/util */
+
+/*! @antv/g2 */
+
+/*! ../column */
+
+/*! ./is-function */
+
+/*! ../../adaptor/geometries/base */
+
+/*! tslib */
+
+/*! ../util/util */
+
+/*! ../_util/hooks/useKeyboardEvent */
+
+/*! @antv/util */
+
+/*! @antv/util */
+
+/*! ./interaction/action/element/sibling-filter */
+
+/*! ./src/Tokenizer.js */
+
+/*! ../../utils */
+
+/*! @antv/util */
+
+/*! react-dom */
+
+/*! dayjs */
+
+/*! ../util/matrix */
+
+/*! ./animate/animation/position-update */
+
+/*! tslib */
+
+/*! ./helper */
+
+/*! ./context */
+
+/*! ../tiny-column */
+
+/*! ./rules/string.js */
+
+/*! ../ConfigProvider */
+
+/*! @antv/util */
+
+/*! ./get-type */
+
+/*! ./basisClosed.js */
+
+/*! ./geometry/shape/point/hollow */
+
+/*! tslib */
+
+/*! ./stratify.js */
+
+/*! ../../utils/tooltip */
+
+/*! react */
+
+/*! ./common.js */
+
+/*! ./canvas */
+
+/*! ./adaptor */
+
+/*! ./image */
+
+/*! ./geometry/label/layout/path/adjust-position */
+
+/*! ./clear-animation-frame */
+
+/*! ../util */
+
+/*! tslib */
+
+/*! ./base */
+
+/*! ../util/util */
+
+/*! ../util/theme */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! react */
+
+/*! ../../adaptor/geometries/polygon */
+
+/*! ./substitute */
+
+/*! ./string.js */
+
+/*! ../_util/mergedToString */
+
+/*! tslib */
+
+/*! ../../adaptor/geometries/base */
+
+/*! ./constant */
+
+/*! ../../interactions/actions/drill-down */
+
+/*! ./numberArray.js */
+
+/*! ./util */
+
+/*! ../../core/plot */
+
+/*! ../constant */
+
+/*! react-dom */
+
+/*! tslib */
+
+/*! ../util */
+
+/*! @antv/util */
+
+/*! ../../util/graphics */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! ./util */
+
+/*! ./is-nil */
+
+/*! ./fixed-base */
+
+/*! ./core/plot */
+
+/*! ../../core/plot */
+
+/*! tslib */
+
+/*! ../tiny-area/adaptor */
+
+/*! @antv/util */
+
+/*! tslib */
+
+/*! ../util/draw */
+
+/*! @antv/util */
+
+/*! ./is-array-like */
+
+/*! ./is-type */
+
+/*! ../../style/index.less */
+
+/*! ../util/dom */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ./utils */
+
+/*! tslib */
+
+/*! ./plots/venn */
+
+/*! @antv/g-base */
+
+/*! ../util/util */
+
+/*! ../../util */
+
+/*! @antv/util */
+
+/*! ./is-string */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! ./iterator.js */
+
+/*! ../../icon/react-icon/IconDragDot */
+
+/*! ./single-state */
+
+/*! ./is-object */
+
+/*! tslib */
+
+/*! ../../icon/react-icon/IconCaretUp */
+
+/*! ./is-undefined */
+
+/*! ./base */
+
+/*! ./utils */
+
+/*! @antv/component */
+
+/*! ./marker-active */
+
+/*! @antv/util */
+
+/*! ./cubic.js */
+
+/*! tslib */
+
+/*! ./plots/violin */
+
+/*! ../../adaptor/common */
+
+/*! ../../icon/react-icon/IconClose */
+
+/*! @antv/util */
+
+/*! ../../../util/transform */
+
+/*! @antv/util */
+
+/*! ./adaptor */
+
+/*! ../../util/label */
+
+/*! scroll-into-view-if-needed */
+
+/*! tslib */
+
+/*! ../smooth-path */
+
+/*! ./useComposition */
+
+/*! ../../util/coordinate */
+
+/*! ../../icon/react-icon/IconClose */
+
+/*! ../../utils */
+
+/*! ./dot */
+
+/*! tslib */
+
+/*! ./line */
+
+/*! ./is-string */
+
+/*! ../../core/plot */
+
+/*! ../_util/omit */
