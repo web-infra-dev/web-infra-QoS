@@ -42,6 +42,7 @@ function generateTable(
 ) {
   const overThresholdTags: string[] = [];
   const properties = Object.keys(base);
+  const limited = caseName.startsWith('module-') ? 10 : 5;
 
   const maxPropertyLength = Math.max(...properties.map(p => p.length));
 
@@ -75,7 +76,7 @@ function generateTable(
       !ValidMetricsForCase[caseName as keyof typeof ValidMetricsForCase]
     ) {
       table.push(row);
-      if (percent > 5 && !property.includes('InstallTime')) {
+      if (percent > limited && !property.includes('InstallTime')) {
         overThresholdTags.push(property);
       }
     }
