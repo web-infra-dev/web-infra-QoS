@@ -1,6 +1,6 @@
 # Web Infra QoS
 
-[Online Benchmark](https://web-infra-dev.github.io/web-infra-QoS/index).
+[Online Benchmark](https://web-infra-qos.netlify.app).
 
 ## Data
 
@@ -169,8 +169,6 @@ Install npm dependency related metrics.
 pnpm run install:webiste
 pnpm run dev:website
 ```
-
-Then visit https://web-infra-dev.github.io/web-infra-QoS/index
 
 ### Deploy Website
 
