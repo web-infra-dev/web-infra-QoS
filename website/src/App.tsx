@@ -14,7 +14,10 @@ const Container = styled.div`
 `;
 
 const BASENAME =
-  process.env.NODE_ENV === 'development' ? '' : '/web-infra-QoS/index';
+  process.env.NODE_ENV === 'production' &&
+  window.location.hostname === 'web-infra-dev.github.io'
+    ? '/web-infra-QoS/index'
+    : '';
 
 const App = () => {
   const query = new URLSearchParams(window.location.search);
