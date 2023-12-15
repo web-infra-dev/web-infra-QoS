@@ -4,7 +4,7 @@ import { pluginReact } from '@rsbuild/plugin-react';
 export default defineConfig({
   plugins: [pluginReact()],
   output: {
-    assetPrefix: 'https://web-infra-dev.github.io/web-infra-QoS/',
+    assetPrefix: '/',
     disableSourceMap: true,
     distPath: {
       html: '/',
