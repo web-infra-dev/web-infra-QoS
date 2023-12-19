@@ -23,7 +23,7 @@ const App = () => {
   const query = new URLSearchParams(window.location.search);
   const initialProductIndex =
     query.get('product') || PRODUCT.MODERNJS_FRAMEWORK;
-  const initialMenuIndex = query.get('metrics') || MENU.BUNDLE_SIZE;
+  const initialMenuIndex = query.get('metrics') || MENU.COMPILE_SPEED;
 
   const [productIndex, setProductIndex] = useState(initialProductIndex);
   const [menuIndex, setMenuIndex] = useState(initialMenuIndex);
