@@ -26,6 +26,7 @@ export const measurePlugin = () => ({
     return {
       beforeBuild: () => {
         beforeBuildTime = performance.now();
+        metrics.beforeBuildTime = beforeBuildTime;
       },
 
       beforeBuildTask: (config: any) => {

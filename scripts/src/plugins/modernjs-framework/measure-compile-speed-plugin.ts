@@ -48,12 +48,14 @@ export const measureCompileSpeedPlugin = () => ({
       beforeDev: () => {
         if (isDev) {
           beforeDevTime = performance.now();
+          metrics.beforeDevTime = beforeDevTime;
         }
       },
 
       beforeBuild: () => {
         if (!isDev) {
           beforeBuildTime = performance.now();
+          metrics.beforeBuildTime = beforeBuildTime;
         }
       },
 

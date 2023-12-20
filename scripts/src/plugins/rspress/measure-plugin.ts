@@ -19,8 +19,10 @@ export function measurePlugin() {
     async beforeBuild(_config: any) {
       if (isDev) {
         beforeDevTime = performance.now();
+        metrics.beforeDevTime = beforeDevTime;
       } else {
         beforeBuildTime = performance.now();
+        metrics.beforeBuildTime = beforeBuildTime;
       }
     },
 
