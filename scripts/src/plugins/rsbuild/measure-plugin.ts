@@ -19,6 +19,7 @@ export const measurePlugin = () => ({
     api.onBeforeBuild(() => {
       if (!isDev) {
         beforeBuildTime = performance.now();
+        metrics.beforeBuildTime = beforeBuildTime;
       }
     });
 
@@ -46,6 +47,7 @@ export const measurePlugin = () => ({
     api.onBeforeStartDevServer(() => {
       if (isDev) {
         beforeDevTime = performance.now();
+        metrics.beforeDevTime = beforeDevTime;
       }
     });
 
