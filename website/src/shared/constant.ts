@@ -109,7 +109,12 @@ export const COMPILE_SPEED_METRICS = {
     'devColdBootTime',
     'routeGenerateTime',
   ],
-  [PRODUCT.RSBUILD]: ['buildColdBootTime', 'devColdBootTime'],
+  [PRODUCT.RSBUILD]: [
+    'buildColdBootTime',
+    'devColdBootTime',
+    'beforeBuildTime',
+    'beforeDevTime',
+  ],
 };
 
 export const INSTALL_SPEED_DEFAULT_CASE = {

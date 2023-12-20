@@ -31,6 +31,8 @@ export const ValidMetricsForCase = {
   'rsbuild-arco-pro': [
     'devColdBootTime',
     'buildColdBootTime',
+    'beforeBuildTime',
+    'beforeDevTime',
     'minifiedBundleSize',
     'gzippedBundleSize',
   ],

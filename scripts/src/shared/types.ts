@@ -1,5 +1,6 @@
 export type Metrics = {
   // Compile speed (dev)
+  beforeDevTime?: number;
   devHotBootTime?: number;
   devColdBootTime?: number;
   devHotRecompileTime?: number;
@@ -8,6 +9,7 @@ export type Metrics = {
   devPrepareTime?: number;
 
   // Compile speed (build)
+  beforeBuildTime?: number;
   buildHotBootTime?: number;
   buildColdBootTime?: number;
   buildPluginSetupTime?: number;
