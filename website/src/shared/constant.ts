@@ -90,15 +90,18 @@ export const COMPILE_SPEED_METRICS = {
   [PRODUCT.MODERNJS_FRAMEWORK]: [
     'buildColdBootTime',
     'buildHotBootTime',
+    'beforeBuildTime',
     'buildPluginSetupTime',
     'buildPrepareTime',
     'devColdBootTime',
     'devHotBootTime',
+    'beforeDevTime',
     'devPluginSetupTime',
     'devPrepareTime',
   ],
   [PRODUCT.MODERNJS_MODULE]: [
     'buildColdBootTime',
+    'beforeBuildTime',
     'buildPluginSetupTime',
     'bulidCjsTime',
     'bulidEsmTime',
@@ -107,6 +110,8 @@ export const COMPILE_SPEED_METRICS = {
   [PRODUCT.RSPRESS]: [
     'buildColdBootTime',
     'devColdBootTime',
+    'beforeBuildTime',
+    'beforeDevTime',
     'routeGenerateTime',
   ],
   [PRODUCT.RSBUILD]: [

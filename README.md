@@ -151,6 +151,8 @@ The size of the bundles after the build.
 - `bulid-esm-time`: the time it takes to complete a build task for esm in module build. Corresponding hooks: `beforeBuildTask -> afterBuildTask`.
 - `bulid-dts-time`: the time it takes to complete a build task for dts in module build. Corresponding hooks: `beforeBuildTask -> afterBuildTask`.
 - `route-generate-time`: the time it takes to generate routes in rspress. Corresponding hooks: `beforeBuild -> routeGenerated`.
+- `before-dev-time`: the time it takes for the dev command to initialize, in other words, cli cold boot time.
+- `before-build-time`: the time it takes for the build command to initialize, in other words, cli cold boot time.
 
 ### Install Speed
 
