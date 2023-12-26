@@ -103,9 +103,9 @@ export const COMPILE_SPEED_METRICS = {
     'buildColdBootTime',
     'beforeBuildTime',
     'buildPluginSetupTime',
-    'bulidCjsTime',
-    'bulidEsmTime',
-    'bulidDtsTime',
+    'buildCjsTime',
+    'buildEsmTime',
+    'buildDtsTime',
   ],
   [PRODUCT.RSPRESS]: [
     'buildColdBootTime',

@@ -147,9 +147,9 @@ The size of the bundles after the build.
 - `build-prepare-time`: the time taken from when the plugins are loaded to when the build prep process is fully completed. Corresponding hooks: `loadPlugin -> prepare`.
 - `build-cold-boot-time`: the time it takes for the build to complete without caching. Corresponding hooks: `beforeBuild -> afterBuild`.
 - `build-hot-boot-time`: the time it takes to complete a build with caching. Corresponding hooks: `beforeBuild -> afterBuild`.
-- `bulid-cjs-time`: the time it takes to complete a build task for cjs in module build. Corresponding hooks: `beforeBuildTask -> afterBuildTask`.
-- `bulid-esm-time`: the time it takes to complete a build task for esm in module build. Corresponding hooks: `beforeBuildTask -> afterBuildTask`.
-- `bulid-dts-time`: the time it takes to complete a build task for dts in module build. Corresponding hooks: `beforeBuildTask -> afterBuildTask`.
+- `build-cjs-time`: the time it takes to complete a build task for cjs in module build. Corresponding hooks: `beforeBuildTask -> afterBuildTask`.
+- `build-esm-time`: the time it takes to complete a build task for esm in module build. Corresponding hooks: `beforeBuildTask -> afterBuildTask`.
+- `build-dts-time`: the time it takes to complete a build task for dts in module build. Corresponding hooks: `beforeBuildTask -> afterBuildTask`.
 - `route-generate-time`: the time it takes to generate routes in rspress. Corresponding hooks: `beforeBuild -> routeGenerated`.
 - `before-dev-time`: the time it takes for the dev command to initialize, in other words, cli cold boot time.
 - `before-build-time`: the time it takes for the build command to initialize, in other words, cli cold boot time.

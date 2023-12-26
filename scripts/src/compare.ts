@@ -42,7 +42,6 @@ function generateTable(
 ) {
   const overThresholdTags: string[] = [];
   const properties = Object.keys(base);
-  const limited = caseName.startsWith('module-') ? 10 : 5;
 
   const maxPropertyLength = Math.max(...properties.map(p => p.length));
 
@@ -57,6 +56,13 @@ function generateTable(
 
   properties.forEach(property => {
     if (property === 'time') return;
+
+    const limited =
+      caseName.startsWith('module-') &&
+      property.toLowerCase().indexOf('build') > -1
+        ? 15
+        : 5;
+
     const percent =
       ((current[property] - base[property]) * 100) / base[property];
     const formattedPercent =
