@@ -14,10 +14,9 @@ export type Metrics = {
   buildColdBootTime?: number;
   buildPluginSetupTime?: number;
   buildPrepareTime?: number;
-  beforeBulidCjsTime?: number;
-  bulidCjsTime?: number;
-  bulidEsmTime?: number;
-  bulidDtsTime?: number;
+  buildCjsTime?: number;
+  buildEsmTime?: number;
+  buildDtsTime?: number;
   routeGenerateTime?: number;
 
   // Bundle size

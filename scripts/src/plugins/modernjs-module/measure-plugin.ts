@@ -14,7 +14,7 @@ export const measurePlugin = () => ({
 
   setup(api: any) {
     let beforeBuildTime: number;
-    let beforeBulidCjsTime: number;
+    let beforeBuildCjsTime: number;
     let beforeBuildEsmTime: number;
     let beforeBuildDtsTime: number;
 
@@ -33,7 +33,7 @@ export const measurePlugin = () => ({
         if (config.dts === false) {
           if (config.format === 'cjs') {
             // build cjs
-            beforeBulidCjsTime = performance.now();
+            beforeBuildCjsTime = performance.now();
           } else if (config.format === 'esm') {
             // build esm
             beforeBuildEsmTime = performance.now();
@@ -48,14 +48,14 @@ export const measurePlugin = () => ({
         if (options.config.dts === false) {
           if (options.config.format === 'cjs') {
             // build cjs
-            metrics.bulidCjsTime = performance.now() - beforeBulidCjsTime;
+            metrics.buildCjsTime = performance.now() - beforeBuildCjsTime;
           } else if (options.config.format === 'esm') {
             // build esm
-            metrics.bulidEsmTime = performance.now() - beforeBuildEsmTime;
+            metrics.buildEsmTime = performance.now() - beforeBuildEsmTime;
           }
         } else {
           // build dts
-          metrics.bulidDtsTime = performance.now() - beforeBuildDtsTime;
+          metrics.buildDtsTime = performance.now() - beforeBuildDtsTime;
         }
       },
 
