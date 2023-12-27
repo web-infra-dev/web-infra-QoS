@@ -82,7 +82,12 @@ function generateTable(
       !ValidMetricsForCase[caseName as keyof typeof ValidMetricsForCase]
     ) {
       table.push(row);
-      if (percent > limited && !property.includes('InstallTime')) {
+      if (
+        percent > limited &&
+        !property.includes('InstallTime') &&
+        property !== 'beforeDevTime' &&
+        property !== 'beforeBuildTime'
+      ) {
         overThresholdTags.push(property);
       }
     }
