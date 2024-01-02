@@ -61,7 +61,7 @@ function generateTable(
       caseName.startsWith('module-') &&
       property.toLowerCase().indexOf('build') > -1
         ? 15
-        : 5;
+        : 10;
 
     const percent =
       ((current[property] - base[property]) * 100) / base[property];
