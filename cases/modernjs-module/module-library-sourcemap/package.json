@@ -7,7 +7,7 @@
   "devDependencies": {
     "@modern-js/module-tools": "workspace:*",
     "@types/node": "18.7.11",
-    "typescript": "5.2.2"
+    "typescript": "5.3.3"
   },
   "dependencies": {
     "art-template": "4.13.2",
