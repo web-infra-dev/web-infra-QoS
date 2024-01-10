@@ -49,6 +49,12 @@ on:
         description: 'commitId of your repo'
       onlyInstallSize:
         description: "If only want install size, set to 'true'"
+      specifiedVersion:
+        description: 'specified the install pkg version, etc. 0.0.0-nightly-20240107170612'
+      updateData:
+        description: 'Update data? (yes/no)'
+        required: false
+        default: 'no'
 
 jobs:
   bench:
@@ -94,7 +100,7 @@ jobs:
         run: pnpm run install:scripts
 
       - name: 🚀 Run specified benchmark
-        run: cd scripts && ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start ${{ matrix.product }} ${{ matrix.case }}
+        run: cd scripts && SPECIFIED_VERSION=${{ github.event.inputs.specifiedVersion }} ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start ${{ matrix.product }} ${{ matrix.case }}
 
       - name: Setup git user
         run: |
@@ -107,6 +113,7 @@ jobs:
 
       - name: Update data
         uses: JamesIves/github-pages-deploy-action@v4.4.1
+        if: github.event.inputs.updateData == 'yes'
         with:
           branch: gh-pages
           folder: data
