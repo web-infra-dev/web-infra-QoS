@@ -11,6 +11,6 @@ export default defineConfig({
   },
   html: {
     title: 'Web Infra QoS Dashboard',
-    favicon: './src/web-infra.png',
+    favicon: './src/public/web-infra.png',
   },
 });

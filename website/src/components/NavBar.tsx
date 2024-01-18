@@ -43,10 +43,7 @@ const Link = styled.a`
 `;
 
 const GitHubIcon = () => (
-  <Link
-    target="_blank"
-    href="https://github.com/web-infra-dev/web-infra-QoS"
-  >
+  <Link target="_blank" href="https://github.com/web-infra-dev/web-infra-QoS">
     <IconGithub />
   </Link>
 );
@@ -56,7 +53,7 @@ export const NavBar = () => {
     <Root className="nav-bar">
       <Left>
         <ImageWrapper>
-          <Image src="https://camo.githubusercontent.com/0e419e25ccf73fc3e186836cdec2f674f7a08b1eaf6ae1646464f9ea1593581c/68747470733a2f2f6c66332d7374617469632e62797465646e73646f632e636f6d2f6f626a2f6564656e2d636e2f7a712d75796c6b76542f6c6a68775a74686c61756b6a6c6b756c7a6c702f7765622d696e6672612d6c6f676f2e706e67" />
+          <Image src="/web-infra.png" />
         </ImageWrapper>
         Web Infra QoS Dashboard
       </Left>
