@@ -37,7 +37,6 @@
   },
   "devDependencies": {
     "@modern-js/app-tools": "workspace:*",
-    "@modern-js/builder-rspack-provider": "workspace:*",
     "@modern-js/tsconfig": "workspace:*",
     "rimraf": "^3.0.2",
     "lint-staged": "^11.2.6",
