@@ -10,7 +10,7 @@ export default defineConfig({
         libraryName: '@arco-design/web-react',
         libraryDirectory: 'es',
         camelToDashComponentName: false,
-        style: true,
+        style: 'css',
       },
       {
         libraryName: '@arco-design/web-react/icon',
