@@ -4,4 +4,19 @@ import { measurePlugin } from '@modern-js/benchmark-scripts/plugins/rsbuild';
 
 export default defineConfig({
   plugins: [pluginReact(), measurePlugin()],
+  source: {
+    transformImport: [
+      {
+        libraryName: '@arco-design/web-react',
+        libraryDirectory: 'es',
+        camelToDashComponentName: false,
+        style: true,
+      },
+      {
+        libraryName: '@arco-design/web-react/icon',
+        libraryDirectory: 'react-icon',
+        camelToDashComponentName: false,
+      },
+    ],
+  },
 });
