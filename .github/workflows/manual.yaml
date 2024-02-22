@@ -112,7 +112,7 @@ jobs:
           apt-get update && apt-get install -y rsync
 
       - name: Update data
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        uses: JamesIves/github-pages-deploy-action@v4.5.0
         if: github.event.inputs.updateData == 'yes'
         with:
           branch: gh-pages
