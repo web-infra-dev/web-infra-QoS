@@ -88,6 +88,7 @@ const average = (nums: number[]) =>
   nums.reduce((ret, num) => ret + num, 0) / nums.length;
 
 const cleanData = (nums: number[]) => {
+  console.log('Origin data: ', nums);
   nums = nums.filter(num => num !== undefined);
 
   nums.sort();
@@ -99,6 +100,7 @@ const cleanData = (nums: number[]) => {
     nums.shift();
   }
 
+  console.log('After filter data: ', nums);
   return nums;
 };
 
@@ -115,6 +117,7 @@ export async function mergeMetrics(productName: string, caseName: string) {
     const keys = Object.keys(firstMetrics) as Array<keyof Metrics>;
 
     keys.forEach(key => {
+      console.log('Key: ', key);
       const val = firstMetrics[key];
       if (typeof val === 'number') {
         const values = allMetrics.map(metrics => metrics[key]) as number[];
