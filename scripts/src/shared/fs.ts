@@ -91,7 +91,7 @@ const cleanData = (nums: number[]) => {
   console.log('Origin data: ', nums);
   nums = nums.filter(num => num !== undefined);
 
-  nums.sort();
+  nums.sort((a, b) => a - b);
 
   if (nums.length > 3) {
     // remove max value
