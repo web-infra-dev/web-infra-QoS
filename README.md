@@ -175,3 +175,16 @@ pnpm run dev:website
 ### Deploy Website
 
 `GitHub Actions` -> `Deploy Website` -> `Run Workflow`.
+
+## Run Cases
+
+### Local development
+
+```bash
+cd scripts
+pnpm start MODERNJS_FRAMEWORK app-arco-pro-rspack
+```
+
+### Actions
+
+`GitHub Actions` -> `Manual`
