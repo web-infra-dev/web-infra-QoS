@@ -85,6 +85,7 @@ function generateTable(
       if (
         percent > limited &&
         !property.includes('InstallTime') &&
+        property !== 'routeGenerateTime' &&
         property !== 'beforeDevTime' &&
         property !== 'beforeBuildTime'
       ) {
