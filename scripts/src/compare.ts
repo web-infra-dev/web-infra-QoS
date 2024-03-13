@@ -57,11 +57,21 @@ function generateTable(
   properties.forEach(property => {
     if (property === 'time') return;
 
-    const limited =
+    if (
       caseName.startsWith('module-') &&
       property.toLowerCase().indexOf('build') > -1
-        ? 20
-        : 10;
+    )
+      return;
+
+    let limited = 10;
+
+    if (
+      caseName.startsWith('app-') &&
+      (property.toLowerCase().indexOf('build') > -1 ||
+        property.toLowerCase().indexOf('dev') > -1)
+    ) {
+      limited = 25;
+    }
 
     const percent =
       ((current[property] - base[property]) * 100) / base[property];
