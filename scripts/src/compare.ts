@@ -57,12 +57,6 @@ function generateTable(
   properties.forEach(property => {
     if (property === 'time') return;
 
-    if (
-      caseName.startsWith('module-') &&
-      property.toLowerCase().indexOf('build') > -1
-    )
-      return;
-
     let limited = 10;
 
     if (
@@ -97,7 +91,11 @@ function generateTable(
         !property.includes('InstallTime') &&
         property !== 'routeGenerateTime' &&
         property !== 'beforeDevTime' &&
-        property !== 'beforeBuildTime'
+        property !== 'beforeBuildTime' &&
+        !(
+          caseName.startsWith('module-') &&
+          property.toLowerCase().indexOf('build') > -1
+        )
       ) {
         overThresholdTags.push(property);
       }
