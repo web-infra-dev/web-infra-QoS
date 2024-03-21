@@ -125,7 +125,7 @@ export const COMPILE_SPEED_METRICS = {
 export const INSTALL_SPEED_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-initial', 'app-initial-rspack'],
   [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
-  [PRODUCT.RSPRESS]: ['rspress-website', 'rspress-website-mdxjs'],
+  [PRODUCT.RSPRESS]: ['rspress-minimal'],
   [PRODUCT.RSBUILD]: ['rsbuild-vanilla', 'rsbuild-react'],
 };
 export const DEFAULT_INSTALL_SPEED_METRICS = [
