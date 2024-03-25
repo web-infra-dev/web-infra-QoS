@@ -23,7 +23,7 @@ jobs:
       comment-id: ${{ steps.create-comment.outputs.result }}
     steps:
       - id: create-comment
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.RSPACK_BOT_ACCESS_TOKEN }}
           result-encoding: string
@@ -85,7 +85,7 @@ jobs:
     needs: [create-comment, run-bench]
     if: always()
     steps:
-      - uses: actions/github-script@v6
+      - uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.RSPACK_BOT_ACCESS_TOKEN }}
           script: |
