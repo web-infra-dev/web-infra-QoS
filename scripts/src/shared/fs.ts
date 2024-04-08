@@ -138,6 +138,7 @@ export async function mergeMetrics(productName: string, caseName: string) {
         const agent = new ProxyAgent();
         axios.defaults.httpAgent = agent;
         axios.defaults.httpsAgent = agent;
+        axios.defaults.proxy = false;
       }
       const response = await axios.get(remoteURL);
       allData = response.data;
