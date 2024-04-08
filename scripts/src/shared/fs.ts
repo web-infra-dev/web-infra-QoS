@@ -19,6 +19,7 @@ import {
   getRepoName,
   getRepoPath,
 } from './utils';
+import { ProxyAgent } from 'proxy-agent';
 
 export async function cleanCache(casePath: string) {
   await remove(join(casePath, 'node_modules', '.cache'));
@@ -133,6 +134,11 @@ export async function mergeMetrics(productName: string, caseName: string) {
 
     let allData = {};
     try {
+      if (process.env.http_proxy) {
+        const agent = new ProxyAgent();
+        axios.defaults.httpAgent = agent;
+        axios.defaults.httpsAgent = agent;
+      }
       const response = await axios.get(remoteURL);
       allData = response.data;
       console.log(`Save metrics:`);
