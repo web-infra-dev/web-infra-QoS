@@ -83,8 +83,17 @@ jobs:
           node-version: 18
           cache-dependency-path: pnpm-lock.yaml
 
+      - name: Activate corepack
+        shell: bash
+        run: |
+          # corepack > 0.24.1 will use native fetch
+          # and native fetch not support HTTP_PROXY
+          # https://github.com/nodejs/undici/issues/1650
+          npm install -g corepack@0.24.1
+          corepack enable
+
       - name: Install Pnpm
-        run: corepack enable && pnpm -v && pnpm store path
+        run: pnpm -v && pnpm store path
 
       - name: Cache pnpm cache
         uses: actions/cache@v3
