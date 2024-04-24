@@ -147,6 +147,7 @@ export async function mergeMetrics(productName: string, caseName: string) {
     } catch (err) {
       console.log('err: ', err);
       console.log(`Remote metrics may not exist: ${remoteURL}`);
+      process.exit(1);
     }
 
     allData = { ...allData, [id]: { time, ...result } };
