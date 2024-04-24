@@ -89,6 +89,15 @@ export async function cloneRepo(productName: string, caseName: string) {
   );
 
   await runCommand(localRepoPath, 'pnpm link ../scripts');
+
+  // since rsbuild set hoist-pattern[]=[], we manually delete this config to run cases deps install
+  if (productName === 'RSBUILD' && caseName === 'rsbuild-arco-pro') {
+    await updateFile(join(localRepoPath, '.npmrc'), content =>
+      content.replace(/^\s*hoist-pattern\[\]=\[\].*$/gm, ''),
+    );
+    await runCommand(localRepoPath, 'pnpm i --force --no-frozen-lockfile');
+  }
+
   await runCommand(
     localRepoPath,
     'pnpm i --ignore-scripts --no-frozen-lockfile',
