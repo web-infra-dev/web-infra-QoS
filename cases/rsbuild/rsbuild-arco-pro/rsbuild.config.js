@@ -1,9 +1,10 @@
 import { defineConfig } from '@rsbuild/core';
 import { pluginReact } from '@rsbuild/plugin-react';
+import { pluginLess } from '@rsbuild/plugin-less';
 import { measurePlugin } from '@modern-js/benchmark-scripts/plugins/rsbuild';
 
 export default defineConfig({
-  plugins: [pluginReact(), measurePlugin()],
+  plugins: [pluginReact(), pluginLess(), measurePlugin()],
   source: {
     transformImport: [
       {
