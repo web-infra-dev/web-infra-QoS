@@ -1,4 +1,3 @@
-import { PUBLIC_PATH } from './constant';
 import type { Metrics } from '../../../scripts/src/shared/types';
 import * as localForage from 'localforage';
 
@@ -49,7 +48,7 @@ export const fetchMetrics = async (
   caseName: string,
 ): Promise<FetchedMetrics[]> => {
   const allMetrics: MetricsMap = await fetchJsonWithCache(
-    PUBLIC_PATH + `/data/${productName}/${caseName}.json`,
+    `/data/${productName}/${caseName}.json`,
   );
 
   return Object.keys(allMetrics).map(id => {

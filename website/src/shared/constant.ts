@@ -141,8 +141,6 @@ export const INSTALL_SPEED_METRICS = {
   [PRODUCT.RSBUILD]: DEFAULT_INSTALL_SPEED_METRICS,
 };
 
-export const PUBLIC_PATH = 'https://web-infra-qos.netlify.app';
-
 export const LINE_CHART_DEFAULT_CONFIG: Partial<LineOptions> = {
   height: 400,
   seriesField: 'category',

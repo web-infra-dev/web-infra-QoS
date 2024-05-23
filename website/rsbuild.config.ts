@@ -1,8 +1,9 @@
 import { defineConfig } from '@rsbuild/core';
 import { pluginReact } from '@rsbuild/plugin-react';
+import { pluginSass } from '@rsbuild/plugin-sass';
 
 export default defineConfig({
-  plugins: [pluginReact()],
+  plugins: [pluginReact(), pluginSass()],
   output: {
     assetPrefix: '/',
     distPath: {
@@ -12,6 +13,11 @@ export default defineConfig({
   html: {
     title: 'Web Infra QoS Dashboard',
     favicon: './src/public/web-infra.png',
+  },
+  server: {
+    proxy: {
+      '/data': 'https://web-infra-qos.netlify.app/',
+    },
   },
   source: {
     transformImport: [
