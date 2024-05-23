@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@rsbuild/core": "workspace:*",
+    "@rsbuild/plugin-less": "workspace:*",
     "@rsbuild/plugin-react": "workspace:*",
     "rimraf": "^3.0.2",
     "lint-staged": "^11.2.6",
