@@ -14,7 +14,6 @@
     "@arco-design/color": "^0.4.0",
     "@arco-design/web-react": "^2.41.2",
     "@arco-themes/react-arco-pro": "^0.0.7",
-    "@modern-js/runtime": "workspace:*",
     "@loadable/component": "^5.13.2",
     "@turf/turf": "^6.5.0",
     "arco-design-pro": "^2.4.0",
