@@ -22,7 +22,7 @@ const BASENAME =
 const App = () => {
   const query = new URLSearchParams(window.location.search);
   const initialProductIndex =
-    query.get('product') || PRODUCT.MODERNJS_FRAMEWORK;
+    query.get('product') || PRODUCT.RSBUILD;
   const initialMenuIndex = query.get('metrics') || MENU.COMPILE_SPEED;
 
   const [productIndex, setProductIndex] = useState(initialProductIndex);
