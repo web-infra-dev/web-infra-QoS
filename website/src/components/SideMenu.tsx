@@ -10,6 +10,7 @@ import {
   IconThunderbolt,
   IconCloudDownload,
   IconDashboard,
+  IconBook,
 } from '@arco-design/web-react/icon';
 import { MENU, PRODUCT } from '@/shared/constant';
 
@@ -124,6 +125,36 @@ export const SideMenu = (props: {
           <IconDashboard />
           Cli Speed
         </MenuItem> */}
+      </SubMenu>
+      <SubMenu
+        key={PRODUCT.RSLIB}
+        title={
+          <>
+            <IconBook /> Rslib
+          </>
+        }
+      >
+        <MenuItem
+          key={`${PRODUCT.RSLIB}_${MENU.COMPILE_SPEED}`}
+          style={itemStyle}
+        >
+          <IconThunderbolt />
+          Compile Speed
+        </MenuItem>
+        <MenuItem
+          key={`${PRODUCT.RSLIB}_${MENU.INSTALL_SPEED}`}
+          style={itemStyle}
+        >
+          <IconCloudDownload />
+          Install Speed
+        </MenuItem>
+        <MenuItem
+          key={`${PRODUCT.RSLIB}_${MENU.BUNDLE_SIZE}`}
+          style={itemStyle}
+        >
+          <IconInteraction />
+          Bundle Size
+        </MenuItem>
       </SubMenu>
       <SubMenu
         key={PRODUCT.MODERNJS_FRAMEWORK}

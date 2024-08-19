@@ -17,6 +17,10 @@ export type Metrics = {
   buildCjsTime?: number;
   buildEsmTime?: number;
   buildDtsTime?: number;
+  buildCjsJsTime?: number;
+  buildCjsTotalTime?: number;
+  buildEsmJsTime?: number;
+  buildEsmTotalTime?: number;
   routeGenerateTime?: number;
 
   // Bundle size
@@ -26,6 +30,10 @@ export type Metrics = {
   gzippedDistSize?: number;
   initialJsSize?: number;
   gzipInitialJsSize?: number;
+  cjsBundleSize?: number;
+  cjsGzipBundleSize?: number;
+  esmBundleSize?: number;
+  esmGzipBundleSize?: number;
 
   // Install Size
   installSize?: number;

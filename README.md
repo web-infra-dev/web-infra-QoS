@@ -122,7 +122,15 @@ Rsbuild project + vanilla.
 
 ### rsbuild-arco-pro
 
-Arco Pro project with rsbuild.
+Arco Pro project with Rsbuild.
+
+### rslib-node-basic
+
+Basic nodejs project with Rslib.
+
+### rslib-react-basic
+
+Basic react component project with Rslib.
 
 ## Metrics
 
@@ -136,6 +144,10 @@ The size of the bundles after the build.
 - `gzipped-dist-size`: file size of output in module after gzip.
 - `initial-js-size`: initial js size in rspress.
 - `gzip-initial-js-size`: initial js size in rspress after gzip.
+- `cjs-bundle-size`: the size of cjs formats outputs.
+- `cjs-gzip-bundle-size`: the size of cjs formats outputs after gzip.
+- `esm-bundle-size`: the size of esm formats outputs.
+- `esm-gzip-bundle-size`: the size of esm formats outputs after gzip.
 
 ### Compile Speed
 
@@ -150,6 +162,10 @@ The size of the bundles after the build.
 - `build-cjs-time`: the time it takes to complete a build task for cjs in module build. Corresponding hooks: `beforeBuildTask -> afterBuildTask`.
 - `build-esm-time`: the time it takes to complete a build task for esm in module build. Corresponding hooks: `beforeBuildTask -> afterBuildTask`.
 - `build-dts-time`: the time it takes to complete a build task for dts in module build. Corresponding hooks: `beforeBuildTask -> afterBuildTask`.
+- `build-cjs-js-time`: the js bundle time it takes to complete a build task for cjs in Rslib.
+- `build-esm-js-time`: the js bundle time it takes to complete a build task for esm in Rslib.
+- `build-cjs-total-time`: the total time it takes to complete a build task for cjs in Rslib.
+- `build-esm-total-time`: the total time it takes to complete a build task for esm in Rslib.
 - `route-generate-time`: the time it takes to generate routes in rspress. Corresponding hooks: `beforeBuild -> routeGenerated`.
 - `before-dev-time`: the time it takes for the dev command to initialize, in other words, cli cold boot time.
 - `before-build-time`: the time it takes for the build command to initialize, in other words, cli cold boot time.
@@ -182,7 +198,7 @@ pnpm run dev:website
 
 ```bash
 cd scripts
-pnpm start MODERNJS_FRAMEWORK app-arco-pro-rspack
+pnpm start RSBUILD rsbuild-react
 ```
 
 ### Actions

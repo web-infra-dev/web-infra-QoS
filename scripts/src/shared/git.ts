@@ -80,7 +80,9 @@ export async function cloneRepo(productName: string, caseName: string) {
 
   // add cases folder to workspace config
   const addWorkspace =
-    productName === 'RSPRESS' || productName === 'RSBUILD'
+    productName === 'RSPRESS' ||
+    productName === 'RSBUILD' ||
+    productName === 'RSLIB'
       ? "  - 'cases/*'"
       : " - 'cases/*'";
   await updateFile(

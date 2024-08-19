@@ -11,10 +11,11 @@ jobs:
     strategy:
       matrix:
         include:
+          - product: RSBUILD
+          - product: RSPRESS
+          - product: RSLIB
           - product: MODERNJS_FRAMEWORK
           - product: MODERNJS_MODULE
-          - product: RSPRESS
-          - product: RSBUILD
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -81,6 +82,8 @@ jobs:
               repo = "rsbuild"
             } else if (product === "RSPRESS") {
               repo = "rspress"
+            } else if (product === "RSLIB") {
+              repo = "rslib"
             }
 
             await github.rest.issues.create({
