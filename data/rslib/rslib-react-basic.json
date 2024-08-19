@@ -1,1 +1,1 @@
-{}
+{"fbb8d67":{"time":1724049018000,"beforeBuildTime":781.2662563323975,"buildEsmJsTime":42.72327168782552,"esmBundleSize":1762,"esmGzipBundleSize":526,"buildEsmTotalTime":3479.2176310221353,"buildCjsJsTime":46.970240910847984,"cjsBundleSize":3062,"cjsGzipBundleSize":939,"buildCjsTotalTime":3480.593275705973,"coldInstallTime":13231.109985351562,"hotInstallTime":242.7159938812256,"dependenciesCount":57,"installSize":88164720}}
