@@ -12,6 +12,30 @@ jobs:
       max-parallel: 2
       matrix:
         include:
+          - case: rsbuild-react
+            product: RSBUILD
+          - case: rsbuild-vue2
+            product: RSBUILD
+          - case: rsbuild-vue3
+            product: RSBUILD
+          - case: rsbuild-lit
+            product: RSBUILD
+          - case: rsbuild-svelte
+            product: RSBUILD
+          - case: rsbuild-vanilla
+            product: RSBUILD
+          - case: rsbuild-arco-pro
+            product: RSBUILD
+          - case: rspress-minimal
+            product: RSPRESS
+          - case: rspress-website
+            product: RSPRESS
+          - case: rspress-website-mdxjs
+            product: RSPRESS
+          - case: rslib-node-basic
+            product: RSLIB
+          - case: rslib-react-basic
+            product: RSLIB
           - case: app-minimal
             product: MODERNJS_FRAMEWORK
           - case: app-initial
@@ -48,26 +72,6 @@ jobs:
             product: MODERNJS_MODULE
           - case: module-component
             product: MODERNJS_MODULE
-          - case: rspress-minimal
-            product: RSPRESS
-          - case: rspress-website
-            product: RSPRESS
-          - case: rspress-website-mdxjs
-            product: RSPRESS
-          - case: rsbuild-react
-            product: RSBUILD
-          - case: rsbuild-vue2
-            product: RSBUILD
-          - case: rsbuild-vue3
-            product: RSBUILD
-          - case: rsbuild-lit
-            product: RSBUILD
-          - case: rsbuild-svelte
-            product: RSBUILD
-          - case: rsbuild-vanilla
-            product: RSBUILD
-          - case: rsbuild-arco-pro
-            product: RSBUILD
 
     runs-on: ${{ fromJSON(vars.SELF_LINUX_LABELS || '"ubuntu-latest"') }}
 

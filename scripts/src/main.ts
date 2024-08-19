@@ -23,7 +23,7 @@ async function main() {
     await remove(dataPath);
 
     if (process.env.ONLY_INSTALL_SIZE !== 'true') {
-      if (productName !== 'MODERNJS_MODULE') {
+      if (productName !== 'MODERNJS_MODULE' && productName !== 'RSLIB') {
         await dev(productName, caseName);
       }
       await build(productName, caseName);

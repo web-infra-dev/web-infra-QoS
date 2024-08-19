@@ -48,7 +48,10 @@ data/**/*
 temp/**/*
 rspress
 rsbuild
+rslib
 !/cases/rspress/
 !/scripts/**/*/rspress
 !/cases/rsbuild/
 !/scripts/**/*/rsbuild
+!/cases/rslib/
+!/scripts/**/*/rslib

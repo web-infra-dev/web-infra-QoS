@@ -23,7 +23,7 @@ export const measurePlugin = () => ({
       }
     });
 
-    api.onAfterBuild(async ({ stats }: { stats: any }) => {
+    api.onAfterBuild(async () => {
       const buildTime = performance.now() - beforeBuildTime;
       metrics.buildColdBootTime = buildTime;
 

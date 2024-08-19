@@ -6,6 +6,7 @@ export const PRODUCT = {
   MODERNJS_FRAMEWORK: 'modernjs-framework',
   MODERNJS_MODULE: 'modernjs-module',
   RSBUILD: 'rsbuild',
+  RSLIB: 'rslib',
   RSPRESS: 'rspress',
   RSPACK: 'rspack',
 };
@@ -60,6 +61,7 @@ export const PRODUCT_CASES: CaseorMetrics = {
     'rsbuild-svelte',
     'rsbuild-vanilla',
   ],
+  [PRODUCT.RSLIB]: ['rslib-node-basic', 'rslib-react-basic'],
 };
 
 export const BUNDLE_SIZE_DEFAULT_CASE = {
@@ -67,6 +69,7 @@ export const BUNDLE_SIZE_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
   [PRODUCT.RSPRESS]: ['rspress-website', 'rspress-website-mdxjs'],
   [PRODUCT.RSBUILD]: ['rsbuild-react', 'rsbuild-arco-pro'],
+  [PRODUCT.RSLIB]: ['rslib-node-basic', 'rslib-react-basic'],
 };
 export const BUNDLE_SIZE_METRICS = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['minifiedBundleSize', 'gzippedBundleSize'],
@@ -78,6 +81,12 @@ export const BUNDLE_SIZE_METRICS = {
     'gzippedBundleSize',
   ],
   [PRODUCT.RSBUILD]: ['minifiedBundleSize', 'gzippedBundleSize'],
+  [PRODUCT.RSLIB]: [
+    'esmBundleSize',
+    'cjsBundleSize',
+    'esmGzipBundleSize',
+    'cjsGzipBundleSize',
+  ],
 };
 
 export const COMPILE_SPEED_DEFAULT_CASE = {
@@ -85,6 +94,7 @@ export const COMPILE_SPEED_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
   [PRODUCT.RSPRESS]: ['rspress-website', 'rspress-website-mdxjs'],
   [PRODUCT.RSBUILD]: ['rsbuild-react', 'rsbuild-arco-pro'],
+  [PRODUCT.RSLIB]: ['rslib-node-basic', 'rslib-react-basic'],
 };
 export const COMPILE_SPEED_METRICS = {
   [PRODUCT.MODERNJS_FRAMEWORK]: [
@@ -120,6 +130,13 @@ export const COMPILE_SPEED_METRICS = {
     'beforeBuildTime',
     'beforeDevTime',
   ],
+  [PRODUCT.RSLIB]: [
+    'buildEsmTotalTime',
+    'buildCjsTotalTime',
+    'buildEsmJsTime',
+    'buildCjsJsTime',
+    'beforeBuildTime',
+  ],
 };
 
 export const INSTALL_SPEED_DEFAULT_CASE = {
@@ -127,6 +144,7 @@ export const INSTALL_SPEED_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
   [PRODUCT.RSPRESS]: ['rspress-minimal', 'rspress-website'],
   [PRODUCT.RSBUILD]: ['rsbuild-vanilla', 'rsbuild-react'],
+  [PRODUCT.RSLIB]: ['rslib-node-basic', 'rslib-react-basic'],
 };
 export const DEFAULT_INSTALL_SPEED_METRICS = [
   'installSize',
@@ -139,6 +157,7 @@ export const INSTALL_SPEED_METRICS = {
   [PRODUCT.MODERNJS_MODULE]: DEFAULT_INSTALL_SPEED_METRICS,
   [PRODUCT.RSPRESS]: DEFAULT_INSTALL_SPEED_METRICS,
   [PRODUCT.RSBUILD]: DEFAULT_INSTALL_SPEED_METRICS,
+  [PRODUCT.RSLIB]: DEFAULT_INSTALL_SPEED_METRICS,
 };
 
 export const LINE_CHART_DEFAULT_CONFIG: Partial<LineOptions> = {

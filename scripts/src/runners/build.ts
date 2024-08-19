@@ -8,6 +8,7 @@ import {
 
 export const build = async (productName: string, caseName: string) => {
   const casePath = join(getCaseDistPath(productName), caseName);
+  console.log('casePath: ', casePath);
 
   for (let i = 0; i < DEFAULT_RERUN_TIME; i++) {
     await cleanCache(casePath);

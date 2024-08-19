@@ -8,15 +8,28 @@ on:
         type: choice
         required: true
         options:
+          - RSBUILD
+          - RSPRESS
+          - RSLIB
           - MODERNJS_FRAMEWORK
           - MODERNJS_MODULE
-          - RSPRESS
-          - RSBUILD
       case:
         description: 'case name of which to bench'
         type: choice
         required: true
         options:
+          - rsbuild-react
+          - rsbuild-vue2
+          - rsbuild-vue3
+          - rsbuild-lit
+          - rsbuild-svelte
+          - rsbuild-vanilla
+          - rsbuild-arco-pro
+          - rspress-minimal
+          - rspress-website
+          - rspress-website-mdxjs
+          - rslib-node-basic
+          - rslib-react-basic
           - app-minimal
           - app-initial
           - app-initial-rspack
@@ -35,16 +48,7 @@ on:
           - module-library-minify-esbuild
           - module-library-minify-terser
           - module-component
-          - rspress-minimal
-          - rspress-website
-          - rspress-website-mdxjs
-          - rsbuild-react
-          - rsbuild-vue2
-          - rsbuild-vue3
-          - rsbuild-lit
-          - rsbuild-svelte
-          - rsbuild-vanilla
-          - rsbuild-arco-pro
+
       commitId:
         description: 'commitId of your repo'
       onlyInstallSize:
