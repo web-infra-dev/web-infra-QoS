@@ -57,6 +57,9 @@ function generateTable(
   properties.forEach(property => {
     if (property === 'time') return;
 
+    // TODO: remove this when we add complex Rslib cases
+    if (caseName.startsWith('rslib-')) return;
+
     let limited = 10;
 
     if (
