@@ -24,7 +24,7 @@ async function prBench() {
     process.env.PRODUCT_NAME = productName;
     process.env.CASE_NAME = caseName;
 
-    if (productName !== 'MODERNJS_MODULE') {
+    if (productName !== 'MODERNJS_MODULE' && productName !== 'RSLIB') {
       await dev(productName, caseName);
     }
 
