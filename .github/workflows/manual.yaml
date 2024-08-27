@@ -19,7 +19,6 @@ on:
         required: true
         options:
           - rsbuild-react
-          - rsbuild-vue2
           - rsbuild-vue3
           - rsbuild-lit
           - rsbuild-svelte

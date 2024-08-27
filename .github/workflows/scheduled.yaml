@@ -14,8 +14,6 @@ jobs:
         include:
           - case: rsbuild-react
             product: RSBUILD
-          - case: rsbuild-vue2
-            product: RSBUILD
           - case: rsbuild-vue3
             product: RSBUILD
           - case: rsbuild-lit

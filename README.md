@@ -100,10 +100,6 @@ Website project with rspress.
 
 Rsbuild project + react.
 
-### rsbuild-vue2
-
-Rsbuild project + vue2.
-
 ### rsbuild-vue3
 
 Rsbuild project + vue3.

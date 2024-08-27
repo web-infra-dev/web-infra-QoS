@@ -55,7 +55,6 @@ export const PRODUCT_CASES: CaseorMetrics = {
   [PRODUCT.RSBUILD]: [
     'rsbuild-react',
     'rsbuild-arco-pro',
-    'rsbuild-vue2',
     'rsbuild-vue3',
     'rsbuild-lit',
     'rsbuild-svelte',
