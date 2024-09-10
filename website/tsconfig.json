@@ -1,6 +1,14 @@
 {
-  "extends": "@modern-js/tsconfig/base",
   "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["DOM", "ES2020"],
+    "module": "ESNext",
+    "strict": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "bundler",
+    "useDefineForClassFields": true,
     "declaration": false,
     "jsx": "react-jsx",
     "baseUrl": "./",
