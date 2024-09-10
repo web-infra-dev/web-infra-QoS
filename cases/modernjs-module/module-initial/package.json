@@ -14,7 +14,6 @@
   "peerDependencies": {},
   "devDependencies": {
     "@modern-js/module-tools": "workspace:*",
-    "@modern-js/eslint-config": "workspace:*",
     "typescript": "5.3.3",
     "@types/jest": "29.2.4",
     "@types/node": "16.11.7",
