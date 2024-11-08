@@ -1,0 +1,20 @@
+{
+  "name": "rsbuild-react-app-10k",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "rsbuild dev",
+    "build": "rsbuild build",
+    "preview": "rsbuild preview"
+  },
+  "dependencies": {
+    "@iconify-icons/material-symbols": "^1.2.58",
+    "@iconify/react": "^5.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@rsbuild/core": "workspace:*",
+    "@rsbuild/plugin-react": "workspace:*"
+  }
+}

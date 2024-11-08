@@ -120,6 +120,10 @@ Rsbuild project + vanilla.
 
 Arco Pro project with Rsbuild.
 
+### rsbuild-react-app-10k
+
+Rsbuild project + React + 5k components + 5k node_modules.
+
 ### rslib-node-basic
 
 Basic nodejs project with Rslib.

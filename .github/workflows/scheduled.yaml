@@ -24,6 +24,8 @@ jobs:
             product: RSBUILD
           - case: rsbuild-arco-pro
             product: RSBUILD
+          - case: rsbuild-react-app-10k
+            product: RSBUILD
           - case: rspress-minimal
             product: RSPRESS
           - case: rspress-website
