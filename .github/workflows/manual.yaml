@@ -24,6 +24,7 @@ on:
           - rsbuild-svelte
           - rsbuild-vanilla
           - rsbuild-arco-pro
+          - rsbuild-react-app-10k
           - rspress-minimal
           - rspress-website
           - rspress-website-mdxjs
