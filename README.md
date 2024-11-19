@@ -204,3 +204,7 @@ pnpm start RSBUILD rsbuild-react
 ### Actions
 
 `GitHub Actions` -> `Manual`
+
+## License
+
+MIT License.
