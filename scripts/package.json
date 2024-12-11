@@ -10,7 +10,6 @@
   },
   "exports": {
     "./plugins/modernjs-framework": "./dist/plugins/modernjs-framework/index.js",
-    "./plugins/modernjs-module": "./dist/plugins/modernjs-module/index.js",
     "./plugins/rspress": "./dist/plugins/rspress/index.js",
     "./plugins/rsbuild": "./dist/plugins/rsbuild/index.js",
     "./plugins/rspack": "./dist/plugins/rspack/index.js"
@@ -19,9 +18,6 @@
     "*": {
       "plugins/modernjs-framework": [
         "./dist/plugins/modernjs-framework/index.d.ts"
-      ],
-      "plugins/modernjs-module": [
-        "./dist/plugins/modernjs-module/index.d.ts"
       ],
       "plugins/rspress": [
         "./dist/plugins/rspress/index.d.ts"

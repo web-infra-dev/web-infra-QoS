@@ -68,6 +68,12 @@ export async function cloneRepo(productName: string, caseName: string) {
     return;
   }
 
+  if (productName === 'RSPACK') {
+    await runCommand(localRepoPath, 'corepack enable && pnpm -v');
+    await runCommand(localRepoPath, 'pnpm i');
+    return;
+  }
+
   await copy(
     join(getCaseSrcPath(productName), caseName),
     join(getCaseDistPath(productName), caseName),

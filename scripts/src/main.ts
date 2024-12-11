@@ -4,6 +4,7 @@ import { build } from './runners/build';
 import { cloneRepo, getDataPath, mergeMetrics } from './shared';
 import { remove } from 'fs-extra';
 import { yarnInstall } from './runners/yarn-install';
+import { getBinarySize } from './runners/binary-size';
 
 const productName = process.argv[2];
 const caseName = process.argv[3];
@@ -17,28 +18,36 @@ async function main() {
     logger.error(`product not found: ${productName}`);
   }
 
-  if (caseName) {
-    process.env.PRODUCT_NAME = productName;
-    process.env.CASE_NAME = caseName;
-    await remove(dataPath);
+  process.env.PRODUCT_NAME = productName;
+  process.env.CASE_NAME = caseName;
 
-    if (process.env.ONLY_INSTALL_SIZE !== 'true') {
-      if (productName !== 'RSLIB') {
-        await dev(productName, caseName);
-      }
-      await build(productName, caseName);
-    }
+  await remove(dataPath);
 
-    try {
-      await yarnInstall(productName, caseName);
-    } catch (err) {
-      console.log('failed to collect install size metrics:', err);
-    }
-
-    await mergeMetrics(productName, caseName);
-  } else {
-    logger.error(`Case not found: ${productName} ${caseName}`);
+  if (!caseName) {
+    throw new Error('Missing case name!');
   }
+
+  // Rspack only need to get binary size
+  if (productName === 'RSPACK') {
+    await getBinarySize();
+    await mergeMetrics(productName, caseName);
+    return;
+  }
+
+  if (process.env.ONLY_INSTALL_SIZE !== 'true') {
+    if (productName !== 'RSLIB') {
+      await dev(productName, caseName);
+    }
+    await build(productName, caseName);
+  }
+
+  try {
+    await yarnInstall(productName, caseName);
+  } catch (err) {
+    console.log('failed to collect install size metrics:', err);
+  }
+
+  await mergeMetrics(productName, caseName);
 }
 
 main();
