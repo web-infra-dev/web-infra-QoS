@@ -12,6 +12,8 @@ jobs:
       max-parallel: 2
       matrix:
         include:
+          - case: rspack-binary-size
+            product: RSPACK
           - case: rsbuild-react
             product: RSBUILD
           - case: rsbuild-vue3
