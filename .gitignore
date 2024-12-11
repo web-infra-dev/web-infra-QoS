@@ -49,6 +49,7 @@ temp/**/*
 rspress
 rsbuild
 rslib
+rspack
 !/cases/rspress/
 !/scripts/**/*/rspress
 !/cases/rsbuild/
