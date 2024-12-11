@@ -7,7 +7,7 @@ export default defineConfig({
   output: {
     assetPrefix: '/',
     distPath: {
-      html: '/',
+      html: './',
     },
   },
   html: {
