@@ -15,7 +15,6 @@ jobs:
           - product: RSPRESS
           - product: RSLIB
           - product: MODERNJS_FRAMEWORK
-          - product: MODERNJS_MODULE
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -76,7 +75,7 @@ jobs:
 
             let repo = context.repo.repo
             const product = "${{ matrix.product }}"
-            if (product === "MODERNJS_FRAMEWORK" || product === "MODERNJS_MODULE") {
+            if (product === "MODERNJS_FRAMEWORK") {
               repo = "modern.js"
             } else if (product === "RSBUILD") {
               repo = "rsbuild"
