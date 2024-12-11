@@ -3,10 +3,15 @@ import { ContentBundleSize } from './ContentBundleSize';
 import { ContentCompileSpeed } from './ContentCompileSpeed';
 import { ContentInstallSpeed } from './ContentInstallSpeed';
 import { ContentCliSpeed } from './ContentCliSpeed';
+import { ContentBinarySize } from './ContentBinarySize';
 
 export const Content = (props: { productIndex: string; menuIndex: string }) => {
   const renderSubContent = () => {
     if (props.productIndex === PRODUCT.RSPACK) {
+      if (props.menuIndex === MENU.BINARY_SIZE) {
+        return <ContentBinarySize productIndex={props.productIndex} />;
+      }
+
       return (
         <div style={{ padding: BASE_PADDING }}>
           <div>

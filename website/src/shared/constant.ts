@@ -15,12 +15,13 @@ export const MENU = {
   COMPILE_SPEED: 'compile-speed',
   INSTALL_SPEED: 'install-speed',
   CLI_SPEED: 'cli-speed',
+  BINARY_SIZE: 'binary-size',
 };
 
 type ProductKey = keyof typeof PRODUCT;
 
 type CaseorMetrics = {
-  [key in typeof PRODUCT[ProductKey]]: string[];
+  [key in (typeof PRODUCT)[ProductKey]]: string[];
 };
 
 export const PRODUCT_CASES: CaseorMetrics = {

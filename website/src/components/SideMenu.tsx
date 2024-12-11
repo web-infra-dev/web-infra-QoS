@@ -81,13 +81,6 @@ export const SideMenu = (props: {
           <IconInteraction />
           Bundle Size
         </MenuItem>
-        {/* <MenuItem
-          key={`${PRODUCT.RSBUILD}_${MENU.CLI_SPEED}`}
-          style={itemStyle}
-        >
-          <IconDashboard />
-          Cli Speed
-        </MenuItem> */}
       </SubMenu>
       <SubMenu
         key={PRODUCT.RSPACK}
@@ -97,7 +90,11 @@ export const SideMenu = (props: {
           </>
         }
       >
-        <MenuItem key={PRODUCT.RSPACK}>
+        <MenuItem key={`${PRODUCT.RSPACK}_${MENU.BINARY_SIZE}`}>
+          <IconCamera />
+          <span style={{ marginLeft: '4px' }}>Binary Size</span>
+        </MenuItem>
+        <MenuItem key={`${PRODUCT.RSPACK}_benchmark`}>
           <IconCamera />
           <span style={{ marginLeft: '4px' }}>Benchmark</span>
         </MenuItem>
@@ -131,13 +128,6 @@ export const SideMenu = (props: {
           <IconInteraction />
           Bundle Size
         </MenuItem>
-        {/* <MenuItem
-          key={`${PRODUCT.RSPRESS}_${MENU.CLI_SPEED}`}
-          style={itemStyle}
-        >
-          <IconDashboard />
-          Cli Speed
-        </MenuItem> */}
       </SubMenu>
       <SubMenu
         key={PRODUCT.RSLIB}
@@ -198,13 +188,6 @@ export const SideMenu = (props: {
           <IconInteraction />
           Bundle Size
         </MenuItem>
-        {/* <MenuItem
-          key={`${PRODUCT.MODERNJS_FRAMEWORK}_${MENU.CLI_SPEED}`}
-          style={itemStyle}
-        >
-          <IconDashboard />
-          Cli Speed
-        </MenuItem> */}
       </SubMenu>
     </Menu>
   </Root>
