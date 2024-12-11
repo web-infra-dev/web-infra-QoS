@@ -21,14 +21,17 @@ const BASENAME =
 
 const App = () => {
   const query = new URLSearchParams(window.location.search);
-  const initialProductIndex =
-    query.get('product') || PRODUCT.RSBUILD;
+  const initialProductIndex = query.get('product') || PRODUCT.RSBUILD;
   const initialMenuIndex = query.get('metrics') || MENU.COMPILE_SPEED;
 
   const [productIndex, setProductIndex] = useState(initialProductIndex);
   const [menuIndex, setMenuIndex] = useState(initialMenuIndex);
   const [openKeys, setOpenKeys] = useState<string[]>([
-    `${initialProductIndex}`,
+    PRODUCT.RSBUILD,
+    PRODUCT.RSPACK,
+    PRODUCT.RSPRESS,
+    PRODUCT.RSLIB,
+    PRODUCT.MODERNJS_FRAMEWORK,
   ]);
   const [selectKeys, setSelectedKeys] = useState<string[]>([
     `${initialProductIndex}_${initialMenuIndex}`,

@@ -96,11 +96,7 @@ function generateTable(
         !property.includes('InstallTime') &&
         property !== 'routeGenerateTime' &&
         property !== 'beforeDevTime' &&
-        property !== 'beforeBuildTime' &&
-        !(
-          caseName.startsWith('module-') &&
-          property.toLowerCase().indexOf('build') > -1
-        )
+        property !== 'beforeBuildTime'
       ) {
         overThresholdTags.push(property);
       }

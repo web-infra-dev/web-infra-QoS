@@ -4,7 +4,6 @@ export const BASE_PADDING = 24;
 
 export const PRODUCT = {
   MODERNJS_FRAMEWORK: 'modernjs-framework',
-  MODERNJS_MODULE: 'modernjs-module',
   RSBUILD: 'rsbuild',
   RSLIB: 'rslib',
   RSPRESS: 'rspress',
@@ -38,15 +37,6 @@ export const PRODUCT_CASES: CaseorMetrics = {
     'app-arco-pro-esbuild',
     'app-arco-pro-rspack',
   ],
-  [PRODUCT.MODERNJS_MODULE]: [
-    'module-initial',
-    'module-library',
-    'module-library-sourcemap',
-    'module-library-noautoexternal',
-    'module-library-minify-esbuild',
-    'module-library-minify-terser',
-    'module-component',
-  ],
   [PRODUCT.RSPRESS]: [
     'rspress-minimal',
     'rspress-website',
@@ -66,14 +56,12 @@ export const PRODUCT_CASES: CaseorMetrics = {
 
 export const BUNDLE_SIZE_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-initial', 'app-initial-rspack'],
-  [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
   [PRODUCT.RSPRESS]: ['rspress-website', 'rspress-website-mdxjs'],
   [PRODUCT.RSBUILD]: ['rsbuild-react', 'rsbuild-arco-pro'],
   [PRODUCT.RSLIB]: ['rslib-node-basic', 'rslib-react-basic'],
 };
 export const BUNDLE_SIZE_METRICS = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['minifiedBundleSize', 'gzippedBundleSize'],
-  [PRODUCT.MODERNJS_MODULE]: ['distSize', 'gzippedDistSize'],
   [PRODUCT.RSPRESS]: [
     'gzipInitialJsSize',
     'initialJsSize',
@@ -91,7 +79,6 @@ export const BUNDLE_SIZE_METRICS = {
 
 export const COMPILE_SPEED_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-arco-pro', 'app-arco-pro-rspack'],
-  [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
   [PRODUCT.RSPRESS]: ['rspress-website', 'rspress-website-mdxjs'],
   [PRODUCT.RSBUILD]: ['rsbuild-react', 'rsbuild-arco-pro'],
   [PRODUCT.RSLIB]: ['rslib-node-basic', 'rslib-react-basic'],
@@ -108,14 +95,6 @@ export const COMPILE_SPEED_METRICS = {
     'beforeDevTime',
     'devPluginSetupTime',
     'devPrepareTime',
-  ],
-  [PRODUCT.MODERNJS_MODULE]: [
-    'buildColdBootTime',
-    'beforeBuildTime',
-    'buildPluginSetupTime',
-    'buildCjsTime',
-    'buildEsmTime',
-    'buildDtsTime',
   ],
   [PRODUCT.RSPRESS]: [
     'buildColdBootTime',
@@ -141,7 +120,6 @@ export const COMPILE_SPEED_METRICS = {
 
 export const INSTALL_SPEED_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-initial', 'app-initial-rspack'],
-  [PRODUCT.MODERNJS_MODULE]: ['module-library', 'module-component'],
   [PRODUCT.RSPRESS]: ['rspress-minimal', 'rspress-website'],
   [PRODUCT.RSBUILD]: ['rsbuild-vanilla', 'rsbuild-react'],
   [PRODUCT.RSLIB]: ['rslib-node-basic', 'rslib-react-basic'],
@@ -154,7 +132,6 @@ export const DEFAULT_INSTALL_SPEED_METRICS = [
 ];
 export const INSTALL_SPEED_METRICS = {
   [PRODUCT.MODERNJS_FRAMEWORK]: DEFAULT_INSTALL_SPEED_METRICS,
-  [PRODUCT.MODERNJS_MODULE]: DEFAULT_INSTALL_SPEED_METRICS,
   [PRODUCT.RSPRESS]: DEFAULT_INSTALL_SPEED_METRICS,
   [PRODUCT.RSBUILD]: DEFAULT_INSTALL_SPEED_METRICS,
   [PRODUCT.RSLIB]: DEFAULT_INSTALL_SPEED_METRICS,

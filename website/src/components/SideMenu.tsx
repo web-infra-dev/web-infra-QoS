@@ -9,7 +9,7 @@ import {
   IconInteraction,
   IconThunderbolt,
   IconCloudDownload,
-  IconDashboard,
+  IconCloud,
   IconBook,
 } from '@arco-design/web-react/icon';
 import { MENU, PRODUCT } from '@/shared/constant';
@@ -90,6 +90,19 @@ export const SideMenu = (props: {
         </MenuItem> */}
       </SubMenu>
       <SubMenu
+        key={PRODUCT.RSPACK}
+        title={
+          <>
+            <IconCloud /> Rspack
+          </>
+        }
+      >
+        <MenuItem key={PRODUCT.RSPACK}>
+          <IconCamera />
+          <span style={{ marginLeft: '4px' }}>Benchmark</span>
+        </MenuItem>
+      </SubMenu>
+      <SubMenu
         key={PRODUCT.RSPRESS}
         title={
           <>
@@ -160,7 +173,7 @@ export const SideMenu = (props: {
         key={PRODUCT.MODERNJS_FRAMEWORK}
         title={
           <>
-            <IconApps /> Modern.js Framework
+            <IconApps /> Modern.js
           </>
         }
       >
@@ -193,47 +206,6 @@ export const SideMenu = (props: {
           Cli Speed
         </MenuItem> */}
       </SubMenu>
-      <SubMenu
-        key={PRODUCT.MODERNJS_MODULE}
-        title={
-          <>
-            <IconBug /> Modern.js Module
-          </>
-        }
-      >
-        <MenuItem
-          key={`${PRODUCT.MODERNJS_MODULE}_${MENU.COMPILE_SPEED}`}
-          style={itemStyle}
-        >
-          <IconThunderbolt />
-          Compile Speed
-        </MenuItem>
-        <MenuItem
-          key={`${PRODUCT.MODERNJS_MODULE}_${MENU.INSTALL_SPEED}`}
-          style={itemStyle}
-        >
-          <IconCloudDownload />
-          Install Speed
-        </MenuItem>
-        <MenuItem
-          key={`${PRODUCT.MODERNJS_MODULE}_${MENU.BUNDLE_SIZE}`}
-          style={itemStyle}
-        >
-          <IconInteraction />
-          Bundle Size
-        </MenuItem>
-        {/* <MenuItem
-          key={`${PRODUCT.MODERNJS_MODULE}_${MENU.CLI_SPEED}`}
-          style={itemStyle}
-        >
-          <IconDashboard />
-          Cli Speed
-        </MenuItem> */}
-      </SubMenu>
-      <MenuItem key={PRODUCT.RSPACK}>
-        <IconCamera />
-        <span style={{ marginLeft: '4px' }}>Rspack</span>
-      </MenuItem>
     </Menu>
   </Root>
 );
