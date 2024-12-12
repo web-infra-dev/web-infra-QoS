@@ -90,13 +90,16 @@ export const SideMenu = (props: {
           </>
         }
       >
-        <MenuItem key={`${PRODUCT.RSPACK}_${MENU.BINARY_SIZE}`}>
+        <MenuItem
+          key={`${PRODUCT.RSPACK}_${MENU.BINARY_SIZE}`}
+          style={itemStyle}
+        >
           <IconCamera />
-          <span style={{ marginLeft: '4px' }}>Binary Size</span>
+          Binary Size
         </MenuItem>
-        <MenuItem key={`${PRODUCT.RSPACK}_benchmark`}>
+        <MenuItem key={`${PRODUCT.RSPACK}_benchmark`} style={itemStyle}>
           <IconCamera />
-          <span style={{ marginLeft: '4px' }}>Benchmark</span>
+          Benchmark
         </MenuItem>
       </SubMenu>
       <SubMenu
