@@ -117,6 +117,8 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Install rsync
+        # Only needed for self-hosted runners
+        if: ${{ matrix.case != 'rspack-binary-size' }}
         run: |
           apt-get update && apt-get install -y rsync
 
