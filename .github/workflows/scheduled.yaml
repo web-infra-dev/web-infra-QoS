@@ -61,7 +61,9 @@ jobs:
           - case: app-arco-pro-rspack
             product: MODERNJS_FRAMEWORK
 
-    runs-on: ${{ fromJSON(vars.SELF_LINUX_LABELS || '"ubuntu-latest"') }}
+    # Use `ubuntu-latest` for `rspack-binary-size`
+    # Use self-hosted runner for other bench cases
+    runs-on: ${{ matrix.case == 'rspack-binary-size' && 'ubuntu-latest' || fromJSON(vars.SELF_LINUX_LABELS || '"ubuntu-latest"') }}
 
     steps:
       - name: Print runner context
