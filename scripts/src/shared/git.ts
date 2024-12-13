@@ -25,9 +25,10 @@ export async function cloneRepo(productName: string, caseName: string) {
       ? `https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/web-infra-dev/${repoName}.git`
       : `git@github.com:web-infra-dev/${repoName}.git`;
 
-    const options = ['clone', '--single-branch'];
+    const options = ['clone'];
 
     if (!COMMIT_ID && !PR_NUMBER) {
+      options.push('--single-branch');
       options.push('--depth', '1');
     }
 
