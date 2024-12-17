@@ -43,7 +43,7 @@ export const ContentBinarySize = (props: { productIndex: string }) => {
         ...LINE_CHART_DEFAULT_CONFIG,
         data,
         yAxis: {
-          min: 40,
+          min: 50,
         },
         tooltip: {
           fields: ['x', 'y', 'category', 'metricsName'],
