@@ -97,6 +97,13 @@ export async function cloneRepo(productName: string, caseName: string) {
     content => `${content}\n${addWorkspace}`,
   );
 
+  // rename prepare scripts to avoid executing
+  // pnpm link will execute complete process of pnpm install in pnpm v10.
+  await updateFile(
+    join(localRepoPath, 'package.json'),
+    content => `${content.replace(`"prepare":`, `"prepare-ignore":`)}`,
+  );
+
   await runCommand(localRepoPath, 'pnpm link ../scripts');
 
   // since rsbuild set hoist-pattern[]=[], we manually delete this config to run cases deps install
