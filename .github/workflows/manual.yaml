@@ -113,7 +113,7 @@ jobs:
         run: pnpm run install:scripts
 
       - name: 🚀 Run specified benchmark
-        run: cd scripts && SPECIFIED_VERSION=${{ github.event.inputs.specifiedVersion }} ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start ${{ matrix.product }} ${{ matrix.case }}
+        run: cd scripts && SPECIFIED_VERSION=${{ github.event.inputs.specifiedVersion }} ONLY_INSTALL_SIZE=${{ github.event.inputs.onlyInstallSize }} COMMIT_ID=${{ github.event.inputs.commitId }} pnpm start ${{ matrix.product }} ${{ matrix.case }}
 
       - name: Setup git user
         run: |

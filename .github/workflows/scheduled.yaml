@@ -112,7 +112,7 @@ jobs:
         run: pnpm run install:scripts
 
       - name: 🚀 Run benchmark
-        run: cd scripts && GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} pnpm start ${{ matrix.product }} ${{ matrix.case }}
+        run: cd scripts && pnpm start ${{ matrix.product }} ${{ matrix.case }}
 
       - name: Setup git user
         run: |
