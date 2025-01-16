@@ -54,6 +54,10 @@ on:
         required: false
         default: 'no'
 
+permissions:
+  # Allow `github-pages-deploy-action` to write to `gh-pages` branch
+  contents: write
+
 jobs:
   bench:
     strategy:
