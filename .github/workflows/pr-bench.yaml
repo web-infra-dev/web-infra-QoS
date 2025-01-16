@@ -81,7 +81,7 @@ jobs:
         run: pnpm run install:scripts
 
       - name: 🚀 Run specified benchmark
-        run: cd scripts && PR_NUMBER=${{ inputs.prNumber }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} pnpm start:pr ${{ inputs.product }}
+        run: cd scripts && PR_NUMBER=${{ inputs.prNumber }} pnpm start:pr ${{ inputs.product }}
 
       - id: print-results
         name: Print results
