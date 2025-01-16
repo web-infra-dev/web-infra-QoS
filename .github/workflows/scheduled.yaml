@@ -5,6 +5,10 @@ on:
     - cron: '0 19 * * *'
   workflow_dispatch:
 
+permissions:
+  # Allow `github-pages-deploy-action` to write to `gh-pages` branch
+  contents: write
+
 jobs:
   benchmark:
     continue-on-error: true

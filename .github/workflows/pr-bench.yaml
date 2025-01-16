@@ -16,6 +16,10 @@ on:
         required: true
         type: string
 
+permissions:
+  # Allow `github-pages-deploy-action` to write to `gh-pages` branch
+  contents: write
+
 jobs:
   create-comment:
     runs-on: ubuntu-latest
