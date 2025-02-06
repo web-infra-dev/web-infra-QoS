@@ -29,7 +29,7 @@ jobs:
           cache-dependency-path: pnpm-lock.yaml
 
       - name: Install Pnpm
-        run: corepack enable && pnpm -v && pnpm store path
+        run: npm install -g corepack@latest && corepack enable && pnpm -v && pnpm store path
 
       - name: Install Dependencies
         run: pnpm run install:scripts
