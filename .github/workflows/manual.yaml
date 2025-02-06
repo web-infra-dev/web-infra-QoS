@@ -90,7 +90,10 @@ jobs:
       - name: Activate corepack
         shell: bash
         run: |
-          npm install -g corepack@latest
+          # corepack > 0.24.1 will use native fetch
+          # and native fetch not support HTTP_PROXY
+          # https://github.com/nodejs/undici/issues/1650
+          npm install -g corepack@0.24.1
           corepack enable
 
       - name: Install Pnpm
