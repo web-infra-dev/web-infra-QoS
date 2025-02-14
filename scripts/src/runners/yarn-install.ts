@@ -148,6 +148,35 @@ const getDepCount = async (casePath: string) => {
   return Object.keys(lockInfo).length;
 };
 
+const printSortedNodeModulesPackages = async (nodeModulesPath: string) => {
+  // 构造匹配所有 package.json 的 glob 模式
+  const pattern = join(nodeModulesPath, '**', 'package.json');
+
+  // 查找所有 package.json 文件，absolute: true 返回完整路径
+  const packageFiles = await fastGlob(pattern, { absolute: true });
+  const packages: { name: string; version: string }[] = [];
+
+  for (const pkgPath of packageFiles) {
+    try {
+      const pkg = await readJson(pkgPath);
+      // 仅存储同时具备 name 和 version 的 package.json 文件
+      if (pkg.name && pkg.version) {
+        packages.push({ name: pkg.name, version: pkg.version });
+      }
+    } catch (error) {
+      console.error(`读取 ${pkgPath} 失败:`, error);
+    }
+  }
+
+  // 根据包的 name 进行排序
+  packages.sort((a, b) => a.name.localeCompare(b.name));
+
+  // 打印排序后的包信息
+  packages.forEach(pkg => {
+    console.log(`Name: ${pkg.name}, Version: ${pkg.version}`);
+  });
+};
+
 const getInstallSize = async (casePath: string) => {
   const nodeModulesPath = join(casePath, 'node_modules');
 
@@ -159,6 +188,8 @@ const getInstallSize = async (casePath: string) => {
 
   // prevent install two linux bindings
   await remove(join(nodeModulesPath, '@rspack/binding-linux-x64-musl'));
+
+  await printSortedNodeModulesPackages(nodeModulesPath);
 
   return new Promise<number>((resolve, reject) => {
     getFolderSize(nodeModulesPath, (err: Error, size: number) => {
