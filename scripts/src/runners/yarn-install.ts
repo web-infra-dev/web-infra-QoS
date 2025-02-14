@@ -159,6 +159,7 @@ const getInstallSize = async (casePath: string) => {
 
   // prevent install two linux bindings
   await remove(join(nodeModulesPath, '@rspack/binding-linux-x64-musl'));
+  await remove(join(nodeModulesPath, '@swc/core-linux-x64-musl'));
 
   return new Promise<number>((resolve, reject) => {
     getFolderSize(nodeModulesPath, (err: Error, size: number) => {
