@@ -6,7 +6,7 @@ import { statSync } from 'fs';
 export const getBinarySize = async () => {
   const repoPath = getRepoPath(getRepoName('RSPACK'));
 
-  await runCommand(repoPath, 'pnpm run build:binding:release-prod');
+  await runCommand(repoPath, 'pnpm run build:binding:release');
 
   const binaryPath = glob.sync(
     join(repoPath, 'crates/node_binding/rspack.*.node'),
