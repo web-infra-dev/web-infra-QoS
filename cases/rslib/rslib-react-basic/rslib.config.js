@@ -6,6 +6,7 @@ const shared = {
   dts: {
     bundle: false,
   },
+  plugins: [measureRslibBuildPlugin()],
 };
 
 export default defineConfig({
@@ -34,5 +35,5 @@ export default defineConfig({
       index: './src/index.tsx',
     },
   },
-  plugins: [pluginReact(), measureRslibBuildPlugin()],
+  plugins: [pluginReact()],
 });
