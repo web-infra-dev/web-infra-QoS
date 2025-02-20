@@ -5,6 +5,7 @@ const shared = {
   dts: {
     bundle: false,
   },
+  plugins: [measureRslibBuildPlugin()],
 };
 
 export default defineConfig({
@@ -36,5 +37,4 @@ export default defineConfig({
   output: {
     target: 'node',
   },
-  plugins: [measureRslibBuildPlugin()],
 });
