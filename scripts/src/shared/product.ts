@@ -16,7 +16,7 @@ export enum REPO_NAME {
 
 export const DefaultBenchCase = {
   MODERNJS_FRAMEWORK: ['app-arco-pro-rspack'],
-  RSPRESS: ['rspress-website'],
+  RSPRESS: ['rspress-website-mdxjs'],
   RSBUILD: ['rsbuild-react', 'rsbuild-arco-pro'],
   RSLIB: ['rslib-node-basic', 'rslib-react-basic'],
 };

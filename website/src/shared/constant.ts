@@ -40,8 +40,8 @@ export const PRODUCT_CASES: CaseorMetrics = {
   ],
   [PRODUCT.RSPRESS]: [
     'rspress-minimal',
-    'rspress-website',
     'rspress-website-mdxjs',
+    'rspress-website-mdxjs-ssg-false',
   ],
   [PRODUCT.RSBUILD]: [
     'rsbuild-react',
@@ -57,7 +57,7 @@ export const PRODUCT_CASES: CaseorMetrics = {
 
 export const BUNDLE_SIZE_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-initial', 'app-initial-rspack'],
-  [PRODUCT.RSPRESS]: ['rspress-website', 'rspress-website-mdxjs'],
+  [PRODUCT.RSPRESS]: ['rspress-website-mdxjs', 'rspress-website-mdxjs-ssg-false'],
   [PRODUCT.RSBUILD]: ['rsbuild-react', 'rsbuild-arco-pro'],
   [PRODUCT.RSLIB]: ['rslib-node-basic', 'rslib-react-basic'],
 };
@@ -80,7 +80,7 @@ export const BUNDLE_SIZE_METRICS = {
 
 export const COMPILE_SPEED_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-arco-pro', 'app-arco-pro-rspack'],
-  [PRODUCT.RSPRESS]: ['rspress-website', 'rspress-website-mdxjs'],
+  [PRODUCT.RSPRESS]: ['rspress-website-mdxjs', 'rspress-website-mdxjs-ssg-false'],
   [PRODUCT.RSBUILD]: ['rsbuild-react', 'rsbuild-arco-pro'],
   [PRODUCT.RSLIB]: ['rslib-node-basic', 'rslib-react-basic'],
 };
@@ -121,7 +121,7 @@ export const COMPILE_SPEED_METRICS = {
 
 export const INSTALL_SPEED_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-initial', 'app-initial-rspack'],
-  [PRODUCT.RSPRESS]: ['rspress-minimal', 'rspress-website'],
+  [PRODUCT.RSPRESS]: ['rspress-minimal', 'rspress-website-mdxjs'],
   [PRODUCT.RSBUILD]: ['rsbuild-vanilla', 'rsbuild-react'],
   [PRODUCT.RSLIB]: ['rslib-node-basic', 'rslib-react-basic'],
 };

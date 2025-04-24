@@ -58,13 +58,13 @@ Arco Pro project.
 
 Minimal doc project.
 
-### rspress-website
-
-Website project with rspress.
-
 ### rspress-website-mdxjs
 
-`rspress-website` + `mdxRs: false`.
+`rspress-website`.
+
+### rspress-website-mdxjs-ssg-false
+
+`rspress-website-mdxjs` + `ssg: false`.
 
 ### rsbuild-react
 

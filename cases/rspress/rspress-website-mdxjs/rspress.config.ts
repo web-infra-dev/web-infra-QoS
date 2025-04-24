@@ -7,7 +7,6 @@ import { pluginSass } from '@rsbuild/plugin-sass';
 export default defineConfig({
   markdown: {
     checkDeadLinks: true,
-    mdxRs: false,
   },
   root: 'docs',
   title: 'Rspress',
