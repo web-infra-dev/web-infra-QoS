@@ -27,8 +27,8 @@ on:
           - rsbuild-arco-pro
           - rsbuild-react-app-10k
           - rspress-minimal
-          - rspress-website
           - rspress-website-mdxjs
+          - rspress-website-mdxjs-ssg-false
           - rslib-node-basic
           - rslib-react-basic
           - app-minimal

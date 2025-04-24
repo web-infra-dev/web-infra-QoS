@@ -8,6 +8,7 @@ export default defineConfig({
   markdown: {
     checkDeadLinks: true,
   },
+  ssg: false,
   root: 'docs',
   title: 'Rspress',
   description: 'Rspack based static site generator',

@@ -34,9 +34,9 @@ jobs:
             product: RSBUILD
           - case: rspress-minimal
             product: RSPRESS
-          - case: rspress-website
-            product: RSPRESS
           - case: rspress-website-mdxjs
+            product: RSPRESS
+          - case: rspress-website-mdxjs-ssg-false
             product: RSPRESS
           - case: rslib-node-basic
             product: RSLIB
