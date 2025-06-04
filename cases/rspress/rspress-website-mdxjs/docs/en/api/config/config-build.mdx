@@ -4,7 +4,7 @@
 
 - Type: `Object`
 
-Used to customize the configurations of Rsbuild. For complete configurations, please refer to [Rsbuild - Config](https://rsbuild.dev/config/).
+Used to customize the configurations of Rsbuild. For complete configurations, please refer to [Rsbuild - Config](https://rsbuild.rs/config/).
 
 For example, change the output directory to `doc_dist`:
 
@@ -24,7 +24,7 @@ export default defineConfig({
 
 - Type: `RsbuildPlugin[]`
 
-Used to customize the [plugins of Rsbuild](https://rsbuild.dev). For example:
+Used to customize the [plugins of Rsbuild](https://rsbuild.rs). For example:
 
 ```ts title="rspress.config.ts"
 import { defineConfig } from 'rspress/config';
@@ -45,7 +45,7 @@ DEBUG=rsbuild rspress dev
 
 After execution, the `rsbuild.config.js` file is created in the `doc_build` directory, which contains the complete `builderConfig`.
 
-> Please refer to [Rsbuild - Debug Mode](https://rsbuild.dev/guide/debug/debug-mode) for more information on how to debug the Rsbuild.
+> Please refer to [Rsbuild - Debug Mode](https://rsbuild.rs/guide/debug/debug-mode) for more information on how to debug the Rsbuild.
 
 ## markdown
 

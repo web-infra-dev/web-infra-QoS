@@ -16,7 +16,7 @@ export const Content = (props: { productIndex: string; menuIndex: string }) => {
         <div style={{ padding: BASE_PADDING }}>
           <div>
             <iframe
-              src="https://rspack-ecosystem-benchmark.rspack.dev/"
+              src="https://ecosystem-benchmark.rspack.rs/"
               title="Rspack Benchmark"
               style={{ width: '100%', height: '900px', border: 'none' }}
             ></iframe>

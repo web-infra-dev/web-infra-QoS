@@ -4,7 +4,7 @@
 
 - Type: `Object`
 
-用于自定义 Rsbuild 的配置项，完整配置项请查看 [Rsbuild - 配置](https://rsbuild.dev/zh/config/)。
+用于自定义 Rsbuild 的配置项，完整配置项请查看 [Rsbuild - 配置](https://rsbuild.rs/zh/config/)。
 
 比如，将产物目录修改为 `doc_dist`：
 
@@ -24,7 +24,7 @@ export default defineConfig({
 
 - Type: `RsbuildPlugin[]`
 
-用于加入 [Rsbuild 的插件](https://rsbuild.dev/zh/plugins/list/)，比如：
+用于加入 [Rsbuild 的插件](https://rsbuild.rs/zh/plugins/list/)，比如：
 
 ```ts title="rspress.config.ts"
 import { defineConfig } from 'rspress/config';
@@ -45,7 +45,7 @@ DEBUG=rsbuild rspress dev
 
 在执行后，`doc_build` 目录下会生成 `rsbuild.config.js` 文件，里面包含了完整的 `builderConfig`。
 
-> 请查看 [Rsbuild - 调试模式](https://rsbuild.dev/zh/guide/debug/debug-mode) 来了解更多调试 Rsbuild 的方法。
+> 请查看 [Rsbuild - 调试模式](https://rsbuild.rs/zh/guide/debug/debug-mode) 来了解更多调试 Rsbuild 的方法。
 
 ## markdown
 
