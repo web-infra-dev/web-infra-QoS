@@ -2,6 +2,7 @@ import execa from 'execa';
 import { copy, pathExists, remove } from 'fs-extra';
 import { updateFile } from './fs';
 import {
+  addContentToPnpmPackages,
   getCaseDistPath,
   getCaseSrcPath,
   getRepoName,
@@ -83,17 +84,21 @@ export async function cloneRepo(productName: string, caseName: string) {
   await runCommand(localRepoPath, 'pnpm i --ignore-scripts');
   await runCommand(localRepoPath, 'pnpm prepare');
 
-  // add cases folder to workspace config
-  const addWorkspace =
-    productName === 'RSPRESS' ||
-    productName === 'RSBUILD' ||
-    productName === 'RSLIB'
-      ? "  - 'cases/*'"
-      : " - 'cases/*'";
-  await updateFile(
-    join(localRepoPath, 'pnpm-workspace.yaml'),
-    content => `${content}\n${addWorkspace}`,
-  );
+  if (productName === 'RSBUILD') {
+    await updateFile(join(localRepoPath, 'pnpm-workspace.yaml'), content =>
+      addContentToPnpmPackages(content, "- 'cases/*'"),
+    );
+  } else {
+    // add cases folder to workspace config
+    const addWorkspace =
+      productName === 'RSPRESS' || productName === 'RSLIB'
+        ? "  - 'cases/*'"
+        : " - 'cases/*'";
+    await updateFile(
+      join(localRepoPath, 'pnpm-workspace.yaml'),
+      content => `${content}\n${addWorkspace}`,
+    );
+  }
 
   // rename prepare scripts to avoid executing
   // pnpm link will execute complete process of pnpm install in pnpm v10.
