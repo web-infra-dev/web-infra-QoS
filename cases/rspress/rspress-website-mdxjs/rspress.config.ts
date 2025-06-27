@@ -28,6 +28,8 @@ export default defineConfig({
           process.env.DOCUMATE_BACKEND_URL,
         ),
       },
+    },
+    resolve: {
       alias: {
         'rspress/theme': process.env.DOC_DEBUG
           ? path.join(__dirname, '../core/src/theme-default')
