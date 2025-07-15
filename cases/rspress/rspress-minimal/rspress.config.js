@@ -6,5 +6,7 @@ import { measureRspressBuildPlugin } from '@modern-js/benchmark-scripts/plugins/
 export default defineConfig({
   root: path.join(__dirname, 'doc'),
   plugins: [measurePlugin()],
-  builderPlugins: [measureRspressBuildPlugin()],
+  builderConfig: {
+    plugins: [measureRspressBuildPlugin()],
+  },
 });

@@ -19,6 +19,7 @@ export default defineConfig({
   },
   icon: 'https://lf3-static.bytednsdoc.com/obj/eden-cn/uhbfnupenuhf/rspress/rspress-logo.png',
   builderConfig: {
+    plugins: [measureRspressBuildPlugin(), pluginSass()],
     dev: {
       startUrl: false,
     },
@@ -104,5 +105,4 @@ gtag('config', 'G-66B2Z6KG0J');`,
     ],
   },
   plugins: [measurePlugin()],
-  builderPlugins: [measureRspressBuildPlugin(), pluginSass()],
 });
