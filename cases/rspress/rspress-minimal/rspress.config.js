@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { defineConfig } from 'rspress/config';
+import { defineConfig } from '@rspress/core';
 import { measurePlugin } from '@modern-js/benchmark-scripts/plugins/rspress';
 import { measureRspressBuildPlugin } from '@modern-js/benchmark-scripts/plugins/rsbuild';
 

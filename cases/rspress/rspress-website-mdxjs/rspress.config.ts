@@ -1,5 +1,5 @@
 import path from 'path';
-import { defineConfig } from 'rspress/config';
+import { defineConfig } from '@rspress/core';
 import { measurePlugin } from '@modern-js/benchmark-scripts/plugins/rspress';
 import { measureRspressBuildPlugin } from '@modern-js/benchmark-scripts/plugins/rsbuild';
 import { pluginSass } from '@rsbuild/plugin-sass';
@@ -28,13 +28,6 @@ export default defineConfig({
         'process.env.DOCUMATE_BACKEND_URL': JSON.stringify(
           process.env.DOCUMATE_BACKEND_URL,
         ),
-      },
-    },
-    resolve: {
-      alias: {
-        'rspress/theme': process.env.DOC_DEBUG
-          ? path.join(__dirname, '../core/src/theme-default')
-          : 'rspress/theme',
       },
     },
     html: {
