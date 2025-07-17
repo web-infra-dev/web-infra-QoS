@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Tabs, Tab } from 'rspress/theme';
-import { NoSSR, useI18n } from 'rspress/runtime';
+import { Tabs, Tab } from '@rspress/core/theme';
+import { NoSSR, useI18n } from '@rspress/core/runtime';
 import { ProgressBar } from './ProgressBar';
 
 const BENCHMARK_DATA = {
