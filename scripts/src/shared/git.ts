@@ -26,7 +26,7 @@ export async function cloneRepo(productName: string, caseName: string) {
 
     const options = ['clone'];
 
-    if (!COMMIT_ID && !PR_NUMBER) {
+    if (!COMMIT_ID && !PR_NUMBER && repoName !== 'modern.js') {
       options.push('--single-branch');
       options.push('--depth', '1');
     }
@@ -36,6 +36,19 @@ export async function cloneRepo(productName: string, caseName: string) {
       stderr: 'inherit',
       stdout: 'inherit',
     });
+
+    if (repoName === 'modern.js') {
+      await execa('git', ['fetch', 'origin', 'v2'], {
+        cwd: localRepoPath,
+        stderr: 'inherit',
+        stdout: 'inherit',
+      });
+      await execa('git', ['checkout', 'v2'], {
+        cwd: localRepoPath,
+        stderr: 'inherit',
+        stdout: 'inherit',
+      });
+    }
 
     if (COMMIT_ID) {
       await execa('git', ['checkout', COMMIT_ID], {
