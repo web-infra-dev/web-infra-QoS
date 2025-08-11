@@ -58,7 +58,7 @@ export const PRODUCT_CASES: CaseorMetrics = {
 export const BUNDLE_SIZE_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-initial', 'app-initial-rspack'],
   [PRODUCT.RSPRESS]: ['rspress-website-mdxjs', 'rspress-website-mdxjs-ssg-false'],
-  [PRODUCT.RSBUILD]: ['rsbuild-react', 'rsbuild-arco-pro'],
+  [PRODUCT.RSBUILD]: ['rsbuild-react-app-10k', 'rsbuild-arco-pro'],
   [PRODUCT.RSLIB]: ['rslib-node-basic', 'rslib-react-basic'],
 };
 export const BUNDLE_SIZE_METRICS = {
@@ -81,7 +81,7 @@ export const BUNDLE_SIZE_METRICS = {
 export const COMPILE_SPEED_DEFAULT_CASE = {
   [PRODUCT.MODERNJS_FRAMEWORK]: ['app-arco-pro', 'app-arco-pro-rspack'],
   [PRODUCT.RSPRESS]: ['rspress-website-mdxjs', 'rspress-website-mdxjs-ssg-false'],
-  [PRODUCT.RSBUILD]: ['rsbuild-react', 'rsbuild-arco-pro'],
+  [PRODUCT.RSBUILD]: ['rsbuild-react-app-10k', 'rsbuild-arco-pro'],
   [PRODUCT.RSLIB]: ['rslib-node-basic', 'rslib-react-basic'],
 };
 export const COMPILE_SPEED_METRICS = {
