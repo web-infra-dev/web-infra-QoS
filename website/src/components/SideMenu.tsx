@@ -65,21 +65,21 @@ export const SideMenu = (props: {
           style={itemStyle}
         >
           <IconThunderbolt />
-          Compile Speed
+          Build performance
         </MenuItem>
         <MenuItem
           key={`${PRODUCT.RSBUILD}_${MENU.INSTALL_SPEED}`}
           style={itemStyle}
         >
           <IconCloudDownload />
-          Install Speed
+          Install size
         </MenuItem>
         <MenuItem
           key={`${PRODUCT.RSBUILD}_${MENU.BUNDLE_SIZE}`}
           style={itemStyle}
         >
           <IconInteraction />
-          Bundle Size
+          Bundle size
         </MenuItem>
       </SubMenu>
       <SubMenu
@@ -95,7 +95,7 @@ export const SideMenu = (props: {
           style={itemStyle}
         >
           <IconCamera />
-          Binary Size
+          Binary size
         </MenuItem>
         <MenuItem key={`${PRODUCT.RSPACK}_benchmark`} style={itemStyle}>
           <IconCamera />
@@ -115,21 +115,21 @@ export const SideMenu = (props: {
           style={itemStyle}
         >
           <IconThunderbolt />
-          Compile Speed
+          Build performance
         </MenuItem>
         <MenuItem
           key={`${PRODUCT.RSPRESS}_${MENU.INSTALL_SPEED}`}
           style={itemStyle}
         >
           <IconCloudDownload />
-          Install Speed
+          Install size
         </MenuItem>
         <MenuItem
           key={`${PRODUCT.RSPRESS}_${MENU.BUNDLE_SIZE}`}
           style={itemStyle}
         >
           <IconInteraction />
-          Bundle Size
+          Bundle size
         </MenuItem>
       </SubMenu>
       <SubMenu
@@ -145,21 +145,21 @@ export const SideMenu = (props: {
           style={itemStyle}
         >
           <IconThunderbolt />
-          Compile Speed
+          Build performance
         </MenuItem>
         <MenuItem
           key={`${PRODUCT.RSLIB}_${MENU.INSTALL_SPEED}`}
           style={itemStyle}
         >
           <IconCloudDownload />
-          Install Speed
+          Install size
         </MenuItem>
         <MenuItem
           key={`${PRODUCT.RSLIB}_${MENU.BUNDLE_SIZE}`}
           style={itemStyle}
         >
           <IconInteraction />
-          Bundle Size
+          Bundle size
         </MenuItem>
       </SubMenu>
       <SubMenu
@@ -175,21 +175,21 @@ export const SideMenu = (props: {
           style={itemStyle}
         >
           <IconThunderbolt />
-          Compile Speed
+          Build performance
         </MenuItem>
         <MenuItem
           key={`${PRODUCT.MODERNJS_FRAMEWORK}_${MENU.INSTALL_SPEED}`}
           style={itemStyle}
         >
           <IconCloudDownload />
-          Install Speed
+          Install size
         </MenuItem>
         <MenuItem
           key={`${PRODUCT.MODERNJS_FRAMEWORK}_${MENU.BUNDLE_SIZE}`}
           style={itemStyle}
         >
           <IconInteraction />
-          Bundle Size
+          Bundle size
         </MenuItem>
       </SubMenu>
     </Menu>

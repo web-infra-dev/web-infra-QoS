@@ -119,7 +119,7 @@ The size of the bundles after the build.
 - `esm-bundle-size`: the size of esm formats outputs.
 - `esm-gzip-bundle-size`: the size of esm formats outputs after gzip.
 
-### Compile Speed
+### Build Performance
 
 - `dev-plugin-setup-time`: the time it takes from the start of the dev command to the completion of loading all plugins. Corresponding hooks: `loadConfig -> loadPlugin`.
 - `dev-prepare-time`: the time taken from the time the plugins are loaded to the time when the build prep process is fully completed. Corresponding hooks: `loadPlugin -> prepare`.
@@ -140,7 +140,7 @@ The size of the bundles after the build.
 - `before-dev-time`: the time it takes for the dev command to initialize, in other words, cli cold boot time.
 - `before-build-time`: the time it takes for the build command to initialize, in other words, cli cold boot time.
 
-### Install Speed
+### Install Size
 
 Install npm dependency related metrics.
 
