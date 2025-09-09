@@ -102,6 +102,16 @@ export async function cloneRepo(productName: string, caseName: string) {
     addContentToPnpmPackages(content, "- 'cases/*'"),
   );
 
+  // Rspress add strictPeerDependencies: false
+  if (productName === 'RSPRESS') {
+    await updateFile(join(localRepoPath, 'pnpm-workspace.yaml'), content =>
+      content.replace(
+        /^strictPeerDependencies: true/m,
+        'strictPeerDependencies: false',
+      ),
+    );
+  }
+
   // rename prepare scripts to avoid executing
   // pnpm link will execute complete process of pnpm install in pnpm v10.
   await updateFile(
