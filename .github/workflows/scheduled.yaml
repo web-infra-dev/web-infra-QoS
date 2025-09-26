@@ -95,7 +95,7 @@ jobs:
         run: pnpm -v && pnpm store path
 
       - name: Cache pnpm cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         if: ${{ startsWith(runner.name, 'GitHub Actions') }}
         with:
           path: |
