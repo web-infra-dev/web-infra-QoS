@@ -23,7 +23,7 @@ const SelectGroup = ({
   return (
     <>
       <Typography.Title heading={6} style={{ marginBottom: 24 }}>
-        Add category by Cases and Metrics:
+        Add category by cases and metrics:
       </Typography.Title>
       <Grid.Row gutter={40}>
         <Grid.Col span={8}>
