@@ -16,7 +16,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/data': 'https://web-infra-qos.netlify.app/',
+      '/data': 'https://web-infra-qos.pages.dev/',
     },
   },
   source: {

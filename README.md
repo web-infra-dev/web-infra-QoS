@@ -1,6 +1,6 @@
 # Web Infra QoS
 
-[Online Benchmark](https://web-infra-qos.netlify.app).
+[Online Benchmark](https://web-infra-qos.pages.dev).
 
 ## Data
 
