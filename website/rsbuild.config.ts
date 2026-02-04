@@ -10,13 +10,27 @@ export default defineConfig({
       html: './',
     },
   },
+  tools: {
+    rspack: {
+      module: {
+        parser: {
+          'javascript/auto': {
+            // requireAlias: true,
+            // requireAsExpression: true,
+          },
+        },
+      },
+    },
+  },
   html: {
     title: 'Web Infra QoS Dashboard',
     favicon: './src/public/web-infra.png',
   },
   server: {
     proxy: {
-      '/data': 'https://web-infra-qos.pages.dev/',
+      '/data': {
+        target: 'https://web-infra-qos.pages.dev/data',
+      },
     },
   },
   source: {
