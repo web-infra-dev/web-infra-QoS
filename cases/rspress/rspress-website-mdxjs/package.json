@@ -14,11 +14,11 @@
   "license": "MIT",
   "devDependencies": {
     "@rspress/core": "workspace:*",
-    "ts-node": "^10.9.1",
-    "typescript": "^5",
-    "@types/react": "18.2.0",
-    "@rsbuild/plugin-sass": "^1.2.2",
-    "framer-motion": "10.16.4"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "@types/react": "18.3.28",
+    "@rsbuild/plugin-sass": "^1.5.0",
+    "framer-motion": "10.18.0"
   },
   "files": [
     "docs"

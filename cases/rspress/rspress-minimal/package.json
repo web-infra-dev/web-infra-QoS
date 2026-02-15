@@ -10,6 +10,6 @@
     "@rspress/core": "workspace:*"
   },
   "devDependencies": {
-    "@types/node": "^14"
+    "@types/node": "^14.18.63"
   }
 }
