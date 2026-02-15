@@ -83,7 +83,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22.18.0
+          node-version: 22.22.0
           cache-dependency-path: pnpm-lock.yaml
 
       - name: Activate corepack
@@ -122,7 +122,7 @@ jobs:
           apt-get update && apt-get install -y rsync
 
       - name: Update data
-        uses: JamesIves/github-pages-deploy-action@v4.5.0
+        uses: JamesIves/github-pages-deploy-action@v4.8.0
         with:
           branch: gh-pages
           folder: data
