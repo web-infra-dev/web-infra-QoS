@@ -9,9 +9,7 @@ import { Content } from './components/Content';
 import { useState } from 'react';
 import { MENU, PRODUCT } from './shared/constant';
 
-const Container = styled.div`
-  min-height: 100vh;
-`;
+const Container = styled.div``;
 
 const BASENAME =
   process.env.NODE_ENV === 'production' &&
