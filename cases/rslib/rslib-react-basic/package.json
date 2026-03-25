@@ -1,5 +1,6 @@
 {
   "name": "rslib-react-basic",
+  "type": "module",
   "private": true,
   "scripts": {
     "build": "rslib build"
