@@ -1,5 +1,6 @@
 {
   "name": "rslib-node-basic",
+  "type": "module",
   "private": true,
   "scripts": {
     "build": "rslib build"
