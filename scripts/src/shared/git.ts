@@ -93,7 +93,7 @@ export async function cloneRepo(productName: string, caseName: string) {
   );
 
   // run prepare before linking cases
-  await runCommand(localRepoPath, 'corepack enable && pnpm -v');
+  await runCommand(localRepoPath, 'corepack enable');
   await runCommand(localRepoPath, 'pnpm i --ignore-scripts');
   await runCommand(localRepoPath, 'pnpm prepare');
 
