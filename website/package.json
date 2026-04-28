@@ -7,24 +7,24 @@
     "build": "rsbuild build"
   },
   "dependencies": {
-    "@antv/g2plot": "^2.4.32",
-    "@arco-design/web-react": "^2.65.0",
-    "dayjs": "^1.11.13",
+    "@antv/g2plot": "^2.4.35",
+    "@arco-design/web-react": "^2.66.14",
+    "dayjs": "^1.11.20",
     "localforage": "^1.10.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-router-dom": "^7.1.5",
-    "styled-components": "6.1.15"
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-router-dom": "^7.14.2",
+    "styled-components": "6.4.1"
   },
   "devDependencies": {
-    "@modern-js/tsconfig": "^2.64.1",
-    "@rsbuild/core": "2.0.0-beta.4",
-    "@rsbuild/plugin-react": "^1.4.5",
-    "@rsbuild/plugin-sass": "^1.5.0",
-    "@types/node": "^22.13.1",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "prettier": "^3.5.0",
-    "typescript": "^5.7.3"
+    "@modern-js/tsconfig": "^2.70.8",
+    "@rsbuild/core": "2.0.3",
+    "@rsbuild/plugin-react": "^1.4.6",
+    "@rsbuild/plugin-sass": "^1.5.2",
+    "@types/node": "^22.19.17",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "prettier": "^3.8.3",
+    "typescript": "^5.9.3"
   }
 }
