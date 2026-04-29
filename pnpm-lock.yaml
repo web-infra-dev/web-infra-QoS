@@ -78,8 +78,8 @@ importers:
         version: 6.4.1(react-dom@19.2.5)(react@19.2.5)
     devDependencies:
       '@modern-js/tsconfig':
-        specifier: ^2.70.8
-        version: 2.70.8
+        specifier: ^3.1.5
+        version: 3.1.5
       '@rsbuild/core':
         specifier: 2.0.3
         version: 2.0.3
@@ -385,8 +385,8 @@ packages:
       call-bind: 1.0.5
     dev: false
 
-  /@modern-js/tsconfig@2.70.8:
-    resolution: {integrity: sha512-Z+lVMxO1z1E5ZuoWD6tnOxdDBMyqzrg4THTJnje2tgr9BB+7zF9cAzFTchdv3Bjm/IdQLq/pr1lpM6LnGq/GuQ==}
+  /@modern-js/tsconfig@3.1.5:
+    resolution: {integrity: sha512-9fEMN6CDgo6H28GP3QlP52YVLrtvVvHmn20DOHiPFEAPZxo8AtUuy6h6hhlcF23JPj74ZbAqxCe6eaVE77rZ6w==}
     dev: true
 
   /@napi-rs/wasm-runtime@1.1.4(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0):
