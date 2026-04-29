@@ -18,7 +18,7 @@
     "typescript": "^5.9.3",
     "@types/react": "18.3.28",
     "@rsbuild/plugin-sass": "^1.5.2",
-    "framer-motion": "10.18.0"
+    "framer-motion": "12.38.0"
   },
   "files": [
     "docs"
