@@ -17,7 +17,7 @@
     "styled-components": "6.4.1"
   },
   "devDependencies": {
-    "@modern-js/tsconfig": "^2.70.8",
+    "@modern-js/tsconfig": "^3.1.5",
     "@rsbuild/core": "2.0.3",
     "@rsbuild/plugin-react": "^1.4.6",
     "@rsbuild/plugin-sass": "^1.5.2",
