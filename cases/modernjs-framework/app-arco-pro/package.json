@@ -17,7 +17,7 @@
     "@loadable/component": "^5.16.7",
     "@turf/turf": "^6.5.0",
     "arco-design-pro": "^2.8.1",
-    "axios": "^0.31.0",
+    "axios": "^0.31.1",
     "bizcharts": "^4.1.23",
     "classnames": "^2.5.1",
     "copy-to-clipboard": "^3.3.3",
@@ -30,7 +30,7 @@
     "react-color": "^2.19.3",
     "react-dom": "^18.3.1",
     "react-redux": "^7.2.9",
-    "react-router": "^5.2.0",
+    "react-router": "^5.3.4",
     "react-router-dom": "^5.3.4",
     "redux": "^4.2.1"
   },
