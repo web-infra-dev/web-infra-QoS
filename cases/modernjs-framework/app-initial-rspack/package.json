@@ -21,7 +21,7 @@
     "rimraf": "^3.0.2",
     "lint-staged": "^11.2.6",
     "prettier": "^2.8.8",
-    "husky": "^8.0.3",
+    "husky": "^9.1.7",
     "typescript": "^5.9.3",
     "@types/react": "^18.3.28",
     "@types/react-dom": "^18.3.7",
