@@ -14,15 +14,15 @@
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-router-dom": "^7.15.1",
-    "styled-components": "6.4.1"
+    "styled-components": "6.4.2"
   },
   "devDependencies": {
-    "@modern-js/tsconfig": "^3.2.0",
-    "@rsbuild/core": "2.0.6",
+    "@modern-js/tsconfig": "^3.2.1",
+    "@rsbuild/core": "2.0.7",
     "@rsbuild/plugin-react": "^2.0.0",
     "@rsbuild/plugin-sass": "^1.5.2",
     "@types/node": "^22.19.19",
-    "@types/react": "^19.2.14",
+    "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
     "prettier": "^3.8.3",
     "typescript": "^5.9.3"
