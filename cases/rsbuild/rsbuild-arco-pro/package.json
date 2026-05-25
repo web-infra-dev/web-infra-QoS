@@ -37,7 +37,7 @@
     "@rsbuild/plugin-react": "workspace:*",
     "@rsbuild/plugin-svgr": "workspace:*",
     "rimraf": "^3.0.2",
-    "lint-staged": "^11.2.6",
+    "lint-staged": "^17.0.5",
     "prettier": "^2.8.8",
     "typescript": "^5.9.3",
     "@types/react": "^18.3.29",
