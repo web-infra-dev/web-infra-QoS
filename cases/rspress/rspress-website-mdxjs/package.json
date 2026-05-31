@@ -17,7 +17,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
     "@types/react": "18.3.29",
-    "@rsbuild/plugin-sass": "^1.5.2",
+    "@rsbuild/plugin-sass": "^1.5.3",
     "framer-motion": "12.40.0"
   },
   "files": [
