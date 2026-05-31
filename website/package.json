@@ -9,18 +9,18 @@
   "dependencies": {
     "@antv/g2plot": "^2.4.35",
     "@arco-design/web-react": "^2.66.15",
-    "dayjs": "^1.11.20",
+    "dayjs": "^1.11.21",
     "localforage": "^1.10.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
-    "react-router-dom": "^7.15.1",
+    "react-router-dom": "^7.16.0",
     "styled-components": "6.4.2"
   },
   "devDependencies": {
     "@modern-js/tsconfig": "^3.2.1",
-    "@rsbuild/core": "2.0.7",
-    "@rsbuild/plugin-react": "^2.0.0",
-    "@rsbuild/plugin-sass": "^1.5.2",
+    "@rsbuild/core": "2.0.9",
+    "@rsbuild/plugin-react": "^2.0.1",
+    "@rsbuild/plugin-sass": "^1.5.3",
     "@types/node": "^22.19.19",
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",

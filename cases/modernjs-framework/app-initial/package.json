@@ -19,7 +19,7 @@
     "@modern-js/app-tools": "workspace:*",
     "@modern-js/tsconfig": "workspace:*",
     "rimraf": "^3.0.2",
-    "lint-staged": "^17.0.5",
+    "lint-staged": "^17.0.6",
     "prettier": "^2.8.8",
     "husky": "^8.0.3",
     "typescript": "^5.9.3",
