@@ -97,6 +97,10 @@ export async function cloneRepo(productName: string, caseName: string) {
   await runCommand(localRepoPath, 'pnpm i --ignore-scripts');
   await runCommand(localRepoPath, 'pnpm prepare');
 
+  if (productName === 'RSBUILD' || productName === 'RSLIB') {
+    await runCommand(localRepoPath, 'pnpm build');
+  }
+
   // add cases folder to workspace config
   await updateFile(join(localRepoPath, 'pnpm-workspace.yaml'), content =>
     addContentToPnpmPackages(content, "- 'cases/*'"),
