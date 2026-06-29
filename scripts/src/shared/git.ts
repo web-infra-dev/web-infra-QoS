@@ -106,6 +106,16 @@ export async function cloneRepo(productName: string, caseName: string) {
     addContentToPnpmPackages(content, "- 'cases/*'"),
   );
 
+  if (productName === 'RSLIB') {
+    await updateFile(join(localRepoPath, 'package.json'), content => {
+      const packageJson = JSON.parse(content);
+      packageJson.devDependencies ??= {};
+      packageJson.devDependencies['@rslib/core'] = 'workspace:*';
+
+      return `${JSON.stringify(packageJson, null, 2)}\n`;
+    });
+  }
+
   // rename prepare scripts to avoid executing
   // pnpm link will execute complete process of pnpm install in pnpm v10.
   await updateFile(
