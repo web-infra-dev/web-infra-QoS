@@ -11,20 +11,20 @@
     "@arco-design/web-react": "^2.66.15",
     "dayjs": "^1.11.21",
     "localforage": "^1.10.0",
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6",
-    "react-router-dom": "^7.16.0",
-    "styled-components": "6.4.2"
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.1",
+    "styled-components": "6.4.3"
   },
   "devDependencies": {
-    "@modern-js/tsconfig": "^3.2.1",
-    "@rsbuild/core": "2.0.9",
-    "@rsbuild/plugin-react": "^2.0.1",
+    "@modern-js/tsconfig": "^3.6.0",
+    "@rsbuild/core": "2.1.5",
+    "@rsbuild/plugin-react": "^2.1.0",
     "@rsbuild/plugin-sass": "^1.5.3",
-    "@types/node": "^22.19.19",
-    "@types/react": "^19.2.15",
+    "@types/node": "^22.20.1",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "prettier": "^3.8.3",
+    "prettier": "^3.9.5",
     "typescript": "^5.9.3"
   }
 }

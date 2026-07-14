@@ -16,9 +16,9 @@
     "@rspress/core": "workspace:*",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
-    "@types/react": "18.3.29",
+    "@types/react": "18.3.31",
     "@rsbuild/plugin-sass": "^1.5.3",
-    "framer-motion": "12.40.0"
+    "framer-motion": "12.42.2"
   },
   "files": [
     "docs"
