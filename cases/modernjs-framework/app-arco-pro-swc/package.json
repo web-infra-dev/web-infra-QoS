@@ -12,7 +12,7 @@
   "dependencies": {
     "@antv/data-set": "^0.11.8",
     "@arco-design/color": "^0.4.0",
-    "@arco-design/web-react": "^2.66.15",
+    "@arco-design/web-react": "^2.66.16",
     "@arco-themes/react-arco-pro": "^0.0.7",
     "@loadable/component": "^5.16.7",
     "@turf/turf": "^6.5.0",
@@ -39,7 +39,7 @@
     "@modern-js/plugin-swc": "workspace:*",
     "@modern-js/tsconfig": "workspace:*",
     "rimraf": "^3.0.2",
-    "lint-staged": "^17.0.8",
+    "lint-staged": "^17.2.0",
     "prettier": "^2.8.8",
     "husky": "4.3.8",
     "typescript": "^5.9.3",
