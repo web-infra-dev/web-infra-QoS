@@ -5,6 +5,9 @@ import { pluginSvgr } from '@rsbuild/plugin-svgr';
 import { measurePlugin } from '@modern-js/benchmark-scripts/plugins/rsbuild';
 
 export default defineConfig({
+  resolve: {
+    dedupe: ['react', 'react-dom'],
+  },
   plugins: [
     pluginReact(),
     pluginLess(),

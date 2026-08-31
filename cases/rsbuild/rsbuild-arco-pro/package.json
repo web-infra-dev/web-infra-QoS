@@ -12,7 +12,7 @@
     "@arco-design/web-react": "^2.66.16",
     "@arco-themes/react-arco-pro": "^0.0.7",
     "@loadable/component": "^5.16.7",
-    "@turf/turf": "^6.5.0",
+    "@turf/turf": "^7.4.0",
     "arco-design-pro": "^2.8.1",
     "axios": "^0.33.0",
     "bizcharts": "^4.1.23",
