@@ -1,8 +1,9 @@
-import { defineConfig } from '@rsbuild/core';
+// Configuration guide: https://rstack.rs/config
+import { define } from 'rstack';
 import { pluginReact } from '@rsbuild/plugin-react';
 import { pluginSass } from '@rsbuild/plugin-sass';
 
-export default defineConfig({
+define.app({
   plugins: [pluginReact(), pluginSass()],
   html: {
     title: 'Web Infra QoS Dashboard',

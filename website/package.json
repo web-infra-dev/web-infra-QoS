@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "rsbuild dev",
-    "build": "rsbuild build"
+    "build": "rs build",
+    "dev": "rs dev",
+    "start": "rs preview"
   },
   "dependencies": {
     "@antv/g2plot": "^2.4.35",
@@ -18,13 +19,11 @@
   },
   "devDependencies": {
     "@modern-js/tsconfig": "^3.8.3",
-    "@rsbuild/core": "2.2.1",
     "@rsbuild/plugin-react": "^2.1.0",
     "@rsbuild/plugin-sass": "^1.5.3",
     "@types/node": "^22.20.1",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.5",
-    "prettier": "^3.9.6",
     "typescript": "^5.9.3"
   }
 }

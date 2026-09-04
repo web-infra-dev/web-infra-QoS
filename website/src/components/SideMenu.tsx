@@ -2,7 +2,6 @@ import { Menu, MenuProps } from '@arco-design/web-react';
 import { styled } from 'styled-components';
 import {
   IconApps,
-  IconBug,
   IconBulb,
   IconCommand,
   IconCamera,
