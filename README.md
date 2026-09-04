@@ -154,9 +154,12 @@ Install npm dependency related metrics.
 ### Local Development
 
 ```bash
-pnpm run install:webiste
+pnpm run install:website
 pnpm run dev:website
 ```
+
+To preview a production build, run `pnpm run build:website` followed by
+`pnpm run start:website`.
 
 ### Deploy Website
 

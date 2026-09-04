@@ -121,7 +121,7 @@ export async function compare(productName: string) {
         ? (await axios.get(remoteURL)).data
         : await readJson(jsonPath);
 
-    let arr = Object.keys(allMetrics).map(key => {
+    const arr = Object.keys(allMetrics).map(key => {
       return { key: key, value: allMetrics[key] };
     });
 

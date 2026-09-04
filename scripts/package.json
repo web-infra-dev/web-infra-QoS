@@ -1,13 +1,6 @@
 {
   "name": "@modern-js/benchmark-scripts",
   "version": "0.1.0",
-  "scripts": {
-    "start": "npm run build && node ./dist/main.js",
-    "start:pr": "npm run build && node ./dist/pr-bench.js",
-    "compare": "npm run build && node ./dist/compare.js",
-    "dev": "tsc --watch",
-    "build": "rm -rf ./dist && tsc"
-  },
   "exports": {
     "./plugins/modernjs-framework": "./dist/plugins/modernjs-framework/index.js",
     "./plugins/rspress": "./dist/plugins/rspress/index.js",
@@ -30,19 +23,25 @@
       ]
     }
   },
+  "scripts": {
+    "build": "rs lib",
+    "compare": "npm run build && node ./dist/compare.js",
+    "dev": "rs lib -w",
+    "start": "npm run build && node ./dist/main.js",
+    "start:pr": "npm run build && node ./dist/pr-bench.js"
+  },
   "dependencies": {
-    "@types/node": "17.0.45",
     "@types/fs-extra": "9.0.13",
+    "@types/node": "17.0.45",
     "@yarnpkg/lockfile": "1.1.0",
-    "get-folder-size": "2.0.1",
     "axios": "0.33.0",
-    "proxy-agent": "6.5.0",
-    "execa": "5.1.1",
-    "prettier": "2.8.8",
-    "gzip-size": "6.0.0",
-    "fast-glob": "3.3.3",
     "consola": "2.15.3",
+    "execa": "5.1.1",
+    "fast-glob": "3.3.3",
     "fs-extra": "10.1.0",
+    "get-folder-size": "2.0.1",
+    "gzip-size": "6.0.0",
+    "proxy-agent": "6.5.0",
     "typescript": "^5.9.3"
   }
 }

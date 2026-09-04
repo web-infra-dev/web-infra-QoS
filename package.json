@@ -1,17 +1,26 @@
 {
   "name": "web-infra-qos-monorepo",
-  "packageManager": "pnpm@8.15.9",
+  "private": true,
+  "type": "module",
   "scripts": {
     "bootstrap": "corepack enable && pnpm install",
     "build:all": "pnpm -r run build",
+    "build:scripts": "pnpm --filter @modern-js/benchmark-scripts run build",
+    "build:website": "pnpm --filter website run build",
+    "check": "rs check",
     "clean": "rm -rf node_modules && pnpm -r exec rm -rf node_modules",
     "dev:scripts": "pnpm --filter @modern-js/benchmark-scripts run dev",
     "dev:website": "pnpm --filter website run dev",
-    "start:scripts": "pnpm --filter @modern-js/benchmark-scripts run start",
-    "start:website": "pnpm --filter website run start",
-    "build:scripts": "pnpm --filter @modern-js/benchmark-scripts run build",
-    "build:website": "pnpm --filter website run build",
+    "format": "rs fmt",
     "install:scripts": "pnpm --filter @modern-js/benchmark-scripts install",
-    "install:website": "pnpm --filter website install"
-  }
+    "install:website": "pnpm --filter website install",
+    "lint": "rs lint",
+    "prepare": "rs hooks",
+    "start:scripts": "pnpm --filter @modern-js/benchmark-scripts run start",
+    "start:website": "pnpm --filter website run start"
+  },
+  "devDependencies": {
+    "rstack": "^0.7.2"
+  },
+  "packageManager": "pnpm@8.15.9"
 }

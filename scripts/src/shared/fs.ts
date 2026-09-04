@@ -114,7 +114,7 @@ export async function mergeMetrics(productName: string, caseName: string) {
   if (await pathExists(jsonPath)) {
     const allMetrics: Metrics[] = await readJson(jsonPath);
     const firstMetrics = allMetrics[0];
-    let result: Record<string, unknown> = {};
+    const result: Record<string, unknown> = {};
     const keys = Object.keys(firstMetrics) as Array<keyof Metrics>;
 
     keys.forEach(key => {
